@@ -510,6 +510,11 @@ SNIPER:
 		ValidTargets: Water, Underwater
 		InvalidTargets: Ship, Structure, Bridge
 
+camea_sniper:
+	Inherits: SNIPER
+	ReloadDelay: 60
+	Range: 11c0
+
 SNIPERE:
 	Inherits: SNIPER
 	Range: 11c0

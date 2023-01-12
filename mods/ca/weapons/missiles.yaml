@@ -808,6 +808,10 @@ HonestJohn:
 		LaunchAngle: 37
 		PointDefenseType: Missile
 
+HonestJohnCamea:   
+    Inherits: HonestJohn
+    Range: 14c256
+
 HonestJohn.toxin:
 	Inherits: ^AntiGroundMissile
 	Inherits: ^Chemical

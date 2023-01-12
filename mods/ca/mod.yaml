@@ -109,7 +109,11 @@ Rules:
 	ca|rules/nod/infantry.yaml
 	ca|rules/scrin/defaults.yaml
 	ca|rules/world.yaml
-
+	ca|rules/camea/defaults.yaml
+	ca|rules/camea/structures.yaml
+	ca|rules/camea/units.yaml
+	#ca|rules/defaults/defaults.yaml
+	
 Sequences:
 	ca|sequences/defaults.yaml
 	ca|sequences/ships.yaml
