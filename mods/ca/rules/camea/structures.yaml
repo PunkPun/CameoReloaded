@@ -83,23 +83,7 @@ camea_conyard:
   	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
 		Icon: spyplane
-		ChargeInterval: 3750
-		Description: Spy Plane
-		LongDesc: Reveals an area of the map\nand cloaked enemy units.
-		SelectTargetSpeechNotification: SelectTarget
-		EndChargeSpeechNotification: SpyPlaneReady
-		CameraActor: camera.spyplane
-		CameraRemoveDelay: 150
-		UnitType: u2
-		QuantizedFacings: 8
-		DisplayBeacon: true
-		BeaconPoster: racamicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: airstrikedirection
-		SupportPowerPaletteOrder: 60
+		ChargeInterval: 3000
         
 POWR.camea:
 	Inherits: POWR
