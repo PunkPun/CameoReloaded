@@ -568,15 +568,26 @@ ttnk.arc:
 ttnk.ra2:
 	Inherits: ^VehicleOverlays
 	Inherits: ^HighRes
+<<<<<<< HEAD
 	idle: ttnknew
 		Facings: 32
 		UseClassicFacings: True
 	turret: ttnknew
+=======
+	idle: heavyteslatank
+		Facings: 32
+		UseClassicFacings: True
+	turret: heavyteslatank
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Start: 32
 		Stride: 13
 		Facings: -32
 		UseClassicFacings: True
+<<<<<<< HEAD
 	shoot: ttnknew
+=======
+	shoot: heavyteslatank
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Start: 32
 		Length: 13
 		Facings: -32
@@ -1916,6 +1927,12 @@ pcan:
 	idle: pcan
 		Facings: 32
 		UseClassicFacings: True
+<<<<<<< HEAD
+=======
+	turret: pcan
+		Start: 32
+		Facings: 32
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	icon: pcanicnh
 
 mwtnk:
@@ -2218,7 +2235,12 @@ ftrk.barrage:
 
 isu:
 	Inherits: ^VehicleOverlays
+<<<<<<< HEAD
 	idle: isu
+=======
+	Inherits: ^HighRes
+	idle: isu152
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: smokeygun

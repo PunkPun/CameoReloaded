@@ -244,6 +244,18 @@ commander_tree.btr:
 commander_tree.nona_svk:
 	icon: nonasvkicon
 
+<<<<<<< HEAD
+=======
+commander_tree.general_armaggeddon:
+	icon: generalarmageddonicon
+
+commander_tree.tiktok_warrior:
+	icon: tiktokwarrioricon
+
+commander_tree.the_chef:
+	icon: thecheficon
+
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 commander_tree.mammoth_tank_gdi:
 	icon: htnkicnh
 
@@ -454,12 +466,15 @@ commander_tree.banshee.bomber:
 commander_tree.banshee.payload:
 	icon: bansheepayloadicon
 
+<<<<<<< HEAD
 commander_tree.apache.flyby:
 	icon: apacheflybyicon
 
 commander_tree.apache.torp:
 	icon: apachetorpicon
 
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 commander_tree.comanche.bomber:
 	icon: comanchebombericon
 
@@ -597,10 +612,17 @@ commander_tree.battlemaster.mass_production:
 	icon: chbattlemassicon
 
 commander_tree.battlemaster.pdl:
+<<<<<<< HEAD
 	icon: chbattlepdlicon
 
 commander_tree.battlemaster.reflector:
 	icon: chbattlereflectoricon
+=======
+	icon: chbattleicon
+
+commander_tree.battlemaster.reflector:
+	icon: chbattleicon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 commander_tree.dragon_tank.pdl:
 	icon: chdragonpdlicon

@@ -1,7 +1,11 @@
 CHE1:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AUTOTARGET2: ^PrioAntiInfantry
+=======
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits: ^ScoutEquipment
 	Inherits@BERSERK: ^Berserk
 	Inherits@BOTHELPER: ^BotCaptureHelper

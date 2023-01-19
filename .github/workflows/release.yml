@@ -28,11 +28,19 @@ jobs:
           make engine
           mkdir -p build/linux
           ./packaging/linux/buildpackage.sh "${GIT_TAG}" "${PWD}/build/linux"
+<<<<<<< HEAD
+=======
+          
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
       - name: Upload Packages
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
+<<<<<<< HEAD
+=======
+          prerelease: true
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
           overwrite: true
           file_glob: true
           file: build/linux/*
@@ -69,6 +77,10 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
+<<<<<<< HEAD
+=======
+          prerelease: true
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
           overwrite: true
           file_glob: true
           file: build/macos/*
@@ -101,6 +113,10 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
+<<<<<<< HEAD
+=======
+          prerelease: true
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
           overwrite: true
           file_glob: true
           file: build/windows/*

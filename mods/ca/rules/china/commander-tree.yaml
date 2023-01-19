@@ -88,6 +88,11 @@ commander_tree.Battlemaster.PDL:
 		Attributes: • Intercepts incoming projectiles.
 	ProvidesPrerequisite@filler:
 		Prerequisite: filler.battlemaster2
+<<<<<<< HEAD
+=======
+	WithProductionIconOverlay:
+		Types: PDL
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 commander_tree.Battlemaster.Reflector:
 	Inherits: ^default.commander_tree_item
@@ -105,6 +110,11 @@ commander_tree.Battlemaster.Reflector:
 		Weaknesses: • Weak vs Projectiles, Chemicals
 	ProvidesPrerequisite@filler:
 		Prerequisite: filler.battlemaster2
+<<<<<<< HEAD
+=======
+	WithProductionIconOverlay:
+		Types: Reflector
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 hack.cameo_filler.battlemaster.2:
 	Inherits: ^default.cameo_filler
@@ -887,3 +897,18 @@ commander_tree.Isotope_Stability:
 		Prerequisites: prerequisite.has_points, radar, ~chinaatom
 		Description: Tanks with nuclear ammo or nuclear engines no longer explode on destruction.\nDamage dealt to close units is prevented.
 		Attributes: • Nuclear Tanks no longer explode on destruction.
+<<<<<<< HEAD
+=======
+
+hack.cameo_filler.china.1:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		BuildPaletteOrder: 590
+		Prerequisites: prerequisite.has_points, radar, ~china
+
+hack.cameo_filler.china.2:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		BuildPaletteOrder: 590
+		Prerequisites: prerequisite.has_points, radar, ~china
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26

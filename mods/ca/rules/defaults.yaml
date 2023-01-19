@@ -862,6 +862,29 @@
 		RequiresCondition: forceshield && !invulnerability
 		Modifier: 0
 
+<<<<<<< HEAD
+=======
+^Shielded:
+	Shielded:
+		MaxStrength: 75000
+		RegenDelay: 100
+		RegenAmount: 100
+		RegenInterval: 2
+		ShieldsUpCondition: shields-up
+		RequiresCondition: shielded && !empdisable
+		SelectionBarColor: 4488ff
+	WithModifiedPalette@shieldhit:
+		Palette: shieldhit
+		RequiresCondition: weaponhit && shields-up
+	ExternalCondition@weaponhit:
+		Condition: weaponhit
+	WithIdleOverlay@NSHIELD:
+		Sequence: idle
+		Image: nshield-overlay
+		Palette: effect
+		RequiresCondition: weaponhit && shields-up
+
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 ^EmpDisable:
 	WithColoredOverlay@EMPDISABLE:
 		RequiresCondition: empdisable
@@ -1243,12 +1266,15 @@
 	Targetable@MINIDRONE:
 		TargetTypes: MiniDroneAttachable
 		RequiresCondition: !mdrn-attached
+<<<<<<< HEAD
 	ChangesHealth@MINIDRONE:
 		PercentageStep: 1
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 75
 		RequiresCondition: mdrn-attached
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ExternalCondition@MINIDRONE:
 		Condition: mdrn-attached
 	AttachableTo:
@@ -1361,14 +1387,151 @@
 		Priority: 10
 
 ^PrioAntiInfantry:
+<<<<<<< HEAD
 
 ^PrioAntiHeavy:
 
 ^PrioAntiLight:
+=======
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 5
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 3
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 1
+
+^PrioAntiHeavy:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 5
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 5
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 3
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 1
+
+^PrioAntiLight:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 1
+
+^PrioAntiReflector:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 9
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 9
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 1
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 ^PrioAntiVehicle:
 
 ^PrioAntiLightAA:
+<<<<<<< HEAD
+=======
+	Inherits: ^AutoTargetAll
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 1
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 ^PrioAntiHeavyAA:
 	AutoTarget:
@@ -1401,12 +1564,178 @@
 		Priority: 1
 
 ^PrioEnergyWeapon:
+<<<<<<< HEAD
 
 ^PrioEnergyAntiHeavy:
 
 ^PrioEnergyAntiLight:
 
 ^PrioArtillery:
+=======
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 9
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 8
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 3
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 1
+
+^PrioEnergyAntiHeavy:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 5
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 3
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 1
+
+^PrioEnergyAntiHeavyAA:
+	AutoTarget:
+		AttackAnythingCondition: stance-attackanything
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 5
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 3
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 1
+
+^PrioEnergyAntiLight:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 1
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 1
+
+^PrioEnergyAntiLightAA:
+	Inherits: ^AutoTargetAll
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 4
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 3
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 2
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 1
+
+^PrioArtillery:
+	Inherits: ^AutoTargetGround
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move
+	AttackMove:
+		AssaultMoveCondition: assault-move
+	AutoTargetPriority@PRIO:
+		ValidTargets: concrete
+		Priority: 10
+	AutoTargetPriority@PRIO:
+		ValidTargets: none
+		Priority: 9
+	AutoTargetPriority@PRIO:
+		ValidTargets: reflector
+		Priority: 8
+	AutoTargetPriority@PRIO:
+		ValidTargets: light
+		Priority: 7
+	AutoTargetPriority@PRIO:
+		ValidTargets: wood
+		Priority: 6
+	AutoTargetPriority@PRIO:
+		ValidTargets: heavy
+		Priority: 1
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 ^RelayTargeting:
 	AutoTargetPriority@Relay:
@@ -1433,10 +1762,13 @@
 		Multiplier: 75
 		Prerequisites: indp2, !indplowpower
 
+<<<<<<< HEAD
 ^AllQueues:
 	Buildable:
 		Queue: Building.GDI, Building.Nod, Building.Allies, Building.Soviet, Building.AlliesRA2, Building.SovietRA2, Building.Yuri, Building.Alpha, Building.Scavenger, Building.Terran, Building.Protoss, Building.Zerg, Building.SimCity, Building.TSGDI, Building.TSNod, Building.CABAL, Building.MUTANT, RABuilding.GDI, RABuilding.Nod, RABuilding.Allies, RABuilding.Soviet, RABuilding.AlliesRA2, RABuilding.SovietRA2, RABuilding.Yuri, RABuilding.Alpha, RABuilding.Scavenger, RABuilding.Terran, RABuilding.Protoss, RABuilding.Zerg, RABuilding.SimCity, RABuilding.TSGDI, RABuilding.TSNod, RABuilding.CABAL, RABuilding.MUTANT, Building.GLA, RABuilding.GLA, Building.USA, RABuilding.USA, Building.CHINA, RABuilding.CHINA, Building.LEANG, RABuilding.LEANG, Building.OrangeStar, RABuilding.OrangeStar, Building.BlueMoon, RABuilding.BlueMoon, Building.YellowComet, RABuilding.YellowComet, Building.GreenEarth, RABuilding.GreenEarth, Building.BlackHole, RABuilding.BlackHole, Building.Rubinelle, RABuilding.Rubinelle, Building.IDS, RABuilding.IDS, Building.NRA, RABuilding.NRA, Building.Lazurian, RABuilding.Lazurian, Building.sow, RABuilding.sow, Building.SWEMPIRE, Building.SWREBELS, RABuilding.SWEMPIRE, RABuilding.SWREBELS, Building.SWSEPARATIST, Building.SWREPUBLIC, RABuilding.SWSEPARATIST, RABuilding.SWREPUBLIC, Building.SWHUTT, RABuilding.SWHUTT, Building.sow, Building.camea, Building.d2k, RABuilding.sow, Building.orc, Building.human, RABuilding.orc, RABuilding.human, RABuilding.d2k, Building.Shockwave, RABuilding.Shockwave, Building.ImperialGuard, RABuilding.ImperialGuard, Building.FreedomGuard, RABuilding.FreedomGuard, Building.Imperium, Building.Shadowhand, RABuilding.Imperium, RABuilding.Shadowhand, RABuilding.Togran, Building.Togran, Building.camea, Defence.camea, RABuilding.camea, RADefence.camea, 
 
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
@@ -1447,12 +1779,18 @@
 	Inherits@6: ^GDIUpgrade
 	Inherits@7: ^BinoUpgrade
 	Inherits@9: ^Warpable
+<<<<<<< HEAD
 	Inherits@10: ^Frenzy
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@11: ^NaniteRepair
 	Inherits@12: ^GpsScramble
 	Inherits@13: ^BotGroundProductionBonus
 	Inherits@14: ^Chillable
+<<<<<<< HEAD
 	Inherits@15: ^AffectedByDriverKill
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@16: ^Concussion
 	Inherits@17: ^Suppressable
 	Inherits@C4: ^C4Plantable
@@ -1462,13 +1800,19 @@
 	Inherits@bounty: ^GlobalBounty
 	Inherits@production: ^ProductionEfficiencyBoost
 	Inherits@selection: ^SelectableCombatUnit
+<<<<<<< HEAD
 	Inherits@mind: ^MindControllable
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@handicaps: ^PlayerHandicaps
 	Inherits@irrad: ^Irradiatable
 	Inherits@atomize: ^Atomizable
 	Inherits@minidrone: ^MiniDroneAttachable
 	Inherits@SLOWCRUSH: ^SlowedByCrushing
+<<<<<<< HEAD
 	Inherits@ToxinRad: ^DriverBiologicalDamage
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@VehicleVision: ^VehicleVision
 	Buildable:
 		Queue: Vehicle
@@ -1523,6 +1867,7 @@
 	Guardable:
 	Tooltip:
 		GenericName: Vehicle
+<<<<<<< HEAD
 	CaptureManager:
 		BeingCapturedCondition: being-captured
 	Capturable:
@@ -1532,6 +1877,8 @@
 	CaptureNotification:
 		Notification: UnitStolen
 		LoseNotification: UnitLost
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	MustBeDestroyed:
 	Voiced:
 		VoiceSet: VehicleVoice
@@ -1625,6 +1972,44 @@
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 
+<<<<<<< HEAD
+=======
+^BiologicalDriver:
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@BERSERK: ^Berserk
+	Inherits@10: ^Frenzy
+	Inherits@mind: ^MindControllable
+	Inherits@driverkill: ^AffectedByDriverKill
+	Inherits@ToxinRad: ^DriverBiologicalDamage
+	CaptureManager:
+		BeingCapturedCondition: being-captured
+	Capturable:
+		Types: vehicle
+		CancelActivity: True
+		RequiresCondition: !being-warped
+	CaptureNotification:
+		Notification: UnitStolen
+		LoseNotification: UnitLost
+
+^RobotDriver:
+	Inherits@IDISABLE: ^DisabledByRadarLoss
+	Inherits@HACKABLE: ^Hackable
+	IgnoresDisguise:
+	WithDecoration@DISABLED:
+		Image: poweroff
+		Sequence: offline
+		Palette: chrome
+		RequiresCondition: disabled
+		Position: Center
+	ProximityExternalCondition@POWERSOUND:
+		Condition: disablesound
+		RequiresCondition: disabled || empdisable
+		AffectsParent: true
+		Range: 1c0
+		EnableSound: vrobon
+		DisableSound: vroboff
+
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 ^SlowedByCrushing:
 	ExternalCondition@CRUSHATTEMPTSLOW:
 		Condition: crush-attempt-slow
@@ -2196,7 +2581,11 @@
 	Aircraft:
 		CruisingCondition: cruising
 		PauseOnCondition: empdisable && !airborne || being-warped
+<<<<<<< HEAD
 	KillsSelf:
+=======
+	KillsSelf@EMP:
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		RequiresCondition: empdisable && cruising
 	Targetable@GROUND:
 		RequiresCondition: !airborne && !being-warped
@@ -2260,6 +2649,45 @@
 	EjectOnDeath:
 		PilotActor: N1
 
+<<<<<<< HEAD
+=======
+^Airship:
+	Inherits: ^Plane
+	Tooltip:
+		GenericName: Helicopter
+	Aircraft:
+		CanHover: True
+		VTOL: true
+		CanSlide: True
+		CruiseAltitude: 2c0
+		InitialFacing: 192
+		TurnSpeed: 12
+		Speed: 56
+		Voice: Move
+		AltitudeVelocity: 0c50
+		CanForceLand: False
+	GpsRadarDot:
+		Sequence: Helicopter
+	BodyOrientation:
+		UseClassicFacings: True
+	-Contrail@1:
+	-Contrail@2:
+	SpeedMultiplier@EMPDISABLE:
+		Modifier: 0
+		RequiresCondition: empdisable
+	-KillsSelf@EMP:
+		RequiresCondition: empdisable && cruising
+
+^AirshipTD:
+	Inherits@1: ^Airship
+	Buildable:
+		IconPalette: chrometd
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	EjectOnDeath:
+		PilotActor: N1
+
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 ^BasicBuilding:
 	Inherits@1: ^ExistsInWorld
 	Inherits@Armor: ^WoodArmor
@@ -3660,11 +4088,17 @@
 		Sequence: tag-primary
 
 ^BuildingPlug:
+<<<<<<< HEAD
+=======
+	Inherits@3: ^SpriteActor
+	WithSpriteBody:
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Interactable:
 	AlwaysVisible:
 	Building:
 		BuildSounds: placbldg.aud
 		UndeploySounds: cashturn.aud
+<<<<<<< HEAD
 	SequencePlaceBuildingPreview:
 		Sequence: place
 		SequencePalette: placebuildingtd
@@ -3672,6 +4106,14 @@
 	KillsSelf:
 		RemoveInstead: true
 	RenderSprites:
+=======
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: placebuildingtd
+	KillsSelf:
+		RemoveInstead: true
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 ^AIUNLOAD:
 	GrantConditionWhileAiming@AIUNLOAD:
@@ -3788,6 +4230,12 @@
 		RequiresCondition: !jammed && !disabled && !being-warped
 	ExternalCondition@JAMMED:
 		Condition: jammed
+<<<<<<< HEAD
+=======
+	ProvidesPrerequisite@radar-active:
+		Prerequisite: radar-active
+		RequiresCondition: !jammed && !disabled && !being-warped
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 ^AircraftWithAmmo:
 	Rearmable:
@@ -3825,7 +4273,11 @@
 	ProvidesPrerequisite@infantryany:
 		Prerequisite: infantry.any
 	ProximityExternalCondition@close:
+<<<<<<< HEAD
 		Range: 6c0
+=======
+		Range: 7c0
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		ValidRelationships: Ally
 		Condition: closeToBarracks
 
@@ -3852,7 +4304,11 @@
 	ProvidesPrerequisite@any:
 		Prerequisite: vehicles.any
 	ProximityExternalCondition@close:
+<<<<<<< HEAD
 		Range: 6c0
+=======
+		Range: 7c0
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		ValidRelationships: Ally
 		Condition: closeToFactory
 
@@ -3943,18 +4399,27 @@
 	ProvidesPrerequisite@naval:
 		Prerequisite: ships.any
 	ProvidesPrerequisite@hunter_sub:
+<<<<<<< HEAD
 		Factions: soviet, russia, ukraine, iraq, nod, marked, blackh, legion, china
+=======
+		Factions: soviet, russia, ukraine, iraq, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisite: hunter_sub
 	ProvidesPrerequisite@subchaser:
 		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle
 		Prerequisite: subchaser
 	ProvidesPrerequisite@patrol_boat:
+<<<<<<< HEAD
 		Factions: allies, france, england, germany, gdi, zocom, talon, eagle, china
+=======
+		Factions: allies, france, england, germany, gdi, zocom, talon, eagle, china, chinainf, chinatnk, chinaatom
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisite: patrol_boat
 	ProvidesPrerequisite@recon_boat:
 		Factions: allies, france, england, germany, gdi, zocom, talon, eagle, nod, marked, blackh, legion
 		Prerequisite: recon_boat
 	ProvidesPrerequisite@sea_scorpion:
+<<<<<<< HEAD
 		Factions: soviet, russia, ukraine, iraq, nod, marked, blackh, legion, china
 		Prerequisite: sea_scorpion
 	ProvidesPrerequisite@attack_submarine:
@@ -3965,11 +4430,24 @@
 		Prerequisite: destroyer
 	ProvidesPrerequisite@frigate:
 		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle, nod, marked, blackh, legion, china
+=======
+		Factions: soviet, russia, ukraine, iraq, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+		Prerequisite: sea_scorpion
+	ProvidesPrerequisite@attack_submarine:
+		Factions: soviet, russia, ukraine, iraq, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+		Prerequisite: attack_submarine
+	ProvidesPrerequisite@destroyer:
+		Factions: allies, france, england, germany, gdi, zocom, talon, eagle, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+		Prerequisite: destroyer
+	ProvidesPrerequisite@frigate:
+		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisite: frigate
 	ProvidesPrerequisite@aegis_cruiser:
 		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle
 		Prerequisite: aegis_cruiser
 	ProvidesPrerequisite@battlecruiser:
+<<<<<<< HEAD
 		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle, china
 		Prerequisite: battlecruiser
 	ProvidesPrerequisite@carrier:
@@ -3977,6 +4455,15 @@
 		Prerequisite: carrier
 	ProvidesPrerequisite@icbm_sub:
 		Factions: soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle, nod, marked, blackh, legion, china
+=======
+		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle, china, chinainf, chinatnk, chinaatom
+		Prerequisite: battlecruiser
+	ProvidesPrerequisite@carrier:
+		Factions: allies, france, england, germany, gdi, zocom, talon, eagle, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+		Prerequisite: carrier
+	ProvidesPrerequisite@icbm_sub:
+		Factions: soviet, russia, ukraine, iraq, gdi, zocom, talon, eagle, nod, marked, blackh, legion, china, chinainf, chinatnk, chinaatom
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisite: icbm_sub
 	ProvidesPrerequisite@missile_sub:
 		Factions: allies, france, england, germany, soviet, russia, ukraine, iraq, nod, marked, blackh, legion

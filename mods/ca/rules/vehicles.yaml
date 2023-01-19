@@ -1,8 +1,14 @@
 V2RL:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+	Inherits: ^SovietArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 115
@@ -35,6 +41,7 @@ V2RL:
 		Name: reloading
 	Explodes:
 		Weapon: BarrelExplode
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -43,6 +50,13 @@ V2RL:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+
+1TNK:
+	Inherits: ^Tank
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@vision: ^ImprovedVision
 	Buildable:
 		Queue: Vehicle
@@ -90,8 +104,11 @@ V2RL:
 	SpawnActorOnDeath:
 		Actor: 1TNK.Husk
 		RequiresCondition: !onwater && !being-warped
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 1TNK.PLD:
 	Inherits: 1TNK
@@ -124,9 +141,14 @@ V2RL:
 
 2TNK:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
@@ -157,8 +179,11 @@ V2RL:
 	SpawnActorOnDeath:
 		Actor: 2TNK.Husk
 		RequiresCondition: !being-warped
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 GTNK:
 	Inherits: 2TNK
@@ -310,9 +335,14 @@ GTNK.squad:
 
 3TNK:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		FactionImages:
 			iraq: 3tnki
@@ -359,8 +389,11 @@ GTNK.squad:
 		Weapon: UnitExplodeIraqTank
 		EmptyWeapon: UnitExplodeIraqTank
 		RequiresCondition: iraqtank && !being-warped
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 3TNK.PLD:
 	Inherits: 3TNK
@@ -514,9 +547,14 @@ GTNK.squad:
 4TNK:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		FactionImages:
 			iraq: 4tnki
@@ -577,14 +615,21 @@ GTNK.squad:
 		Delay: 25
 		StartIfBelow: 50
 		DamageCooldown: 150
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Carryable:
 		LocalOffset: 0,0,500
 	-Crushable:
 
 4TNK.Speaker:
 	Inherits: 4TNK
+<<<<<<< HEAD
+=======
+	Inherits: ^PropagandaSpeaker
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		-FactionImages:
 	Buildable:
@@ -603,10 +648,16 @@ GTNK.squad:
 		Cost: 2000
 	Health:
 		HP: 88000
+<<<<<<< HEAD
 	ProximityExternalCondition@Propaganda:
 		Condition: propaganda
 		Range: 7c0
 		AffectsParent: False
+=======
+	GrantConditionOnPrerequisite@TikTok:
+		Prerequisites: commander_tree.tiktok_warrior
+		Condition: subliminal
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 4TNK.Speaker.Reflector:
 	Inherits: 4TNK.Speaker
@@ -642,6 +693,10 @@ GTNK.squad:
 
 4TNK.Nuke:
 	Inherits: 4TNK
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		-FactionImages:
 	Buildable:
@@ -702,6 +757,10 @@ GTNK.squad:
 
 4TNK.Tesla:
 	Inherits: 4TNK
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		-FactionImages:
 	Buildable:
@@ -762,9 +821,14 @@ GTNK.squad:
 
 ARTY:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110
@@ -793,8 +857,11 @@ ARTY:
 	Explodes:
 		Weapon: ArtilleryExplode
 		LoadedChance: 75
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 ARTY.nod:
 	Inherits: ARTY
@@ -851,15 +918,26 @@ ARTY.Chrono:
 
 ISU:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BigVehicle
+	Inherits: ^HighResShadow
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 175
 		Prerequisites: weap, radar, ~commander_tree.isu, ~!commander_tree.isu_concussion
+<<<<<<< HEAD
 		Description: Powerful Medium-range artillery with PLD defense.\n  Strong vs Buildings, Infantry, Projectile Weapons \n  Weak vs Aircraft
+=======
+		Description: Powerful Medium-range artillery with PDL defense.\n  Strong vs Buildings, Infantry, Projectile Weapons \n  Weak vs Aircraft
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 1650
 	Tooltip:
@@ -876,17 +954,26 @@ ISU:
 		LocalOffset: 824,0,208
 		MuzzleSequence: muzzle
 	AttackFrontal:
+<<<<<<< HEAD
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable || being-warped
 		Voice: Attack
 		FacingTolerance: 0
+=======
+		PauseOnCondition: empdisable || being-warped
+		Voice: Attack
+		FacingTolerance: 10
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	WithMuzzleOverlay:
 	Explodes:
 		Weapon: ArtilleryExplode
 		LoadedChance: 75
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Passenger:
 		Voice: Move
 	Voiced:
@@ -947,6 +1034,10 @@ SPEC:
 
 HARV:
 	Inherits: ^Tank
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@HARV: ^Harvester
 	-Crushable:
 	-Carryable:
@@ -1034,6 +1125,10 @@ HARV.Chrono:
 MCV:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 300
@@ -1071,10 +1166,16 @@ MCV:
 
 JEEP:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 15
@@ -1100,16 +1201,25 @@ JEEP:
 		PauseOnCondition: empdisable || being-warped
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	IgnoresDisguise:
 
 APC:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@TRANSPORT: ^Transport
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@TRANSPORT: ^Transport
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
@@ -1137,8 +1247,11 @@ APC:
 		MaxWeight: 5
 		LoadingCondition: notmobile
 		LoadedCondition: cargo
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Capturable:
 		RequiresCondition: !being-warped && !cargo
 	Capturable@DRIVER_DEAD:
@@ -1151,6 +1264,10 @@ APC:
 
 TRUK:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 280
@@ -1203,6 +1320,10 @@ TRUK.DROP:
 
 MGG:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 245
@@ -1234,6 +1355,10 @@ MGG:
 
 MRJ:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -1261,9 +1386,14 @@ MRJ:
 
 TTNK:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 125
@@ -1288,8 +1418,11 @@ TTNK:
 	Turreted:
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Passenger:
 		Voice: Move
 	Voiced:
@@ -1315,6 +1448,7 @@ TTNK.Arc:
 
 TTNK.RA2:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
@@ -1322,6 +1456,15 @@ TTNK.RA2:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
+=======
+	Inherits: ^HighResShadow
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyWeapon
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 200
+		IconPalette: chrome
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisites: dome, ~vehicles.russia, ~!commander_tree.tesla_tank_arc
 		Description: Tank with twin mounted Tesla coils.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
@@ -1371,7 +1514,12 @@ TTNK.RA2.Arc:
 
 DTRK:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^HighResShadow
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@UNLOAD: ^UnloadCondition
 	Buildable:
 		Queue: Vehicle
@@ -1442,9 +1590,14 @@ TTRK:
 
 CTNK:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 175
@@ -1476,8 +1629,11 @@ CTNK:
 		FacingTolerance: 0
 	PortableChrono:
 		ChargeDelay: 250
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ProductionCostMultiplier@GermanyBonus:
 		Multiplier: 90
 		Prerequisites: vehicles.germany
@@ -1509,6 +1665,10 @@ CTNK.Reflector:
 AMCV:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 300
@@ -1547,10 +1707,16 @@ AMCV:
 
 HMMV:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -1584,6 +1750,7 @@ HMMV:
 		Range: 6c0
 		DetectionTypes: Cloak, Thief
 		RequiresCondition: !(empdisable || being-warped)
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -1593,6 +1760,14 @@ BGGY:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+
+BGGY:
+	Inherits: ^VehicleTD
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -1621,8 +1796,11 @@ BGGY:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	IgnoresDisguise:
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 BGGY.PLD:
 	Inherits@PLD: ^PointLaserDefenseSystem
@@ -1642,7 +1820,11 @@ BGGY.PLD:
 
 BGGY.AA:
 	Inherits: BGGY
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 15
@@ -1662,10 +1844,16 @@ BGGY.AA:
 
 APC2:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@TRANSPORT: ^Transport
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@TRANSPORT: ^Transport
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		FactionImages:
 			nod: apc2.nod
@@ -1700,8 +1888,11 @@ APC2:
 		MaxWeight: 5
 		LoadingCondition: notmobile
 		LoadedCondition: cargo
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Capturable:
 		RequiresCondition: !being-warped && !cargo
 	Capturable@DRIVER_DEAD:
@@ -1728,10 +1919,16 @@ APC2.Reinforce:
 
 VULC:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@TRANSPORT: ^Transport
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@TRANSPORT: ^Transport
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
@@ -1849,9 +2046,14 @@ VULC:
 
 LTNK:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -1907,6 +2109,7 @@ LTNK:
 	SpawnActorOnDeath:
 		Actor: LTNK.Husk
 		RequiresCondition: !onwater && !being-warped
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -1915,6 +2118,13 @@ LTNK.Laser:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+
+LTNK.Laser:
+	Inherits: ^Tank
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -1971,6 +2181,7 @@ LTNK.Laser:
 	SpawnActorOnDeath:
 		Actor: LTNK.Husk
 		RequiresCondition: !onwater && !being-warped
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -1979,6 +2190,13 @@ MTNK:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+
+MTNK:
+	Inherits: ^TankTD
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		FactionImages:
 			nod: mtnk.nod
@@ -2019,8 +2237,11 @@ MTNK:
 	SpawnActorOnDeath:
 		Actor: MTNK.Husk
 		RequiresCondition: !being-warped
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 MTNK.PLD:
 	Inherits: MTNK
@@ -2050,9 +2271,15 @@ MTNK.Reflector:
 
 MTNK.Drone:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@IDISABLE: ^DisabledByRadarLoss
 	Inherits@HACKABLE: ^Hackable
+=======
+	Inherits: ^RobotDriver
+	Inherits: ^DronePairing
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 85
@@ -2093,6 +2320,7 @@ MTNK.Drone:
 	Power:
 		Amount: -1
 		RequiresCondition: !being-warped
+<<<<<<< HEAD
 	WithDecoration@DISABLED:
 		Image: poweroff
 		Sequence: offline
@@ -2122,6 +2350,10 @@ MTNK.Drone:
 	AttachOnCreation@DRONEPAIR:
 		Actor: mdrn.attached
 		RequiresCondition: dronepair
+=======
+	Targetable:
+		TargetTypes: Ground, Vehicle, C4, ChaosImmune, DriverKillImmune
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 MTNK.Drone.PLD:
 	Inherits: MTNK.Drone
@@ -2150,9 +2382,15 @@ MTNK.Drone.Reflector:
 HTNK:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^DronePairing
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 185
@@ -2198,8 +2436,11 @@ HTNK:
 		Delay: 25
 		StartIfBelow: 50
 		DamageCooldown: 150
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Carryable:
 		LocalOffset: 0,0,500
 	-Crushable:
@@ -2212,6 +2453,10 @@ HTNK:
 
 HTNK.Ion:
 	Inherits: HTNK
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 190
 		IconPalette: chrometd
@@ -2250,15 +2495,24 @@ HTNK.Ion.PLD:
 
 HTNK.Nanite:
 	Inherits: HTNK
+<<<<<<< HEAD
+=======
+	Inherits: ^Shielded
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 190
 		IconPalette: chrometd
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.mammoth_tank_gdi.nr, ~!filler.gdimammoth2
+<<<<<<< HEAD
 		Description: Big and slow tank with anti-air capability.\n  Is very tough and repairs itself with Nanite Repair System.\n  Can crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Point Laser Defense
+=======
+		Description: Big and slow tank with anti-air capability.\n  Is very tough and has a nanite shield system.\n  Can crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Point Laser Defense
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Nanite Mammoth Tank
 	Valued:
 		Cost: 2500
+<<<<<<< HEAD
 	Health:
 		HP: 125000
 	ChangesHealth:
@@ -2283,13 +2537,23 @@ HTNK.Nanite:
 	GrantConditionOnDamageState@NREPAIR:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+=======
+	Shielded:
+		MaxStrength: 60000
+		RegenAmount: 800
+		RequiresCondition: !(empdisable || driver-dead)
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 HTNK.Nanite.Reflector:
 	Inherits: HTNK.Nanite
 	Inherits: ^ReflectorArmor
 	Buildable:
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.mammoth_tank_gdi.nr, ~commander_tree.mammoth_tank_gdi.reflector
+<<<<<<< HEAD
 		Description: Big and slow tank with anti-air capability.\n  Has Reflector Armor, which is very good vs. Energy Weapons.\n  Strong vs Vehicles, Infantry, Aircraft, Energy Weapons \n  Weak vs Conventional Weapons
+=======
+		Description: Big and slow tank with anti-air capability.\n  Has Reflector Armor, which is very good vs. Energy Weapons.\n  Is very tough and has a nanite shield system.\n  Strong vs Vehicles, Infantry, Aircraft, Energy Weapons \n  Weak vs Conventional Weapons
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Nanite Mammoth Tank (Reflector)
 
@@ -2299,7 +2563,11 @@ HTNK.Nanite.PLD:
 	Buildable:
 		IconPalette: chrometd
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.mammoth_tank_gdi.pld, ~commander_tree.mammoth_tank_gdi.nr,
+<<<<<<< HEAD
 		Description: Big and slow tank with anti-air capability.\n  Can crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Energy Weapons
+=======
+		Description: Big and slow tank with anti-air capability.\n  Can crush concrete walls.\n  Is very tough and has a nanite shield system.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Energy Weapons
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Nanite Mammoth Tank (PLD)
 	Valued:
@@ -2357,9 +2625,14 @@ HTNK.Hover.PLD:
 
 MSAM:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		FactionImages:
 			nod: msam.nod
@@ -2398,11 +2671,18 @@ MSAM:
 	WithSpriteTurret:
 	Explodes:
 		Weapon: ArtilleryExplode
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
 MSAM.Hailstorm:
 	Inherits: MSAM
+=======
+
+MSAM.Hailstorm:
+	Inherits: MSAM
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		-FactionImages:
 	Valued:
@@ -2421,9 +2701,14 @@ MSAM.Hailstorm:
 
 MLRS:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Valued:
 		Cost: 1050
@@ -2473,8 +2758,11 @@ MLRS:
 	ReloadAmmoPool@1:
 		Delay: 120
 		Count: 2
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 MLRS.Toxin:
 	Inherits: MLRS
@@ -2493,6 +2781,10 @@ MLRS.Toxin:
 
 MLRS.Multi:
 	Inherits: MLRS
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 91
 		Prerequisites: tmpl, ~vehicles.nod, ~commander_tree.ssm_multi_launcher
@@ -2510,9 +2802,14 @@ MLRS.Multi:
 
 STNK:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -2557,17 +2854,24 @@ STNK:
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ProductionCostMultiplier@BlackhBonus:
 		Multiplier: 90
 		Prerequisites: vehicles.blackh
 
 STNK.Scrin:
 	Inherits: STNK
+<<<<<<< HEAD
 	-AutoTargetPriority@DEFAULT:
 	-AutoTargetPriority@ATTACKANYTHING:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioEnergyAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 130
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.stealth_tank.scrin, ~!filler.stealthtank2
@@ -2607,6 +2911,10 @@ STNK.Scrin.Reflector:
 
 STNK.HE:
 	Inherits: STNK
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 130
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.stealth_tank.explosive_rockets, ~!filler.stealthtank2
@@ -2647,6 +2955,10 @@ STNK.HE.Reflector:
 
 STNK.AP:
 	Inherits: STNK
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.stealth_tank.ap, ~!filler.stealthtank2
 		Queue: Vehicle
@@ -2685,9 +2997,14 @@ STNK.AP.Reflector:
 
 BIKE:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Valued:
 		Cost: 500
@@ -2718,14 +3035,21 @@ BIKE:
 		Armaments: primary, secondary
 		PauseOnCondition: empdisable || being-warped
 		FacingTolerance: 0
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 BIKE.Scrin:
 	Inherits: BIKE
 	-AutoTargetPriority@DEFAULT:
 	-AutoTargetPriority@ATTACKANYTHING:
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.scrin, ~!commander_tree.recon_bike.scrin.reflector, ~!commander_tree.recon_bike.scrin.pld
@@ -2769,9 +3093,13 @@ BIKE.Scrin.Reflector:
 
 BIKE.RocketHail:
 	Inherits: BIKE
+<<<<<<< HEAD
 	-AutoTargetPriority@DEFAULT:
 	-AutoTargetPriority@ATTACKANYTHING:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.rocket_hail, ~!commander_tree.recon_bike.rocket_hail.reflector, ~!commander_tree.recon_bike.rocket_hail.pld
@@ -2813,6 +3141,10 @@ BIKE.RocketHail.Reflector:
 
 BIKE.Explosive:
 	Inherits: BIKE
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.explosive, ~!commander_tree.recon_bike.explosive.pld, ~!commander_tree.recon_bike.explosive.reflector
@@ -2855,9 +3187,14 @@ BIKE.Explosive.Reflector:
 
 FTNK:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Valued:
 		Cost: 700
@@ -2920,6 +3257,10 @@ FTNK.PLD:
 
 FTNK.PLD.Chem:
 	Inherits: FTNK.PLD
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiReflector
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		BuildPaletteOrder: 65
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.chem_tank, ~commander_tree.flame_tank.pld
@@ -2989,6 +3330,11 @@ FTNK.Reflector.Fireball:
 
 HAR2:
 	Inherits: ^TankTD
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^Shielded
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@HARV: ^Harvester
 	-Crushable:
 	-Carryable:
@@ -3030,6 +3376,7 @@ HAR2:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	GrantConditionOnPrerequisite@shielded:
+<<<<<<< HEAD
 		Condition: shielded-miner
 		Prerequisites: commander_tree.shielded_miners
 	Shielded:
@@ -3057,6 +3404,16 @@ BTR:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMoveAntiAir
 	Inherits@BERSERK: ^Berserk
+=======
+		Condition: shielded
+		Prerequisites: commander_tree.shielded_miners
+
+BTR:
+	Inherits: ^Vehicle
+	Inherits: ^BiologicalDriver
+	Inherits@TRANSPORT: ^Transport
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 45
@@ -3105,10 +3462,17 @@ BTR:
 
 BTR.Surveillance:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@radar: ^MobileDeployableRadar
 	Inherits@TRANSPORT: ^Transport
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits@radar: ^MobileDeployableRadar
+	Inherits@TRANSPORT: ^Transport
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 45
@@ -3144,6 +3508,10 @@ BTR.Surveillance:
 
 NonaSVK:
 	Inherits: BTR
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 45
@@ -3171,10 +3539,16 @@ NonaSVK:
 
 IFV:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@TRANSPORT: ^Transport
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMoveAntiAir
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@TRANSPORT: ^Transport
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits: ^PointLaserDefenseSystem
 	Armament@pointdefense:
 		RequiresCondition: cryoturr
@@ -3439,9 +3813,14 @@ IFV:
 
 IFV.AI:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
@@ -3504,9 +3883,14 @@ IFV.AI:
 TITN:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 195
@@ -3611,6 +3995,10 @@ TITN.Battle.Reflector:
 
 TITN.Railgun:
 	Inherits: TITN
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioEnergyAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 195
@@ -3652,9 +4040,14 @@ JUGG:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
 	Inherits: ^HighResShadow
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Juggernaut
 	Buildable:
@@ -3724,9 +4117,15 @@ DISR:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
 	Inherits: ^HighResShadow
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyWeapon
+	Inherits: ^DronePairing
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -3791,10 +4190,16 @@ DISR:
 
 HMLRS:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@Hover: ^HoverVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 1150
 	Tooltip:
@@ -3872,9 +4277,14 @@ HMLRS.PLD:
 
 RTNK:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 75
@@ -3986,9 +4396,15 @@ RTNK.Reflector:
 
 V3RL:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+	Inherits: ^SovietArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 160
@@ -4068,9 +4484,15 @@ V3:
 
 KATY:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+	Inherits: ^SovietArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 150
@@ -4101,9 +4523,14 @@ KATY:
 
 TNKD:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
@@ -4158,9 +4585,14 @@ TNKD:
 
 TNKD2:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
@@ -4250,9 +4682,16 @@ TNKD2.Reflector:
 
 MSAR:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@radar: ^MobileDeployableRadar
 	Inherits@autodeploy: ^AutoDeployIdler
+=======
+	Inherits: ^SensorEquipment
+	Inherits: ^BiologicalDriver
+	Inherits: ^MobileDeployableRadar
+	Inherits: ^AutoDeployIdler
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Mobile Sensor Array
 		RequiresCondition: !deployed
@@ -4346,11 +4785,18 @@ MSAR.PLD.Nod:
 	-ProximityExternalCondition@Bino:
 
 PTNK:
+<<<<<<< HEAD
 	Inherits: ^TankTD
 	Inherits: ^HighResShadow
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^VehicleTD
+	Inherits: ^HighResShadow
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 135
@@ -4392,9 +4838,13 @@ PBLASTER:
 	Tooltip:
 		Name: Prism Blaster
 	Buildable:
+<<<<<<< HEAD
 		Queue: Vehicle
 		IconPalette: chrometd
 		BuildPaletteOrder: 135
+=======
+		IconPalette: chrometd
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisites: radar, ~commander_tree.prism_blaster
 		Description: Prism Tower derived weapon hitting many targets on impact.\n  Strong vs Buildings, Infantry, Light Armor\n  Weak vs Tanks, Aircraft
 	Health:
@@ -4404,6 +4854,7 @@ PBLASTER:
 		LocalOffset: 100,0,140
 
 PCAN:
+<<<<<<< HEAD
 	Inherits: ^TankTD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -4413,6 +4864,13 @@ PCAN:
 		Queue: Vehicle
 		IconPalette: chrome
 		BuildPaletteOrder: 130
+=======
+	Inherits: PTNK
+	Inherits: ^PrioAntiHeavy
+	Inherits: ^Vehicle
+	Buildable:
+		IconPalette: chrome
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisites: radar, ~commander_tree.prism_cannon
 		Description: A prototype long range artillery that fires highly focused beams of light.\n  Strong vs Buildings, Vehicles, Infantry\n  Weak vs Tanks, Aircraft
 	Valued:
@@ -4425,17 +4883,25 @@ PCAN:
 	Mobile:
 		Speed: 82
 		Voice: Move
+<<<<<<< HEAD
+=======
+	Turreted:
+		TurnSpeed: 12
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Armament:
 		Weapon: PrisCLaser
 		FireDelay: 10
 		LocalOffset: 900,0,300
 		PauseOnCondition: empdisable || being-warped
+<<<<<<< HEAD
 	AttackFrontal:
 		TargetFrozenActors: True
 		OpportunityFire: False
 		PauseOnCondition: empdisable || being-warped
 		Voice: Attack
 		FacingTolerance: 0
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	SpawnActorOnDeath:
 		Actor: PTNK.Husk
 		RequiresCondition: !being-warped
@@ -4445,15 +4911,23 @@ PCAN:
 
 WTNK:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move
 		InvalidTargets: NoAutoTarget, empdisabled
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 		InvalidTargets: NoAutoTarget, empdisabled
+<<<<<<< HEAD
 	Inherits@BERSERK: ^Berserk
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		Image: mwtnk
 	Buildable:
@@ -4502,9 +4976,14 @@ WTNK:
 BATF:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 230
@@ -4619,6 +5098,10 @@ BATF.Reflector:
 
 BATF.Prism:
 	Inherits: BATF
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 230
@@ -4697,6 +5180,10 @@ BATF.Prism.Reflector:
 
 BATF.Artillery:
 	Inherits: BATF
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 230
@@ -4774,10 +5261,16 @@ BATF.Artillery.Reflector:
 BATF.Bunker:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@TRANSPORT: ^Transport
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@TRANSPORT: ^Transport
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@CARGO: ^AttackingCargo
 	Buildable:
 		Queue: Vehicle
@@ -4831,9 +5324,14 @@ BATF.Bunker:
 BATF.Arty:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 230
@@ -4878,8 +5376,12 @@ BATF.AI:
 
 MEMP:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@IDISABLE: ^DisabledByRadarLoss
 	Inherits@HACKABLE: ^Hackable
+=======
+	Inherits: ^RobotDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 260
@@ -4942,6 +5444,7 @@ MEMP:
 		Range: 1c0
 		EnableSound: vrobon
 		DisableSound: vroboff
+<<<<<<< HEAD
 	-CaptureManager:
 	-Capturable:
 	-CaptureNotification:
@@ -4950,6 +5453,8 @@ MEMP:
 	-ChangesHealth@DRIVER_DEAD:
 	-Targetable@DRIVERKILL:
 	-Targetable@AICAPTURE:
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	GrantConditionOnPrerequisite@DRONEPAIR:
 		Condition: dronepair
 		Prerequisites: dronepair.upgrade
@@ -5031,7 +5536,12 @@ MEMP.Stable:
 
 CDRN:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGround
+=======
+	Inherits: ^RobotDriver
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 		Image: cdrone
 	AutoTargetPriority@DEFAULT:
@@ -5095,6 +5605,7 @@ CDRN:
 		TargetTypes: Ground, Vehicle, C4, ChaosImmune, DriverKillImmune
 	Voiced:
 		VoiceSet: ChaosDroneVoice
+<<<<<<< HEAD
 	-CaptureManager:
 	-Capturable:
 	-CaptureNotification:
@@ -5103,6 +5614,8 @@ CDRN:
 	-ChangesHealth@DRIVER_DEAD:
 	-Targetable@DRIVERKILL:
 	-Targetable@AICAPTURE:
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
@@ -5113,8 +5626,13 @@ CDRN:
 CHPR:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 225
@@ -5213,6 +5731,10 @@ CHPR.Range:
 
 CHPR.AA:
 	Inherits: CHPR
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioEnergyAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 225
@@ -5258,9 +5780,15 @@ CHPR.AA:
 
 2S3:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+	Inherits: ^SovietArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 120
@@ -5298,9 +5826,14 @@ CHPR.AA:
 
 CRYO:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Valued:
 		Cost: 1150
@@ -5331,10 +5864,16 @@ CRYO:
 
 SLNG:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@Hover: ^HoverVehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 550
 	Tooltip:
@@ -5381,8 +5920,13 @@ SLNG:
 
 FTRK:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLightAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 130
@@ -5413,6 +5957,7 @@ FTRK:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -5420,6 +5965,12 @@ FTRK.Barrage:
 	Inherits: FTRK
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+
+FTRK.Barrage:
+	Inherits: FTRK
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 130
@@ -5442,6 +5993,10 @@ FTRK.Barrage:
 
 COORDINATOR:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
+=======
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@Vision: ^ImprovedVision
 	Valued:
@@ -5475,6 +6030,10 @@ COORDINATOR:
 		PauseOnCondition: forceshield || invulnerability || being-warped
 		ActorType: c17.cargo
 		ReadyAudio: ReinforcementsArrived
+<<<<<<< HEAD
+=======
+		RequiresCondition: !vehiclesdisabled
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Exit@1:
 		ExitCell: 0,1
 		ProductionTypes: Vehicle
@@ -5526,9 +6085,14 @@ COORDINATOR:
 
 Beam_Cannon:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	AutoTargetPriority@DEFAULT:
 		InvalidTargets: NoAutoTarget, WaterStructure
 		ValidTargets: BoostMe
@@ -5653,14 +6217,22 @@ Beam_Cannon:
 		RequiresCondition: !being-warped
 	Voiced:
 		VoiceSet: MWTnkVoice
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 MAMMOTHMK2:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioEnergyAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@Voxel: ^TSRenderVoxel
 	Valued:
 		Cost: 10000
@@ -5730,9 +6302,14 @@ MAMMOTHMK2:
 APOC:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@SHRAPNEL: ^ThrowsShrapnel
 	RenderSprites:
 		FactionImages:
@@ -5790,8 +6367,11 @@ APOC:
 		Delay: 25
 		StartIfBelow: 100
 		DamageCooldown: 150
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Carryable:
 		LocalOffset: 0,0,500
 	-Crushable:
@@ -5812,10 +6392,16 @@ APOC:
 
 XO:
 	Inherits: ^VehicleTD
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^SensorEquipment
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -5867,9 +6453,14 @@ XO:
 
 HFTK:
 	Inherits: ^TankTD
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -5909,8 +6500,11 @@ HFTK:
 	Explodes:
 		Weapon: BarrelExplode
 		EmptyWeapon: BarrelExplode
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	AmbientSoundCA:
 		SoundFiles: bigflamer-loop1.aud
 		InitialSound: bigflamer-start1.aud
@@ -5922,9 +6516,15 @@ HFTK:
 
 MDRN:
 	Inherits: ^Vehicle
+<<<<<<< HEAD
 	Inherits@Hover: ^HoverVehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@HACKABLE: ^Hackable
+=======
+	Inherits: ^HoverVehicle
+	Inherits: ^RobotDriver
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Mini Drone
 	Buildable:
@@ -5941,14 +6541,22 @@ MDRN:
 		TurnSpeed: 255
 		Locomotor: seal
 		Voice: Move
+<<<<<<< HEAD
 		PauseOnCondition: empdisable || being-warped || notmobile
+=======
+		PauseOnCondition: !radarenabled || empdisable || being-warped || notmobile
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Voiced:
 		VoiceSet: RobotTankVoice
 	Armament@PRIMARY:
 		Weapon: M60mgMD
 		LocalOffset: 72,0,72
 		MuzzleSequence: muzzle
+<<<<<<< HEAD
 		PauseOnCondition: empdisable || being-warped
+=======
+		PauseOnCondition: !radarenabled || empdisable || being-warped
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	WithMuzzleOverlay:
 	WithShadow:
 		Offset: 43, 128, -250
@@ -5967,6 +6575,7 @@ MDRN:
 	Targetable:
 		TargetTypes: Ground, Vehicle, C4, ChaosImmune, DriverKillImmune, MindControlImmune
 	-WithDamageOverlay:
+<<<<<<< HEAD
 	-CaptureManager:
 	-Capturable:
 	-CaptureNotification:
@@ -5978,6 +6587,10 @@ MDRN:
 	-InfiltrateToAttach@MINIDRONE:
 	-Targetable@MINIDRONE:
 	-ChangesHealth@MINIDRONE:
+=======
+	-InfiltrateToAttach@MINIDRONE:
+	-Targetable@MINIDRONE:
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	-ExternalCondition@MINIDRONE:
 	AttachableTo:
 		-Limits:
@@ -5993,21 +6606,42 @@ MDRN.Attached:
 	-Buildable:
 	-Infiltrates:
 	-Selectable:
+<<<<<<< HEAD
 	Interactable:
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	-Tooltip:
 	Interactable:
 	RenderSprites:
 		Image: mdrn
+<<<<<<< HEAD
 	Mobile:
 		Speed: 0
 		Locomotor: cloud
 		ImmovableCondition: attached
 		PauseOnCondition: attached || empdisable || being-warped || notmobile
+=======
+	-Mobile:
+	AttachedAircraft:
+		TurnSpeed: 18
+		Speed: 0
+		CanHover: true
+		Repulsable: false
+		CruiseAltitude: 1
+		LandableTerrainTypes: Clear,Road,Rough,Ore,Gems,Tiberium,BlueTiberium,Water,Tree,River
+	RevealsShroud:
+		Type: GroundPosition
+	RevealsShroud@GAPGEN:
+		Type: GroundPosition
+	HiddenUnderFog:
+		Type: GroundPosition
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	WithSpriteTurret:
 		Sequence: turret-attached
 	TurnOnIdleCA:
 		MinDelay: 25
 		MaxDelay: 75
+<<<<<<< HEAD
 		TurnWhileMobilePaused: true
 	Armament@PRIMARY:
 		Weapon: M60mgTD
@@ -6024,6 +6658,28 @@ GDRN:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Inherits@HACKABLE: ^Hackable
+=======
+		TurnWhileAircraftPaused: true
+	Armament@PRIMARY:
+		Weapon: M60mgMD
+		LocalOffset: -500,0,72
+		PauseOnCondition: !radarenabled
+	DamageMultiplier@ATTACHED:
+		Modifier: 15
+	Attachable:
+	ChangesHealth:
+		PercentageStep: 2
+		Delay: 25
+		StartIfBelow: 100
+		DamageCooldown: 50
+	-ChronoshiftableWithSpriteEffect:
+
+GDRN:
+	Inherits: ^Vehicle
+	Inherits: ^RobotDriver
+	Inherits: ^SensorEquipment
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	RenderSprites:
 	Buildable:
 		Queue: Vehicle
@@ -6040,7 +6696,18 @@ GDRN:
 	Mobile:
 		TurnSpeed: 40
 		Speed: 134
+<<<<<<< HEAD
 		Voice: Move
+=======
+		PauseOnCondition: !radarenabled || disabled || empdisable || being-warped
+		Voice: Move
+	GrantCondition@power:
+		Condition: radarenabled
+		RequiresCondition: !lowpower
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Turreted:
 		TurnSpeed: 40
 		Offset: 0,0,0
@@ -6057,16 +6724,26 @@ GDRN:
 		VoiceSet: RobotTankVoice
 	Targetable:
 		TargetTypes: Ground, Vehicle, C4, ChaosImmune, DriverKillImmune, MindControlImmune
+<<<<<<< HEAD
 	IgnoresDisguise:
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	DetectCloaked:
 		Range: 6c0
 		DetectionTypes: Cloak, Thief, AirCloak
 		RequiresCondition: !(empdisable || being-warped)
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
 MSG:
 	Inherits: ^Vehicle
+=======
+
+MSG:
+	Inherits: ^Vehicle
+	Inherits: ^BiologicalDriver
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@autodeploy: ^AutoDeployIdler
 	Buildable:
 		Queue: Vehicle
@@ -6129,9 +6806,14 @@ MSG:
 
 SAPC:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BERSERK: ^Berserk
+=======
+	Inherits: ^BiologicalDriver
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	-DamagedByTintedCells@TOXIN:
 	Buildable:
 		Queue: Vehicle
@@ -6182,8 +6864,11 @@ SAPC:
 		Weapon: ToxinEmit
 		RequiresCondition: triggered && ammo
 		AmmoPoolName: explosion
+<<<<<<< HEAD
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Capturable:
 		RequiresCondition: !being-warped && !cargo
 	Capturable@DRIVER_DEAD:

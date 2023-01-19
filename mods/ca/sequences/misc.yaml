@@ -713,6 +713,11 @@ select:
 		Start: 2
 	repair-small: select
 		Start: 3
+<<<<<<< HEAD
+=======
+	vehicle: vehicleicon
+	infantry: infantryicon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 poweroff:
 	offline: poweroff
@@ -952,6 +957,19 @@ iconchevrons:
 	veteran: iconchevrons
 		Offset: 2, 2
 
+<<<<<<< HEAD
+=======
+iconoverlays:
+	reflector: reflectoriconoverlay
+		Offset: 43, -1
+	pdl: pdliconoverlay
+		Offset: 38, 0
+	air: airiconoverlay
+		Offset: -2, -2
+	torpedo: torpedoiconoverlay
+		Offset: -2, -2
+
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 atomic:
 	up: atomicup
 		Length: *

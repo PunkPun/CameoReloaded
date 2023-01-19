@@ -13,12 +13,15 @@ EditorPlayer:
 
 Player:
 	Inherits: ^BasePlayer
+<<<<<<< HEAD
 	LobbyPrerequisiteCheckbox@CLASSICPRODUCTIONQUEUES:
 		ID: classicproductionqueues
 		Label: Classic Queues
 		Description: Build units and buildings of the same category in one queue.
 		DisplayOrder: 12
 		Prerequisites: classicproductionqueues
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ClassicProductionQueue@Building:
 		Type: Building
 		DisplayOrder: 0
@@ -32,6 +35,10 @@ Player:
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 50, 33, 25, 20, 17, 14, 13, 11, 10, 9, 8, 8, 7, 7, 7, 6, 6, 6, 5
 		DisallowPaused: True
+<<<<<<< HEAD
+=======
+		InfiniteBuildLimit: 10
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ClassicProductionQueue@Defense:
 		Type: Defense
 		DisplayOrder: 1
@@ -45,6 +52,10 @@ Player:
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 50, 33, 25, 20, 17, 14, 13, 11, 10, 9, 8, 8, 7, 7, 7, 6, 6, 6, 5
 		DisallowPaused: True
+<<<<<<< HEAD
+=======
+		InfiniteBuildLimit: 10
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
 		DisplayOrder: 3
@@ -230,6 +241,33 @@ Player:
 		Id: unrestricted
 	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
+<<<<<<< HEAD
+=======
+	ProductionIconOverlayManager@Veterancy:
+		Type: Veterancy
+		Image: iconchevrons
+		Sequence: veteran
+	ProductionIconOverlayManager@Reflector:
+		Type: Reflector
+		Image: iconoverlays
+		Palette: chrometd
+		Sequence: reflector
+	ProductionIconOverlayManager@PDL:
+		Type: PDL
+		Image: iconoverlays
+		Palette: chrometd
+		Sequence: pdl
+	ProductionIconOverlayManager@Air:
+		Type: Air
+		Image: iconoverlays
+		Palette: chrometd
+		Sequence: air
+	ProductionIconOverlayManager@Torpedo:
+		Type: Torpedo
+		Image: iconoverlays
+		Palette: chrometd
+		Sequence: torpedo
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ResourceStorageWarning:
 	PlayerExperience:
 	GameSaveViewportManager:
@@ -246,6 +284,7 @@ Player:
 	ProvidesPrerequisite@BuildUpBoost:
 		Prerequisite: BuildUpBoostEnded
 		RequiresCondition: BuildingsOwned > 7
+<<<<<<< HEAD
 	ClassicProductionQueue@RABUILDINGGDI:
 		Type: RABuilding.GDI
 		DisplayOrder: 0
@@ -1603,3 +1642,5 @@ Player:
 		CancelledAudio: Cancelled
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 50, 33, 25, 20, 17, 14, 12, 11, 10
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26

@@ -664,14 +664,23 @@ DevastatorRift:
 		ZOffset: 2045
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
+<<<<<<< HEAD
 		Damage: 8900
+=======
+		Damage: 12000
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		ValidRelationships: Neutral, Enemy
 		InvalidTargets: Air
 		AffectsParent: false
 		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
 	Warhead@2Dam: SpreadDamage
+<<<<<<< HEAD
 		Spread: 512
 		Damage: 2250
+=======
+		Spread: 1c512
+		Damage: 3000
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		ValidRelationships: Ally
 		InvalidTargets: Air
 		AffectsParent: false

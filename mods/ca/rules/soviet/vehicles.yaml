@@ -1,10 +1,19 @@
 QTNK:
 	Inherits: ^Tank
+<<<<<<< HEAD
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 250
 		Prerequisites: stek, ~vehicles.soviet, ~!commander_tree.yuri
 		Description: Erupts the ground sending out seismic waves slowing vehicles and infantry.\nThe effect stacks for up to 3 MAD Tanks.
+=======
+	Inherits: ^AutoDeployIdler
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 250
+		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.general_armaggeddon
+		Description: Erupts the ground sending out seismic waves slowing vehicles and infantry.\n The effect stacks for up to 3 MAD Tanks.\n Hold-Fire stops automatic deployment.
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	TooltipExtras:
 		Strengths: • Strong vs Infantry, Vehicles
 		Weaknesses: • Weak vs Aircraft, Artillery

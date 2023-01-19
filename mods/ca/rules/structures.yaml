@@ -607,9 +607,12 @@ DOME:
 	ProvidesPrerequisite@gdirad:
 		Factions: gdi, zocom, talon, eagle
 		Prerequisite: radar.gdi
+<<<<<<< HEAD
 	ProvidesPrerequisite@radar-active:
 		Prerequisite: radar-active
 		RequiresCondition: !jammed && !disabled && !being-warped
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ProvidesPrerequisite@buildingname:
 	InfiltrateForSupportPower@tec:
 		Types: SabInfiltrate
@@ -1642,7 +1645,11 @@ AFLD:
 		Prerequisite: aircraft.any
 	ParatroopersPower@paratroopers:
 		OrderName: paratroopers
+<<<<<<< HEAD
 		Prerequisites: aircraft.soviet, !aircraft.russia
+=======
+		Prerequisites: aircraft.soviet, !aircraft.russia, ~!commander_tree.tiktok_warrior
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Icon: paratroopers
 		ChargeInterval: 7500
 		Name: Paratroopers
@@ -1662,9 +1669,37 @@ AFLD:
 		CircleSequence: circles
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
+<<<<<<< HEAD
 	ParatroopersPower@Russianparatroopers:
 		OrderName: stormtroopers
 		Prerequisites: aircraft.russia
+=======
+	ParatroopersPower@Chechenparatroopers:
+		OrderName: chechentroopers
+		Prerequisites: aircraft.soviet, ~commander_tree.tiktok_warrior
+		Icon: paratroopers
+		ChargeInterval: 5000
+		Name: Chechen Paratoopers
+		Description: A Badger drops a squad of infantry heavily influenced by TikTok\nanywhere on the map.
+		SquadSize: 3
+		SquadOffset: 0,1792,0
+		DropItems: E1,E1,SHOK,E1,E2,E2,E2,E3,E3,E3,E3,E3,DOG,Mortar,Mortar,Mortar,Mortar,DOG,SHOK,SHOK,E1
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+	ParatroopersPower@Russianparatroopers:
+		OrderName: stormtroopers
+		Prerequisites: aircraft.russia, ~!commander_tree.tiktok_warrior
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Icon: stormtroopers
 		ChargeInterval: 9000
 		Name: Storm-troopers
@@ -2874,6 +2909,10 @@ AIRS:
 		ExitType: StraightAhead
 		LandingFacing: 64
 		ReadyAudio: ReinforcementsArrived
+<<<<<<< HEAD
+=======
+		RequiresCondition: !vehiclesdisabled
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ProvidesPrerequisite@any:
 		Factions: gdi, talon, zocom, eagle, nod, marked, blackh, legion, allies, england, france, germany, soviet, russia, ukraine, iraq
 		Prerequisite: vehicles.any
@@ -3764,9 +3803,12 @@ HQ:
 		Factions: gdi, zocom, talon, eagle
 		Prerequisite: radar.gdi
 	ProvidesPrerequisite@buildingname:
+<<<<<<< HEAD
 	ProvidesPrerequisite@radar-active:
 		Prerequisite: radar-active
 		RequiresCondition: !jammed && !disabled && !being-warped
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	InfiltrateForSupportPower@tec:
 		Types: SabInfiltrate
 		Proxy: rad.gdi.stolen
@@ -5568,24 +5610,45 @@ UPGC:
 	WithIdleOverlay@RADAR:
 		RequiresCondition: !build-incomplete && tower.radar
 		Sequence: turret-radar
+<<<<<<< HEAD
+=======
+		Offset: 0, 350, 0
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		PauseOnCondition: !scan-active || disabled || being-warped
 	WithIdleOverlay@SHIELD:
 		RequiresCondition: !build-incomplete && tower.shield && !nshield-active
 		Sequence: turret-shield
+<<<<<<< HEAD
+=======
+		Offset: 0, 350, 0
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		PauseOnCondition: disabled || being-warped
 	WithIdleOverlay@SHIELD-ACTIVE:
 		RequiresCondition: !build-incomplete && tower.shield && nshield-active
 		Sequence: turret-shield-active
+<<<<<<< HEAD
+=======
+		Offset: 0, 350, 0
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		PauseOnCondition: disabled || being-warped
 	WithIdleOverlay@SHIELD-ACTIVE-EFFECT:
 		RequiresCondition: !build-incomplete && tower.shield && nshield-active
 		Sequence: emp-overlay
 		Palette: tseffect
+<<<<<<< HEAD
 		PauseOnCondition: disabled || being-warped
 		Offset: -1284,384,0
 	WithIdleOverlay@DZONE:
 		RequiresCondition: !build-incomplete && tower.drop
 		Sequence: turret-drop
+=======
+		Offset: -1284,350,0
+		PauseOnCondition: disabled || being-warped
+	WithIdleOverlay@DZONE:
+		RequiresCondition: !build-incomplete && tower.drop
+		Sequence: turret-drop
+		Offset: 0, 350, 0
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		PauseOnCondition: disabled || being-warped
 	GrantPrerequisiteChargeDrainPowerCA@RADAR:
 		OrderName: advradarorder
@@ -6019,7 +6082,10 @@ PDLT:
 	Inherits@PLD: ^PointLaserDefenseSystemBig
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetGround
+<<<<<<< HEAD
 	RenderSprites:
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 80

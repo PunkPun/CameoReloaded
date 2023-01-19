@@ -1,5 +1,10 @@
 DOG:
 	Inherits: ^Soldier
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Dog
@@ -73,7 +78,12 @@ DOG:
 E1:
 	Inherits: ^Soldier
 	Inherits: ^ScoutEquipment
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Inherits@BOTHELPER: ^BotCaptureHelper
 	Buildable:
@@ -111,7 +121,12 @@ E1R1:
 
 E2:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioArtillery
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -155,7 +170,11 @@ E2:
 E3:
 	Inherits: ^Soldier
 	Inherits: ^WhiteFlash
+<<<<<<< HEAD
 	Inherits@TargetPrio: ^PrioAntiHeavyAA
+=======
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@TargetRelay: ^RelayTargeting
 	Inherits@BERSERK: ^Berserk
 	Buildable:
@@ -217,6 +236,10 @@ E3:
 
 E3.soviet:
 	Inherits: E3
+<<<<<<< HEAD
+=======
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~infantry.soviet
 
@@ -279,7 +302,11 @@ E3.cryo:
 
 U3:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMoveAntiAir
+=======
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Defense
 	AutoTargetPriority@HighPrio:
@@ -481,7 +508,12 @@ U3:
 
 E4:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -525,6 +557,10 @@ E4:
 
 E6:
 	Inherits: ^Soldier
+<<<<<<< HEAD
+=======
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -606,8 +642,13 @@ SPY:
 
 E7:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits@detect: ^SensorEquipment
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@COMMANDOSKULL: ^CommandoSkull
 	Buildable:
 		Queue: Infantry
@@ -883,6 +924,10 @@ GNRL:
 
 THF:
 	Inherits: ^Soldier
+<<<<<<< HEAD
+=======
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -934,7 +979,12 @@ THF:
 
 SHOK:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioEnergyWeapon
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	AutoTargetPriority@DEFAULT:
 		InvalidTargets: NoAutoTarget, WaterStructure, TeslaBoost
@@ -1003,8 +1053,13 @@ SHOK:
 
 N1:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits: ^ScoutEquipment
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits: ^ScoutEquipment
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Inherits@BOTHELPER: ^BotCaptureHelper
 	Buildable:
@@ -1047,7 +1102,11 @@ N1R1:
 
 N2:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -1117,7 +1176,11 @@ N2.Emp:
 
 N3:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@TargetPrio: ^PrioAntiHeavyAA
+=======
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@TargetRelay: ^RelayTargeting
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
@@ -1194,7 +1257,11 @@ N3R1:
 
 N4:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
@@ -1244,7 +1311,11 @@ N4:
 
 N5:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiReflector
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BioDamageImmune: ^BioDamageImmune
 	Buildable:
@@ -1322,7 +1393,11 @@ N5R1:
 
 RMBO:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@COMMANDOSKULL: ^CommandoSkull
 	Valued:
@@ -1462,8 +1537,13 @@ VICE:
 
 SNIP:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits: ^ScoutEquipment
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits: ^ScoutEquipment
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Inherits@CloakedAttacker: ^CloakedAttacker
@@ -1534,8 +1614,14 @@ SNIP:
 
 BORI:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@detect: ^SensorEquipment
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits: ^SensorEquipment
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@COMMANDOSKULL: ^CommandoSkull
 	RenderSprites:
@@ -1609,7 +1695,11 @@ BORI:
 
 Mortar:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
@@ -1650,7 +1740,11 @@ Mortar:
 
 Mortar.Chemical:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioArtillery
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
@@ -1691,7 +1785,11 @@ Mortar.Chemical:
 
 SAB:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Inherits@CloakedInfiltrator: ^CloakedInfiltrator
@@ -1776,7 +1874,11 @@ SpecOps:
 
 ACOL:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -1835,7 +1937,11 @@ ACOL:
 
 JJET:
 	Inherits: ^Infantry
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@Armor: ^LightArmor
 	Inherits@BERSERK: ^Berserk
 	Inherits@EMP: ^EmpDisable
@@ -1957,7 +2063,11 @@ JJET:
 
 JJET.Rocket:
 	Inherits: JJET
+<<<<<<< HEAD
 	Inherits@TargetPrio: ^PrioAntiHeavyAA
+=======
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -1996,6 +2106,10 @@ JJET.Rocket:
 
 JJET.Railgun:
 	Inherits: JJET
+<<<<<<< HEAD
+=======
+	Inherits: ^PrioEnergyAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -2022,7 +2136,11 @@ JJET.Railgun:
 
 E8:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -2093,8 +2211,13 @@ E8:
 
 N1C:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits: ^ScoutEquipment
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+	Inherits: ^ScoutEquipment
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BOTHELPER: ^BotCaptureHelper
 	Inherits@BioDamageImmune: ^BioDamageImmune
@@ -2136,7 +2259,11 @@ N1C:
 
 N3C:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+	Inherits: ^PrioAntiHeavyAA
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BioDamageImmune: ^BioDamageImmune
 	RenderSprites:
@@ -2215,7 +2342,11 @@ N3C:
 
 RMBC:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioEnergyWeapon
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@Armor: ^HeavyArmor
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@EMP: ^EmpDisable
@@ -2312,14 +2443,22 @@ RMBC.range:
 
 CRYOT:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 50
 		Prerequisites: ~infantry.allies, dome, ~tent, ~commander_tree.advanced_infantry_training
+<<<<<<< HEAD
 		Description: Support infantry that slows enemies and makes them take more damage. Can intercept incoming bullets and rockets.
+=======
+		Description: Support infantry that slows enemies and makes them take more damage. Can intercept incoming shells and rockets.
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		IconPalette: chrometd
 	Valued:
 		Cost: 500
@@ -2349,7 +2488,11 @@ CRYOT:
 
 Railgunner:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+=======
+	Inherits: ^PrioEnergyAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -2401,6 +2544,10 @@ Railgunner.noCrush:
 LEADER:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
+<<<<<<< HEAD
+=======
+	Inherits: ^InfantrySupportUnit
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Buildable:
 		Queue: Infantry
@@ -2446,7 +2593,12 @@ LEADER:
 
 IVAN:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+	Inherits: ^SovietInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -2499,7 +2651,11 @@ IVAN:
 BRUT:
 	Inherits: ^Soldier
 	Inherits@Armor: ^LightArmor
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	AutoTarget:
 		ScanRadius: 4
 		InitialStance: AttackAnything
@@ -2608,7 +2764,11 @@ BRUT.Mutating:
 
 SHAD:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiInfantry
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Valued:
@@ -2735,7 +2895,11 @@ SHAD.REARM:
 
 SGLI:
 	Inherits: ^Plane
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -2878,7 +3042,11 @@ SGLI.discarded:
 
 BH:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiLight
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@BERSERK: ^Berserk
 	Buildable:
 		Queue: Infantry
@@ -2935,7 +3103,11 @@ BH:
 YURI:
 	Inherits: ^Soldier
 	Inherits@detect: ^SensorEquipment
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@COMMANDOSKULL: ^CommandoSkull
 	Inherits@BOTHELPER: ^BotCaptureHelper
 	AutoTargetPriority@DEFAULT:
@@ -3133,7 +3305,11 @@ SEAL:
 
 HACK:
 	Inherits: ^Soldier
+<<<<<<< HEAD
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+=======
+	Inherits: ^PrioAntiHeavy
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~disabled

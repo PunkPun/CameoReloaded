@@ -15,16 +15,20 @@
 	Image2x: glyphs-2x.png
 	Image3x: glyphs-3x.png
 
+<<<<<<< HEAD
 ^Flags:
 	Image: flags.png
 	Image2x: flags-2x.png
 	Image3x: flags-3x.png
 
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 ^LoadScreen:
 	Image: loadscreen.png
 	Image2x: loadscreen-2x.png
 	Image3x: loadscreen-3x.png
 
+<<<<<<< HEAD
 # Generic
 
 sidebar:
@@ -90,6 +94,8 @@ sidebar-camea:
 		background-bottom: 0, 480, 238, 31
 		background-supportoverlay: 12, 324, 64, 48
 
+=======
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 sidebar-allies:
 	Inherits: ^Sidebar
 	Regions:
@@ -753,6 +759,7 @@ strategic:
 		enemy_owned: 137, 119, 22, 22
 		player_owned: 183, 119, 22, 22
 
+<<<<<<< HEAD
 flags:
 	Inherits: ^Flags
 	Regions:
@@ -798,6 +805,67 @@ flags:
 		glacamo: 224, 128, 32, 16
 		glademo: 224, 112, 32, 16
 		camea: 0, 224, 32, 16
+=======
+
+
+flags:
+	Inherits: ^Glyphs
+	Regions:
+		england: 226, 49, 30, 15
+		germany: 226, 65, 30, 15
+		france: 226, 81, 30, 15
+		zocom: 226, 97, 30, 15
+		talon: 226, 113, 30, 15
+		eagle: 226, 129, 30, 15
+		ukraine: 226, 145, 30, 15
+		russia: 226, 161, 30, 15
+		iraq: 195, 145, 30, 15
+		blackh: 195, 161, 30, 15
+		legion: 133, 161, 30, 15
+		marked: 164, 161, 30, 15
+		allies: 226, 177, 30, 15
+		soviet: 226, 193, 30, 15
+		gdi: 226, 97, 30, 15
+		nod: 195, 161, 30, 15
+		scrin: 164, 177, 30, 15
+		reaper: 133, 177, 30, 15
+		traveler: 102, 177, 30, 15
+		harbinger: 164, 177, 30, 15
+		RandomSoviet: 226, 209, 30, 15
+		RandomAllies: 226, 225, 30, 15
+		RandomGDI: 195, 177, 30, 15
+		RandomNOD: 195, 193, 30, 15
+		RandomScrin: 164, 193, 30,15
+		RandomChina: 288, 209, 32,16
+		Random: 226, 241, 30, 15
+		spectator: 226, 241, 30, 15
+		usa: 288, 225, 32, 16
+		usaair: 288, 81, 32, 16
+		usalsr: 288, 65, 32, 16
+		usasuper: 288, 49, 32, 16
+		china: 288, 209, 32, 16
+		chinainf: 288, 97, 32, 16
+		chinatnk: 288, 113, 32, 16
+		chinaatom: 288, 129, 32, 16
+		gla: 288, 193, 32, 16
+		glatoxin: 288, 145, 32, 16
+		glacamo: 288, 177, 32, 16
+		glademo: 288, 161, 32, 16
+
+games:
+	Inherits: ^Glyphs
+	Regions:
+		Generic: 226, 241, 30, 15
+		Random: 226, 241, 30, 15
+		Allies: 226, 177, 30, 15
+		China: 288, 209, 32, 16
+		USA: 288, 225, 32, 16
+		GLA: 288, 193, 32, 16
+		GDI: 226, 97, 30, 15
+		Nod: 195, 161, 30, 15
+		Scrin: 164, 177, 30, 15
+		Soviet: 226, 193, 30, 15
+>>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 music:
 	Inherits: ^Glyphs
