@@ -295,11 +295,7 @@ NukeCannonDummyAim:
 
 CHNukeCannon:
 	Inherits: ^ShellArtillery
-<<<<<<< HEAD
-	Inherits@Explosion: ^TacticalNuke
-=======
 	Inherits@Explosion: ^MiniNuke
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ReloadDelay: 250
 	Range: 18c0
 	MinRange: 8c0
@@ -310,12 +306,7 @@ CHNukeCannon:
 		LaunchAngle: 135
 		Speed: 180
 	Warhead@1Dam: SpreadDamage
-<<<<<<< HEAD
-		Spread: 1c0
-		Damage: 25000
-=======
 		Damage: 2500
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Warhead@3Eff: CreateEffect
 		Explosions: schnukeexplosion
 
@@ -327,16 +318,10 @@ CHNukeCannon.Neutron:
 	Inherits: CHNukeCannon
 	Inherits: ^Radiation
 	Warhead@1Dam: SpreadDamage
-<<<<<<< HEAD
-		Damage: 25000
-	Warhead@DriverDam: DriverPoisonDamage
-		Damage: 25000
-=======
 		Damage: 250
 	Warhead@DriverDam: DriverPoisonDamage
 		Spread: 2c0
 		Damage: 75000
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Warhead@3Eff: CreateEffect
 		Explosions: plasmaball
 
@@ -569,13 +554,8 @@ CHECMBeam:
 		Blockable: true
 		DamageActorsInLine: false
 		BeamColor: 44FF44AA
-<<<<<<< HEAD
-		HelixColor: 00FF00CC
-		BeamWidth: 100
-=======
 		HelixColor: 00FF00FF
 		BeamWidth: 60
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		HelixThickness: 48
 		HelixRadius: 32
 		HitAnim: ecmimpact
@@ -597,14 +577,11 @@ CHECMBeam.Overlord:
 CHECMBeam.Focus:
 	Inherits: CHECMBeam
 	Inherits: ^EnergyAP
-<<<<<<< HEAD
-=======
 	Range: 8c512
 	Projectile: Railgun
 		BeamColor: 44FF44AA
 		HelixColor: 00FF00CC
 		BeamWidth: 100
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 CHECMBeam.Pulse:
 	Inherits: CHECMBeam
@@ -617,13 +594,10 @@ CHECMBeam.Pulse:
 CHECMBeam.Chain:
 	Inherits: CHECMBeam
 	Range: 7c512
-<<<<<<< HEAD
-=======
 	Warhead@1Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 100, 100
 		Damage: 200
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Warhead@Arc: FireShrapnel
 		Weapon: CHECMBeam.Arc
 		Amount: 1
@@ -669,11 +643,7 @@ CHECMDisable:
 CHInfernoCannon:
 	Inherits: ^ShellArtillery
 	Inherits: ^Napalm
-<<<<<<< HEAD
-	ReloadDelay: 100
-=======
 	ReloadDelay: 90
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	MinRange: 1c256
 	Range: 13c0
 	Report: vinfweaa.wav, vinfweab.wav, vinfweac.wav

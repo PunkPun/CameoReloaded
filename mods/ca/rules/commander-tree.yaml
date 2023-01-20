@@ -1456,8 +1456,6 @@ hack.cameo_filler.123:
 		BuildPaletteOrder: 151
 		Prerequisites: prerequisite.has_points, ~aircraft.soviet, ~aircraft.!ukraine, ~filler.mig, disabled
 
-<<<<<<< HEAD
-=======
 commander_tree.General_Armaggeddon:
 	Inherits: ^default.commander_tree_item
 	Tooltip:
@@ -1512,7 +1510,6 @@ hack.cameo_filler.sovietgeneral.2:
 		BuildPaletteOrder: 0
 		Prerequisites: prerequisite.has_points, radar, ~structures.soviet, ~filler.soviet_general
 
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 #GDI
 commander_tree.Railgunner:
 	Inherits: ^default.commander_tree_item
@@ -1871,22 +1868,14 @@ commander_tree.Mammoth_Tank_GDI.Ion:
 commander_tree.Mammoth_Tank_GDI.NR:
 	Inherits: ^default.commander_tree_item
 	Tooltip:
-<<<<<<< HEAD
-		Name: Mammoth Nanite Repair
-=======
 		Name: Mammoth Nanite Shield
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Commander_Tree
 		IconPalette: chrometd
 		BuildPaletteOrder: 230
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, ~vehicles.zocom, techcenter, ~!commander_tree.mammoth_tank_gdi.ion, ~!commander_tree.mammoth_tank_gdi.hover
-<<<<<<< HEAD
-		Description: The Mammoth Tank is upgraded with a Nanite Repair System. \n  This makes it more durable and vastly increases its self repair capabilites.
-=======
 		Description: The Mammoth Tank is upgraded with a Nanite Shield System. \n  This makes it more durable and shield recovers fast when out of combat.
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ProvidesPrerequisite@filler:
 		Prerequisite: filler.gdimammoth
 
@@ -2726,23 +2715,17 @@ commander_tree.Apache.Flyby:
 		Name: Harpy Flyby
 	Buildable:
 		Queue: Commander_Tree
-<<<<<<< HEAD
-=======
 		IconPalette: chrometd
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		BuildPaletteOrder: 344
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, ~aircraft.legion, techcenter, ~!commander_tree.apache.torp
 		Description: Upgrades the Apache to be able to fire on the move.
 	ProvidesPrerequisite@filler:
 		Prerequisite: filler.apache
-<<<<<<< HEAD
-=======
 	RenderSprites:
 		Image: apch
 	WithProductionIconOverlay:
 		Types: Air
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 commander_tree.Apache.Torp:
 	Inherits: ^default.commander_tree_item
@@ -2750,23 +2733,17 @@ commander_tree.Apache.Torp:
 		Name: Harpy Torpedo Upgrade
 	Buildable:
 		Queue: Commander_Tree
-<<<<<<< HEAD
-=======
 		IconPalette: chrometd
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		BuildPaletteOrder: 344
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, ~aircraft.nod, techcenter, ~!commander_tree.apache.flyby
 		Description: Upgrades the Apache with torpedo bombs.
 	ProvidesPrerequisite@filler:
 		Prerequisite: filler.apache
-<<<<<<< HEAD
-=======
 	RenderSprites:
 		Image: apch
 	WithProductionIconOverlay:
 		Types: Torpedo
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 hack.cameo_filler.322a:
 	Inherits: ^default.cameo_filler

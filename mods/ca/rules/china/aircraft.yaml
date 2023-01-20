@@ -1,11 +1,6 @@
 CHMIG:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@AUTOTARGET2: ^PrioAntiHeavy
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@announce: ^AnnounceOnBuild
 	Inherits@rearm: ^AircraftWithAmmo
@@ -81,11 +76,7 @@ CHMIG:
 
 CHMIG.AA:
 	Inherits: CHMIG
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAir
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildPaletteOrder: 50
@@ -194,12 +185,7 @@ chmig.husk:
 chhelix:
 	Inherits: ^HelicopterTD
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@AUTOTARGET2: ^PrioAntiLight
-=======
 	Inherits: ^PrioAntiInfantry
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@announce: ^AnnounceOnBuild
 	Inherits@speaker: ^PropagandaSpeaker
 	Inherits@recon: ^SensorEquipment
@@ -323,10 +309,7 @@ chhelix:
 chhelix.Gatling:
 	Inherits: chhelix
 	Inherits: ^ChinaGatling
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLightAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~aircraft.china, radar, ~commander_tree.helix.gatling
 		Description: Helicopter gatling gunship upgradeable with addons.
@@ -356,10 +339,7 @@ chhelix.Gatling:
 
 chhelix.Napalm:
 	Inherits: chhelix
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@rearm: ^AircraftWithAmmo
 	Buildable:
 		Prerequisites: ~aircraft.china, radar, ~commander_tree.helix.napalm
@@ -408,10 +388,7 @@ chhelix.Napalm:
 
 chhelix.Nuke:
 	Inherits: chhelix
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@rearm: ^AircraftWithAmmo
 	Buildable:
 		Prerequisites: ~aircraft.china, radar, ~commander_tree.helix.nuke
@@ -450,10 +427,6 @@ chhelix.Nuke:
 
 chhelix.Bunker:
 	Inherits: chhelix
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@AUTOTARGET2: ^PrioAntiHeavyAA
 	Inherits@CARGO: ^AttackingCargo
 	Buildable:
@@ -498,10 +471,7 @@ chhelix.Bunker.advinf:
 
 chhelix.Torpedo:
 	Inherits: chhelix
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@rearm: ^AircraftWithAmmo
 	Buildable:
 		Prerequisites: ~aircraft.china, radar, ~commander_tree.helix.torpedo

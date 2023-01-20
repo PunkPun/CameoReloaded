@@ -808,13 +808,10 @@ HonestJohn:
 		LaunchAngle: 37
 		PointDefenseType: Missile
 
-<<<<<<< HEAD
 HonestJohnCamea:   
     Inherits: HonestJohn
     Range: 14c256
 
-=======
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 HonestJohn.toxin:
 	Inherits: ^AntiGroundMissile
 	Inherits: ^Chemical
@@ -1314,11 +1311,7 @@ ScrinTorpAA:
 		-TrailImage:
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-<<<<<<< HEAD
-		Damage: 3200
-=======
 		Damage: 6400
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		ValidTargets: Air
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air

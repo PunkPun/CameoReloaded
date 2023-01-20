@@ -4,11 +4,7 @@ name: Deploy
 
 on:
   release:
-<<<<<<< HEAD
-    types: [published]
-=======
     types: [released]
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

@@ -109,15 +109,12 @@ Rules:
 	ca|rules/nod/infantry.yaml
 	ca|rules/scrin/defaults.yaml
 	ca|rules/world.yaml
-<<<<<<< HEAD
 	ca|rules/camea/defaults.yaml
 	ca|rules/camea/structures.yaml
 	ca|rules/camea/units.yaml
 	#ca|rules/defaults/defaults.yaml
 	
-=======
 
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 Sequences:
 	ca|sequences/defaults.yaml
 	ca|sequences/ships.yaml
@@ -183,15 +180,9 @@ ChromeLayout:
 	common|chrome/settings-hotkeys.yaml
 	common|chrome/settings-advanced.yaml
 	common|chrome/credits.yaml
-<<<<<<< HEAD
-	common|chrome/lobby.yaml
-	common|chrome/lobby-mappreview.yaml
-	common|chrome/lobby-players.yaml
-=======
 	ca|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
 	ca|chrome/lobby-players.yaml
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	common|chrome/lobby-options.yaml
 	common|chrome/lobby-music.yaml
 	common|chrome/lobby-servers.yaml
@@ -308,11 +299,7 @@ Missions:
 	ca|missions.yaml
 
 MapGrid:
-<<<<<<< HEAD
 	TileSize: 48,48
-=======
-	TileSize: 24,24
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Type: Rectangular
 
 DefaultOrderGenerator: UnitOrderGenerator

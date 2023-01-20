@@ -254,50 +254,6 @@
 		FogVariants: shroud
 		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
 		UseExtendedIndex: true
-<<<<<<< HEAD
-	Faction@random:
-		Name: Any
-		InternalName: Random
-		RandomFactionMembers: RandomAllies, RandomSoviet, RandomGDI, RandomNOD, RandomScrin, RandomChina
-		Side: Random
-		Description: Random Faction\nA random faction will be chosen when the game starts.
-	Faction@randomallies:
-		Name: Allies
-		InternalName: RandomAllies
-		RandomFactionMembers: england, france, germany
-		Side: Random
-		Description: Random Allied Faction\nA random Allied faction will be chosen when the game starts.
-	Faction@randomsoviet:
-		Name: Soviet
-		InternalName: RandomSoviet
-		RandomFactionMembers: russia, ukraine, iraq
-		Side: Random
-		Description: Random Soviet Faction\nA random Soviet faction will be chosen when the game starts.
-	Faction@randomchina:
-		Name: China
-		InternalName: RandomChina
-		RandomFactionMembers: chinainf, chinatnk, chinaatom
-		Side: Random
-		Description: Random China Faction\nA random China faction will be chosen when the game starts.
-	Faction@randomgdi:
-		Name: GDI
-		InternalName: RandomGDI
-		RandomFactionMembers: talon, zocom, eagle
-		Side: Random
-		Description: Random GDI Faction\nA random GDI faction will be chosen when the game starts.
-	Faction@randomnod:
-		Name: Nod
-		InternalName: RandomNOD
-		RandomFactionMembers: blackh, marked, legion
-		Side: Random
-		Description: Random Nod Faction\nA random Nod faction will be chosen when the game starts.
-	Faction@randomscrin:
-		Name: Scrin
-		InternalName: RandomScrin
-		RandomFactionMembers: reaper, traveler, harbinger
-		Side: Random
-		Description: Random Scrin Faction\nA random Scrin faction will be chosen when the game starts.
-=======
 	FactionCA@random:
 		Name: Any
 		InternalName: Random
@@ -305,7 +261,6 @@
 		RandomFactionMembers: RandomAllies, RandomSoviet, RandomGDI, RandomNOD, RandomScrin, RandomChina
 		Side: Random
 		Description: Random Faction\nA random faction will be chosen when the game starts.
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	ResourceRenderer:
 		ResourceTypes:
 			Ore:
@@ -486,11 +441,7 @@ World:
 			RandomScrin: fact.colorpicker
 		PresetHues: 0, 0.07, 0.15, 0.34, 0.57, 0.66, 0.74, 0.84, 0, 0.07, 0.12, 0.40, 0.49, 0.63, 0.74, 0.88
 		PresetSaturations: 0.95, 0.97, 0.97, 0.9, 0.97, 0.85, 0.9, 0.9, 0.4, 0.3, 0.52, 0.35, 0.88, 0.37, 0.35, 0.37
-<<<<<<< HEAD
-		HsvSaturationRange: 0.3, 0.97
-=======
 		HsvSaturationRange: 0.1, 0.97
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		SimilarityThreshold: 0.16
 	OrderEffects:
 		TerrainFlashImage: moveflsh
@@ -500,11 +451,7 @@ World:
 	ScriptLobbyDropdown@commanderpoints:
 		ID: commanderpoints
 		Label: Comm. Points Mode
-<<<<<<< HEAD
-		Description: Specify the amount of Commander Points 
-=======
 		Description: Specify the amount of Commander Points
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Values:
 			noinit: No Starting Points
 			fewer: Fewer

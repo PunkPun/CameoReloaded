@@ -52,12 +52,7 @@ CHNMCV:
 chbattle:
 	Inherits: ^TankTD
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@AUTOTARGET2: ^PrioAntiHeavy
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@horde: ^HordeBonus
 	Inherits@atom: ^AtomicTank
@@ -136,11 +131,7 @@ chbattle.Autoloader.Reflector:
 
 chbattle.Nuclear_Shells:
 	Inherits: chbattle
-<<<<<<< HEAD
-	Inherits@AUTOTARGET2: ^PrioAntiLight
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: chweap, ~vehicles.china, ~commander_tree.battlemaster.nuclear_shells, ~!filler.battlemaster2
 		Description: Chinese main battle tank.\nFires nuclear shells.
@@ -219,12 +210,7 @@ chbattle.Mass_Production.Reflector:
 charty:
 	Inherits: ^VehicleTD
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@AUTOTARGET2: ^PrioAntiLight
-=======
 	Inherits: ^PrioArtillery
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@announce: ^AnnounceOnBuild
 	Inherits@vo: ^AttackFrontalVoice
@@ -283,12 +269,7 @@ choverlord:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@AUTOTARGET2: ^PrioAntiHeavy
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@atom: ^AtomicTank
 	Inherits@uran: ^UranShells
@@ -342,10 +323,7 @@ choverlord:
 choverlord.Gatling:
 	Inherits: choverlord
 	Inherits: ^ChinaGatlingOverlord
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@detect: ^SensorEquipment
 	Buildable:
 		Prerequisites: techcenter, ~commander_tree.overlord.gatling, ~!filler.overlord2
@@ -418,10 +396,7 @@ choverlord.Gatling.Reflector:
 
 choverlord.Bunker:
 	Inherits: choverlord
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	-AttackTurreted:
 	Inherits@CARGO: ^AttackingCargoAndTurret
 	Buildable:
@@ -440,13 +415,9 @@ choverlord.Bunker:
 	Valued:
 		Cost: 3000
 	Cargo:
-<<<<<<< HEAD
-		InitialUnits: che3, che3, che3, che3, che3
-=======
 		MaxWeight: 4
 		PipCount: 4
 		InitialUnits: che3, che3, che3, che3
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 choverlord.Bunker.PDL:
 	Inherits: choverlord.Bunker
@@ -540,11 +511,7 @@ choverlord.Propaganda.Reflector:
 
 choverlord.Nuke_Shells:
 	Inherits: choverlord
-<<<<<<< HEAD
-	Inherits@AUTOTARGET2: ^PrioAntiLight
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: chweap, techcenter, ~commander_tree.overlord.nuclear_shells, ~!filler.overlord2
 		Description: Heavy Chinese tank armed with nuclear shells.
@@ -599,11 +566,7 @@ choverlord.Nuke_Shells.Reflector:
 
 choverlord.Plasma:
 	Inherits: choverlord
-<<<<<<< HEAD
-	Inherits@AUTOTARGET2: ^PrioEnergyWeapon
-=======
 	Inherits: ^PrioEnergyWeapon
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: techcenter, ~commander_tree.overlord.plasma, ~!filler.overlord2
 		Description: Heavy Chinese tank shooting ionized plasma.
@@ -674,10 +637,6 @@ choverlord.Husk:
 chdragon:
 	Inherits: ^VehicleTD
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@AUTOTARGET2: ^PrioAntiInfantry
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@announce: ^AnnounceOnBuild
@@ -798,12 +757,7 @@ chdragon.Husk:
 chgtnk:
 	Inherits: ^TankTD
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMoveAntiAir
-	Inherits@AUTOTARGET2: ^PrioAntiLight
-=======
 	Inherits: ^PrioAntiLightAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@announce: ^AnnounceOnBuild
 	Inherits@vo: ^AttackTurretedVoice
@@ -1007,12 +961,7 @@ choutpost.Propaganda.Reflector:
 choutpost.Bunker:
 	Inherits: choutpost
 	Inherits@CARGO: ^AttackingCargo
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@AUTOTARGET2: ^PrioAntiHeavyAA
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 1800
 	Tooltip:
@@ -1064,11 +1013,7 @@ choutpost.Bunker.Reflector:
 checm:
 	Inherits: ^TankTD
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioEnergyWeapon
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@announce: ^AnnounceOnBuild
 	Inherits@vo: ^AttackTurretedVoice
@@ -1119,10 +1064,7 @@ checm:
 
 checm.pulse:
 	Inherits: checm
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioEnergyAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Plasma Pulse Tank
 	Buildable:
@@ -1138,10 +1080,7 @@ checm.pulse:
 
 checm.focus:
 	Inherits: checm
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioEnergyAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Plasma Focus Tank
 	Buildable:
@@ -1209,11 +1148,7 @@ chcrawl:
 chcrawl2:
 	Inherits: chcrawl
 	Inherits: ^TankTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@CARGO: ^AttackingCargo
 	Valued:
 		Cost: 1000
@@ -1252,10 +1187,7 @@ chcrawl2:
 
 chcrawl2.Hunter:
 	Inherits: chcrawl2
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1304,10 +1236,7 @@ chcrawl2.Hunter.Reflector:
 
 chcrawl2.Assault:
 	Inherits: chcrawl2
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLightAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1369,11 +1298,7 @@ chnukecann:
 	Inherits: ^TankTD
 	Inherits: ^BigVehicle
 	Inherits@EXPERIENCE: ^GainsExperience
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioArtillery
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@announce: ^AnnounceGlobal
 	Inherits@vo: ^AttackTurretedVoice

@@ -216,11 +216,7 @@ B2B:
 
 Stealth_Fighter:
 	Inherits: ^Plane
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -318,11 +314,7 @@ Stealth_Fighter.payload:
 
 MIG:
 	Inherits: ^Plane
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -420,11 +412,7 @@ MIG:
 SU47:
 	Inherits: MIG
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~afld, stek, ~commander_tree.mig.aa
 		IconPalette: chrome
@@ -453,10 +441,7 @@ SU47:
 
 MIG.Nuke:
 	Inherits: MIG
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~afld, stek, ~commander_tree.mig.nuke
 		Description: Nuclear attack bomber aircraft.\n  Strong vs Vehicles, Defenses\n  Weak vs Aircraft
@@ -494,11 +479,7 @@ MIG.Tesla:
 
 SUK:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -613,11 +594,7 @@ SUK.Conc:
 
 FROG:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -710,11 +687,7 @@ FROGDIRTY:
 
 YAK:
 	Inherits: ^Plane
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -803,11 +776,7 @@ YAK:
 
 CHEMYAK:
 	Inherits: ^Plane
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -1040,11 +1009,7 @@ TRAN:
 
 TRAN.Eagle:
 	Inherits: TRAN
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@CARGO: ^AttackingCargo
 	RenderSprites:
 		Image: ctran
@@ -1135,11 +1100,7 @@ TRAN.paradrop:
 
 NHAW:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiInfantry
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@TRANSPORT: ^Transport
 	RenderSprites:
 		Image: nhaw
@@ -1147,11 +1108,7 @@ NHAW:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 10
-<<<<<<< HEAD
-		IconPalette: chrome
-=======
 		IconPalette: chrometd
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Prerequisites: ~aircraft.england, ~commander_tree.air_logistics
 		Description: Fast infantry transport helicopter armed with\n  a light machine gun.
 	TooltipExtras:
@@ -1267,11 +1224,7 @@ NHAW.paradrop:
 
 HELI:
 	Inherits: ^Helicopter
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -1389,11 +1342,7 @@ HELI.Cryo:
 
 HELI.Artillery:
 	Inherits: HELI
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioArtillery
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1437,10 +1386,7 @@ HELI.Payload:
 
 HELI.Torp:
 	Inherits: HELI
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1464,11 +1410,7 @@ HELI.Torp:
 
 HIND:
 	Inherits: ^Helicopter
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1556,10 +1498,7 @@ HIND:
 
 HIND.Tesla:
 	Inherits: HIND
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioEnergyWeapon
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~hpad, ~commander_tree.hind.tesla
 		Description: Helicopter gunship armed\nwith tesla coils.\n  Strong vs Infantry, Light Vehicles\n  Weak vs Aircraft
@@ -1587,10 +1526,7 @@ HIND.Tesla:
 
 HIND.Missile:
 	Inherits: HIND
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~hpad, ~commander_tree.hind.missile
 		Description: Helicopter gunship with unguided missiles.
@@ -1612,10 +1548,7 @@ HIND.Missile:
 
 HIND.Radcannon:
 	Inherits: HIND
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiInfantry
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~hpad, ~commander_tree.hind.radcannon
 		Description: Helicopter gunship armed\nwith radiation cannon.
@@ -1643,10 +1576,7 @@ HIND.Radcannon:
 
 HIND.Torp:
 	Inherits: HIND
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Prerequisites: ~hpad, ~commander_tree.hind.torp
 		Description: Helicopter gunship armed\nwith torpedo bombs.
@@ -1669,11 +1599,7 @@ HIND.Torp:
 
 HUEY:
 	Inherits: ^Helicopter
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiInfantry
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1826,10 +1752,7 @@ HUEY.recon:
 
 HUEY.cryo:
 	Inherits: HUEY
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		IconPalette: chrometd
 		Prerequisites: ~hpad, ~aircraft.allies, ~commander_tree.huey.cryo
@@ -1847,10 +1770,7 @@ HUEY.cryo:
 
 HUEY.Grenade:
 	Inherits: HUEY
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -2002,11 +1922,7 @@ U2.Bomber:
 
 A10:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -2269,11 +2185,7 @@ C17.Clustermines:
 
 APCH:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 1250
@@ -2372,10 +2284,6 @@ APCH.Flyby:
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 20
 		Prerequisites: ~hpad.td, ~aircraft.legion, ~commander_tree.apache.flyby
-<<<<<<< HEAD
-		IconPalette: chrome
-=======
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Description: Helicopter gunship with a chaingun.\n Upgraded to be able to fire on the move. \n Strong vs Infantry, Light Armor\n  Weak vs Tanks
 	Tooltip:
 		Name: Harpy Flyby
@@ -2391,11 +2299,6 @@ APCH.Flyby:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
-<<<<<<< HEAD
-
-APCH.Torp:
-	Inherits: APCH
-=======
 	RenderSprites:
 		Image: apch
 	WithProductionIconOverlay:
@@ -2404,15 +2307,10 @@ APCH.Torp:
 APCH.Torp:
 	Inherits: APCH
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Harpy (Torpedo)
 	Buildable:
 		Prerequisites: ~hpad.td, ~aircraft.nod, ~commander_tree.apache.torp
-<<<<<<< HEAD
-		IconPalette: chrome
-=======
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Description: Helicopter gunship with torpedo bombs.
 	TooltipExtras:
 		Strengths: • Strong vs Ships, Submarines
@@ -2430,12 +2328,6 @@ APCH.Torp:
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
-<<<<<<< HEAD
-
-ORCA:
-	Inherits: ^HelicopterTD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	RenderSprites:
 		Image: apch
 	WithProductionIconOverlay:
@@ -2444,7 +2336,6 @@ ORCA:
 ORCA:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 1500
@@ -2548,10 +2439,7 @@ ORCA.AP:
 
 ORCA.HE:
 	Inherits: ORCA
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiLightAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Tooltip:
 		Name: Orca (HE)
 	UpdatesPlayerStatistics:
@@ -2618,11 +2506,7 @@ ORCA.Torp:
 
 ORCB:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	RenderSprites:
 		Image: orcab
@@ -2770,11 +2654,7 @@ UAV:
 
 RAH66:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -2880,11 +2760,7 @@ RAH66:
 
 RAH66.Bomber:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -2990,15 +2866,9 @@ RAH66.Bomber:
 
 
 KIRO:
-<<<<<<< HEAD
-	Inherits: ^HelicopterTD
-	Inherits@Armor: ^HeavyArmor
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^AirshipTD
 	Inherits@Armor: ^HeavyArmor
 	Inherits: ^PrioArtillery
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	RenderSprites:
 		Image: kirov
@@ -3108,13 +2978,6 @@ KIRO:
 	GrantConditionOnFaction@iraq:
 		Condition: iraqbombs
 		Factions: iraq
-<<<<<<< HEAD
-	-KillsSelf:
-	SpeedMultiplier@EMPDISABLE:
-		Modifier: 0
-		RequiresCondition: empdisable
-=======
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -3137,11 +3000,7 @@ KIRO:
 		RequiresCondition: !airborne
 
 BLIMP:
-<<<<<<< HEAD
-	Inherits: ^Helicopter
-=======
 	Inherits: ^Airship
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@Armor: ^HeavyArmor
 	Inherits@PRIMARY: ^PrimaryBuilding
 	RenderSprites:
@@ -3208,8 +3067,6 @@ BLIMP:
 	Production:
 		Produces: Infantry, Soldier
 		PauseOnCondition: forceshield || invulnerability || being-warped
-<<<<<<< HEAD
-=======
 		RequiresCondition: !infdisabled
 	GrantConditionOnPrerequisite@vehiclesonly:
 		Condition: infdisabled
@@ -3217,7 +3074,6 @@ BLIMP:
 	GrantConditionOnPrerequisite@aircraftonly:
 		Condition: infdisabled
 		Prerequisites: techlevel.aircraftonly
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	GrantExternalConditionToProduced:
 		Condition: produced, parachute
 	Exit@1:
@@ -3340,11 +3196,7 @@ OCAR.Reinforce:
 
 HARR:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -3484,11 +3336,7 @@ HARR.payload:
 
 Raptor:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAir
-=======
 	Inherits: ^PrioAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -3561,11 +3409,7 @@ Raptor:
 
 SCRN:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-=======
 	Inherits: ^PrioEnergyAntiHeavyAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft
@@ -3671,10 +3515,7 @@ SCRN:
 
 SCRN.Bomber:
 	Inherits: SCRN
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioEnergyAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -3720,10 +3561,7 @@ SCRN.Payload:
 
 HORN:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 50
 	Tooltip:
@@ -3943,11 +3781,7 @@ POD3:
 
 VENM:
 	Inherits: ^HelicopterTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetAll
-=======
 	Inherits: ^PrioEnergyAntiLightAA
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 1350
@@ -4088,10 +3922,7 @@ VENM.Payload:
 
 VENM.HeavyLaser:
 	Inherits: VENM
-<<<<<<< HEAD
-=======
 	Inherits: ^PrioEnergyAntiHeavy
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -4140,10 +3971,7 @@ Dropship:
 	Inherits: ^Plane
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@TRANSPORT: ^Transport
-<<<<<<< HEAD
-=======
 	Inherits@PRODUCTION: ^InfantryProduction
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@PRODUCTION: ^VehicleProduction
 	Buildable:
 		Queue: Aircraft
@@ -4176,19 +4004,6 @@ Dropship:
 		PersistentTargeting: false
 		OpportunityFire: false
 		PauseOnCondition: empdisable || being-warped
-<<<<<<< HEAD
-	Production:
-		Produces: Vehicle
-		ProduceIntoCargo: True
-		PauseOnCondition: being-warped
-		RequiresCondition: closeToFactory && !cargoFull
-	ExternalCondition@closeToFactory:
-		Condition: closeToFactory
-	WithDecoration@close:
-		Image: select
-		Palette: chrome
-		Sequence: repair-small
-=======
 	Production@1:
 		Produces: Vehicle
 		ProduceIntoCargo: True
@@ -4208,15 +4023,10 @@ Dropship:
 		Image: select
 		Palette: chrometd
 		Sequence: vehicle
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Position: TopLeft
 		RequiresCondition: closeToFactory
 		RequiresSelection: True
 		ValidRelationships: Ally, Neutral
-<<<<<<< HEAD
-	PrimaryBuilding:
-		BasePriority: 11
-=======
 	WithDecoration@closeToBarracks:
 		Image: select
 		Palette: chrometd
@@ -4228,7 +4038,6 @@ Dropship:
 	PrimaryBuilding:
 		BasePriority: 11
 	-Exit@1:
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Armament@DROP:
 		Name: drop
 		Weapon: DropDummy
@@ -4246,11 +4055,7 @@ Dropship:
 	Cargo:
 		MaxWeight: 24
 		CargoFullCondition: cargoFull
-<<<<<<< HEAD
-		Types: Vehicle
-=======
 		Types: Infantry, Vehicle
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	SpawnActorOnDeath:
 		Actor: dropship.Husk
 		RequiresCondition: !being-warped
@@ -4280,11 +4085,7 @@ Dropship:
 
 AURORA:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
@@ -4393,11 +4194,7 @@ AURORA:
 
 AURO:
 	Inherits: ^PlaneTD
-<<<<<<< HEAD
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-=======
 	Inherits: ^PrioAntiLight
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Aircraft

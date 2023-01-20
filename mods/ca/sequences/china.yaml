@@ -38,11 +38,7 @@ chcommand:
 		Offset: 0,0
 
 chcommand.radar:
-<<<<<<< HEAD
-	place: chpropagandatower
-=======
 	idle: chpropagandatower
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Offset: 0, -12, 12
 		UseTilesetCode: true
 	icon: chradarupgradeicon
@@ -245,11 +241,7 @@ chgatling:
 
 chbunker:
 	Inherits: ^StructureOverlays
-<<<<<<< HEAD
-	Defaults:
-=======
 	Defaults: chbunker
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		Offset: 0,-7
 	idle: chbunker
 	damaged-idle:

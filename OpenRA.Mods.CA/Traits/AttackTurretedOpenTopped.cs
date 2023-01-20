@@ -181,11 +181,7 @@ namespace OpenRA.Mods.CA.Traits
 
 			foreach (var a in passengerArmaments)
 			{
-<<<<<<< HEAD
-				//Game.Debug(a.Info.Name.ToString());
-=======
 				//Game.Debug TextNotificationsManager.Debug(a.Info.Name.ToString());
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 				if (a.IsTraitDisabled)
 					continue;

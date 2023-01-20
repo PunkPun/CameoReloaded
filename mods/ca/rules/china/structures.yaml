@@ -780,28 +780,6 @@ chsilo:
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !lowpower
-<<<<<<< HEAD
-	NukePower@unlimited:
-		PauseOnCondition: lowpower
-		Icon: chnuclear
-		IconPalette: chrometd
-		Cursor: nuke
-		ChargeInterval: 13500
-		Description: Nuclear Strike
-		LongDesc: Launch a tactical nuclear warhead.\nApplies heavy damage over a large area.
-		EndChargeSpeechNotification: NuclearWeaponAvailable
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		LaunchSpeechNotification: NuclearWeaponLaunched
-		IncomingSpeechNotification: NuclearWarheadApproaching
-		MissileWeapon: CHBigAtomicWeapon
-		MissileDelay: 11
-		SpawnOffset: 3c0,0,-1c512
-		DisplayBeacon: True
-		BeaconPoster: raatomicon
-		DisplayTimerStances: Ally, Neutral, Enemy
-		DisplayRadarPing: True
-=======
 	NukePower:
 		PauseOnCondition: disabled || empdisable || being-warped
 		Cursor: nuke
@@ -824,19 +802,14 @@ chsilo:
 		DisplayRadarPing: True
 		BeaconPoster: atomicon
 		FlashType: Nuke
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 		CameraRange: 10c0
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
-<<<<<<< HEAD
-		SupportPowerPaletteOrder: 30
-=======
 		TrailImage: smokey2
 		TrailSequences: idle
 		TrailPalette: tseffect-ignore-lighting-alpha75
 		MissileImage: atomic
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 	AirstrikePower@EMP:
 		OrderName: chempbomb
 		Icon: chemp

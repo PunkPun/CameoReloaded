@@ -310,11 +310,7 @@ nhaw:
 	muzzle: minigun16
 		Length: 6
 		Facings: 16
-<<<<<<< HEAD
-	icon: nhawicon
-=======
 	icon: bhwkicon
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 badr:
 	Inherits: ^VehicleOverlays
@@ -392,19 +388,7 @@ apch:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-<<<<<<< HEAD
-	icon: apchicnh
-
-apch.flyby:
-	Inherits: apch
-	icon: apacheflybyicon
-
-apch.torp:
-	Inherits: apch
-	icon: apachetorpicon
-=======
 	icon: harpyicon
->>>>>>> e908c16c59fb23e8e4aba3478595623c5ee31a26
 
 uav:
 	Inherits: ^VehicleOverlays
