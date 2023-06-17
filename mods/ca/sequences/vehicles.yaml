@@ -392,17 +392,16 @@ artynod:
 
 howi:
 	Inherits: ^VehicleOverlays
-	idle: howi
-		Facings: 32
+	idle: newarty
+		Facings: -32
 		UseClassicFacings: True
-	turret: howi
-		Start: 32
-		Facings: 32
+	turret: newartytur
+		Facings: -32
 		UseClassicFacings: True
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30
-	icon: howiicnh
+	icon: newartyicon
 
 2s3:
 	Inherits: ^VehicleOverlays
@@ -688,11 +687,10 @@ vulc:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	turret: vulc
+	turret: apctur
 		Facings: 32
 		UseClassicFacings: True
-	turret-ground: vulc
-		Start: 32
+	turret-ground: apctur2
 		Facings: 32
 		UseClassicFacings: True
 	open: apc2
@@ -1415,18 +1413,17 @@ ltnk:
 ltnk.laser:
 	Inherits: ^VehicleOverlays
 	idle: sherman
-		Start: 32
 		Facings: 32
-		Offset: 0,7
+		Offset: 0,0
 		UseClassicFacings: True
 	idle-water: ltnkwater
 		Facings: 32
 		UseClassicFacings: True
-	turret: sherman
-		Offset: 0,8
-		Start: 1
+	turret: mtnklastur
+		Offset: 0,-1
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.8
 	muzzle: redlasermuzzle
 		Length: 3
 	icon: laserltnkicon
@@ -1541,47 +1538,56 @@ ifv:
 	turret: ifvtur
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret2: ifvtur
 		Start: 320
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret3: ifvtur
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret4: ifvtur
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret5: ifvtur
 		Start: 128
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret6: ifvtur
 		Start: 160
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret7: ifvtur
 		Start: 192
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret8: ifvtur
 		Start: 224
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret9: ifvtur
 		Start: 256
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	turret10: ifvtur
 		Start: 288
 		Facings: 32
 		UseClassicFacings: True
+		Offset: 0,4
 	open: ifv
-		Start: 32
-		Length: 3
+		Facings: 32
 	unload: ifv
-		Start: 32
+		Facings: 32
 	icon: ifvicon
 
 ifv.destroyed:
@@ -2059,8 +2065,9 @@ batf.bunker:
 spec:
 	Inherits: ^VehicleOverlays
 	idle: spec
-		Facings: 32
+		Facings: -32
 		UseClassicFacings: True
+		Scale: 1.3
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30
@@ -2111,6 +2118,10 @@ cdrone:
 katy:
 	Inherits: ^VehicleOverlays
 	idle: katy
+		Facings: 32
+		UseClassicFacings: True
+	turret: katy
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	icon: katyicnh
@@ -2262,7 +2273,8 @@ beam_cannon:
 	idle: 0tnk
 		Facings: 32
 		UseClassicFacings: True
-	turret: ifvtur
+	turret: stnk
+		Start: 38
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: emp_fx02
@@ -2333,3 +2345,230 @@ apoci:
 	muzzle: gunfire2
 		Length: 5
 	icon: apociicon
+
+newhumvee:
+	Inherits: ^VehicleOverlays
+	idle: newhumvee
+		Facings: -32
+		UseClassicFacings: True
+	turret: hmmv
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	unload: newhumvee
+		Facings: -32
+		UseClassicFacings: True
+	icon: newhumveeicon
+
+ttnkcamea:
+	Inherits: ^VehicleOverlays
+	idle: ttnk
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.5
+	spinner: tsla
+		Start: 0
+		Length: 10
+		Tick: 100
+		Scale: 1.0
+		Offset: 0,-24
+	icon: ttnkicon
+#New Civilian Cars for Maps
+civcar_car1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car1
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_car2:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car2
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_car3:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car3
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_car4:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car4
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_car5:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car5
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_car6:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car6
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_car7:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car7
+		Scale: 1.0
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_car8:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car8
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_car9:
+	Inherits: ^VehicleOverlays
+	idle: civcar_car9
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_suv1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_suv1
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_pik1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_pik1
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_sport1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_sport1
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_sport2:
+	Inherits: ^VehicleOverlays
+	idle: civcar_sport2
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_sport3:
+	Inherits: ^VehicleOverlays
+	idle: civcar_sport3
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_sport4:
+	Inherits: ^VehicleOverlays
+	idle: civcar_sport4
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_sport5:
+	Inherits: ^VehicleOverlays
+	idle: civcar_sport5
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_sport6:
+	Inherits: ^VehicleOverlays
+	idle: civcar_sport6
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_van1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_van1
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_van2:
+	Inherits: ^VehicleOverlays
+	idle: civcar_van2
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_van3:
+	Inherits: ^VehicleOverlays
+	idle: civcar_van3
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_truck1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_truck1
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_pik2:
+	Inherits: ^VehicleOverlays
+	idle: civcar_pik2
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_pik3:
+	Inherits: ^VehicleOverlays
+	idle: civcar_pik3
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+civcar_pik4:
+	Inherits: ^VehicleOverlays
+	idle: civcar_pik4
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_bus1:
+	Inherits: ^VehicleOverlays
+	idle: civcar_bus1
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+
+civcar_bus2:
+	Inherits: ^VehicleOverlays
+	idle: civcar_bus2
+		Scale: 0.9
+		Facings: 32
+		UseClassicFacings: True
+	icon: 1tnkicon
+

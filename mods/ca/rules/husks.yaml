@@ -49,7 +49,7 @@
 		IntoActor: 3tnk.yuri
 	RenderSprites:
 		Image: 3tnky.destroyed
-
+		PlayerPalette: overlayplayertd
 4TNK.Husk:
 	Inherits: ^Husk
 	Tooltip:

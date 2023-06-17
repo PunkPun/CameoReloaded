@@ -1,0 +1,51 @@
+###################################################
+#               Technical
+###################################################
+^TerranStimpack:
+^ZergHole:
+###################################################
+#               Terran
+###################################################
+scmarine:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swempire
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: scmarine
+	Valued:
+		Cost: 222
+	Tooltip:
+		Name: Terran Marine
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 8000
+	Armament@PRIMARY:
+		Weapon: GTChainGun
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWMachinegunLaser
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+###################################################
+#               Protoss
+###################################################
+###################################################
+#               Zerg
+###################################################
+###################################################
+#               Neutral
+###################################################

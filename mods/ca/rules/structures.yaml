@@ -8,7 +8,7 @@ MSLO:
 	Tooltip:
 		Name: Missile Silo
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 140
 		Prerequisites: stek, ~techlevel.superw, ~structures.soviet
 		BuildLimit: 1
@@ -80,7 +80,7 @@ GAP:
 	Tooltip:
 		Name: Gap Generator
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 110
 		Prerequisites: atek, ~structures.allies
 		Description: Obscures the enemy's view with shroud.\n  Requires power to operate.
@@ -129,7 +129,7 @@ SPEN:
 	Tooltip:
 		Name: Sub Pen
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 50
 		Prerequisites: anypower, ~structures.soviet, ~!global.nonaval
 		Description: Produces and repairs\nsubmarines and transports.
@@ -186,7 +186,7 @@ SYRD:
 		Proxy: powerproxy.sonarpulse
 		Types: SpyInfiltrate
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 40
 		Prerequisites: anypower, ~structures.allies, ~!global.nonaval
 		Description: Produces and repairs\nships and transports.
@@ -242,7 +242,7 @@ IRON:
 	Inherits@shape: ^2x1Shape
 	Inherits@sw: ^SuperWeapon
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: stek, ~structures.soviet, ~techlevel.superw
 		BuildLimit: 1
@@ -309,7 +309,7 @@ PDOX:
 	Inherits@shape: ^2x2Shape
 	Inherits@sw: ^SuperWeapon
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 120
 		Prerequisites: atek, ~structures.allies, ~techlevel.superw
 		BuildLimit: 1
@@ -437,7 +437,7 @@ TSLA:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@Flash: ^WhiteFlash
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: weap, ~structures.soviet
 		Description: Advanced base defense.\n  Can be buffed or made work during low power by Shock Troopers.\n  Requires power to operate.\n  Can detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -513,7 +513,7 @@ AGUN:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 90
 		Prerequisites: dome, ~structures.allies
 		Description: Anti-aircraft base defense.\n  Requires power to operate.\n  Strong vs Aircraft\n  Weak vs Ground Units
@@ -566,7 +566,7 @@ DOME:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 90
 		Prerequisites: proc, ~structures.ra, ~!techlevel.low
 		Description: Provides an overview\nof the battlefield.\n  Requires power to operate.
@@ -713,7 +713,7 @@ PBOX:
 		Name: Pillbox
 	Building:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 40
 		Prerequisites: tent, ~structures.allies, ~!structures.england
 		Description: Anti-infantry base defense.\n  Can detect cloaked units.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft
@@ -757,7 +757,7 @@ HBOX:
 		Name: Camo Pillbox
 	Building:
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 50
 		Prerequisites: tent, ~structures.england
 		Description: Anti-infantry base defense.\n  Can detect cloaked units.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft
@@ -806,7 +806,7 @@ GUN:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 70
 		Prerequisites: tent, ~structures.allies
 		Description: Basic anti-tank base defense.\n  Can detect cloaked units.\n  Strong vs Tanks, Vehicles\n  Weak vs Infantry
@@ -850,7 +850,7 @@ FTUR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 60
 		Prerequisites: barr, ~!structures.iraq, ~structures.soviet
 		Description: Anti-infantry base defense.\n  Can detect cloaked units.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft
@@ -899,7 +899,7 @@ SAM:
 			TopLeft: -768,-512
 			BottomRight: 768,512
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: dome, ~structures.soviet
 		Description: Anti-aircraft base defense.\n  Requires power to operate.\n  Can detect cloaked units.\n  Strong vs Aircraft\n  Weak vs Ground Units
@@ -952,7 +952,7 @@ ATEK:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 140
 		Prerequisites: weap, dome, ~structures.allies, ~!techlevel.medium
 		Description: Provides Allied advanced technologies.\n  Special Ability: GPS Satellite
@@ -1073,7 +1073,7 @@ WEAP:
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@VehicleProduction: ^VehicleProduction
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: proc, ~structures.ra
 		Description: Produces vehicles.
@@ -1247,7 +1247,7 @@ FACT:
 		Dimensions: 3,4
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 1000
 		Prerequisites: ~conyardbuildable, ~structures.ra, fix
 		Description: Produces structures.
@@ -1347,7 +1347,7 @@ PROC:
 	Inherits@shape: ^3x3Shape
 	Inherits@Refinery: ^Refinery
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 60
 		Prerequisites: anypower, ~structures.ra
 		Description: Processes raw Tiberium, Ore and Gems\ninto credits.
@@ -1432,7 +1432,7 @@ PROC.Dummy:
 SILO:
 	Inherits: ^Building
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 35
 		Prerequisites: proc, ~structures.ra
 		Description: Stores excess refined\nTiberium, Ore and Gems.
@@ -1478,7 +1478,7 @@ HPAD:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 120
 		Prerequisites: dome, ~structures.ra
 		Description: Produces and reloads\nhelicopters.
@@ -1585,7 +1585,7 @@ AFLD:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: dome, ~structures.soviet
 		Description: Produces and reloads aircraft.\n  Special Ability: Spy Plane\n  Special Ability: Paratroopers
@@ -1725,7 +1725,7 @@ POWR:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~structures.ra
 		Description: Provides power for other structures.
@@ -1763,7 +1763,7 @@ APWR:
 	HitShape:
 		TargetableOffsets: -355,-1024,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 110
 		Prerequisites: dome, ~structures.ra, ~!structures.russia
 		Description: Provides double the power of\na standard Power Plant.
@@ -1862,7 +1862,7 @@ STEK:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 150
 		Prerequisites: weap, dome, ~structures.soviet, ~!techlevel.medium
 		Description: Provides Soviet advanced technologies.
@@ -1990,7 +1990,7 @@ BARR:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 30
 		Prerequisites: anypower, ~structures.soviet
 		Description: Trains infantry.
@@ -2070,7 +2070,7 @@ KENN:
 	Inherits: ^Building
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 175
 		Prerequisites: anypower, ~structures.soviet
 		Description: Trains Attack Dogs.
@@ -2116,7 +2116,7 @@ TENT:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 20
 		Prerequisites: anypower, ~structures.allies
 		Description: Trains infantry.
@@ -2204,7 +2204,7 @@ FIX:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: weap, ~structures.ra
 		Description: Repairs vehicles.
@@ -2257,7 +2257,7 @@ FIX:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~structures.sandbag
 		Description: Stops infantry and light vehicles.\n  Can be crushed by tanks.
@@ -2279,7 +2279,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 20
 		Prerequisites: fact, ~structures.soviet
 		Description: Stops infantry and light vehicles.\n  Can be crushed by tanks.
@@ -2301,7 +2301,7 @@ FENC:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 30
 		Prerequisites: anypower
 		Description: Stops units and blocks enemy fire.
@@ -2330,7 +2330,7 @@ CHAIN:
 	Inherits: ^Wall
 	Inherits@Armor: ^WoodArmor
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 20
 		Prerequisites: afac, ~structures.nod
 		Description: Stops infantry and light vehicles.\n  Can be crushed by tanks.
@@ -2502,7 +2502,7 @@ PYLE:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 640
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 20
 		Prerequisites: anypower, ~structures.gdi
 		IconPalette: chrometd
@@ -2588,7 +2588,7 @@ HAND:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 20
 		Prerequisites: anypower, ~structures.nod
 		IconPalette: chrometd
@@ -2678,7 +2678,7 @@ WEAP.TD:
 			TopLeft: -1536, -1024
 			BottomRight: 1536, 512
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: proc.td, ~structures.weap.td, ~structures.td
 		IconPalette: chrometd
@@ -2856,7 +2856,7 @@ AIRS:
 			TopLeft: -2048, -1024
 			BottomRight: 2048, 1024
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: proc.td, ~structures.nod, ~!structures.legion
 		IconPalette: chrometd
@@ -3063,7 +3063,7 @@ NUKE:
 	WithSpriteBody:
 		PauseOnCondition: disabled
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~structures.td
 		IconPalette: chrometd
@@ -3114,7 +3114,7 @@ NUK2:
 	WithSpriteBody:
 		PauseOnCondition: disabled
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 110
 		Prerequisites: hq, ~structures.td
 		IconPalette: chrometd
@@ -3165,7 +3165,7 @@ AFAC:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 1000
 		Prerequisites: ~conyardbuildable, ~structures.td, rep
 		IconPalette: chrometd
@@ -3270,7 +3270,7 @@ NSAM:
 			TopLeft: -768,-512
 			BottomRight: 768,512
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		IconPalette: chrome
 		BuildPaletteOrder: 100
 		Prerequisites: hq, ~structures.nod
@@ -3320,7 +3320,7 @@ GTWR:
 	Inherits: ^DefenseTD
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 50
 		Prerequisites: pyle, ~structures.gdi
 		IconPalette: chrometd
@@ -3362,7 +3362,7 @@ ATWR:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: hq, ~structures.gdi, ~!structures.zocom
 		IconPalette: chrometd
@@ -3458,7 +3458,7 @@ STWR:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: hq, ~structures.zocom
 		Description: Advanced base defense that emits devastating sonic shockwaves.\n  Requires power to operate.\n  Can detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
@@ -3504,7 +3504,7 @@ OBLI:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: hq, ~structures.nod
 		IconPalette: chrometd
@@ -3604,7 +3604,7 @@ HQ:
 			marked: nodhq
 			legion: nodhq
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 90
 		Prerequisites: proc.td, ~structures.td, ~!techlevel.low
 		IconPalette: chrometd
@@ -3799,7 +3799,7 @@ EYE:
 			TopLeft: -1024, -384
 			BottomRight: 1024, 1024
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: gtek, ~structures.gdi, ~techlevel.superw
 		IconPalette: chrometd
@@ -3902,7 +3902,7 @@ REP:
 		Type: Polygon
 			Points: -1536,-300, -640,-811, 640,-811, 1536,-300, 1536,555, 640,1110, -640,1110, -1536,555
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.td, ~structures.td
 		IconPalette: chrometd
@@ -3962,7 +3962,7 @@ HPAD.TD:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 120
 		Prerequisites: radar, ~structures.td
 		IconPalette: chrometd
@@ -4093,7 +4093,7 @@ PROC.TD:
 	Buildable:
 		BuildPaletteOrder: 60
 		Prerequisites: anypower, ~structures.td
-		Queue: Building
+		Queue: Building, Building.Multi
 		IconPalette: chrometd
 		Description: Processes raw Tiberium, Ore and Gems\ninto useable resources
 	Building:
@@ -4148,7 +4148,7 @@ SILO.TD:
 	Buildable:
 		BuildPaletteOrder: 35
 		Prerequisites: proc.td, ~structures.td
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		IconPalette: chrometd
 		Description: Stores processed Tiberium, Ore and Gems
 	Building:
@@ -4195,7 +4195,7 @@ AFLD.GDI:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: radar, ~structures.gdi
 		Description: Produces and reloads aircraft.\n  Special Ability: Recon Drone
@@ -4333,7 +4333,7 @@ AFLD.allies:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: dome, ~structures.allies
 		Description: Produces and reloads aircraft.\n
@@ -4400,7 +4400,7 @@ GTEK:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
 	Inherits@shape: ^3x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 150
 		IconPalette: chrometd
 		Prerequisites: weap.td, hq, ~structures.gdi, ~!techlevel.medium
@@ -4480,7 +4480,7 @@ TMPL:
 	Tooltip:
 		Name: Temple of Nod
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 140
 		Prerequisites: hq, ~vehicles.nod, ~structures.nod, ~!techlevel.medium
 		IconPalette: chrometd
@@ -4617,7 +4617,7 @@ PRIS:
 		RequiresCondition: !assault-move && !attack-move
 		ValidTargets: PrismTower
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 90
 		Prerequisites: radar, ~structures.allies
 		Description: Experimental base defense.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
@@ -4748,7 +4748,7 @@ SPEN.nod:
 	Tooltip:
 		Name: Sub Pen
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 50
 		IconPalette: chrometd
 		Prerequisites: anypower, ~structures.nod, ~!global.nonaval
@@ -4826,7 +4826,7 @@ SYRD.gdi:
 		Types: SpyInfiltrate
 		Proxy: powerproxy.sonarpulse
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 40
 		Prerequisites: anypower, ~structures.gdi, ~!global.nonaval
 		Description: Produces and repairs ships\nand transports.
@@ -4882,7 +4882,7 @@ HTUR:
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: radar, ~structures.france
 		Description: Artillery base defense.\n  Requires power to operate.\n  Can detect cloaked units.\n  Strong vs Ground Units\n  Weak vs Aircraft
@@ -4976,7 +4976,7 @@ TTUR:
 	Inherits: ^DefenseTD
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 60
 		Prerequisites: barr, ~structures.iraq
 		IconPalette: chrometd
@@ -5022,7 +5022,7 @@ SGEN:
 	Inherits@shape: ^3x2Shape
 	Inherits@sw: ^SuperWeapon
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: tmpl, ~structures.nod, ~techlevel.superw
 		BuildLimit: 1
@@ -5135,7 +5135,7 @@ LASP:
 	Inherits@Armor: ^BrickArmor
 	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 30
 		Prerequisites: ~structures.nod, nuk2
 		IconPalette: chrometd
@@ -5242,7 +5242,7 @@ PATR:
 	Inherits@shape: ^2x2Shape
 	Inherits@sw: ^SuperWeapon
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: gtek, ~structures.gdi, ~techlevel.superw
 		BuildLimit: 1
@@ -5346,7 +5346,7 @@ INDP:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 200
 		Prerequisites: ~structures.soviet, ~!structures.iraq, stek
 		Description: Reduces cost of vehicles & aircraft by 25%\n  Maximum 1 can be built.\n  Cannot be captured.
@@ -5413,7 +5413,7 @@ OREP:
 		Range: 4c0
 	WithBuildingBib:
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 200
 		Prerequisites: ~structures.allies, atek
 		Description: Refines income from ore, gems & tiberium by 5-10%.\nProvides access to advanced chrono harvester technology.\n  Maximum 1 can be built.\n  Cannot be captured.
@@ -5478,7 +5478,7 @@ UPGC:
 	WithSpriteBody:
 		PauseOnCondition: disabled || being-warped
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 200
 		Prerequisites: ~structures.gdi, gtek
 		Description: Allows the construction of advanced weaponry and upgrades.\n  Maximum 1 can be built.\n  Cannot be captured.
@@ -5731,7 +5731,7 @@ UPGC.BOMB:
 	Tooltip:
 		Name: Upgrade: Firestorm Missile System
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 1
 		Prerequisites: ~upgc, !upgc.plugged
 		Description: Provides an napalm rocket barrage power.\n\nUnits get a firepower bonus of 15%.
@@ -5748,7 +5748,7 @@ UPGC.SEEK:
 	Tooltip:
 		Name: Upgrade: Advanced Radar System
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 2
 		Prerequisites: ~upgc, !upgc.plugged
 		Description: Provides detailed information on enemy locations.\n\nUnits get a range and speed bonus of 15%.
@@ -5765,7 +5765,7 @@ UPGC.HOLD:
 	Tooltip:
 		Name: Upgrade: Nanoshield Generator
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 3
 		Prerequisites: ~upgc, !upgc.plugged
 		Description: Provides the ability to rapidly repair friendly structures.\n\nUnits get an armor bonus of 15%.
@@ -5782,7 +5782,7 @@ UPGC.DROP:
 	Tooltip:
 		Name: Upgrade: Supply Drop Zone
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 4
 		Prerequisites: ~upgc, ~!upgc.plugged
 		Description: Provides a dropzone for emergency supplies\nYou will receive an universal basic income.
@@ -5820,7 +5820,7 @@ BIO.Nod:
 		Range: 4c0
 	WithBuildingBib:
 	Buildable:
-		Queue: Building
+		Queue: Building, Building.Multi
 		BuildPaletteOrder: 200
 		IconPalette: chrometd
 		Prerequisites: ~structures.nod, tmpl
@@ -5881,7 +5881,7 @@ MSLO.Nod:
 	Tooltip:
 		Name: Missile Silo
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 140
 		IconPalette: chrometd
 		Prerequisites: tmpl, ~techlevel.superw, ~structures.nod
@@ -5957,7 +5957,7 @@ WEAT:
 	Inherits@shape: ^2x2Shape
 	Inherits@sw: ^SuperWeapon
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: atek, ~structures.allies, ~techlevel.superw
 		BuildLimit: 1
@@ -6041,7 +6041,7 @@ PDLT:
 	Inherits@IDISABLE: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Defense
+		Queue: Defense, Defense.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: anypower, ~commander_tree.point_defense_turret
 		IconPalette: chrometd

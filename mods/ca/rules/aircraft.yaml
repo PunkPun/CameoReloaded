@@ -315,8 +315,9 @@ Stealth_Fighter.payload:
 MIG:
 	Inherits: ^Plane
 	Inherits: ^PrioAntiHeavy
+	Inherits: ^AircraftWithAmmo
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft, Aircraft.Multi
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 50
 		Prerequisites: ~afld, stek, ~commander_tree.mig, ~!commander_tree.mig.aa, ~!commander_tree.mig.tesla, ~!commander_tree.mig.nuke
@@ -404,8 +405,6 @@ MIG:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -481,6 +480,7 @@ SUK:
 	Inherits: ^PlaneTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -573,8 +573,6 @@ SUK:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -596,6 +594,7 @@ FROG:
 	Inherits: ^PlaneTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -654,8 +653,6 @@ FROG:
 		TrailWhileStationary: True
 		Type: CenterPosition
 		RequiresCondition: enable-smoke
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -688,6 +685,7 @@ FROGDIRTY:
 YAK:
 	Inherits: ^Plane
 	Inherits: ^PrioAntiLight
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -765,8 +763,6 @@ YAK:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	Contrail@1:
 		Offset: -98,-683,-10
 	Contrail@2:
@@ -777,6 +773,7 @@ YAK:
 CHEMYAK:
 	Inherits: ^Plane
 	Inherits: ^PrioAntiLight
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -849,8 +846,6 @@ CHEMYAK:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	Contrail@1:
 		Offset: -98,-683,-10
 	Contrail@2:
@@ -1226,6 +1221,7 @@ HELI:
 	Inherits: ^Helicopter
 	Inherits: ^PrioAntiHeavyAA
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1311,8 +1307,6 @@ HELI:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -1411,6 +1405,7 @@ HELI.Torp:
 HIND:
 	Inherits: ^Helicopter
 	Inherits: ^PrioAntiLight
+	Inherits: ^AircraftWithAmmoHelicopter
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1491,8 +1486,6 @@ HIND:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -1600,6 +1593,7 @@ HIND.Torp:
 HUEY:
 	Inherits: ^Helicopter
 	Inherits: ^PrioAntiInfantry
+	Inherits: ^AircraftWithAmmoHelicopter
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -1683,8 +1677,6 @@ HUEY:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -1924,6 +1916,7 @@ A10:
 	Inherits: ^PlaneTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -2187,6 +2180,7 @@ APCH:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
 	Valued:
 		Cost: 1250
 	Tooltip:
@@ -2269,8 +2263,6 @@ APCH:
 		TrailWhileStationary: True
 		Type: CenterPosition
 		RequiresCondition: enable-smoke
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	DetectCloaked:
 		DetectionTypes: Underwater
 		Range: 6c0
@@ -2337,6 +2329,7 @@ ORCA:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiHeavyAA
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -2415,8 +2408,6 @@ ORCA:
 		RequiresCondition: enable-smoke
 	WithMoveAnimation:
 		MoveSequence: move
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -2508,6 +2499,7 @@ ORCB:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiHeavy
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoTwo
 	RenderSprites:
 		Image: orcab
 	Buildable:
@@ -2591,8 +2583,6 @@ ORCB:
 		MoveSequence: move
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: hpad.td, hpad
 	Voiced:
 		VoiceSet: OrcaVoice
 	GrantConditionOnDamageState@SmokeTrail:
@@ -2656,6 +2646,7 @@ RAH66:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -2751,8 +2742,6 @@ RAH66:
 		TrailWhileStationary: True
 		Type: CenterPosition
 		RequiresCondition: enable-smoke
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	Voiced:
 		VoiceSet: OxannaVoice
 	GrantConditionOnDamageState@SmokeTrail:
@@ -2762,6 +2751,7 @@ RAH66.Bomber:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiHeavy
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -2857,8 +2847,6 @@ RAH66.Bomber:
 		TrailWhileStationary: True
 		Type: CenterPosition
 		RequiresCondition: enable-smoke
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	Voiced:
 		VoiceSet: OxannaVoice
 	GrantConditionOnDamageState@SmokeTrail:
@@ -3198,6 +3186,7 @@ HARR:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoTwo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -3291,8 +3280,6 @@ HARR:
 		VoiceSet: HarrierVoice
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	RenderSprites:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
@@ -3338,6 +3325,7 @@ Raptor:
 	Inherits: ^PlaneTD
 	Inherits: ^PrioAntiHeavyAA
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -3402,8 +3390,6 @@ Raptor:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -3411,6 +3397,7 @@ SCRN:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioEnergyAntiHeavyAA
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoTwo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -3508,8 +3495,6 @@ SCRN:
 		VoiceSet: ScrinVoice
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 
@@ -3783,6 +3768,7 @@ VENM:
 	Inherits: ^HelicopterTD
 	Inherits: ^PrioEnergyAntiLightAA
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
 	Valued:
 		Cost: 1350
 	Tooltip:
@@ -3864,8 +3850,6 @@ VENM:
 	WithMoveAnimation:
 		MoveSequence: move
 	WithMuzzleOverlay:
-	Rearmable:
-		RearmActors: hpad, hpad.td
 	ReloadAmmoPool@1:
 		Delay: 30
 		Count: 1
@@ -4088,6 +4072,7 @@ AURORA:
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -4185,8 +4170,6 @@ AURORA:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	Voiced:
 		VoiceSet: AuroraVoice
 	GrantConditionOnDamageState@SmokeTrail:
@@ -4196,6 +4179,7 @@ AURO:
 	Inherits: ^PlaneTD
 	Inherits: ^PrioAntiLight
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmo
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -4298,8 +4282,6 @@ AURO:
 		RequiresCondition: enable-smoke
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies
 	Voiced:
 		VoiceSet: AuroraVoice
 	GrantConditionOnDamageState@SmokeTrail:

@@ -34,6 +34,46 @@
 		Tileset: JUNGLE
 		Filename: temperat.pal
 		ShadowIndex: 4
+	PaletteFromFile@navy-arrakis:
+		Name: navy
+		Tileset: ARRAKIS
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-arrakis:
+		Name: terrain
+		Tileset: ARRAKIS
+		Filename: desert.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrain-arrakis:
+		Name: staticterrain
+		Tileset: ARRAKIS
+		Filename: arrakis.pal
+		ShadowIndex: 4
+	PaletteFromFile@staticterrainarrakis-temperat:
+		Name: staticterrainarrakis
+		Tileset: TEMPERAT
+		Filename: arrakis.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-arrakis-td:
+		Name: terrain-td
+		Tileset: ARRAKIS
+		Filename: temperattd.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-c315tiles:
+		Name: terrain
+		Tileset: C315TILES
+		Filename: temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@terrain-c315tiles-td:
+		Name: terrain-td
+		Tileset: C315TILES
+		Filename: temperattd.pal
+		ShadowIndex: 4
+	PaletteFromFile@navy-c315tiles:
+		Name: navy
+		Tileset: C315TILES
+		Filename: temperat.pal
+		ShadowIndex: 4
 	PaletteFromFile@terrain-snow:
 		Name: terrain
 		Tileset: SNOW
@@ -104,6 +144,16 @@
 		Tileset: DESERT
 		Filename: desert.pal
 		ShadowIndex: 3, 4
+	PaletteFromFile@tiberium-c315tiles:
+		Name: tiberiumpalette
+		Tileset: C315TILES
+		Filename: temperattd.pal
+		ShadowIndex: 3, 4
+	PaletteFromFile@tiberium-arrakis:
+		Name: tiberiumpalette
+		Tileset: ARRAKIS
+		Filename: desert.pal
+		ShadowIndex: 3, 4
 	PaletteFromFile@player:
 		Name: player
 		Filename: temperat.pal
@@ -126,6 +176,11 @@
 	PaletteFromFile@chromeTD:
 		Name: chrometd
 		Filename: temperattd.pal
+		ShadowIndex: 3
+		AllowModifiers: false
+	PaletteFromFile@chromeTS:
+		Name: chromets
+		Filename: tscameo.pal
 		ShadowIndex: 3
 		AllowModifiers: false
 	PaletteFromFile@cursor:
@@ -190,6 +245,20 @@
 		BasePalette: ra2unit
 		BaseName: playerra2
 		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+	PaletteFromFile@tsunit:
+		Name: tsunit
+		Filename: tsunittem.pal
+		ShadowIndex: 1
+		AllowModifiers: false
+	PlayerColorPalette@tibsun:
+		BasePalette: tsunit
+		BaseName: playerts
+		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+	PaletteFromFile@tsisotem:
+		Name: tsisotem
+		Filename: tsisotem.pal
+		ShadowIndex: 1
+		AllowModifiers: false
 	VoxelNormalsPalette@normals:
 		Name: normals
 		Type: RedAlert2
@@ -216,6 +285,14 @@
 		Name: tsunit-ignore-lighting-alpha75
 		Alpha: 0.75
 		BasePalette: tsunit
+	PaletteFromPaletteWithAlpha@TSunit-nolite-alpha40:
+		Name: tsunit-ignore-lighting-alpha40
+		Alpha: 0.40
+		BasePalette: tsunit
+	PaletteFromPaletteWithAlpha@TSunit-nolite-alpha25:
+		Name: tsunit-ignore-lighting-alpha25
+		Alpha: 0.20
+		BasePalette: tsunit
 	PaletteFromPaletteWithAlpha@RA2unit-nolite-alpha75:
 		Name: ra2unit-ignore-lighting-alpha75
 		Alpha: 0.75
@@ -236,10 +313,26 @@
 		Name: effect-ignore-lighting-alpha40
 		Alpha: 0.4
 		BasePalette: effect
+	PaletteFromPaletteWithAlpha@tseffect-nolite-alpha40:
+		Name: tseffect-ignore-lighting-alpha40
+		Alpha: 0.4
+		BasePalette: tseffect
+	PaletteFromPaletteWithAlpha@tseffect-nolite-alpha30:
+		Name: tseffect-ignore-lighting-alpha30
+		Alpha: 0.4
+		BasePalette: tseffect
 	PaletteFromPaletteWithAlpha@effect25:
 		Name: alpha25
 		BasePalette: effect
 		Alpha: 0.25
+	PaletteFromPaletteWithAlpha@effect40:
+		Name: alpha40
+		BasePalette: effect
+		Alpha: 0.4
+	PaletteFromPaletteWithAlpha@effect60:
+		Name: alpha60
+		BasePalette: effect
+		Alpha: 0.6
 	PaletteFromPaletteWithAlpha@effect-nolite:
 		Name: effect-ignore-lighting
 		Alpha: 1
@@ -416,21 +509,23 @@
 	MenuPaletteEffect:
 	RotationPaletteEffect@defaultwater:
 		Palettes: terrain
-		ExcludeTilesets: DESERT
+		ExcludeTilesets: DESERT, ARRAKIS
+		ExcludePalettes: cursor, chrome, chrometd, colorpicker, playerd2k, d2k, ra2unit, tsunit, playertd, staticterrain
 	RotationPaletteEffect@actorswater:
 		Palettes: player, overlayplayer, effect, playernavy
 		ExcludePalettes: playerd2k, d2k
 	RotationPaletteEffect@desertwater:
 		Palettes: terrain, temptd, playertd, overlayplayertd
 		Tilesets: DESERT
+		ExcludeTilesets: ARRAKIS
 		RotationBase: 32
-		ExcludePalettes: cursor, chrome, chrometd, colorpicker, playerd2k, d2k
+		ExcludePalettes: cursor, chrome, chrometd, colorpicker, playerd2k, d2k, ra2unit, tsunit, staticterrain
 	RotationPaletteEffect@desertwater-actor:
 		Palettes: desert, temptd, playertd, overlayplayertd, tdeffect
 		RotationBase: 32
-		ExcludePalettes: cursor, chrome, chrometd, colorpicker, playerd2k, d2k
+		ExcludePalettes: cursor, chrome, chrometd, colorpicker, playerd2k, d2k, ra2unit, tsunit
 	LightPaletteRotator:
-		ExcludePalettes: playerd2k, d2k, terrain, effect, tdeffect, desert, tseffect, ra2effect, tsunit, ra2unit, ra2unit-ignore-lighting-alpha75, tsunit-ignore-lighting-alpha75, tseffect-ignore-lighting-alpha75, tseffect-ignore-lighting-alpha90, effect-ignore-lighting-alpha85
+		ExcludePalettes: playerd2k, d2k, terrain, effect, tdeffect, desert, tseffect, ra2effect, tsunit, ra2unit, ra2unit-ignore-lighting-alpha75, tsunit-ignore-lighting-alpha75, tseffect-ignore-lighting-alpha75, tseffect-ignore-lighting-alpha90, effect-ignore-lighting-alpha85, staticterrain
 	ChronoshiftPaletteEffect:
 	CloakPaletteEffect:
 	FlashPaletteEffect@NUKE:

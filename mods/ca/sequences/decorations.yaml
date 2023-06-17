@@ -552,6 +552,7 @@ v01:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 			DESERT: TEMPERAT
+		Scale: 2.0
 	idle:
 	damaged-idle:
 		Start: 1
@@ -562,6 +563,7 @@ v02:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 			DESERT: TEMPERAT
+		Scale: 2.0
 	idle:
 	damaged-idle:
 		Start: 1
@@ -572,6 +574,7 @@ v03:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 			DESERT: TEMPERAT
+		Scale: 2.0
 	idle:
 	damaged-idle:
 		Start: 1
@@ -582,6 +585,7 @@ v04:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 			DESERT: TEMPERAT
+		Scale: 2.0
 	idle:
 	damaged-idle:
 		Start: 1

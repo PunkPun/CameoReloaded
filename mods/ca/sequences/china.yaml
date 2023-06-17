@@ -13,7 +13,8 @@ chnukegeneralicon:
 	idle: chnukegeneralicon
 chmcv:
 	Inherits: ^VehicleOverlays
-	idle:
+	idle: chmcv
+		Scale: 0.65
 		Facings: 32
 		UseClassicFacings: True
 	icon: chmcvicon
@@ -164,6 +165,7 @@ chpropagandatower:
 			JUNGLE: TEMPERAT
 			BARREN: TEMPERAT
 	icon: chpropagandatowericon
+		Offset: 0,0
 
 chpropagandatower.pdl:
 	Inherits: chpropagandatower
@@ -516,9 +518,12 @@ chbattle:
 	idle: chbattle
 		Facings: 32
 		UseClassicFacings: True
-	turret: chbattletur
+		Scale: 0.65
+	turret: chbattle
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	muzzle: gunfire2
 		Length: 5
 	icon: chbattleicon
@@ -583,9 +588,20 @@ chmig.napalm:
 
 charty:
 	Inherits: ^VehicleOverlays
-	idle:
+	idle: charty
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.7
+	turret: charty
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.7
+	turret-ground: charty
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.7
 	muzzle: gunfire2
 		Length: *
 	icon: chartyicon
@@ -598,16 +614,23 @@ choverlord:
 	idle: choverlord
 		Facings: 32
 		UseClassicFacings: True
-	turret: choverlordtur
+		Scale: 0.65
+	turret: choverlord
+		Start: 32
 		Facings: 32
 		Offset: 1, 0
 		UseClassicFacings: True
-	turretgat: choverlordtur2
+		Scale: 0.65
+	turretgat: choverlord
+		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	turretpro: choverlordtur4
+		Scale: 0.65
+	turretpro: choverlord
+		Start: 128
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	muzzle: gunfire2
 		Length: 5
 	muzzleplasma: lightbluelasermuzzle
@@ -620,11 +643,13 @@ choverlord:
 
 choverlord.gatling:
 	Inherits: choverlord
-	turretgat: chgatlingt
+	turretgat: choverlord
+		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,0
 		ZOffset: 512
+		Scale: 0.65
 	icon: choverlordgatlingicon
 
 choverlord.gatling.pdl:
@@ -649,9 +674,11 @@ choverlord.nuke_shells.reflector:
 
 choverlord.bunker:
 	Inherits: choverlord
-	turret: choverlordtur3
+	turret: choverlord
+		Start: 96
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	icon: choverlordbunkericon
 
 choverlord.bunker.pdl:
@@ -699,9 +726,12 @@ chdragon:
 	idle: chdragon
 		Facings: 32
 		UseClassicFacings: True
-	turret: chdragontur
+		Scale: 0.65
+	turret: chdragon
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	muzzle: gunfire2
 		Length: *
 	icon: chdragonicon
@@ -719,9 +749,17 @@ chgtnk:
 	idle: chgtnk
 		Facings: 32
 		UseClassicFacings: True
-	turret: chgtnktur
+		Scale: 0.65
+	turret-ground: chgtnk
+		Start: 32
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
+	turret: chgtnk
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.65
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -738,29 +776,29 @@ chgtnk.reflector:
 chcrawl:
 	Inherits: ^VehicleOverlays
 	idle: chcrawl
-		Scale: 0.75
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	close: chcrawl
-		Scale: 0.75
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	unload: chcrawl
-		Scale: 0.75
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	icon: chcrawlicon
 
 chcrawl2:
 	Inherits: ^VehicleOverlays
 	idle: chcrawl2
-		Scale: 0.75
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	close: chcrawl2
-		Scale: 0.75
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 0.65
 	unload: chcrawl2
 		Scale: 0.75
 		Facings: 32
@@ -793,19 +831,31 @@ chcrawl2.assault.reflector:
 
 chnukecann:
 	Inherits: ^VehicleOverlays
-	idle: invisibleitem
-	idle2: chnukecann
-		Facings: 32
-		UseClassicFacings: True
-	muzzle: gunfire2
-		Length: 5
-	deploy: chnukecanndep
-		Facings: 32
-		UseClassicFacings: True
-	turret: chnukecanntur
-		Facings: 32
-		UseClassicFacings: True
 	icon: chnukecannicon
+	idle: chnukecann
+		Start: 101
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.7
+	turret: chnukecann
+		Start: 134
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.7
+	idletur: chnukecann
+		Start: 133
+		Scale: 0.7
+	damaged-idletur: chnukecann
+		Start: 133
+		Scale: 0.7
+	make: chnukecann
+		Length: 100
+		Tick: 25
+		Scale: 0.7
+	muzzle: gunfire2
+		Length: 2
+		IgnoreWorldTint: True
+
 
 chnukecann.range:
 	Inherits: chnukecann
@@ -817,7 +867,8 @@ chnukecann.neutron:
 
 chharv:
 	Inherits: ^VehicleOverlays
-	idle:
+	idle: chharv
+		Scale: 0.65
 		Facings: 32
 		UseClassicFacings: True
 	icon: chharvicon
@@ -825,16 +876,45 @@ chharv:
 
 chharvfull:
 	Inherits: chharv
+	idle: chharv
+		Scale: 0.65
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+
+chharv2:
+	Inherits: ^VehicleOverlays
+	idle: chharv2
+		Scale: 0.65
+		Facings: 32
+		UseClassicFacings: True
+	icon: chharvicon
+		Start: 0
+
+chharv2full:
+	Inherits: chharv2
+	idle: chharv2
+		Scale: 0.65
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
 
 choutpost:
 	Inherits: ^VehicleOverlays
 	idle: choutpost
-		Scale: 0.7
-		Facings: -32
+		Scale: 0.65
+		Start: 32
+		Facings: 32
 		UseClassicFacings: True
-	spinner: choutpostspin
-		Length: *
-		Scale: 0.7
+	move: choutpost
+		Scale: 0.65
+		Facings: 32
+		UseClassicFacings: True
+	spinner: choutpost
+		Scale: 0.65
+		Start: 64
+		Length: 32
+		Tick: 50
 	muzzle: minigun
 		Length: 6
 		Facings: 8

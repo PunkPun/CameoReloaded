@@ -506,7 +506,34 @@ MiniNuke:
 		LayerName: radioactivity
 	Warhead@Flash: FlashEffect
 		FlashType: Nuke
-
+NerfedMiniNuke:
+	Inherits: KirovExplode
+	Warhead@4Dam_areanuke1: SpreadDamage
+		Spread: 1c0
+		Damage: 2500
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 5
+		ValidTargets: Ground, Trees, Water, Underwater, Air
+		Versus:
+			Wood: 50
+			Brick: 25
+		AffectsParent: true
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@4Dam_areanuke2: SpreadDamage
+		Spread: 2c0
+		Damage: 1000
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 10
+		ValidTargets: Ground, Trees, Water, Underwater, Air
+		Versus:
+			Wood: 50
+			Brick: 25
+		AffectsParent: true
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Eff: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+		ImpactActors: false
 UnitExplodeVice:
 	Inherits: ^Chemical
 	Warhead@1Dam: SpreadDamage

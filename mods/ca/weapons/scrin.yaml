@@ -2,6 +2,12 @@ WarriorGun:
 	Inherits: M1Carbine
 	Report: warrior-fire1.aud
 
+BuzzerShards:
+	Inherits: M1Carbine
+	ReloadDelay: 15
+	Report: warrior-fire1.aud
+	Range: 2c0
+
 DisintegratorBeam:
 	Inherits: Laser
 	Inherits: ^EnergyAP
@@ -182,7 +188,7 @@ InterloperLaser.AA:
 		Damage: 2400
 
 CorrupterSpew:
-	Inherits: BigChemspray
+	Inherits: Grenade
 	StartBurstReport: corrupter-fire1.aud
 	ReloadDelay: 110
 	Burst: 12
@@ -539,6 +545,24 @@ TripodLaser.Arc2:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 	-Warhead@Arc:
+
+LTTripodLaser:
+	Inherits: Laser
+	Range: 6c0
+	Report: tripod-fire1.aud, tripod-fire2.aud, tripod-fire3.aud
+	ReloadDelay: 23
+	Burst: 2
+	BurstDelays: 15
+	Projectile: LaserZap
+		Duration: 20
+		Color: FAFAFFFF
+		Width: 35
+		SecondaryBeamColor: 382EFFAA
+		SecondaryBeamWidth: 75
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 2000
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 
 ReaperLaser:
 	Inherits: TripodLaser
@@ -1011,7 +1035,6 @@ LaceratorShards:
 	Burst: 4
 	Projectile: MissileCA
 		Image: bshard
-		ContrailColor: 4499FFAA
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 2000
@@ -1415,3 +1438,94 @@ DepthCharge.Scrin:
 		ValidTargets: Ship, Submarine
 	Warhead@3Eff: CreateEffect
 		ValidTargets: Submarine, Ship
+ScrinDiskGrenade:
+	Inherits: ^TSArtilleryWeapon
+	ReloadDelay: 60
+	Range: 5c512
+	-Report:
+	ValidTargets: Ground, Trees, Air
+	Projectile: Bullet
+		Speed: 555
+		Blockable: true
+		Shadow: true
+		LaunchAngle: 80
+		Inaccuracy: 0
+		Image: plasdiscsm
+		BounceCount: 2
+	Warhead@1Dam: SpreadDamage
+		Spread: 255
+		Damage: 4500
+		Versus:
+			Light: 70
+			Concrete: 28
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+		ValidTargets: Ground, Trees, Air
+	Warhead@2Eff: CreateEffect
+		Explosions: tssmall_grey_explosion
+		ImpactSounds: expnew13.aud
+		ValidTargets: Ground, Trees, Air
+
+TripodDiskGrenade:
+	Inherits: ^TSArtilleryWeapon
+	Report: tripod-fire1.aud, tripod-fire2.aud, tripod-fire3.aud
+	ReloadDelay: 60
+	Range: 6c512
+	-Report:
+	ValidTargets: Ground, Trees
+	Projectile: Bullet
+		Speed: 670
+		Blockable: true
+		Shadow: true
+		LaunchAngle: 80
+		Inaccuracy: 0
+		Image: plasdiscsm
+		BounceCount: 1
+		ContrailLength: 5
+		ContrailEndColor: 4C00FF
+		ContrailColor: 4C00FF
+		ContrailStartColor: 9669FF
+	Warhead@1Dam: SpreadDamage
+		Spread: 255
+		Damage: 6000
+		Versus:
+			Light: 70
+			Concrete: 28
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+		ValidTargets: Ground, Trees, Air
+	Warhead@2Eff: CreateEffect
+		Explosions: tssmall_grey_explosion
+		ImpactSounds: expnew13.aud
+		ValidTargets: Ground, Trees
+	Warhead@4: FireShrapnel 
+		InvalidTargets: FireImmune
+		Weapon: TripodDiskGrenade_Clust1
+		Amount: 1
+		AimChance: 100
+		AimTargetStances: Enemy, Neutral
+
+TripodDiskGrenade_Clust1:
+	Inherits: TripodDiskGrenade
+	Warhead@4: FireShrapnel 
+		InvalidTargets: FireImmune
+		Weapon: TripodDiskGrenade_Clust2
+		Amount: 1
+		AimChance: 100
+		AimTargetStances: Enemy, Neutral
+
+TripodDiskGrenade_Clust2:
+	Inherits: TripodDiskGrenade
+	Warhead@4: FireShrapnel 
+		InvalidTargets: FireImmune
+		Weapon: TripodDiskGrenade_Clust3
+		Amount: 1
+		AimChance: 75
+		AimTargetStances: Enemy, Neutral
+
+TripodDiskGrenade_Clust3:
+	Inherits: TripodDiskGrenade
+	Warhead@4: FireShrapnel 
+		InvalidTargets: FireImmune
+		Weapon: ScrinDiskGrenade
+		Amount: 1
+		AimChance: 75
+		AimTargetStances: Enemy, Neutral

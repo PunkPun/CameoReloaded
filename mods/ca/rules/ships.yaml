@@ -3,7 +3,7 @@ LST:
 	Inherits@Armor: ^LightArmor
 	Inherits@TRANSPORT: ^Transport
 	Buildable:
-		Queue: Ship
+		Queue: Ship, Ship.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~ships.any
 		Description: General-purpose naval transport.\n  Can carry infantry and tanks.\n  Unarmed

@@ -1902,6 +1902,129 @@
 	Selectable:
 		Bounds: 1536, 1536
 
+#Used for Generic Civilian Cars, Like RA2, TS and some customs
+#Recomendable for Cars
+
+^TerroristCar:
+	Inherits: ^BiologicalDriver
+	WithDecoration@terrorist:
+		Image: c4
+		Sequence: c4
+		Position: Center
+		ValidRelationships: Ally
+	Tooltip:
+		Name: Bomb Car
+	Explodes@NUKE:
+		Weapon: NerfedMiniNuke
+		EmptyWeapon: NerfedMiniNuke
+		DamageSource: Killer
+		RequiresCondition: !unloaded && !being-warped
+	Explodes@UNARMED:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		RequiresCondition: unloaded && !being-warped
+	AttackFrontal:
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 512
+		Voice: Attack
+		RequiresCondition: !unloaded
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		RequiresCondition: !unloaded
+	KillsSelf:
+		RequiresCondition: invulnerability || triggered || berserk
+	Voiced:
+		VoiceSet: GLATerroristVoice
+	MapEditorData:
+		Categories: Civilian (Terrorist) Vehicles
+^DefaultCivCars:
+	Inherits: ^MindControllable
+	RenderSprites:
+		PlayerPalette: playerts
+	CaptureManager:
+		BeingCapturedCondition: being-captured
+	Capturable:
+		Types: terroristcar
+		ValidRelationships: Enemy, Neutral
+	CaptureNotification:
+		Notification: UnitStolen
+		LoseNotification: UnitLost
+	MapEditorData:
+		Categories: Civilian Vehicles
+	InfiltrateForTransform@terror:
+		Types: terroristcar
+		IntoActor: civcar_car1_bomb
+	TransformOnCapture:
+		IntoActor: civcar_car1_bomb
+		CaptureTypes: terroristcar
+	Targetable@terroristcar:
+		TargetTypes: terroristcar
+	Buildable:
+		Prerequisites: ~debug
+^CivilianCar:
+	Inherits@1: ^Vehicle
+	Inherits@2: ^DefaultCivCars
+	Health:
+		HP: 11000
+	Mobile:
+		TurnSpeed: 80
+		Speed: 110
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Civilian Car
+	Crushable:
+		CrushClasses: wall
+		CrushSound: destw.aud
+		CrushedByFriendlies: false
+^CivilianSportCar:
+	Inherits@1: ^Vehicle
+	Inherits@2: ^DefaultCivCars
+	Health:
+		HP: 10000
+	Mobile:
+		TurnSpeed: 80
+		Speed: 150
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Sport Car
+	Crushable:
+		CrushClasses: wall
+		CrushSound: destw.aud
+		CrushedByFriendlies: false
+
+^CivilianSmallTruck:
+	Inherits@1: ^Vehicle
+	Inherits@2: ^DefaultCivCars
+	Health:
+		HP: 15000       #Uses stats similar to Jeep
+	Mobile:
+		TurnSpeed: 80
+		Speed: 100
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Civilian Vehicle
+
+^CivilianBigTruck:
+	Inherits@1: ^Vehicle
+	Inherits@2: ^DefaultCivCars
+	Health:
+		HP: 20000       #Uses stats similar to Jeep
+	Mobile:
+		TurnSpeed: 80
+		Speed: 90
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Civilian Vehicle
+
+#End Civilian Cars
 ^VehicleVision:
 	RevealsShroud:
 		MinRange: 4c0
@@ -2156,6 +2279,214 @@
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
 		StandSequences: stand,stand2
+
+^Infantry:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^GainsExperience
+	Inherits@Armor: ^NoneArmor
+	Inherits@3: ^InfantryExperienceHospitalOverrides
+	Inherits@4: ^SpriteActor
+	Inherits@7: ^Warpable
+	Inherits@9: ^IronCurtainable-Kills
+	Inherits@10: ^Frenzy
+	Inherits@11: ^GpsScramble
+	Inherits@12: ^BotGroundProductionBonus
+	Inherits@13: ^Chillable
+	Inherits@14: ^Concussion
+	Inherits@15: ^Propaganda
+	Inherits@16: ^Suppressable
+	Inherits@TNT: ^TNTPlantable
+	Inherits@bounty: ^GlobalBounty
+	Inherits@selection: ^SelectableCombatUnit
+	Inherits@mind: ^MindControllable
+	Inherits@GMUT: ^GeneticallyMutatable
+	Inherits@handicaps: ^PlayerHandicaps
+	Inherits@biodamage: ^BiologicalDamage
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	TooltipExtras:
+	Huntable:
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: DefaultDeath
+	DrawLineToTarget:
+	Health:
+		HP: 2500
+	RevealsShroud:
+		Range: 4c0
+	Mobile:
+		Speed: 61
+		Locomotor: foot
+		PauseOnCondition: being-warped
+	SpawnActorOnDeath@viceroid:
+		Probability: 35
+		Actor: vice
+		OwnerType: InternalName
+		InternalOwner: Creeps
+		DeathType: ToxinDeath
+		RequiresLobbyCreeps: false
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 768, 768, 0, -256
+		DecorationBounds: 512, 725, 0, -256
+	Targetable:
+		RequiresCondition: !parachute && !being-warped
+		TargetTypes: Ground, Infantry, Disguise, TNT
+	Targetable@HEAL:
+		RequiresCondition: !parachute && damaged && !being-warped
+		TargetTypes: Heal
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		RequiresCondition: !being-warped
+	WithInfantryBody@Warped:
+		StandSequences: stand
+		RequiresCondition: being-warped
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 2
+			SmallExplosionDeath: 3
+			ExplosionDeath: 4
+			FireDeath: 5
+			ElectricityDeath: 6
+			PoisonDeath: 7
+			ChronoDeath: 8
+			ToxinDeath: 9
+			RadiationDeath: 10
+			FrozenDeath: 11
+		CrushedSequence: die-crushed
+	AttackMove:
+	Passenger:
+		CargoType: Infantry
+		CargoCondition: disable-experience
+	GainsExperienceMultiplier:
+		Modifier: 0
+		RequiresCondition: disable-experience
+	HiddenUnderFog:
+	ActorLostNotification:
+	GpsRadarDot:
+		Sequence: Infantry
+	Crushable:
+		CrushSound: squishy2.aud
+	Guard:
+	Guardable:
+	Tooltip:
+		GenericName: Soldier
+	ChangesHealth@HOSPITAL:
+		Step: 500
+		Delay: 100
+		StartIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: hospitalheal
+	ExternalCondition@MEDIFV:
+		Condition: hospitalheal
+	GrantConditionOnPrerequisite@HOSPITAL:
+		Condition: hospital
+		Prerequisites: hosp
+	GrantConditionOnDamageState@HOSPITAL:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	GrantCondition@HOSPITAL:
+		RequiresCondition: hospital && damaged
+		Condition: hospitalheal
+	WithDecoration@REDCROSS:
+		Image: pips
+		Sequence: medic
+		Palette: chrome
+		ReferencePoint: Bottom, Right
+		RequiresCondition: hospitalheal
+		BlinkInterval: 32
+		BlinkPattern: Off, On
+	DeathSounds@NORMAL:
+		Voice: Die
+		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath
+	DeathSounds@BURNED:
+		Voice: Burned
+		DeathTypes: FireDeath
+	DeathSounds@ZAPPED:
+		Voice: Zapped
+		DeathTypes: ElectricityDeath, ChronoDeath
+	DeathSounds@POISONED:
+		Voice: Poisoned
+		DeathTypes: PoisonDeath, ToxinDeath, RadiationDeath
+	Parachutable:
+		FallRate: 26
+		KilledOnImpassableTerrain: true
+		GroundCorpseSequence: corpse
+		GroundImpactSound: squishy2.aud
+		WaterImpactSound: splash9.aud
+		WaterCorpseSequence: small_splash
+		ParachutingCondition: parachute
+	Cloneable:
+		Types: Infantry
+	Voiced:
+		VoiceSet: GenericVoice
+	WithParachute:
+		ShadowImage: parach-shadow
+		ShadowSequence: idle
+		Image: parach
+		Sequence: idle
+		OpeningSequence: open
+		Offset: 0,0,427
+		RequiresCondition: parachute
+	HitShape:
+		Type: Circle
+			Radius: 128
+	MapEditorData:
+		Categories: Infantry
+	EdibleByLeap:
+	GrantConditionOnPrerequisite@ROF:
+		Condition: revealonfire
+		Prerequisites: global.revealonfire
+	RevealOnFire:
+		RevealGeneratedShroud: True
+		RequiresCondition: revealonfire
+	RevealOnDeath:
+		Duration: 100
+	DetectCloaked:
+		CloakTypes: Cloak
+		Range: 1c0
+	ExternalCondition@CLOAKGENERATOR:
+		Condition: invisibility
+	TeleportNetworkTransportable:
+
+^RobotInfantry:
+	Inherits: ^Infantry
+	Inherits@DRIVER: ^CanCaptureDriverlessVehicles
+	Inherits@BioDamageImmune: ^BioDamageImmune
+	Inherits@HACKABLE: ^Hackable
+	Inherits@5: ^EmpDisable
+	Inherits@11: ^NaniteRepair
+	Inherits@12: ^GpsScramble
+	UpdatesPlayerStatistics:
+	MustBeDestroyed:
+	ProximityCaptor:
+		Types: Infantry
+	TakeCover:
+		DamageModifiers:
+			Prone50Percent: 50
+		DamageTriggers: TriggerProne
+		PauseOnCondition: being-warped
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+		StandSequences: stand,stand2
+	Targetable:
+		TargetTypes: Ground, Infantry, Disguise, ChaosImmune, Metallic
+	Targetable@MetalInfantry:
+		TargetTypes: MetalInfantry
+	Targetable@REPAIR:
+		RequiresCondition: !parachute && damaged && !being-warped
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 
 ^CivInfantry:
 	Inherits: ^Infantry
@@ -3082,6 +3413,10 @@
 		Terrain: Tiberium
 	HiddenUnderShroud:
 	WithMakeAnimation:
+	TerrainLightSource:
+		Range: 8c0
+		Intensity: 0.3
+		GreenTint: 0.2
 
 ^Tree:
 	Inherits@1: ^SpriteActor
@@ -4161,6 +4496,30 @@
 		Margin: 4, 3
 		RequiresSelection: true
 
+^AircraftWithAmmoHelicopter:
+	Rearmable:
+		RearmActors: hpad, hpad.td, hpad.camea, chairport, tsgthpad, tsnthpad, tscgpad
+	AmmoPool:
+		Ammo: 8
+		ReloadDelay: 10
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+
+^AircraftWithAmmoTwo:
+	Rearmable:
+		RearmActors: afld, afld.gdi, afld.allies, hpad, hpad.td, hpad.camea, chairport, tsgthpad, tsnthpad, tscgpad
+	AmmoPool:
+		Ammo: 8
+		ReloadDelay: 10
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+
 ^InfantryProduction:
 	RallyPoint:
 	Exit@1:
@@ -4171,7 +4530,22 @@
 	Production:
 		Produces: Infantry, Soldier
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !infdisabled
+		RequiresCondition: !infdisabled && classicproductionqueues
+	Production@Multi:
+		Produces: Infantry.Multi, Soldier
+		PauseOnCondition: forceshield || invulnerability || being-warped
+		RequiresCondition: !infdisabled && !classicproductionqueues
+	ProductionQueue@Multi:
+		Type: Infantry.Multi
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	GrantConditionOnPrerequisite@vehiclesonly:
 		Condition: infdisabled
 		Prerequisites: techlevel.vehiclesonly
@@ -4182,13 +4556,19 @@
 		Condition: produced
 	ProductionBar:
 		ProductionType: Infantry
+		RequiresCondition: classicproductionqueues
+	ProductionBar@Multi:
+		ProductionType: Infantry.Multi
+		RequiresCondition: !classicproductionqueues
 	ProvidesPrerequisite@infantryany:
 		Prerequisite: infantry.any
 	ProximityExternalCondition@close:
 		Range: 7c0
 		ValidRelationships: Ally
 		Condition: closeToBarracks
-
+	GrantConditionOnPrerequisite@classicproductionqueues:
+		Prerequisites: classicproductionqueues
+		Condition: classicproductionqueues
 ^VehicleProduction:
 	RallyPoint:
 	Exit@1:
@@ -4198,7 +4578,22 @@
 	Production:
 		Produces: Vehicle, Paradrop
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !vehiclesdisabled
+		RequiresCondition: !vehiclesdisabled && classicproductionqueues
+	Production@Multi:
+		Produces: Vehicle.Multi, Paradrop
+		PauseOnCondition: forceshield || invulnerability || being-warped
+		RequiresCondition: !vehiclesdisabled && !classicproductionqueues
+	ProductionQueue@Multi:
+		Type: Vehicle.Multi
+		DisplayOrder: 3
+		Group: Vehicle
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	GrantConditionOnPrerequisite@infonly:
 		Condition: vehiclesdisabled
 		Prerequisites: techlevel.infonly
@@ -4209,12 +4604,19 @@
 		Condition: produced
 	ProductionBar:
 		ProductionType: Vehicle
+		RequiresCondition: classicproductionqueues
+	ProductionBar@Multi:
+		ProductionType: Vehicle.Multi
+		RequiresCondition: !classicproductionqueues
 	ProvidesPrerequisite@any:
 		Prerequisite: vehicles.any
 	ProximityExternalCondition@close:
 		Range: 7c0
 		ValidRelationships: Ally
 		Condition: closeToFactory
+	GrantConditionOnPrerequisite@classicproductionqueues:
+		Prerequisites: classicproductionqueues
+		Condition: classicproductionqueues
 
 ^AircraftProduction:
 	Exit@1:
@@ -4223,10 +4625,29 @@
 	RallyPoint:
 	ProductionBar:
 		ProductionType: Aircraft
+		RequiresCondition: classicproductionqueues
+	ProductionBar@Multi:
+		ProductionType: Aircraft.Multi
+		RequiresCondition: !classicproductionqueues
 	Production:
 		Produces: Aircraft, Helicopter, Plane
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !aircraftdisabled
+		RequiresCondition: !aircraftdisabled && classicproductionqueues
+	Production@Multi:
+		Produces: Aircraft.Multi, Helicopter, Plane
+		PauseOnCondition: forceshield || invulnerability || being-warped
+		RequiresCondition: !aircraftdisabled && !classicproductionqueues
+	ProductionQueue@Multi:
+		Type: Aircraft.Multi
+		DisplayOrder: 4
+		Group: Aircraft
+		LowPowerModifier: 300
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	GrantConditionOnPrerequisite@infonly:
 		Condition: aircraftdisabled
 		Prerequisites: techlevel.infonly
@@ -4235,16 +4656,56 @@
 		Prerequisites: techlevel.vehiclesonly
 	GrantExternalConditionToProduced:
 		Condition: produced
-
+	GrantConditionOnPrerequisite@classicproductionqueues:
+		Prerequisites: classicproductionqueues
+		Condition: classicproductionqueues
 ^StructureProduction:
 	ProductionBar@Building:
 		ProductionType: Building
+		RequiresCondition: classicproductionqueues
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
+		RequiresCondition: classicproductionqueues
+	ProductionBar@MultiB:
+		ProductionType: Building.Multi
+		RequiresCondition: !classicproductionqueues
+	ProductionBar@Multid:
+		ProductionType: Defense.Multi
+		Color: 8A8A8A
+		RequiresCondition: !classicproductionqueues
 	Production:
 		Produces: Building, Defense
 		PauseOnCondition: forceshield || invulnerability || being-warped
+		RequiresCondition: classicproductionqueues
+	Production@Multi:
+		Produces: Building.Multi, Defense.Multi
+		PauseOnCondition: forceshield || invulnerability || being-warped
+		RequiresCondition: !classicproductionqueues
+	ProductionQueue@BMulti:
+		Type: Building.Multi
+		Group: Building
+		DisplayOrder: 0
+		ProductionGroup: Building
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@DMulti:
+		Type: Defense.Multi
+		Group: Defense
+		DisplayOrder: 1
+		ProductionGroup: Defense
+		LowPowerModifier: 300
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProvidesPrerequisite@conyardbuildable:
 		Prerequisite: conyardbuildable
 		RequiresPrerequisites: techlevel.aircraftonly
@@ -4255,7 +4716,9 @@
 	BaseProvider:
 		PauseOnCondition: being-captured
 		Range: 16c0
-
+	GrantConditionOnPrerequisite@classicproductionqueues:
+		Prerequisites: classicproductionqueues
+		Condition: classicproductionqueues
 ^ShipProduction:
 	Exit@1:
 		ExitCell: 1,1
@@ -4298,7 +4761,9 @@
 		Facing: 32
 		ExitCell: 2,0
 		ProductionTypes: Submarine, Ship, Boat
-
+	GrantConditionOnPrerequisite@classicproductionqueues:
+		Prerequisites: classicproductionqueues
+		Condition: classicproductionqueues
 ^ShipPrerequisites:
 	ProvidesPrerequisite@naval:
 		Prerequisite: ships.any
@@ -4497,3 +4962,50 @@
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -256
+#New Cameo buildings resume
+^WithShieldUnit:
+	GrantConditionOnDamageState@shield1:
+		Condition: Shield50
+		ValidDamageStates: Medium, Heavy, Critical
+	GrantConditionOnDamageState@shield2:
+		Condition: Shield25
+		ValidDamageStates: Heavy, Critical
+	DamageMultiplier@shield1:
+		RequiresCondition: !Shield50 && !empdisable
+		Modifier: 60
+	DamageMultiplier@shield2:
+		RequiresCondition: !Shield25 && !empdisable
+		Modifier: 80
+	WithIdleOverlay@shield1:
+		RequiresCondition: !Shield50 && !empdisable && !Shield25
+		Image: energyshields
+		Sequence: shield-complete
+		StartSequence: shield-starts
+		Palette: alpha60
+	WithIdleOverlay@shield2:
+		RequiresCondition: Shield50 && !Shield25 && !empdisable
+		Image: energyshields
+		Sequence: shield-damaged
+		Palette: alpha40
+	ChangesHealth@Shield1:
+		PercentageStep: 1
+		Delay: 7
+		StartIfBelow: 100
+		DamageCooldown: 100
+		RequiresCondition: !Shield50 && !empdisable
+	ChangesHealth@Shield2:
+		PercentageStep: 1
+		Delay: 20
+		StartIfBelow: 100
+		DamageCooldown: 100
+		RequiresCondition: Shield50 && !Shield25 && !empdisable
+
+^ArmedBaseBuilding:
+	Inherits: ^Defense
+	GivesBuildableArea:
+		AreaTypes: building
+	AcceptsDeliveredCash:
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Buildable:
+		BuildDurationModifier: 25

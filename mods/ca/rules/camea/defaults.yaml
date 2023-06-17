@@ -34,6 +34,15 @@ Player:
         RequiresCondition: BuildingsOwned < 5
 
 ^BuildingCamea:
+	Inherits: ^Building
+	SpawnActorsOnSell:
+		ActorTypes: che1,che1,che1,che1,che1,che1,che1,che1,che1,che1,c1,c1,c1,c1,c7,c7,c7,c7,c10,c10
+
+^BuildingCameaTD:
 	Inherits: ^BuildingTD
+	SpawnActorsOnSell:
+		ActorTypes: che1,che1,che1,che1,che1,che1,che1,che1,che1,che1,c1,c1,c1,c1,c7,c7,c7,c7,c10,c10
+
+^SellCamea:
 	SpawnActorsOnSell:
 		ActorTypes: che1,che1,che1,che1,che1,che1,che1,che1,che1,che1,c1,c1,c1,c1,c7,c7,c7,c7,c10,c10

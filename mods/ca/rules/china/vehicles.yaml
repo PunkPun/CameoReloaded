@@ -48,7 +48,8 @@ CHNMCV:
 	ProvidesPrerequisite@chinaatom:
 		Factions: chinaatom
 		Prerequisite: structures.chinaatom
-
+	RenderSprites:
+		PlayerPalette: playerts
 chbattle:
 	Inherits: ^TankTD
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -78,7 +79,7 @@ chbattle:
 		HP: 40000
 	Turreted:
 		TurnSpeed: 12
-		Offset: 150,0,150
+		Offset: 20,0,1
 	Armament:
 		Weapon: CHBattlemasterCannon
 		Recoil: 128
@@ -91,6 +92,8 @@ chbattle:
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: BattlemasterTankVoice
+	RenderSprites:
+		PlayerPalette: playerts
 
 chbattle.Autoloader:
 	Inherits: chbattle
@@ -213,7 +216,7 @@ charty:
 	Inherits: ^PrioArtillery
 	Inherits@GeneralsVehicle: ^GeneralsVehicle
 	Inherits@announce: ^AnnounceOnBuild
-	Inherits@vo: ^AttackFrontalVoice
+	Inherits@vo: ^AttackTurretedVoice
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -233,18 +236,30 @@ charty:
 		HP: 12000
 	Armament:
 		Weapon: CHInfernoCannon
-		LocalOffset: 624,0,608
+		LocalOffset: 777,0,777
 		MuzzleSequence: muzzle
 		RequiresCondition: !blacknapalm
+		PauseOnCondition: engage-ground
+		ReloadingCondition: engage-air
 	Armament@Upgraded:
 		Weapon: CHInfernoCannon.Black_Napalm
-		LocalOffset: 624,0,608
+		LocalOffset: 777,0,777
 		MuzzleSequence: muzzle
 		RequiresCondition: blacknapalm
-	AttackFrontal:
+		PauseOnCondition: engage-ground
+		ReloadingCondition: engage-air
+	AttackTurreted:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable || being-warped
+	WithSpriteTurret:
+		RequiresCondition: engage-air
+	WithSpriteTurret@GROUND:
+		Sequence: turret-ground
+		RequiresCondition: !engage-air
+	Turreted:
+		TurnSpeed: 12
+		Offset: -60,0,1
 	WithMuzzleOverlay:
 	AutoTarget:
 		InitialStanceAI: Defend
@@ -253,7 +268,8 @@ charty:
 		Prerequisites: commander_tree.black_napalm
 	Voiced:
 		VoiceSet: CHInfernoCannonVoice
-
+	RenderSprites:
+		PlayerPalette: playerts
 charty.Husk:
 	Inherits: ^LightHusk
 	Tooltip:
@@ -306,7 +322,7 @@ choverlord:
 	Turreted:
 		Turret: primary
 		TurnSpeed: 3
-		Offset: -298,0,150
+		Offset: -298,0,2
 	Armament:
 		Weapon: OverlordCannon
 		LocalOffset: 1250,250,50, 1250,-250,50
@@ -319,7 +335,8 @@ choverlord:
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	WithSpriteTurret:
-
+	RenderSprites:
+		PlayerPalette: playerts
 choverlord.Gatling:
 	Inherits: choverlord
 	Inherits: ^ChinaGatlingOverlord
@@ -342,20 +359,18 @@ choverlord.Gatling:
 		Cost: 2000
 	Turreted@gatling:
 		Turret: primary
-		TurnSpeed: 16
-		Offset: -298,0,400
+		TurnSpeed: 4
+		Offset: -298,0,2
 	Turreted:
 		Turret: secondary
-		TurnSpeed: 3
+		TurnSpeed: 4
 		Offset: -298,0,150
 	AttackTurreted:
 		Turrets: primary, secondary, tertiary
 		Armaments: primary, secondary, tertiary
-	WithSpriteTurret@gatling:
-		Turret: primary
-		Sequence: turretgat
 	WithSpriteTurret:
 		Turret: secondary
+		Sequence: turretgat
 	Armament:
 		Name: tertiary
 		Turret: secondary
@@ -663,7 +678,7 @@ chdragon:
 		HP: 28000
 	Turreted:
 		TurnSpeed: 9
-		Offset: 150,0,150
+		Offset: 150,0,22
 	Armament:
 		Weapon: CHDragonFlamer
 		Recoil: 85
@@ -716,7 +731,8 @@ chdragon:
 	GrantConditionOnPrerequisite@blacknapalm:
 		Condition: blacknapalm
 		Prerequisites: commander_tree.black_napalm
-
+	RenderSprites:
+		PlayerPalette: playerts
 chdragon.PDL:
 	Inherits: chdragon
 	Inherits: ^PointLaserDefenseSystem
@@ -783,7 +799,7 @@ chgtnk:
 		Range: 6c0
 	Turreted:
 		TurnSpeed: 16
-		Offset: -275,0,150
+		Offset: -225,0,1
 	AttackTurreted:
 		PauseOnCondition: empdisable || being-warped
 		Armaments: primary, secondary
@@ -791,7 +807,21 @@ chgtnk:
 	WithSpriteTurret:
 	Voiced:
 		VoiceSet: CHGatlingTankVoice
-
+	WithSpriteTurret:
+		RequiresCondition: !gatling-ground
+	WithSpriteTurret@GROUND:
+		Sequence: turret-ground
+		RequiresCondition: gatling-ground
+	GrantConditionOnAttack@GROUND:
+		ArmamentNames: secondary
+		Condition: gatling-ground
+		RequiredShotsPerInstance: 1,6
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeOnNewTarget: False
+		RevokeAll: True
+	RenderSprites:
+		PlayerPalette: playerts
 chgtnk.PDL:
 	Inherits: chgtnk
 	Inherits: ^PointLaserDefenseSystem
@@ -862,7 +892,8 @@ chharv:
 		DockLoopSequence: idle
 	Voiced:
 		VoiceSet: CHSupplyTruckVoice
-
+	RenderSprites:
+		PlayerPalette: playerts
 chharv.Husk:
 	Inherits: ^LightHusk
 	Tooltip:
@@ -873,6 +904,53 @@ chharv.Husk:
 		IntoActor: chharv
 	RenderSprites:
 		Image: chharv
+		PlayerPalette: playerts
+chharv2:
+	Inherits: ^TankTD
+	Inherits@HARV: ^Harvester
+	-Crushable:
+	-Carryable:
+	Inherits@GeneralsVehicle: ^GeneralsVehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: chsupply, ~vehicles.china, ~chinatnk
+		Description: Collects Ore and Gems for processing.\n  Unarmed
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: Huge Harvester Truck
+	Harvester:
+		Capacity: 45
+		PipCount: 9
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 66
+		Locomotor: wheeled
+	RevealsShroud:
+		Range: 4c0
+	-WithFacingSpriteBody:
+	WithHarvesterSpriteBody:
+		ImageByFullness: chharv2, chharv2full, chharv2full
+	WithDockingAnimation:
+		DockSequence: idle
+		DockLoopSequence: idle
+	Voiced:
+		VoiceSet: CHSupplyTruckVoice
+	RenderSprites:
+		PlayerPalette: playerts
+chharv2.Husk:
+	Inherits: ^LightHusk
+	Tooltip:
+		Name: Supply Truck (Destroyed)
+	TransformOnCapture:
+		IntoActor: chharv
+	InfiltrateForTransform:
+		IntoActor: chharv
+	RenderSprites:
+		Image: chharv
+		PlayerPalette: playerts
 
 choutpost:
 	Inherits: ^VehicleTD
@@ -903,7 +981,7 @@ choutpost:
 		TurnSpeed: 10
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
-		Offset: -256,0,256
+		Offset: -578,0,-8
 	Voiced:
 		VoiceSet: ListeningOutpostVoice
 	Cloak:
@@ -911,8 +989,12 @@ choutpost:
 		CloakDelay: 45
 		UncloakOn: Attack, Unload, Move
 		PauseOnCondition: cloak-force-disabled || base-reveal || disabled || driver-dead
-		IsPlayerPalette: true
-
+		Palette: cloak
+		IsPlayerPalette: false
+	RenderSprites:
+		PlayerPalette: playerts
+	WithMoveAnimation:
+		ValidMovementTypes: Horizontal, Vertical, Turn
 choutpost.Propaganda:
 	Inherits: choutpost
 	Inherits@speaker: ^PropagandaSpeaker
@@ -1144,7 +1226,8 @@ chcrawl:
 		InitialUnits: che1,che1,che1,che1,che1
 	Voiced:
 		VoiceSet: TroopCrawlerVoice
-
+	RenderSprites:
+		PlayerPalette: playerts
 chcrawl2:
 	Inherits: chcrawl
 	Inherits: ^TankTD
@@ -1184,7 +1267,8 @@ chcrawl2:
 		TurnSpeed: 10
 	Voiced:
 		VoiceSet: AssaultTroopCrawlerVoice
-
+	RenderSprites:
+		PlayerPalette: playerts
 chcrawl2.Hunter:
 	Inherits: chcrawl2
 	Inherits: ^PrioAntiHeavyAA
@@ -1294,26 +1378,34 @@ chcrawl.Husk:
 	RenderSprites:
 		Image: chcrawl
 
+
 chnukecann:
-	Inherits: ^TankTD
-	Inherits: ^BigVehicle
+	Inherits: ^TankTS
+	Inherits: ^BiologicalDriver
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits: ^PrioArtillery
-	Inherits@GeneralsVehicle: ^GeneralsVehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@announce: ^AnnounceGlobal
-	Inherits@vo: ^AttackTurretedVoice
+	Inherits@vo: ^AttackVoice
 	Valued:
-		Cost: 2400
+		Cost: 975
 	Tooltip:
 		Name: Nuke Cannon
+		RequiresCondition: !deployed
+	Tooltip@DEPLOYED:
+		Name: Nuke Cannon (deployed)
+		RequiresCondition: deployed
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
-		BuildPaletteOrder: 60
-		Prerequisites: techcenter, ~chweap, ~commander_tree.nuke_cannon, ~!filler.nuke_cannon
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 100
+		Prerequisites: ~vehicles.tsnod, anyhq
 		Description: Slow heavy artillery.\n Must be deployed to fire nuclear shells.
 	TooltipExtras:
 		Strengths: • Strong vs Masses
 		Weaknesses: • Weak vs PDL, Aircraft
+	Armor:
+		Type: Light
 	Mobile:
 		Locomotor: tracked
 		TurnSpeed: 8
@@ -1321,68 +1413,62 @@ chnukecann:
 	Health:
 		HP: 24000
 	RevealsShroud:
-		Range: 6c0
-	Turreted:
-		TurnSpeed: 8	#3
-	AttackTurreted:
-	SelectionDecorations:
-	Selectable:
-	Armament@PRIMARY:
-		Name: primary
-		Weapon: CHNukeCannon
-		LocalOffset: 407,0,362
-		PauseOnCondition: !ammo || fired
-	Armament@AIM:
-		Weapon: NukeCannonDummyAim
-		PauseOnCondition: deployed
-	DeployOnAttack:
-		RequiresCondition: undeployed
+		RequiresCondition: !inside-tunnel
+		Range: 9c0
+		MaxHeightDelta: 3
+	RenderSprites:
+		Image: chnukecann
+	WithMakeAnimation:
 	GrantConditionOnDeploy:
-		DeploySounds: placbldg.aud
+		PauseOnCondition: empdisable || being-captured
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
 		UndeployOnMove: true
 		UndeployOnPickup: true
-		SmartDeploy: True
-	AmmoPool:
-		Ammo: 1
-		InitialAmmo: 0
-		PipCount: 1
-		AmmoCondition: ammo
-	WithAmmoPipsDecoration:
-		Position: BottomLeft
-		Margin: 4, 3
-		RequiresSelection: true
-	ReloadAmmoPoolCA@deployed:
-		Delay: 100
-		Count: 1
-		ShowSelectionBar: true
-		SelectionBarColor: ff0000
+		Facing: 640
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
+		DeploySounds: placbldg.aud
+		UndeploySounds: placbldg.aud
+		Voice: Move
+	Repairable:
+		RequireForceMoveCondition: !undeployed
+	Passenger:
+		RequireForceMoveCondition: !undeployed
+	GrantCondition@PREVIEWWORKAROUND:
+		Condition: real-actor
+	WithFacingSpriteBody:
+		RequiresCondition: !deployed
+	WithSpriteBody@deployed:
+		RequiresCondition: !undeployed && real-actor
+		Sequence: idletur
+	Turreted:
+		Turret: deployed
+		TurnSpeed: 20
+		InitialFacing: 384
+		Offset: 0,0,65
+		RealignDelay: -1
+	WithSpriteTurret@deployed:
+		Turret: deployed
 		RequiresCondition: deployed
-	GrantConditionOnAttack@fired:
-		Condition: fired
-		RevokeDelay: 100
-		ArmamentNames: primary
-	ReloadAmmoPoolCA@undeployed:
-		Delay: 10
-		Count: -1
-		ShowSelectionBar: true
-		SelectionBarColor: 00ff00
-		RequiresCondition: undeployed
-	SpeedMultiplier@UNDEPLOY:
-		Modifier: 0
-		RequiresCondition: fired
-	WithFacingSpriteBody@Skin1:
-		Sequence: idle2
-		RequiresCondition: !ammo && !deployed
-		Name: body1
-	WithFacingSpriteBody@Skin2:
-		Sequence: deploy
-		RequiresCondition: ammo || deployed
-		Name: body2
-	WithSpriteTurret@Skin2:
-		RequiresCondition: ammo || deployed
-		Sequence: turret
+	AttackTurreted@deployed:
+		Voice: Attack
+		Armaments: deployed
+		Turrets: deployed
+		RequiresCondition: deployed
+		PauseOnCondition: empdisable
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		OutsideRangeRequiresForceFire: True
+	Armament@deployed:
+		Name: deployed
+		Turret: deployed
+		Weapon: CHNukeCannon
+		LocalOffset: 1000,0,500
+		RequiresCondition: deployed
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	RevealOnFire:
+		ArmamentNames: deployed
 	Voiced:
 		VoiceSet: CHNukeCannonVoice
 	Explodes:
@@ -1392,6 +1478,8 @@ chnukecann:
 	GrantConditionOnPrerequisite@upneutronshell:
 		Condition: upneutronshell
 		Prerequisites: upneutronshell
+	RenderSprites:
+		PlayerPalette: playerts
 
 chnukecann.Range:
 	Inherits: chnukecann
@@ -1405,7 +1493,7 @@ chnukecann.Range:
 	TooltipExtras:
 		Strengths: • Strong vs Masses
 		Weaknesses: • Weak vs PDL, Aircraft
-	Armament@PRIMARY:
+	Armament@deployed:
 		Weapon: CHNukeCannon.Range
 
 chnukecann.Neutron:
@@ -1421,7 +1509,7 @@ chnukecann.Neutron:
 		Strengths: • Strong vs Masses
 		Weaknesses: • Weak vs PDL, Aircraft, Buildings
 		Attributes: • Kills Drivers
-	Armament@PRIMARY:
+	Armament@deployed:
 		Weapon: CHNukeCannon.Neutron
 
 chnukecann.Husk:

@@ -103,6 +103,10 @@ S1:
 		FacingTolerance: 0
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
 
 S2:
 	Inherits@SCRININFANTRY: ^ScrinInfantry
@@ -177,6 +181,10 @@ S3:
 		Prerequisites: barracks.upgraded
 	AutoTarget:
 		ScanRadius: 5
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
 
 S4:
 	Inherits@SCRININFANTRY: ^ScrinInfantry
@@ -215,7 +223,10 @@ S4:
 	PortableChrono:
 		ChargeDelay: 250
 		ChronoshiftSound: scrinport.aud
-
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
 S6:
 	Inherits@SCRININFANTRY: ^ScrinInfantry
 	Inherits@SELECTION: ^SelectableSupportUnit
@@ -495,19 +506,125 @@ MAST:
 		Position: BottomLeft
 		RequiresSelection: true
 
+S7:
+	Inherits@SCRININFANTRY: ^ScrinInfantry
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.scrin
+		Description: General-purpose scouting infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chrome
+	Valued:
+		Cost: 80
+	Tooltip:
+		Name: Buzzers
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6500
+	Armament@PRIMARY:
+		Weapon: BuzzerShards
+		MuzzleSequence: muzzle
+		MuzzlePalette: scrin
+		LocalOffset: 150,0,400
+	WithMuzzleOverlay:
+	WithInfantryBody:
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
+	-WithDeathAnimation:
+	WithDeathAnimation:
+	Mobile:
+		Speed: 110
+	RenderSprites:
+		PlayerPalette: playerra2
+	Mobile:
+		Locomotor: seal
+S8:
+	Inherits@SCRININFANTRY: ^ScrinInfantry
+	Inherits@scout: ^ScoutEquipment
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.scrin
+		Description: General-purpose scouting infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chrome
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6500
+	Armament@PRIMARY:
+		Weapon: ScrinDiskGrenade
+		MuzzleSequence: muzzle
+		MuzzlePalette: scrin
+		LocalOffset: 150,0,400
+	Armament@Garrison:
+		Name: mounted
+		Weapon: ScrinDiskGrenade
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	WithInfantryBody:
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
+
 #
 # ---- Vehicles
 #
+^ScrinLightsMedium:
+	WithIdleOverlay@DecorationLights:
+		RequiresCondition: !damaged
+		Image: prop_light_effect_scrin
+		Sequence: light-medium
+		Palette: tseffect-ignore-lighting-alpha40
+	WithIdleOverlay@DamagedDecorationLights:
+		RequiresCondition: damaged
+		Image: prop_light_effect_scrin
+		Sequence: damaged-light-medium
+		Palette: tseffect-ignore-lighting-alpha30
+
+^ScrinLightsBig:
+	WithIdleOverlay@DecorationLights:
+		RequiresCondition: !damaged
+		Image: prop_light_effect_scrin
+		Sequence: light-big
+		Palette: tseffect-ignore-lighting-alpha40
+	WithIdleOverlay@DamagedDecorationLights:
+		RequiresCondition: damaged
+		Image: prop_light_effect_scrin
+		Sequence: damaged-light-big
+		Palette: tseffect-ignore-lighting-alpha30
 
 HARV.Scrin:
 	Inherits: HAR2
 	Inherits@Hover: ^HoverVehicle
+	Inherits@Lights: ^ScrinLightsBig
 	RenderSprites:
 		Image: harv.scrin
 		PlayerPalette: overlayplayer
-	WithShadow:
-		Offset: 43, 255, 0
-		ZOffset: -256
 	WithHarvestOverlay:
 		Palette: scrin
 		LocalOffset: 400, 0, 0
@@ -527,7 +644,8 @@ HARV.Scrin:
 		Palette: chrometd
 	Targetable:
 		TargetTypes: Ground, Vehicle, C4, ChaosImmune, MindControlImmune
-
+	RenderSprites:
+		PlayerPalette: playerra2
 GUNW:
 	Inherits: ^Vehicle
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
@@ -576,12 +694,10 @@ GUNW:
 		Prerequisites: vehicles.upgraded
 	WithMoveAnimation:
 		ValidMovementTypes: Horizontal, Vertical, Turn
-	GrantConditionOnFaction@TRAVELERSPEED:
-		Condition: travelerspeed
-		Factions: traveler
-	SpeedMultiplier@TRAVELERSPEED:
-		RequiresCondition: travelerspeed
-		Modifier: 115
+	WithAttackAnimation:
+		Sequence: shoot
+	RenderSprites:
+		PlayerPalette: overlayplayertd
 
 GUNW.sensor:
 	Inherits: GUNW
@@ -602,6 +718,7 @@ SEEK:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits: ^PrioAntiHeavy
 	Inherits@BERSERK: ^Berserk
+	Inherits@Lights: ^ScrinLightsMedium
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Valued:
@@ -636,15 +753,12 @@ SEEK:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 48
-		Offset: -280,0,0
+		Offset: -200,0,15
 	Hovers:
 		BobDistance: -25
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
 	Armament@PRIMARY:
 		Weapon: PlasmaDiscs
-		LocalOffset: 320,0,320
+		LocalOffset: 320,0,70
 	AttackTurreted:
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: false
@@ -657,6 +771,8 @@ SEEK:
 	SpawnActorOnDeath:
 		Actor: SEEK.Husk
 		RequiresCondition: !being-warped && !onwater
+	RenderSprites:
+		PlayerPalette: playerra2
 
 SEEK.PLD:
 	Inherits: SEEK
@@ -688,6 +804,7 @@ LACE:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits: ^PrioAntiHeavy
 	Inherits@BERSERK: ^Berserk
+	Inherits@Lights: ^ScrinLightsMedium
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Valued:
@@ -723,12 +840,9 @@ LACE:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 48
-		Offset: -50,0,0
+		Offset: -300,0,28
 	Hovers:
 		BobDistance: -25
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
 	Armament@PRIMARY:
 		Weapon: LaceratorShards
 		LocalOffset: 0,50,320, 0,-50,320
@@ -741,7 +855,8 @@ LACE:
 	IgnoresDisguise:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-
+	RenderSprites:
+		PlayerPalette: playerra2
 LACE.PLD:
 	Inherits: LACE
 	Inherits@PLD: ^PointLaserDefenseSystem
@@ -784,6 +899,7 @@ INTL:
 	Inherits: ^HoverVehicle
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiInfantry
+	Inherits@Lights: ^ScrinLightsMedium
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Valued:
@@ -847,7 +963,8 @@ INTL:
 	WithCargoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
-
+	RenderSprites:
+		PlayerPalette: playerra2
 INTL.AA:
 	Inherits: INTL
 	Inherits: ^PrioAntiLightAA
@@ -920,12 +1037,10 @@ CORR:
 		Prerequisites: vehicles.upgraded
 	WithMoveAnimation:
 		ValidMovementTypes: Horizontal, Vertical, Turn
-	GrantConditionOnFaction@TRAVELERSPEED:
-		Condition: travelerspeed
-		Factions: traveler
-	SpeedMultiplier@TRAVELERSPEED:
-		RequiresCondition: travelerspeed
-		Modifier: 115
+	WithAttackAnimation:
+		Sequence: shoot
+	RenderSprites:
+		PlayerPalette: overlayplayertd
 
 CORR.Area:
 	Inherits: CORR
@@ -956,6 +1071,7 @@ CORR.Area:
 		RevokeDelay: 20
 		RevokeOnNewTarget: False
 		RevokeAll: True
+	-WithAttackAnimation:
 
 CORR.Range:
 	Inherits: CORR
@@ -976,6 +1092,7 @@ LCHR:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiLight
 	Inherits@SLOWCRUSH: ^SlowedByCrushing
+	Inherits@Lights: ^ScrinLightsMedium
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Valued:
@@ -1009,8 +1126,8 @@ LCHR:
 		FacingTolerance: 0
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	WithMoveAnimation:
-		ValidMovementTypes: Horizontal, Vertical, Turn
+	RenderSprites:
+		PlayerPalette: playerra2
 	ConvertsDamageToHealth:
 		DamagePercentConverted: 20
 	Explodes:
@@ -1098,6 +1215,7 @@ DEVO:
 	Inherits: ^HoverVehicle
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavy
+	Inherits@Lights: ^ScrinLightsBig
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 135
@@ -1126,12 +1244,12 @@ DEVO:
 		Range: 4c0
 	Armament:
 		Weapon: DevourerLaser
-		LocalOffset: 850,0,208
+		LocalOffset: 880,0,198
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 	TurretedFloating:
 		TurnSpeed: 64
-		Offset: 0,0,0
+		Offset: -10,0,40
 	AttackTurreted:
 		TargetFrozenActors: True
 		PauseOnCondition: empdisable || being-warped
@@ -1144,7 +1262,8 @@ DEVO:
 	ProductionCostMultiplier@REAPBONUS:
 		Multiplier: 90
 		Prerequisites: vehicles.reaper
-
+	RenderSprites:
+		PlayerPalette: playerra2
 DEVO.acid:
 	Inherits: DEVO
 	Inherits: ^PrioAntiReflector
@@ -1460,7 +1579,8 @@ TPOD:
 	SpeedMultiplier@TRAVELERSPEED:
 		RequiresCondition: travelerspeed
 		Modifier: 115
-
+	RenderSprites:
+		PlayerPalette: playerra2
 TPOD.chain:
 	Inherits: TPOD
 	Buildable:
@@ -1537,8 +1657,6 @@ RPTP:
 	Inherits: TPOD
 	Buildable:
 		Prerequisites: scrt, ~vehicles.reaper, ~!commander_tree.reaper.range, ~!commander_tree.reaper.acid
-	RenderSprites:
-		PlayerPalette: overlayplayerscrin
 	Valued:
 		Cost: 2200
 	Tooltip:
@@ -1675,6 +1793,113 @@ SMCV:
 	Hovers:
 		BobDistance: -25
 
+LTPOD:
+	Inherits: ^Tank
+	Inherits: ^BiologicalDriver
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^PrioAntiLightAA
+	Inherits@BERSERK: ^Berserk
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 45
+		Prerequisites: wsph, ~vehicles.scrin, radar
+		Description: Light assault walker.\n  Strong vs Infantry, Aircraft\n  Weak vs Tanks
+		IconPalette: chrome
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Light Tripod
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 50000
+	Mobile:
+		Speed: 105
+		TurnSpeed: 16
+		PauseOnCondition: being-captured || empdisable || being-warped || driver-dead
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Armament@PRIMARY:
+		Weapon: LTTripodLaser
+		LocalOffset: 450,390,1200, 450,-390,1200
+		MuzzleSequence: muzzle
+		MuzzlePalette: scrin
+	WithMuzzleOverlay:
+	AttackFrontal:
+		FacingTolerance: 40
+		PauseOnCondition: empdisable || being-warped
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	WithMoveAnimation:
+		ValidMovementTypes: Horizontal, Vertical, Turn
+	WithAttackAnimation:
+		Sequence: shoot
+	RenderSprites:
+		PlayerPalette: playerts
+	Carryable:
+		LocalOffset: 0,0,700
+STPOD:
+	Inherits: ^Tank
+	Inherits: ^BiologicalDriver
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^PrioAntiLightAA
+	Inherits@BERSERK: ^Berserk
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 45
+		Prerequisites: wsph, ~vehicles.scrin, radar
+		Description: Light assault walker.\n  Strong vs Infantry, Aircraft\n  Weak vs Tanks
+		IconPalette: chrome
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Strider Tripod
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 6000
+	Mobile:
+		Locomotor: Amphibious
+		Speed: 100
+		TurnSpeed: 16
+		PauseOnCondition: being-captured || empdisable || being-warped || driver-dead
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Armament@PRIMARY:
+		Weapon: TripodDiskGrenade
+		LocalOffset: 450,390,1200, 450,-390,1200
+		MuzzleSequence: muzzle
+		MuzzlePalette: scrin
+	WithMuzzleOverlay:
+	AttackFrontal:
+		FacingTolerance: 40
+		PauseOnCondition: empdisable || being-warped
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	GrantConditionOnTerrain:
+		TerrainTypes: Water
+		Condition: onwater
+	WithMoveAnimation:
+		ValidMovementTypes: Horizontal, Vertical, Turn
+	LeavesTrails:
+		Image: twake
+		Palette: effect
+		TerrainTypes: Water
+		TrailWhileStationary: true
+		StationaryInterval: 18
+		MovingInterval: 6
+	RenderSprites:
+		PlayerPalette: playerts
+	Carryable:
+		LocalOffset: 0,0,700
 #
 # ---- Aircraft
 #
@@ -1768,7 +1993,8 @@ STMR:
 	-EjectOnDeath:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
-
+	RenderSprites:
+		PlayerPalette: playerra2
 STMR.hunter:
 	Inherits: STMR
 	-AttackMove:
@@ -2061,7 +2287,8 @@ DEVA:
 		Delay: 25
 		StartIfBelow: 75
 		DamageCooldown: 150
-
+	RenderSprites:
+		PlayerPalette: playerra2
 DEVA.Shards:
 	Inherits: DEVA
 	Inherits: ^PrioAntiHeavy
@@ -2179,7 +2406,8 @@ PAC:
 		Delay: 25
 		StartIfBelow: 75
 		DamageCooldown: 150
-
+	RenderSprites:
+		PlayerPalette: playerra2
 PAC.suicide:
 	Inherits: PAC
 	Inherits: ^PrioAntiLight
@@ -2370,7 +2598,8 @@ INVA:
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
-
+	RenderSprites:
+		PlayerPalette: playerra2
 INVA.support:
 	Inherits: ^Plane
 	Valued:
@@ -2664,7 +2893,7 @@ SEEK.Husk:
 		IntoActor: seek
 	RenderSprites:
 		Image: seek.destroyed
-		PlayerPalette: overlayplayerscrin
+		PlayerPalette: playerra2
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129

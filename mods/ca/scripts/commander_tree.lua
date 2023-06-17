@@ -20,9 +20,9 @@ elseif StartingPoints == "normal" then
 elseif StartingPoints == "later" then
 	PointsPerRank = { 3, 2, 2, 2, 3 }
 elseif StartingPoints == "toomany" then
-	PointsPerRank = { 12, 1, 1, 1, 2 }
+	PointsPerRank = { 12, 2, 2, 2, 3 }
 elseif StartingPoints == "all" then
-	PointsPerRank = { 100, 1, 1, 1, 2 }
+	PointsPerRank = { 100, 2, 2, 2, 3 }
 end
 
 PointActorExists =

@@ -1,0 +1,212 @@
+
+SWBanthaVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: swbanthasound,swbanthasound
+		Action: swbanthar,swbanthar
+		Die: swtuskdie1,swtuskdie2
+		Burned: swtuskdie1,swtuskdie2
+		Zapped: swtuskdie1,swtuskdie2
+		Poisoned: swtuskdie1,swtuskdie2
+
+SWDroidInfantryVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_d_b1_sel2, sw_d_b1_sel1, sw_d_b1_sel3, sw_d_b1_sel4, sw_d_b1_sel5
+		Action: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, swdroidwalk
+		Move: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, swdroidwalk
+		Attack: sw_d_b1_attack1, sw_d_b1_attack2, sw_d_b1_attack3, sw_d_b1_attack4, sw_d_b1_attack5, sw_d_b1_attack6, sw_d_b1_attack7
+		Die: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+		Burned: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+		Zapped: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+		Poisoned: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+
+SWDroidVehicleLightVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_d_b1_sel2, sw_d_b1_sel1, sw_d_b1_sel3, sw_d_b1_sel4, sw_d_b1_l_sel1
+		Action: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, sw_d_b1_l_mov1
+		Move: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, sw_d_b1_l_mov1
+		Attack: sw_d_b1_attack1, sw_d_b1_attack2, sw_d_b1_attack3
+		Die: swdroiddeath2, swdroiddeath3
+		Burned: swdroiddeath2, swdroiddeath3
+		Zapped: swdroiddeath2, swdroiddeath3
+		Poisoned: swdroiddeath2, swdroiddeath3
+
+SWDroidVehicleHvyVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_d_b1_sel2, sw_d_b1_sel1, sw_d_b1_sel3, sw_d_b1_sel4
+		Action: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1
+		Move: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1
+		Attack: sw_d_b1_attack1, sw_d_b1_attack2, sw_d_b1_attack3
+		Die: swdroiddeath2, swdroiddeath3
+		Burned: swdroiddeath2, swdroiddeath3
+		Zapped: swdroiddeath2, swdroiddeath3
+		Poisoned: swdroiddeath2, swdroiddeath3
+
+SWDroidTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_d_b1_sel2, sw_d_b1_sel1, sw_d_b1_sel3, sw_d_b1_sel4, sw_d_tank_sel1, sw_d_tank_sel2
+		Action: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, sw_d_tank_mov1, sw_d_tank_mov2
+		Move: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, sw_d_tank_mov1, sw_d_tank_mov2
+		Attack: sw_d_b1_attack1, sw_d_b1_attack2, sw_d_b1_attack3, sw_d_tank_mov1, sw_d_tank_mov2
+		Die: swdroiddeath2, swdroiddeath3
+		Burned: swdroiddeath2, swdroiddeath3
+		Zapped: swdroiddeath2, swdroiddeath3
+		Poisoned: swdroiddeath2, swdroiddeath3
+
+SWDroidInfantryRocketVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_d_b1_sel2, sw_d_b1_sel1, sw_d_b1_sel3, sw_d_b1_sel4, sw_d_b1_m_sel, sw_d_b1_m_sel2, sw_d_b1_m_sel3
+		Action: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, sw_d_b1_m_mov, sw_d_b1_m_mov2
+		Move: sw_d_b1_roger, sw_d_b1_roger2, sw_d_b1_mov1, sw_d_b1_m_mov, sw_d_b1_m_mov2
+		Attack: sw_d_b1_attack1, sw_d_b1_attack2, sw_d_b1_attack3, sw_d_b1_m_atk
+		Die: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+		Burned: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+		Zapped: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+		Poisoned: swdroiddeath2, swdroiddeath3, sw_d_b1_die1
+
+SWDroidekaVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: swrogerroger3
+		Action: sw_droideka_roll
+		Die: swrogerroger3
+		Burned: swrogerroger3
+		Zapped: swrogerroger3
+		Poisoned: swrogerroger3
+		Attack: swrogerroger3
+		Move: sw_droideka_roll
+
+SWBigDroidVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: swrogerroger3
+		Action: swrogerroger3
+		Die: swrogerroger3
+		Burned: swrogerroger3
+		Zapped: swrogerroger3
+		Poisoned: swrogerroger3
+		Attack: swrogerroger3
+		Move: swrogerroger3
+
+SWTrooperVoice:
+	Voices:
+		Select: await1v01,readyv01,report1v01,yessir1v01,await1v03,readyv03,report1v03,yessir1v03
+		Action: acknov01,acknov03,affirm1v01,affirm1v03,noprobv01,noprobv03,ritawayv01,ritawayv03,rogerv01,rogerv03,ugotitv01,ugotitv03
+		Die: nuyell1,nuyell4,nuyell5,nuyell6,swwilhelm
+		Burned: yell1
+		Zapped: nuyell3,swwilhelm
+		Poisoned: nuyell12
+
+SWGreedoVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: swgreedosel3, swgreedosel2, swgreedosel1, swgreedosel4
+		Action: swgreedomov4, swgreedomov3, swgreedomov2, swgreedomov1
+		Die: swgreedodie
+		Burned: swgreedodie
+		Zapped: swgreedodie
+		Poisoned: swgreedodie
+
+SWTuskVoice:
+	Voices:
+		Select: swtusk1
+		Action: swtusk2
+		Die: swtuskdie1,swtuskdie2,swtuskdie1,swtuskdie2,swwilhelm
+		Burned: swtuskdie1,swtuskdie2,swtuskdie1,swtuskdie2,swwilhelm
+		Zapped: swtuskdie1,swtuskdie2,swtuskdie1,swtuskdie2,swwilhelm
+		Poisoned: swtuskdie1,swtuskdie2,swtuskdie1,swtuskdie2,swwilhelm
+
+SWMercenaryVoice:
+	Voices:
+		Select: swyeah1,swyes1,swyo1
+		Move: swcmon1,swonit1,swgotit1
+		Action: swcmon1,swonit1,swgotit1
+		Attack: swonit1,swgotit1,swnoprblm1,swbombit1
+		Demolish: swbombit1
+		Die: swramyell1
+		Burned: swramyell1
+		Zapped: swramyell1
+		Poisoned: swramyell1
+		Build: swrokroll1
+		Kill: swkeepem1,swlaugh1,swlefty1,swtuffguy1
+
+SWProbotVoice:
+	Voices:
+		Select: swdinoyes
+		Move: swdinomout
+		Action: swdinomout
+		Attack: swdinoyes
+		Die: psahit00
+		Burned: psahit00
+		Zapped: psahit00
+		Poisoned: psahit00
+
+SWR2Voice:
+	DefaultVariant: .wav
+	Voices:
+		Select: swr2s1,swr2s2
+		Action: swr2mov1,swr2mov2,swr2mov3,swr2mov4
+		Die: swr2die
+		Burned: swr2die
+		Zapped: swr2die
+		Poisoned: swr2die
+SWItsAtrapVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: itsatrapsel1,itsatrapsel2
+		Action: itsatrapmov1, itsatrapmov2
+		Unload: itsatrapsel1,itsatrapsel2
+
+
+SWATATVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_at_at_sel1, sw_at_at_sel2, sw_at_at_sel3, sw_at_at_sel4, sw_at_at_sel5
+		Action: sw_at_at_mov1, sw_at_at_mov2
+		Attack: sw_at_at_atk1, sw_at_at_atk2, sw_at_at_atk3, sw_at_at_atk4, sw_at_at_atk5, sw_at_at_atk6, sw_at_at_atk7
+		Move: sw_at_at_mov1, sw_at_at_mov2
+
+SWStormtrooperVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_e_trooper_sel1, sw_e_trooper_sel2, sw_e_trooper_sel3, sw_e_trooper_sel4, sw_e_trooper_sel5, sw_e_trooper_sel6, sw_e_trooper_sel7
+		Action: sw_e_trooper_walk, sw_e_trooper_mov1, sw_e_trooper_mov2
+		Move: sw_e_trooper_walk, sw_e_trooper_mov1, sw_e_trooper_mov2
+		Attack: sw_e_trooper_atk1, sw_e_trooper_atk2, sw_e_trooper_atk3, sw_e_trooper_atk4, sw_e_trooper_atk5, sw_e_trooper_atk6
+		Die: sw_e_trooper_die, sw_wilhelm, sw_lego_die1, sw_lego_die2, sw_e_trooper_die, sw_lego_die2
+		Burned: sw_e_trooper_die, sw_wilhelm, sw_lego_die1, sw_lego_die2, sw_e_trooper_die, sw_lego_die2
+		Zapped: sw_e_trooper_die, sw_wilhelm, sw_lego_die1, sw_lego_die2, sw_e_trooper_die, sw_lego_die2
+		Poisoned: sw_e_trooper_die, sw_wilhelm, sw_lego_die1, sw_lego_die2, sw_e_trooper_die, sw_lego_die2
+
+SWRebelTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_r_tank_sel1, sw_r_tank_sel2, sw_r_tank_sel3, sw_r_tank_sel4, sw_r_tank_sel5
+		Action: sw_r_tank_mov1
+		Attack: sw_r_tank_atk1, sw_r_tank_atk2, sw_r_tank_atk3, sw_r_tank_atk4, sw_r_tank_atk5, sw_r_tank_atk6
+		Move: sw_r_tank_mov1
+
+SWRebelHeavyTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_r_hvytnk_sel1, sw_r_hvytnk_sel2, sw_r_hvytnk_sel3, sw_r_hvytnk_sel4
+		Action: sw_r_hvytnk_move
+		Attack: sw_r_hvytnk_atk1, sw_r_hvytnk_atk2, sw_r_hvytnk_atk3, sw_r_hvytnk_atk4, sw_r_hvytnk_atk5
+		Move: sw_r_hvytnk_move
+
+SWRebelTrooperVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sw_r_trooper_sel1, sw_r_trooper_sel2, sw_r_trooper_sel3, sw_r_trooper_sel4, sw_r_trooper_sel5, sw_r_trooper_sel6, sw_r_trooper_sel7
+		Action: sw_r_trooper_mov1, sw_r_trooper_mov2, sw_r_trooper_mov3, sw_r_trooper_mov4
+		Move: sw_r_trooper_mov1, sw_r_trooper_mov2, sw_r_trooper_mov3, sw_r_trooper_mov4
+		Attack: sw_r_trooper_atk1, sw_r_trooper_atk2
+		Die: sw_r_trooper_die, sw_wilhelm, sw_lego_die1, sw_r_trooper_die, sw_lego_die3
+		Burned: sw_r_trooper_die, sw_wilhelm, sw_lego_die1, sw_r_trooper_die, sw_lego_die3
+		Zapped: sw_r_trooper_die, sw_wilhelm, sw_lego_die1, sw_r_trooper_die, sw_lego_die3
+		Poisoned: sw_r_trooper_die, sw_wilhelm, sw_lego_die1, sw_r_trooper_die, sw_lego_die3
