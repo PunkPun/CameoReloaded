@@ -1,0 +1,77 @@
+^VehicleKKND:
+	Inherits: ^VehicleTD
+	RenderSprites:
+		PlayerPalette: kkndplayer
+
+^TankKKND:
+	Inherits: ^TankTD
+	RenderSprites:
+		PlayerPalette: kkndplayer
+
+survivors_vehicle_4x4pickup:
+	Inherits: ^VehicleKKND
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 15
+		Prerequisites: weap, ~vehicles.survivors
+		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: 4x4 Pickup
+	Valued:
+		Cost: 400
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 90
+		TurnSpeed: 32
+	Turreted:
+		TurnSpeed: 80
+		Offset: -100,0,44
+	Armament:
+		Weapon: survivors_vehicle_4x4pickup
+		LocalOffset: 158,0,66
+		MuzzleSequence: muzzle
+		MuzzlePalette: kknd
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithSpriteTurret:
+	IgnoresDisguise:
+	WithMoveAnimation:
+	WithMuzzleOverlay:
+
+survivors_vehicle_allterrainvehicle:
+	Inherits: ^TankKKND
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 15
+		Prerequisites: weap, ~vehicles.survivors
+		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: All-Terrain Vehicle
+	Valued:
+		Cost: 600
+	Health:
+		HP: 100000
+	Mobile:
+		Speed: 70
+		TurnSpeed: 32
+	Turreted:
+		TurnSpeed: 80
+		Offset: -100,0,44
+	Armament:
+		Weapon: survivors_vehicle_allterrainvehicle
+		LocalOffset: 158,0,66
+		MuzzleSequence: muzzle
+		MuzzlePalette: kknd
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithSpriteTurret:
+	IgnoresDisguise:
+	WithMoveAnimation:
+	WithMuzzleOverlay:

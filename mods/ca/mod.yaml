@@ -5,7 +5,7 @@ Metadata:
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 	WindowTitle: OpenRA Combined Arms
 
-PackageFormats: Mix
+PackageFormats: Mix, LvlPackage
 
 Packages:
 	~^SupportDir|Content/ca
@@ -67,6 +67,13 @@ Packages:
 	ca|scripts
 	ca|audio/music
 	ca|bits/starcraft
+    ca|bits/kknd/sprites.lvl: kknd1
+    ca|bits/kknd/surv.slv: surv.slv
+    ca|bits/kknd/mute.slv: mute.slv
+    ca|bits/kknd/gamesprt.lpk: kknd2
+    ca|bits/kknd/surv.spk
+    ca|bits/kknd/mute.spk
+    ca|bits/kknd/robo.spk
 
 Translations:
 	ca|languages/en.ftl
@@ -130,7 +137,8 @@ Rules:
 	ca|rules/tibsun/aircraft.yaml
 	ca|rules/tibsun/commander-tree.yaml
 	ca|rules/starcraft/units.yaml
-
+	ca|rules/kknd/palettes.yaml
+	ca|rules/kknd/units.yaml
 
 Sequences:
 	ca|sequences/defaults.yaml
@@ -150,6 +158,7 @@ Sequences:
 	ca|sequences/starwars.yaml
 	ca|sequences/tibsun.yaml
 	ca|sequences/starcraft.yaml
+	ca|sequences/kknd.yaml
 
 ModelSequences:
 	ca|sequences/voxels.yaml
@@ -246,6 +255,7 @@ Weapons:
 	ca|rules/starwars/weapons.yaml
 	ca|rules/camea/weapons.yaml
 	ca|rules/tibsun/weapons.yaml
+	ca|rules/kknd/weapons.yaml
 
 Voices:
 	ca|audio/voices.yaml
@@ -336,7 +346,7 @@ SupportsMapsFrom: ca, ra
 
 SoundFormats: Aud, Wav, Mp3
 
-SpriteFormats: ShpD2, R8, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet
+SpriteFormats: ShpD2, R8, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet, Mobd
 
 SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 	TilesetExtensions:
@@ -357,8 +367,8 @@ VideoFormats: Vqa, Wsa
 TerrainFormat: DefaultTerrain
 
 AssetBrowser:
-	SpriteExtensions: .shp, .tmp, .tem, .win, .sno, .des, .int, .jun, .r8, .png
-	AudioExtensions: .aud, .wav, .v00, .v01, .v02, .v03, .var, .mp3
+	SpriteExtensions: .shp, .tmp, .tem, .win, .sno, .des, .int, .jun, .r8, .png, .mobd
+	AudioExtensions: .aud, .wav, .v00, .v01, .v02, .v03, .var, .mp3, .soun
 	VideoExtensions: .vqa, .wsa
 
 GameSpeeds:
