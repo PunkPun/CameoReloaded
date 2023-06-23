@@ -133,7 +133,10 @@
 	ProductionTimeMultiplier@hardbonus:
 		Multiplier: 96
 		Prerequisites: is-hard-ai
-
+^BotUnitManager:
+	GrantConditionOnBotOwner@BotCondition:
+		Condition: botplayer
+		Bots: naval, easy, brutal, hard, normal
 ^BotDefenseProductionBonus:
 	ProductionTimeMultiplier@brutalbonus:
 		Multiplier: 80

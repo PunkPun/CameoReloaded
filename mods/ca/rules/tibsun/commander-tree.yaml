@@ -1,3 +1,19 @@
+commander_tree.tsgdi.keeper:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Keeper
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: reserve vehicles that appear when your base is attacked, are used for defense and as a countermeasure in case of emergency they are equivalent to a light tank, without much more purpose
+	RenderSprites:
+		Image: tskeeper
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tskeeper
+
 commander_tree.forgotten.doctrine.gdi:
 	Inherits: ^default.commander_tree_item
 	Tooltip:

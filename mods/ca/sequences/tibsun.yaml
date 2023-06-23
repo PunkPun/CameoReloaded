@@ -308,8 +308,11 @@ explosion:
 		Scale: 1.3
 	tsionring2: tsmempfx
 		Tick: 100
-		IgnoreWorldTint: False
 		Scale: 1.3
+	tsionringsmall: tsring1
+		ZRamp: 1
+		Tick: 60
+		Scale: 0.7
 icon:
 	tsclustermissile: tsmltiicon
 	tschemmissile: tschemicon
@@ -532,6 +535,27 @@ tsdbrislg:
 tstorpedo:
 	idle:
 		Length: *
+		ZOffset: 1023
+		Offset: 0, 0, 8
+		IgnoreWorldTint: True
+tscanister:
+	idle:
+		Length: *
+		ZOffset: 1023
+		Offset: 0, 0, 8
+		IgnoreWorldTint: True
+tsbomb:
+	idle:
+		Scale: 1.0
+		Length: *
+		ZOffset: 1023
+		Offset: 0, 0, 8
+		IgnoreWorldTint: True
+
+tsionprojectile:
+	idle: tsring1
+		Length: 2
+		Scale: 0.5
 		ZOffset: 1023
 		Offset: 0, 0, 8
 		IgnoreWorldTint: True
@@ -1884,6 +1908,128 @@ tssteamchurch:
 	icon: tshandicon
 		Offset: 0, 0
 
+gasilo.gdi:
+	Defaults: gtsilo
+		Offset: 0, -24, 24
+		UseTilesetCode: true
+		DepthSprite: isodepth.shp
+	idle: gtsilo_a
+	damaged-idle: gtsilo_a
+		Start: 4
+	stages: gtsilo_a
+		Length: 4
+	damaged-stages: gtsilo_a
+		Start: 4
+		Length: 4
+	idle-underlay:
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-underlay:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	dead:
+		Start: 2
+		ShadowStart: 5
+		ZOffset: -512
+		Tick: 400
+	idle-lights-bright: gtsilo_b
+		Length: 16
+		Tick: 120
+		IgnoreWorldTint: True
+	damaged-idle-lights-bright: gtsilo_b
+		Start: 16
+		Length: 16
+		Tick: 120
+		IgnoreWorldTint: True
+	make: gtsilomk
+		Length: 18
+		ShadowStart: 20
+	emp-overlay: emp_fx01
+		Length: *
+		Offset: 0, 0, 25
+		UseTilesetCode: false
+		ZOffset: 512
+		BlendMode: Additive
+		IgnoreWorldTint: True
+		-DepthSprite:
+	icon: sidebar-gdi|siloicon
+		Offset: 0, 0
+		UseTilesetCode: false
+		-DepthSprite:
+
+tsgtsilo.nod:
+	Defaults: tsgtsilo
+		Offset: 0, -24, 24
+	idle: tsgtsilo_a
+	damaged-idle: tsgtsilo_a
+		Start: 4
+	stages: tsgtsilo_a
+		Length: 4
+	damaged-stages: tsgtsilo_a
+		Start: 4
+		Length: 4
+	idle-underlay:
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-underlay:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	dead:
+		Start: 2
+		ShadowStart: 5
+		ZOffset: -512
+		Tick: 400
+	idle-lights-bright: tsgtsilo_b
+		Length: 16
+		Tick: 120
+	damaged-idle-lights-bright: tsgtsilo_b
+		Start: 16
+		Length: 16
+		Tick: 120
+	make: tsgtsilomk
+		Length: 18
+		ShadowStart: 20
+	icon: tssiloicon
+		Offset: 0, 0
+		UseTilesetCode: false
+tsgtsilo.gdi:
+	Defaults: tsGTSILO2
+		Offset: 0, -24, 24
+	idle: tsGTSILO2_A
+	damaged-idle: tsGTSILO2_A
+		Start: 4
+	stages: tsGTSILO2_A
+		Length: 4
+	damaged-stages: tsGTSILO2_A
+		Start: 4
+		Length: 4
+	idle-underlay:
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-underlay:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	dead:
+		Start: 2
+		ShadowStart: 5
+		ZOffset: -512
+		Tick: 400
+	idle-lights-bright: tsGTSILO2_B
+		Length: 16
+		Tick: 120
+	damaged-idle-lights-bright: tsGTSILO2_B
+		Start: 16
+		Length: 16
+		Tick: 120
+	make: tsGTSILO2MK
+		Length: 41
+		ShadowStart: 41
+	icon: tssiloicong
+		Offset: 0, 0
+		UseTilesetCode: false
 ###################################################
 #               Defense
 ###################################################
@@ -2084,9 +2230,13 @@ tsntsam:
 		UseTilesetCode: false
 
 tsgtctwr:
+	Inherits: ^StructureOverlays
 	Defaults:
 		Offset: 0, -12, 12
+		Scale: 1.2
 	idle:
+		ShadowStart: 3
+	invisible:
 		ShadowStart: 3
 	damaged-idle:
 		Start: 1
@@ -2095,10 +2245,10 @@ tsgtctwr:
 		Start: 2
 		ShadowStart: 5
 		Tick: 400
-	idle-lights: gtctwr_a
+	idle-lights: tsgtctwr_a
 		Length: 6
 		Tick: 200
-	damaged-idle-lights: gtctwr_a
+	damaged-idle-lights: tsgtctwr_a
 		Length: 6
 		Tick: 200
 	make: tsgtctwrmk
@@ -2113,9 +2263,17 @@ tsgtctwr:
 		Facings: 32
 	icon: tstowricon
 		Offset: 0, 0
-
+	muzzle-rpg: gunfire2
+		Length: 2
+		IgnoreWorldTint: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
 tsgtvulc:
 	place: tsgtctwr_b
+		Offset: 0, -12, 12
+		Start: 28
+	idle: tsgtctwr_b
 		Offset: 0, -12, 12
 		Start: 28
 	icon: tstwr1icon
@@ -2124,10 +2282,16 @@ tsgtrock:
 	place: tsgtctwr_c
 		Offset: 0, -12, 12
 		Start: 28
+	idle: tsgtctwr_c
+		Offset: 0, -12, 12
+		Start: 28
 	icon: tstwr2icon
 
 tsgtcsam:
 	place: tsgtctwr_d
+		Offset: 0, -12, 12
+		Start: 28
+	idle: tsgtctwr_d
 		Offset: 0, -12, 12
 		Start: 28
 	icon: tstwr3icon
@@ -2135,105 +2299,28 @@ tsgtcsam:
 ###################################################
 #               Infantry
 ###################################################
+#               Infantry GDI
 tse1.gdi:
 	Inherits: ^BasicInfantryTibsun
 	Inherits@attack: ^BasicInfantryAttackTibsun
 	Defaults: tse1
 	icon: tse1gicon
-
-tse1.nod:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsaltnode1
-	icon: tse1nicon
-tse1.nod2:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsnode1_2
-	icon: tse1nicon
-tse1.pilot.nod:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsnodpilot
-	icon: tse1nicon
-tshgrunt:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tshgrunt
-	icon: tshgrunticon
-tsmassn:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsmassn
-	icon: tsmassicon
-tssplntcl1:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tssplntcl1
-	icon: tsmassicon
 tse2:
 	Inherits: ^BasicInfantryTibsun
 	Inherits@attack: ^BasicInfantryAttackTibsun
 	icon: tse2icon
 
-tse3:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	icon: tse3icon
-
-tse3.nod2:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsalte3
-	icon: tse3icon
-tse3.nod3:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsalte3_2
-	icon: tse3icon
 tsengineer.gdi:
 	Inherits: ^BasicInfantryTibsun
 	Defaults: tsengineer
 	icon: tsgengnicon
 
-tsengineer.nod:
-	Inherits: ^BasicInfantryTibsun
-	Defaults: tsaltengi
-	icon: tsnengnicon
-tsengineer.nod2:
-	Inherits: ^BasicInfantryTibsun
-	Defaults: tsnodengineer
-	icon: tsnengnicon
-tslasgunner:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsnodheavy
-	icon: tslasgunnericon
 tsheavi:
 	Inherits: ^BasicInfantryTibsun
 	Inherits@attack: ^BasicInfantryAttackTibsun
 	Defaults: tsheavi
 	icon: tsweaticon
-tshgunner:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsnodhgunner
-	icon: tshgunnericon
-tsnodflame:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsnodflame
-	icon: tsnodflameicon
-tsbhand:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsbhand
-	icon: tsbhandico
-tselitcadre:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tselitcadre
-	icon: tselitcadrecam
+
 tsgcmdo:
 	Inherits: ^BasicInfantryTibsun
 	Inherits@attack: ^BasicInfantryAttackTibsun
@@ -2346,11 +2433,550 @@ tsmedic:
 		Length: 15
 		ShadowStart: 455
 	icon: tsmediicon
-tsmedic.nod:
-	Inherits: tsmedic
-	Defaults: tsnodmedic
-	icon: tsmediicon
+#               Infantry Nod
+tse1.nod:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsaltnode1
+	icon: tse1nicon
+tse1.nod2:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsnode1_2
+	icon: tse1nicon
+tse1.pilot.nod:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsnodpilot
+	icon: tse1nicon
+tse3:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	icon: tse3icon
 
+tse3.nod2:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsalte3
+	icon: tse3icon
+tse3.nod3:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsalte3_2
+	icon: tse3icon
+tsengineer.nod:
+	Inherits: ^BasicInfantryTibsun
+	Defaults: tsaltengi
+	icon: tsnengnicon
+tsengineer.nod2:
+	Inherits: ^BasicInfantryTibsun
+	Defaults: tsnodengineer
+	icon: tsnengnicon
+tshgunner:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsnodhgunner
+	icon: tshgunnericon
+tsnodflame:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsnodflame
+	icon: tsnodflameicon
+tsbhand:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsbhand
+	icon: tsbhandico
+tselitcadre:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tselitcadre
+	icon: tselitcadrecam
+#               Infantry Forgotten
+tsmhijack:
+	Inherits: ^BasicInfantryTibsun
+	icon: tshjack1icon
+
+tschamspy:
+	Inherits: ^BasicInfantryTibsun
+	icon: tschamicon
+
+tsmutant:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	icon: tsmut1icon
+
+tsmwmn:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	icon: tsmwmn1icon
+
+tsmutant3:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	icon: tsmserg1icon
+
+tsoxanna:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+tsshotmut:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsoxanna
+	icon: tsshotmuticon
+tsumagon:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	icon: tsumagicon
+
+tsghost:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	icon: tsgosticon
+
+tsmutciv4:
+	Inherits: tsciv1
+tsweedguy:
+	Defaults: tsweed
+		Tick: 80
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand:
+		Facings: 8
+		ShadowStart: 202
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		ShadowStart: 210
+	attack:
+		Start: 56
+		Facings: 8
+		ShadowStart: 258
+	prone-attack:
+		Start: 64
+		Facings: 8
+		Stride: 6
+		ShadowStart: 288
+	standup:
+		Start: 112
+		Length: 2
+		Facings: 8
+		ShadowStart: 314
+	prone-run:
+		Start: 64
+		Length: 6
+		Facings: 8
+		ShadowStart: 288
+	prone-stand:
+		Start: 64
+		Facings: 8
+		Stride: 6
+		ShadowStart: 288
+	idle1:
+		Start: 128
+		Length: 8
+		ShadowStart: 330
+	idle2:
+		Start: 136
+		Length: 16
+		ShadowStart: 338
+	die1:
+		Start: 152
+		Length: 8
+		ShadowStart: 354
+	die2:
+		Start: 160
+		Length: 6
+		ShadowStart: 362
+	die4:
+		Start: 166
+		Length: 11
+		ShadowStart: 368
+	die5:
+		Start: 177
+		Length: 20
+		ShadowStart: 379
+	die3: tss_bang34
+		Length: *
+	die6: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die-crushed:
+		Start: 174
+		Length: 3
+		ShadowStart: 376
+		Tick: 1000
+	die7: tss_bang34
+		Length: *
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tsweaticon
+tscengie:
+	Defaults: tscengie5050
+		Tick: 80
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	attack:
+		Start: 134
+		Facings: 8
+		Length: 6
+	prone-attack:
+		Start: 134
+		Facings: 8
+		Length: 6
+	standup:
+		Facings: 8
+	prone-run:
+		Start: 56
+		Length: 6
+		Facings: 8
+	prone-stand:
+		Start: 56
+		Facings: 8
+		Stride: 6
+	idle1:
+		Start: 230
+		Length: 6
+	idle2:
+		Start: 230
+		Length: 6
+	die1:
+		Start: 104
+		Length: 15
+	die2:
+		Start: 104
+		Length: 15
+	die4:
+		Start: 104
+		Length: 15
+	die5:
+		Start: 104
+		Length: 15
+	die3: tss_bang34
+		Length: *
+	die6: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die10:
+		Start: 104
+		Length: 15
+	die11:
+		Start: 104
+		Length: 15
+	die-crushed:
+		Start: 104
+		Length: 15
+	die7: tss_bang34
+		Length: *
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tscengieicon
+tsmutant4:
+	Defaults: tsmutant4
+		Tick: 80
+		Offset: 0, 0, 16
+		Scale: 1.1
+	stand:
+		Facings: 8
+		ShadowStart: 368
+	run:
+		Start: 8
+		Length: 10
+		Facings: 8
+		ShadowStart: 376
+	attack:
+		Start: 128
+		Length: 10
+		Facings: 8
+		ShadowStart: 496
+	prone-attack:
+		Start: 128
+		Length: 10
+		Facings: 8
+		ShadowStart: 496
+	standup:
+		Start: 112
+		Length: 2
+		Facings: 8
+		ShadowStart: 314
+	prone-run:
+		Start: 268
+		Length: 10
+		Facings: 8
+		ShadowStart: 536
+	prone-stand:
+		Start: 268
+		Facings: 8
+		Stride: 10
+		ShadowStart: 536
+	idle1:
+		Start: 88
+		Length: 20
+		ShadowStart: 456
+	idle2:
+		Start: 108
+		Length: 20
+		ShadowStart: 476
+	die1:
+		Start: 208
+		Length: 8
+		ShadowStart: 576
+	die2:
+		Start: 228
+		Length: 20
+		ShadowStart: 596
+	die4:
+		Start: 208
+		Length: 20
+		ShadowStart: 576
+	die5:
+		Start: 208
+		Length: 20
+		ShadowStart: 576
+	die3: tss_bang34
+		Length: *
+	die6: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die10:
+		Start: 208
+		Length: 20
+		ShadowStart: 576
+	die11:
+		Start: 208
+		Length: 20
+		ShadowStart: 576
+	die-crushed:
+		Start: 228
+		Length: 20
+		ShadowStart: 596
+	die7: tss_bang34
+		Length: *
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tsmutcicon
+
+tsdoggie:
+	Defaults:
+		Tick: 80
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand:
+		Facings: 8
+		ShadowStart: 119
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		ShadowStart: 127
+	attack:
+		Start: 56
+		Length: 4
+		Facings: 8
+		ShadowStart: 175
+	laydown:
+		Start: 88
+		Length: 2
+		ShadowStart: 207
+	hide:
+		Start: 90
+		ShadowStart: 209
+	idle1:
+		Start: 91
+		Length: 8
+		ShadowStart: 210
+	die:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	dead:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	death:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die-twirling:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die-flying:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die-exploding: tss_bang34
+		Length: *
+	die-crushed:
+		Start: 105
+		Length: 4
+		ShadowStart: 224
+		Tick: 800
+		ZOffset: -511
+	die-burning:
+		Start: 109
+		Length: 10
+		ShadowStart: 228
+		IgnoreWorldTint: True
+	die-melting:
+		Start: 109
+		Length: 10
+		ShadowStart: 228
+	emp-overlay: emp_fx01
+		Length: *
+		ZOffset: 512
+		BlendMode: Additive
+		IgnoreWorldTint: True
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tsfiend1icon
+tsdoggieblue:
+	Defaults:
+		Tick: 80
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand:
+		Facings: 8
+		ShadowStart: 119
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		ShadowStart: 127
+	attack:
+		Start: 56
+		Length: 4
+		Facings: 8
+		ShadowStart: 175
+	laydown:
+		Start: 88
+		Length: 2
+		ShadowStart: 207
+	hide:
+		Start: 90
+		ShadowStart: 209
+	idle1:
+		Start: 91
+		Length: 8
+		ShadowStart: 210
+	die:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	dead:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	death:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die-twirling:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die-flying:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die-exploding: tss_bang34
+		Length: *
+	die-crushed:
+		Start: 105
+		Length: 4
+		ShadowStart: 224
+		Tick: 800
+		ZOffset: -511
+	die-burning:
+		Start: 109
+		Length: 10
+		ShadowStart: 228
+		IgnoreWorldTint: True
+	die-melting:
+		Start: 109
+		Length: 10
+		ShadowStart: 228
+	emp-overlay: emp_fx01
+		Length: *
+		ZOffset: 512
+		BlendMode: Additive
+		IgnoreWorldTint: True
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tsfiend1icon
+#               Infantry CABAL
 tscyborg:
 	Inherits: ^CommonDeaths
 	Defaults:
@@ -3106,46 +3732,34 @@ tscyc2:
 		Start: 134
 		Length: 15
 		ShadowStart: 426
-tsmhijack:
+#               Infantry Civilian / Unused
+tshgrunt:
 	Inherits: ^BasicInfantryTibsun
-	icon: tshjack1icon
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tshgrunt
+	icon: tshgrunticon
+tsmassn:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsmassn
+	icon: tsmassicon
+tssplntcl1:
+	Inherits: ^BasicInfantryTibsun
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tssplntcl1
+	icon: tsmassicon
 
-tschamspy:
+tslasgunner:
 	Inherits: ^BasicInfantryTibsun
-	icon: tschamicon
+	Inherits@attack: ^BasicInfantryAttackTibsun
+	Defaults: tsnodheavy
+	icon: tslasgunnericon
 
-tsmutant:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	icon: tsmut1icon
+tsmedic.nod:
+	Inherits: tsmedic
+	Defaults: tsnodmedic
+	icon: tsmediicon
 
-tsmwmn:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	icon: tsmwmn1icon
-
-tsmutant3:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	icon: tsmserg1icon
-
-tsoxanna:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-tsshotmut:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsoxanna
-	icon: tsshotmuticon
-tsumagon:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	icon: tsumagicon
-
-tsghost:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	icon: tsgosticon
 
 tsciv1:
 	Inherits: ^BasicInfantryTibsun
@@ -3182,281 +3796,6 @@ tsciv2:
 
 tsciv3:
 	Inherits: tsciv1
-
-tsmutciv4:
-	Inherits: tsciv1
-tsweedguy:
-	Defaults: tsweed
-		Tick: 80
-		Offset: 0, 0, 16
-		Scale: 1.3
-	stand:
-		Facings: 8
-		ShadowStart: 202
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		ShadowStart: 210
-	attack:
-		Start: 56
-		Facings: 8
-		ShadowStart: 258
-	prone-attack:
-		Start: 64
-		Facings: 8
-		Stride: 6
-		ShadowStart: 288
-	standup:
-		Start: 112
-		Length: 2
-		Facings: 8
-		ShadowStart: 314
-	prone-run:
-		Start: 64
-		Length: 6
-		Facings: 8
-		ShadowStart: 288
-	prone-stand:
-		Start: 64
-		Facings: 8
-		Stride: 6
-		ShadowStart: 288
-	idle1:
-		Start: 128
-		Length: 8
-		ShadowStart: 330
-	idle2:
-		Start: 136
-		Length: 16
-		ShadowStart: 338
-	die1:
-		Start: 152
-		Length: 8
-		ShadowStart: 354
-	die2:
-		Start: 160
-		Length: 6
-		ShadowStart: 362
-	die4:
-		Start: 166
-		Length: 11
-		ShadowStart: 368
-	die5:
-		Start: 177
-		Length: 20
-		ShadowStart: 379
-	die3: tss_bang34
-		Length: *
-	die6: electro
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-	die8: chronozapTD
-		Length: *
-		BlendMode: Alpha
-	die9: poisonTD
-		Length: *
-	die-crushed:
-		Start: 174
-		Length: 3
-		ShadowStart: 376
-		Tick: 1000
-	die7: tss_bang34
-		Length: *
-	chrono-overlay: chronofade_small
-		Length: *
-		BlendMode: Additive
-		Offset: 0, 0
-		UseTilesetCode: false
-		ZOffset: 512
-		Tick: 80
-	mind-overlay: mindanim
-		Length: *
-		Tick: 200
-		BlendMode: Alpha
-		Offset: 0, 0
-	icon: tsweaticon
-tscengie:
-	Defaults: tscengie5050
-		Tick: 80
-		Offset: 0, 0, 16
-		Scale: 1.3
-	stand:
-		Facings: 8
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-	attack:
-		Start: 134
-		Facings: 8
-		Length: 6
-	prone-attack:
-		Start: 134
-		Facings: 8
-		Length: 6
-	standup:
-		Facings: 8
-	prone-run:
-		Start: 56
-		Length: 6
-		Facings: 8
-	prone-stand:
-		Start: 56
-		Facings: 8
-		Stride: 6
-	idle1:
-		Start: 230
-		Length: 6
-	idle2:
-		Start: 230
-		Length: 6
-	die1:
-		Start: 104
-		Length: 15
-	die2:
-		Start: 104
-		Length: 15
-	die4:
-		Start: 104
-		Length: 15
-	die5:
-		Start: 104
-		Length: 15
-	die3: tss_bang34
-		Length: *
-	die6: electro
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-	die8: chronozapTD
-		Length: *
-		BlendMode: Alpha
-	die9: poisonTD
-		Length: *
-	die10:
-		Start: 104
-		Length: 15
-	die11:
-		Start: 104
-		Length: 15
-	die-crushed:
-		Start: 104
-		Length: 15
-	die7: tss_bang34
-		Length: *
-	chrono-overlay: chronofade_small
-		Length: *
-		BlendMode: Additive
-		Offset: 0, 0
-		UseTilesetCode: false
-		ZOffset: 512
-		Tick: 80
-	mind-overlay: mindanim
-		Length: *
-		Tick: 200
-		BlendMode: Alpha
-		Offset: 0, 0
-	icon: tscengieicon
-tsmutant4:
-	Defaults: tsmutant4
-		Tick: 80
-		Offset: 0, 0, 16
-		Scale: 1.1
-	stand:
-		Facings: 8
-		ShadowStart: 368
-	run:
-		Start: 8
-		Length: 10
-		Facings: 8
-		ShadowStart: 376
-	attack:
-		Start: 128
-		Length: 10
-		Facings: 8
-		ShadowStart: 496
-	prone-attack:
-		Start: 128
-		Length: 10
-		Facings: 8
-		ShadowStart: 496
-	standup:
-		Start: 112
-		Length: 2
-		Facings: 8
-		ShadowStart: 314
-	prone-run:
-		Start: 268
-		Length: 10
-		Facings: 8
-		ShadowStart: 536
-	prone-stand:
-		Start: 268
-		Facings: 8
-		Stride: 10
-		ShadowStart: 536
-	idle1:
-		Start: 88
-		Length: 20
-		ShadowStart: 456
-	idle2:
-		Start: 108
-		Length: 20
-		ShadowStart: 476
-	die1:
-		Start: 208
-		Length: 8
-		ShadowStart: 576
-	die2:
-		Start: 228
-		Length: 20
-		ShadowStart: 596
-	die4:
-		Start: 208
-		Length: 20
-		ShadowStart: 576
-	die5:
-		Start: 208
-		Length: 20
-		ShadowStart: 576
-	die3: tss_bang34
-		Length: *
-	die6: electro
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-	die8: chronozapTD
-		Length: *
-		BlendMode: Alpha
-	die9: poisonTD
-		Length: *
-	die10:
-		Start: 208
-		Length: 20
-		ShadowStart: 576
-	die11:
-		Start: 208
-		Length: 20
-		ShadowStart: 576
-	die-crushed:
-		Start: 228
-		Length: 20
-		ShadowStart: 596
-	die7: tss_bang34
-		Length: *
-	chrono-overlay: chronofade_small
-		Length: *
-		BlendMode: Additive
-		Offset: 0, 0
-		UseTilesetCode: false
-		ZOffset: 512
-		Tick: 80
-	mind-overlay: mindanim
-		Length: *
-		Tick: 200
-		BlendMode: Alpha
-		Offset: 0, 0
-	icon: tsmutcicon
-
 tscygrl:
 	Defaults:
 		Tick: 75
@@ -3536,174 +3875,7 @@ tscygrl:
 	die7:
 		Start: 280
 		Length: 13
-tsdoggie:
-	Defaults:
-		Tick: 80
-		Offset: 0, 0, 16
-		Scale: 1.3
-	stand:
-		Facings: 8
-		ShadowStart: 119
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		ShadowStart: 127
-	attack:
-		Start: 56
-		Length: 4
-		Facings: 8
-		ShadowStart: 175
-	laydown:
-		Start: 88
-		Length: 2
-		ShadowStart: 207
-	hide:
-		Start: 90
-		ShadowStart: 209
-	idle1:
-		Start: 91
-		Length: 8
-		ShadowStart: 210
-	die:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	dead:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	death:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	die-twirling:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	die-flying:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	die-exploding: tss_bang34
-		Length: *
-	die-crushed:
-		Start: 105
-		Length: 4
-		ShadowStart: 224
-		Tick: 800
-		ZOffset: -511
-	die-burning:
-		Start: 109
-		Length: 10
-		ShadowStart: 228
-		IgnoreWorldTint: True
-	die-melting:
-		Start: 109
-		Length: 10
-		ShadowStart: 228
-	emp-overlay: emp_fx01
-		Length: *
-		ZOffset: 512
-		BlendMode: Additive
-		IgnoreWorldTint: True
-	chrono-overlay: chronofade_small
-		Length: *
-		BlendMode: Additive
-		Offset: 0, 0
-		UseTilesetCode: false
-		ZOffset: 512
-		Tick: 80
-	mind-overlay: mindanim
-		Length: *
-		Tick: 200
-		BlendMode: Alpha
-		Offset: 0, 0
-	icon: tsfiend1icon
-tsdoggieblue:
-	Defaults:
-		Tick: 80
-		Offset: 0, 0, 16
-		Scale: 1.3
-	stand:
-		Facings: 8
-		ShadowStart: 119
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		ShadowStart: 127
-	attack:
-		Start: 56
-		Length: 4
-		Facings: 8
-		ShadowStart: 175
-	laydown:
-		Start: 88
-		Length: 2
-		ShadowStart: 207
-	hide:
-		Start: 90
-		ShadowStart: 209
-	idle1:
-		Start: 91
-		Length: 8
-		ShadowStart: 210
-	die:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	dead:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	death:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	die-twirling:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	die-flying:
-		Start: 99
-		Length: 10
-		ShadowStart: 218
-	die-exploding: tss_bang34
-		Length: *
-	die-crushed:
-		Start: 105
-		Length: 4
-		ShadowStart: 224
-		Tick: 800
-		ZOffset: -511
-	die-burning:
-		Start: 109
-		Length: 10
-		ShadowStart: 228
-		IgnoreWorldTint: True
-	die-melting:
-		Start: 109
-		Length: 10
-		ShadowStart: 228
-	emp-overlay: emp_fx01
-		Length: *
-		ZOffset: 512
-		BlendMode: Additive
-		IgnoreWorldTint: True
-	chrono-overlay: chronofade_small
-		Length: *
-		BlendMode: Additive
-		Offset: 0, 0
-		UseTilesetCode: false
-		ZOffset: 512
-		Tick: 80
-	mind-overlay: mindanim
-		Length: *
-		Tick: 200
-		BlendMode: Alpha
-		Offset: 0, 0
-	icon: tsfiend1icon
+
 tsparasuar:
 	Defaults:
 		Tick: 80
@@ -3925,17 +4097,10 @@ tsfloater:
 ###################################################
 #               Vehicles
 ###################################################
+#               Vehicles GDI
 tsgghunt:
 	Inherits: ^VehicleOverlays
 	idle: tsgghunt
-		Length: 8
-		ShadowStart: 8
-		Scale: 1.2
-	icon: tsdetnicon
-
-tsnnhunt:
-	Inherits: ^VehicleOverlays
-	idle: tsnnhunt
 		Length: 8
 		ShadowStart: 8
 		Scale: 1.2
@@ -3949,13 +4114,6 @@ tsmcv.gdi:
 		Scale: 0.8
 	icon: tsgharvicon
 
-tsmcv.nod:
-	Inherits: tsharv.gdi
-	idle: tsnmcv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	icon: tsnharvicon
 tsfist.gdi:
 	Inherits: ^VehicleOverlays
 	idle: tsfist
@@ -3963,14 +4121,6 @@ tsfist.gdi:
 		UseClassicFacings: True
 		Scale: 0.8
 	icon: tsgharvicon
-
-tsfist.nod:
-	Inherits: ^VehicleOverlays
-	idle: tsnfist
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	icon: tsnharvicon
 
 tsharv.gdi:
 	Inherits: ^VehicleOverlays
@@ -3992,6 +4142,521 @@ tsharv.gdi:
 		Scale: 0.8
 	icon: tsgharvicon
 
+
+
+tssmech:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 232
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 136
+		Tick: 48
+	shoot:
+		Start: 104
+		Length: 4
+		Facings: -8
+		ShadowStart: 240
+		Tick: 80
+	shoot-muzzle:
+		Start: 104
+		Length: 4
+		Facings: -8
+		Tick: 80
+		IgnoreWorldTint: True
+	icon: tssmchicon
+tsbehemoth:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 106
+		Tick: 48
+	shoot:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+		Tick: 80
+	shoot-muzzle:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+		Tick: 80
+		IgnoreWorldTint: True
+	icon: tsbeheicon
+
+tsmmch:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Scale: 1.2
+	stand:
+		Facings: -8
+		Stride: 15
+		ShadowStart: 152
+		Offset: 0, 0, 12
+	walk:
+		Length: 15
+		Facings: -8
+		ShadowStart: 152
+		Offset: 0, 0, 12
+		Tick: 60
+	turret:
+		Start: 120
+		Facings: -32
+		Offset: 0, 0, 12
+	turret2: tsmmchbarl
+		Facings: 32
+		Offset: 0, -52, 11
+		Scale: 0.5
+	muzzle: gunfire2
+		Length: 2
+	icon: tsmmchicon
+tstitanne2:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Scale: 1.2
+	stand:
+		Facings: -8
+		Stride: 16
+		ShadowStart: 161
+		Offset: 0, 0, 12
+	walk:
+		Length: 16
+		Facings: -8
+		ShadowStart: 161
+		Offset: 0, 0, 12
+		Tick: 60
+	turret:
+		Start: 128
+		Facings: -32
+		Offset: 0, 0, 12
+	turret2: tsmmchbarl
+		Facings: 32
+		Offset: 0, -52, 11
+		Scale: 0.5
+	muzzle: gunfire2
+		Length: 2
+	icon: tsmmchicon
+tsmmch2:
+	Inherits: ^VehicleOverlays
+	Defaults: tsmmch
+		Scale: 1.2
+	stand:
+		Facings: -8
+		Stride: 15
+		ShadowStart: 152
+		Offset: 0, 0, 12
+	walk:
+		Length: 15
+		Facings: -8
+		ShadowStart: 152
+		Offset: 0, 0, 12
+		Tick: 60
+	turret:
+		Start: 120
+		Facings: -32
+		Offset: 0, 0, 12
+	turret2: tsmmchbarl2
+		Facings: 32
+		Offset: 0, -52, 11
+		Scale: 0.5
+	muzzle: gunfire2
+		Length: 2
+	icon: tsmmchicon
+
+tstriton:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Scale: 1.2
+	stand:
+		Facings: -8
+		Stride: 12
+		ShadowStart: 128
+		Offset: 0, 0, 12
+	walk:
+		Length: 12
+		Facings: -8
+		ShadowStart: 128
+		Offset: 0, 0, 12
+		Tick: 60
+	turret:
+		Start: 96
+		Facings: -32
+		Offset: 0, 0, 12
+	muzzle: gunfire2
+		Length: 2
+	icon: tstriticon
+tsapc:
+	Inherits: ^VehicleOverlays
+	idle: tsapc
+		Scale: 0.84
+		Facings: 32
+		UseClassicFacings: True
+	idle-water: tsapcw
+		Scale: 0.84
+		Facings: 32
+		UseClassicFacings: True
+	turret: ts2tnktur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.3
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	unload: tsapc
+		Scale: 0.84
+		Facings: 32
+		UseClassicFacings: True
+	icon: tsapcicon
+tshvr:
+	Inherits: ^VehicleOverlays
+	idle: tshvr
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	turret: tshvrtur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	muzzle: gunfire2
+		Length: 2
+	icon: tshovricon
+
+tsmmkii:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand: tsmmkii
+		Frames: 29,30,31,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
+		Facings: -32
+		ShadowStart: 768
+	walk: tsmmkii
+		Facings: -32
+		Length: 20
+ 		Frames: 612,613,614,615,616,617,618,,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467,468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611
+		Tick: 48
+	shoot: tsmmkii
+		Frames: 29,30,31,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
+		Facings: -32
+	shoot-muzzle: tsmmkii
+		Frames: 29,30,31,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
+		Facings: -32
+	muzzle2: lightbluelasermuzzle
+		Length: 3
+	muzzle1: gunfire2
+		Length: 5
+	muzzle3: minigun
+		Length: 6
+		Facings: 8
+		Scale: 2.0
+	icon: tshmecicon
+tssonic:
+	Inherits: ^VehicleOverlays
+	idle: tssonic
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	turret: tssonictur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.7
+	muzzle: gunfire2
+		Length: 2
+	icon: tssoniicon
+
+tsjugg:
+	Inherits: ^VehicleOverlays
+	icon: tsjuggicon
+	Defaults:
+		Scale: 1.35
+	idle: tsjugger
+		Facings: -8
+		Stride: 15
+		ShadowStart: 120
+		Offset: 0, 0, 12
+	walk: tsjugger
+		Length: 15
+		Facings: -8
+		ShadowStart: 120
+		Offset: 0, 0, 12
+		Tick: 60
+	turret: tsdjugg_a
+		Facings: 32
+		Offset: -4, 0, 12
+	barrel: tsjuggerbarl
+		Facings: 32
+		Offset: -4, 0, 12
+		Scale: 0.5
+	barrelup: tsjuggerbarlup
+		Facings: 32
+		Offset: -4, 0, 12
+		Scale: 0.5
+	idletur: tsdjugg
+		ShadowStart: 3
+		Offset: 0, -12, 12
+	damaged-idletur: tsdjugg
+		Start: 1
+		ShadowStart: 4
+		Offset: 0, -12, 12
+	make: tsdjuggmk
+		Length: 18
+		ShadowStart: 18
+		Offset: 0, -12, 12
+	muzzle: gunfire2
+		Length: 2
+
+tsmemp:
+	Inherits: ^VehicleOverlays
+	idle: tsmemp
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	icon: tsmempicon
+
+tspredator:
+	Inherits: ^VehicleOverlays
+	idle: tspredator
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	turret: tspredatortur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	muzzle: gunfire2
+		Length: 2
+	icon: ts2tnkicon
+tsprowler:
+	Inherits: ^VehicleOverlays
+	idle: tsprowler
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	turret: tsprowlertur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	muzzle: gunfire2
+		Length: 2
+	icon: ts2tnkicon
+
+tsprowler_twin:
+	Inherits: ^VehicleOverlays
+	idle: tsprowler
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	turret: tsprowlertur2
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	muzzle: gunfire2
+		Length: 2
+	icon: ts2tnkicon
+
+tskeeper:
+	Inherits: ^VehicleOverlays
+	idle: tskeeper
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	turret: tskeepertur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	muzzle: gunfire2
+		Length: 2
+	icon: ts1tnkicon
+tsionh:
+	Inherits: ^VehicleOverlays
+	idle: tsionh
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	turret: tsionhtur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	turretup: tsionhturup
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.68
+	muzzle: tsring1
+		Scale: 0.4
+		Length: 3
+	icon: ts2tnkicon
+
+
+tsjenng:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 216
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 120
+		Tick: 48
+	shoot:
+		Start: 104
+		Length: 2
+		Facings: -8
+		ShadowStart: 224
+		Tick: 80
+	shoot-muzzle:
+		Start: 104
+		Length: 2
+		Facings: -8
+		Tick: 80
+		IgnoreWorldTint: True
+	icon: tsjennicong
+tskesselbrutg:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	icon: tskessicong
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+tsbhawkg:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 120
+		Facings: -8
+		ShadowStart: 248
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 128
+		Tick: 48
+	shoot:
+		Start: 96
+		Length: 3
+		Facings: -8
+		ShadowStart: 224
+		Tick: 80
+	shoot-muzzle:
+		Start: 96
+		Length: 3
+		Facings: -8
+		Tick: 80
+		IgnoreWorldTint: True
+	icon: tsbhawkicong
+tsfireflyg:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	icon: tsfireicong
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+tscolog:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	icon: tscoloicong
+	muzzle: gunfire2
+		Length: 2
+tscolog:
+	Inherits: ^VehicleOverlays
+	icon: tscoloicong
+	Defaults: tscolog
+		Scale: 1.35
+	idle: tscolog
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk: tscolog
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	turret: tsdcolog_a
+		Facings: 32
+	idletur: tsdcolog
+		ShadowStart: 3
+	damaged-idletur: tsdcolog
+		ShadowStart: 3
+	make: tsdcologmk
+		Length: 25
+		ShadowStart: 25
+	muzzle: gunfire2
+		Length: 2
+#               Vehicles Nod
+tsnnhunt:
+	Inherits: ^VehicleOverlays
+	idle: tsnnhunt
+		Length: 8
+		ShadowStart: 8
+		Scale: 1.2
+	icon: tsdetnicon
+
+tsmcv.nod:
+	Inherits: tsharv.gdi
+	idle: tsnmcv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	icon: tsnharvicon
+tsfist.nod:
+	Inherits: ^VehicleOverlays
+	idle: tsnfist
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	icon: tsnharvicon
+
 tsharv.nod:
 	Inherits: ^VehicleOverlays
 	idle: tsharv
@@ -4011,74 +4676,6 @@ tsharv.nod:
 		UseClassicFacings: True
 		Scale: 0.8
 	icon: tsgharvicon
-
-tsharv.forgotten:
-	Inherits: ^VehicleOverlays
-	idle: tsmharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	harvest: tsmharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	dock: tsmharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	dock-loop: tsmharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	icon: tsmharvicon
-
-tsharv.cabal:
-	Inherits: ^VehicleOverlays
-	idle: tscharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	harvest: tscharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	dock: tscharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	dock-loop: tscharv
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	icon: tscharvicon
-
-tsreaper:
-	Inherits: ^VehicleOverlays
-	idle: tsreaper
-		Facings: -8
-		ShadowStart: 117
-		Scale: 1.3
-	stand: tsreaper
-		Facings: -8
-		ShadowStart: 117
-		Scale: 1.3
-	move: tsreaper
-		Start: 8
-		Length: 12
-		Facings: -8
-		ShadowStart: 125
-		Scale: 1.3
-	shoot: tsreaper
-		Facings: -8
-		ShadowStart: 117
-		Scale: 1.3
-	die: tsreaper
-		Start: 104
-		Length: 12
-		ShadowStart: 221
-		Scale: 1.3
-	icon: tsreapicon
-
 tsbggy:
 	Inherits: ^VehicleOverlays
 	idle: tsbggy
@@ -4163,6 +4760,157 @@ tsart2:
 	muzzle: gunfire2
 		Length: 2
 		IgnoreWorldTint: True
+
+tsrepair:
+	Inherits: ^VehicleOverlays
+	idle: tsrepair
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.7
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	unload: tsrepair
+		Facings: 32
+		UseClassicFacings: True
+	icon: tsrboticon
+
+tsjennn:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 216
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 120
+		Tick: 48
+	shoot:
+		Start: 104
+		Length: 2
+		Facings: -8
+		ShadowStart: 224
+		Tick: 80
+	shoot-muzzle:
+		Start: 104
+		Length: 2
+		Facings: -8
+		Tick: 80
+		IgnoreWorldTint: True
+	icon: tsjenniconn
+tskesselbrutn:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	icon: tskessiconn
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+tsbhawkn:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 120
+		Facings: -8
+		ShadowStart: 248
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 128
+		Tick: 48
+	shoot:
+		Start: 96
+		Length: 3
+		Facings: -8
+		ShadowStart: 224
+		Tick: 80
+	shoot-muzzle:
+		Start: 96
+		Length: 3
+		Facings: -8
+		Tick: 80
+		IgnoreWorldTint: True
+	icon: tsbhawkiconn
+tsfireflyn:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Offset: 0,0,8
+		Scale: 1.2
+	stand:
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk:
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	icon: tsfireiconn
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+tscolon:
+	Inherits: ^VehicleOverlays
+	icon: tscoloiconn
+	Defaults: tscolon
+		Scale: 1.35
+	idle: tscolon
+		Start: 96
+		Facings: -8
+		ShadowStart: 200
+	walk: tscolon
+		Facings: -8
+		Length: 12
+		ShadowStart: 104
+		Tick: 48
+	turret: tsdcolon_a
+		Facings: 32
+	idletur: tsdcolon
+		ShadowStart: 3
+	damaged-idletur: tsdcolon
+		ShadowStart: 3
+	make: tsdcolonmk
+		Length: 25
+		ShadowStart: 25
+	muzzle: gunfire2
+		Length: 2
+#               Vehicles Forgotten
+tsharv.forgotten:
+	Inherits: ^VehicleOverlays
+	idle: tsmharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	harvest: tsmharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	dock: tsmharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	dock-loop: tsmharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	icon: tsmharvicon
+
 
 ts1tnk:
 	Inherits: ^VehicleOverlays
@@ -4265,82 +5013,7 @@ tscatapult:
 		UseClassicFacings: True
 		Scale: 1.0
 	icon: tscatapulticon
-tshvrlazer:
-	Inherits: ^VehicleOverlays
-	idle: tshvrlazer
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	icon: tshvrlazericon
-ts23tnk:
-	Inherits: ^VehicleOverlays
-	idle: ts23tnk
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	turret: ts23tnktur
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	muzzle: gunfire2
-		Length: 2
-	icon: ts23tnkicon
-ts25tnk:
-	Inherits: ^VehicleOverlays
-	idle: ts25tnk
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	turret: ts25tnktur
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	muzzle: gunfire2
-		Length: 2
-	icon: ts25tnkicon
-tscorb:
-	Inherits: ^VehicleOverlays
-	idle: tscorb
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	icon: tscorbicon
-tsmorb:
-	Inherits: ^VehicleOverlays
-	idle: tsmorb
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	icon: tsmorbicon
 
-tsgorb:
-	Inherits: ^VehicleOverlays
-	idle: tsgorb
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	icon: tsgorbicon
-tsmonolith:
-	Inherits: ^VehicleOverlays
-	idle: tsmonolith
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	icon: tsmonolithicon
-
-tssentryd:
-	Inherits: ^VehicleOverlays
-	idle: tssentryd
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	turret: tssentrydtur
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 1.0
-	muzzle: gunfire2
-		Length: 2
-	icon: tssentrydicon
 tscarf:
 	Inherits: ^VehicleOverlays
 	idle: tscar
@@ -4480,276 +5153,135 @@ tspickf:
 	muzzle: gunfire2
 		Length: 2
 	icon: tspickficon
-tssmech:
+
+#               Vehicles CABAL
+tsharv.cabal:
 	Inherits: ^VehicleOverlays
-	Defaults:
-		Offset: 0,0,8
-		Scale: 1.2
-	stand:
-		Start: 96
+	idle: tscharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	harvest: tscharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	dock: tscharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	dock-loop: tscharv
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	icon: tscharvicon
+
+tsreaper:
+	Inherits: ^VehicleOverlays
+	idle: tsreaper
 		Facings: -8
-		ShadowStart: 232
-	walk:
+		ShadowStart: 117
+		Scale: 1.3
+	stand: tsreaper
 		Facings: -8
+		ShadowStart: 117
+		Scale: 1.3
+	move: tsreaper
+		Start: 8
 		Length: 12
-		ShadowStart: 136
-		Tick: 48
-	shoot:
+		Facings: -8
+		ShadowStart: 125
+		Scale: 1.3
+	shoot: tsreaper
+		Facings: -8
+		ShadowStart: 117
+		Scale: 1.3
+	die: tsreaper
 		Start: 104
-		Length: 4
-		Facings: -8
-		ShadowStart: 240
-		Tick: 80
-	shoot-muzzle:
-		Start: 104
-		Length: 4
-		Facings: -8
-		Tick: 80
-		IgnoreWorldTint: True
-	icon: tssmchicon
-tsbehemoth:
-	Inherits: ^VehicleOverlays
-	Defaults:
-		Offset: 0,0,8
-		Scale: 1.2
-	stand:
-		Start: 96
-		Facings: -8
-		ShadowStart: 200
-	walk:
-		Facings: -8
 		Length: 12
-		ShadowStart: 106
-		Tick: 48
-	shoot:
-		Start: 96
-		Facings: -8
-		ShadowStart: 200
-		Tick: 80
-	shoot-muzzle:
-		Start: 96
-		Facings: -8
-		ShadowStart: 200
-		Tick: 80
-		IgnoreWorldTint: True
-	icon: tsbeheicon
+		ShadowStart: 221
+		Scale: 1.3
+	icon: tsreapicon
 
-tsmmch:
+
+tshvrlazer:
 	Inherits: ^VehicleOverlays
-	Defaults:
-		Scale: 1.2
-	stand:
-		Facings: -8
-		Stride: 15
-		ShadowStart: 152
-		Offset: 0, 0, 12
-	walk:
-		Length: 15
-		Facings: -8
-		ShadowStart: 152
-		Offset: 0, 0, 12
-		Tick: 60
-	turret:
-		Start: 120
-		Facings: -32
-		Offset: 0, 0, 12
-	turret2: tsmmchbarl
+	idle: tshvrlazer
 		Facings: 32
-		Offset: 0, -52, 11
-		Scale: 0.5
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tshvrlazericon
+ts23tnk:
+	Inherits: ^VehicleOverlays
+	idle: ts23tnk
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: ts23tnktur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
 	muzzle: gunfire2
 		Length: 2
-	icon: tsmmchicon
-tsmmch2:
+	icon: ts23tnkicon
+ts25tnk:
 	Inherits: ^VehicleOverlays
-	Defaults: tsmmch
-		Scale: 1.2
-	stand:
-		Facings: -8
-		Stride: 15
-		ShadowStart: 152
-		Offset: 0, 0, 12
-	walk:
-		Length: 15
-		Facings: -8
-		ShadowStart: 152
-		Offset: 0, 0, 12
-		Tick: 60
-	turret:
-		Start: 120
-		Facings: -32
-		Offset: 0, 0, 12
-	turret2: tsmmchbarl2
+	idle: ts25tnk
 		Facings: 32
-		Offset: 0, -52, 11
-		Scale: 0.5
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: ts25tnktur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
 	muzzle: gunfire2
 		Length: 2
-	icon: tsmmchicon
-
-tstriton:
+	icon: ts25tnkicon
+tscorb:
 	Inherits: ^VehicleOverlays
-	Defaults:
-		Scale: 1.2
-	stand:
-		Facings: -8
-		Stride: 12
-		ShadowStart: 128
-		Offset: 0, 0, 12
-	walk:
-		Length: 12
-		Facings: -8
-		ShadowStart: 128
-		Offset: 0, 0, 12
-		Tick: 60
-	turret:
-		Start: 96
-		Facings: -32
-		Offset: 0, 0, 12
+	idle: tscorb
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tscorbicon
+tsmorb:
+	Inherits: ^VehicleOverlays
+	idle: tsmorb
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tsmorbicon
+
+tsgorb:
+	Inherits: ^VehicleOverlays
+	idle: tsgorb
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tsgorbicon
+tsmonolith:
+	Inherits: ^VehicleOverlays
+	idle: tsmonolith
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tsmonolithicon
+
+tssentryd:
+	Inherits: ^VehicleOverlays
+	idle: tssentryd
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: tssentrydtur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
 	muzzle: gunfire2
 		Length: 2
-	icon: tstriticon
-tsapc:
-	Inherits: ^VehicleOverlays
-	idle: tsapc
-		Scale: 0.84
-		Facings: 32
-		UseClassicFacings: True
-	idle-water: tsapcw
-		Scale: 0.84
-		Facings: 32
-		UseClassicFacings: True
-	turret: ts2tnktur
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.3
-	muzzle: minigun
-		Length: 6
-		Facings: 8
-	unload: tsapc
-		Scale: 0.84
-		Facings: 32
-		UseClassicFacings: True
-	icon: tsapcicon
-tshvr:
-	Inherits: ^VehicleOverlays
-	idle: tshvr
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	turret: tshvrtur
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	muzzle: gunfire2
-		Length: 2
-	icon: tshovricon
+	icon: tssentrydicon
 
-tsrepair:
-	Inherits: ^VehicleOverlays
-	idle: tsrepair
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.7
-	muzzle: minigun
-		Length: 6
-		Facings: 8
-	unload: tsrepair
-		Facings: 32
-		UseClassicFacings: True
-	icon: tsrboticon
+#               Vehicles Civilian / Unused
 
-tsmmkii:
-	Inherits: ^VehicleOverlays
-	Defaults:
-		Offset: 0,0,8
-		Scale: 1.2
-	stand: tsmmkii
-		Frames: 29,30,31,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
-		Facings: -32
-		ShadowStart: 768
-	walk: tsmmkii
-		Facings: -32
-		Length: 20
- 		Frames: 612,613,614,615,616,617,618,,619,620,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,659,660,661,662,663,664,665,666,667,668,669,670,671,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,388,389,390,391,392,393,394,395,396,397,398,399,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422,423,424,425,426,427,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,445,446,447,448,449,450,451,452,453,454,455,456,457,458,459,460,461,462,463,464,465,466,467,468,469,470,471,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527,528,529,530,531,532,533,534,535,536,537,538,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,596,597,598,599,600,601,602,603,604,605,606,607,608,609,610,611
-		Tick: 48
-	shoot: tsmmkii
-		Frames: 29,30,31,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
-		Facings: -32
-	shoot-muzzle: tsmmkii
-		Frames: 29,30,31,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28
-		Facings: -32
-	muzzle2: lightbluelasermuzzle
-		Length: 3
-	muzzle1: gunfire2
-		Length: 5
-	muzzle3: minigun
-		Length: 6
-		Facings: 8
-		Scale: 2.0
-	icon: tshmecicon
-tssonic:
-	Inherits: ^VehicleOverlays
-	idle: tssonic
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	turret: tssonictur
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.7
-	muzzle: gunfire2
-		Length: 2
-	icon: tssoniicon
-
-tsjugg:
-	Inherits: ^VehicleOverlays
-	icon: tsjuggicon
-	Defaults:
-		Scale: 1.35
-	idle: tsjugger
-		Facings: -8
-		Stride: 15
-		ShadowStart: 120
-		Offset: 0, 0, 12
-	walk: tsjugger
-		Length: 15
-		Facings: -8
-		ShadowStart: 120
-		Offset: 0, 0, 12
-		Tick: 60
-	turret: tsdjugg_a
-		Facings: 32
-		Offset: -4, 0, 12
-	barrel: tsjuggerbarl
-		Facings: 32
-		Offset: -4, 0, 12
-		Scale: 0.5
-	barrelup: tsjuggerbarlup
-		Facings: 32
-		Offset: -4, 0, 12
-		Scale: 0.5
-	idletur: tsdjugg
-		ShadowStart: 3
-		Offset: 0, -12, 12
-	damaged-idletur: tsdjugg
-		Start: 1
-		ShadowStart: 4
-		Offset: 0, -12, 12
-	make: tsdjuggmk
-		Length: 18
-		ShadowStart: 18
-		Offset: 0, -12, 12
-	muzzle: gunfire2
-		Length: 2
-
-tsmemp:
-	Inherits: ^VehicleOverlays
-	idle: tsmemp
-		Facings: 32
-		UseClassicFacings: True
-		Scale: 0.8
-	icon: tsmempicon
 
 ###################################################
 #               Aircraft

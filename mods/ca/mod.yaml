@@ -109,7 +109,7 @@ Rules:
 	ca|rules/allies/defaults.yaml
 	ca|rules/soviet/defaults.yaml
 	ca|rules/soviet/structures.yaml
-	ca|rules/soviet/vehicles.yaml
+	#ca|rules/soviet/vehicles.yaml
 	ca|rules/china.yaml #this should be removed
 	ca|rules/china/ai.yaml
 	ca|rules/china/defaults.yaml
@@ -121,7 +121,7 @@ Rules:
 	ca|rules/china/misc.yaml
 	ca|rules/gdi/defaults.yaml
 	ca|rules/nod/defaults.yaml
-	ca|rules/nod/infantry.yaml
+	#ca|rules/nod/infantry.yaml
 	ca|rules/scrin/defaults.yaml
 	ca|rules/world.yaml
 	ca|rules/camea/defaults.yaml

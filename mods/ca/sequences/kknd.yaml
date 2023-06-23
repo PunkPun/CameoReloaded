@@ -47,6 +47,7 @@ survivors_vehicle_4x4pickup:
 
 survivors_vehicle_allterrainvehicle:
 	Inherits@muzzle: ^muzzle_16_directions
+	Inherits: ^VehicleOverlays
 	turret: sprites.lvl|24.mobd
 		Facings: -16
 		AddExtension: False

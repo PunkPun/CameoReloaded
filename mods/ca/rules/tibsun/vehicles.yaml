@@ -158,12 +158,66 @@ tssmech:
 		ValidMovementTypes: Horizontal, Turn
 	Selectable:
 		Bounds: 603, 700, 0, -482
+tsfireflyg:
+	Inherits: ^VehicleTS
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Firefly
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.tsgdi
+		Description: Small Recon/Support mech, shoots small shells aganist ground, and has AA missiles
+	Mobile:
+		TurnSpeed: 20
+		Speed: 90
+		AlwaysTurnInPlace: true
+		TerrainOrientationAdjustmentMargin: -1
+	Health:
+		HP: 35000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 6c0
+		MaxHeightDelta: 3
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+		FacingTolerance: 0
+	Armament:
+		Weapon: TSAssaultCannon
+		LocalOffset: 88,282,273, 88,-282,273
+		MuzzleSequence: muzzle
+	Armament@AA:
+		Weapon: TSRedEyeBehemoth
+		LocalOffset: -90,180,543, -90,-180,543
+	Voiced:
+		VoiceSet: TSMech
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithFacingSpriteBody:
+		Sequence: stand
+	WithMoveAnimation:
+		MoveSequence: walk
+		ValidMovementTypes: Horizontal, Turn
+	Selectable:
+		Bounds: 653, 603, 0, -482
+	WithMuzzleOverlay:
 tsbehemoth:
 	Inherits: ^VehicleTS
 	Inherits: ^BiologicalDriver
 	Inherits@detect: ^SensorEquipment
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -210,6 +264,166 @@ tsbehemoth:
 	Selectable:
 		Bounds: 653, 603, 0, -482
 
+tsjenng:
+	Inherits: ^VehicleTS
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Jenner
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.tsgdi
+		Description: Anti Air light mech
+	Mobile:
+		TurnSpeed: 20
+		Speed: 95
+		AlwaysTurnInPlace: true
+		TerrainOrientationAdjustmentMargin: -1
+	Health:
+		HP: 22500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 6c0
+		MaxHeightDelta: 3
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+		FacingTolerance: 0
+	Armament:
+		Weapon: TSHoverMissile
+		LocalOffset: 0,242,543, 0,-242,543
+	Voiced:
+		VoiceSet: TSMech
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithFacingSpriteBody:
+		Sequence: stand
+	WithAttackAnimation:
+		Sequence: shoot
+	WithAttackOverlay@muzzle:
+		Sequence: shoot-muzzle
+	WithMoveAnimation:
+		MoveSequence: walk
+		ValidMovementTypes: Horizontal, Turn
+	Selectable:
+		Bounds: 603, 700, 0, -482
+tskesselbrutg:
+	Inherits: ^VehicleTS
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Cauldron Born
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.tsgdi, ~vehicles.disable
+		Description: Anti infantry Mech
+	Mobile:
+		TurnSpeed: 20
+		Speed: 95
+		AlwaysTurnInPlace: true
+		TerrainOrientationAdjustmentMargin: -1
+	Health:
+		HP: 44500
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 6c0
+		MaxHeightDelta: 3
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+		FacingTolerance: 0
+	Armament:
+		Weapon: TSVulcan4
+		LocalOffset: 88,282,343, 88,-282,343, 88,282,273, 88,-282,273
+		MuzzleSequence: muzzle
+	Armament@Cannons:
+		Weapon: TS90mmx
+		LocalOffset: 0,222,543, 0,-222,543
+	Voiced:
+		VoiceSet: TSMech
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithFacingSpriteBody:
+		Sequence: stand
+	WithMoveAnimation:
+		MoveSequence: walk
+		ValidMovementTypes: Horizontal, Turn
+	Selectable:
+		Bounds: 603, 700, 0, -482
+	WithMuzzleOverlay:
+tsbhawkg:
+	Inherits: ^VehicleTS
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Black Hawk
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 30
+		Prerequisites: ~vehicles.tsgdi
+		Description: Anti Air light mech
+	Mobile:
+		TurnSpeed: 20
+		Speed: 90
+		AlwaysTurnInPlace: true
+		TerrainOrientationAdjustmentMargin: -1
+	Health:
+		HP: 50000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 6c0
+		MaxHeightDelta: 3
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: empdisable
+		FacingTolerance: 0
+	Armament:
+		Weapon: TS120mmx
+		LocalOffset: 0,242,543, 0,-242,543
+	Voiced:
+		VoiceSet: TSMech
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithFacingSpriteBody:
+		Sequence: stand
+	WithAttackAnimation:
+		Sequence: shoot
+	WithAttackOverlay@muzzle:
+		Sequence: shoot-muzzle
+	WithMoveAnimation:
+		MoveSequence: walk
+		ValidMovementTypes: Horizontal, Turn
+	Selectable:
+		Bounds: 603, 700, 0, -482
 tsmmch:
 	Inherits: ^TankTS
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -230,7 +444,7 @@ tsmmch:
 		TurnSpeed: 20
 		Speed: 56
 	Health:
-		HP: 45000
+		HP: 60000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -281,10 +495,26 @@ tsmmch2:
 	Armament:
 		Weapon: TSTitanRail
 
+tstitanne2:
+	Inherits: tsmmch
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Armored Titan
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 50
+		Prerequisites: ~vehicles.tsgdi
+		Description: General purpose mechanized walker.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Health:
+		HP: 120000
+	Armor:
+		Type: Heavy
 tstriton:
 	Inherits: ^TankTS
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -567,13 +797,119 @@ tssonic:
 	WithSpriteTurret:
 
 
+tscolog:
+	Inherits: ^TankTS
+	Inherits: ^BiologicalDriver
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Colossus
+		RequiresCondition: !deployed
+	Tooltip@DEPLOYED:
+		Name: Colossus (deployed)
+		RequiresCondition: deployed
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 100
+		Prerequisites: ~vehicles.tsgdi, anyhq
+		Description: Mobile Artillery.\nNeeds to deploy in order to shoot.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Health:
+		HP: 60000
+	Armor:
+		Type: Medium
+	Mobile:
+		Speed: 61
+		TurnSpeed: 15
+		ImmovableCondition: !undeployed
+		RequireForceMoveCondition: !undeployed
+	RevealsShroud:
+		RequiresCondition: !inside-tunnel
+		Range: 9c0
+		MaxHeightDelta: 3
+	RenderSprites:
+		Image: tscolog
+	WithMakeAnimation:
+		BodyNames: body, deployedbody
+	GrantConditionOnDeploy:
+		PauseOnCondition: empdisable || being-captured
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: true
+		UndeployOnPickup: true
+		Facing: 384
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
+		DeploySounds: place2.aud
+		UndeploySounds: clicky1.aud
+		Voice: Move
+	Repairable:
+		RequireForceMoveCondition: !undeployed
+	Passenger:
+		RequireForceMoveCondition: !undeployed
+	GrantCondition@PREVIEWWORKAROUND:
+		Condition: real-actor
+	WithFacingSpriteBody:
+		RequiresCondition: !deployed
+		Name: body
+	WithSpriteBody@deployed:
+		RequiresCondition: !undeployed && real-actor
+		Sequence: idletur
+		Name: deployedbody
+	Turreted:
+		Turret: deployed
+		TurnSpeed: 20
+		InitialFacing: 384
+		Offset: 0,0,12
+		RealignDelay: -1
+	WithSpriteTurret@deployed:
+		Turret: deployed
+		RequiresCondition: deployed
+	AttackTurreted@deployed:
+		Voice: Attack
+		Armaments: deployed
+		Turrets: deployed
+		PauseOnCondition: empdisable
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		OutsideRangeRequiresForceFire: True
+	Armament@deployed:
+		Name: deployed
+		Turret: deployed
+		Weapon: TSColossusArtillery
+		LocalOffset: 777,203,999, 777,-203,999
+		MuzzleSequence: muzzle
+		ReloadingCondition: engage-air
+		RequiresCondition: deployed
+	Armament@AIDeploy:
+		Weapon: TSArtilleryDummy
+		RequiresCondition: !deployed && botplayer
+		Name: deployed
+		Turret: deployed
+	WithMuzzleOverlay:
+	RevealOnFire:
+		ArmamentNames: deployed
+	WithMoveAnimation:
+		MoveSequence: walk
+		ValidMovementTypes: Horizontal, Turn
+		Body: body
+		RequiresCondition: !deployed
+	AutoDeployer:
+		DeployChance: 85
+		DeployTicks: 100
+		UndeployTicks: 2500
+		DeployTriggers:
+			Attack: 50
 tsjugg:
 	Inherits: ^TankTS
 	Inherits: ^BiologicalDriver
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 950
+		Cost: 1100
 	Tooltip:
 		Name: Juggernaut
 		RequiresCondition: !deployed
@@ -650,7 +986,6 @@ tsjugg:
 		Voice: Attack
 		Armaments: deployed
 		Turrets: deployed
-		RequiresCondition: deployed
 		PauseOnCondition: empdisable
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
@@ -660,9 +995,14 @@ tsjugg:
 		Turret: deployed
 		Weapon: TSJugg90mm
 		LocalOffset: 777,203,999, 777,0,999, 777,-203,999
-		RequiresCondition: deployed
 		MuzzleSequence: muzzle
 		ReloadingCondition: engage-air
+		RequiresCondition: deployed
+	Armament@AIDeploy:
+		Weapon: TSArtilleryDummy
+		RequiresCondition: !deployed && botplayer
+		Name: deployed
+		Turret: deployed
 	WithMuzzleOverlay:
 	RevealOnFire:
 		ArmamentNames: deployed
@@ -671,6 +1011,12 @@ tsjugg:
 		ValidMovementTypes: Horizontal, Turn
 		Body: body
 		RequiresCondition: !deployed
+	AutoDeployer:
+		DeployChance: 85
+		DeployTicks: 100
+		UndeployTicks: 2500
+		DeployTriggers:
+			Attack: 50
 
 tsmemp:
 	Inherits: ^TankTS
@@ -727,6 +1073,164 @@ tsmemp:
 		Range: 1c0
 		EnableSound: vrobon
 		DisableSound: vroboff
+tspredator:
+	Inherits: ^TankTS
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 70
+		Prerequisites: ~vehicles.tsgdi
+		Description: A new tank model
+		IconPalette: chromets
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Predator Tank
+		GenericName: Tank
+	Health:
+		HP: 62000
+	Mobile:
+		Speed: 102
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: TS120mmPredator
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+tsprowler:
+	Inherits: ^TankTS
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 70
+		Prerequisites: ~vehicles.tsgdi
+		Description: A new tank model
+		IconPalette: chromets
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Prowler Tank
+		GenericName: Tank
+	Health:
+		HP: 60000
+	Mobile:
+		Speed: 94
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: TS120mmProwler
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	Armament@Sonic:
+		Weapon: TSSonicZapSmall
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: -520,0,222
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+
+tsprowler_twin:
+	Inherits: tsprowler
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 70
+		Prerequisites: ~vehicles.tsgdi
+		Description: A new tank model
+		IconPalette: chromets
+	Tooltip:
+		Name: Prowler Tank (Twin Cannon)
+		GenericName: Tank
+	Armament:
+		Weapon: TS120mmProwlerx
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,200,80, 720,-200,80
+		MuzzleSequence: muzzle
+
+tskeeper:
+	Inherits: ^TankTS
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 70
+		Prerequisites: ~vehicles.tsgdi ~disabled
+		Description: Light Tank for reserve, are the guardians of your base, unlockable and usable when some structures are destroyed
+		IconPalette: chromets
+	Valued:
+		Cost: 620
+	Tooltip:
+		Name: Keeper Tank
+		GenericName: Tank
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 112
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: TS90mm
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+tsionh:
+	Inherits: ^TankTS
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		BuildPaletteOrder: 70
+		Prerequisites: ~vehicles.tsgdi, tech
+		Description: A new tank model
+		IconPalette: chromets
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Ion Hotwizer
+		GenericName: Tank
+	Health:
+		HP: 72000
+	Mobile:
+		Speed: 64
+	Turreted:
+		TurnSpeed: 6
+		Offset: -100,0,30
+	Armament:
+		Weapon: TSIonHotwizer
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,55,272
+		ReloadingCondition: engage-air
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	WithSpriteTurret:
+		RequiresCondition: !engage-air
+	WithSpriteTurret@air:
+		Sequence: turretup
+		RequiresCondition: engage-air
 ###################################################
 #               Nod
 ###################################################
@@ -943,7 +1447,14 @@ tsttnk:
 		ArmamentNames: primary, deployed
 	DamageMultiplier@Deploy:
 		RequiresCondition: deployed
-		Modifier: 50
+		Modifier: 60
+	AutoDeployer:
+		DeployChance: 85
+		DeployTicks: 100
+		UndeployTicks: 2500
+		DeployTriggers:
+			Attack: 99
+
 tsstnk:
 	Inherits: ^TankTS
 	Inherits: ^BiologicalDriver
@@ -1002,6 +1513,7 @@ tsart2:
 	Inherits: ^BiologicalDriver
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AI: ^BotUnitManager
 	Valued:
 		Cost: 975
 	Tooltip:
@@ -1069,7 +1581,6 @@ tsart2:
 		Voice: Attack
 		Armaments: deployed
 		Turrets: deployed
-		RequiresCondition: deployed
 		PauseOnCondition: empdisable
 		TargetFrozenActors: True
 		ForceFireIgnoresActors: True
@@ -1084,7 +1595,17 @@ tsart2:
 	WithMuzzleOverlay:
 	RevealOnFire:
 		ArmamentNames: deployed
-
+	AutoDeployer:
+		DeployChance: 85
+		DeployTicks: 100
+		UndeployTicks: 2500
+		DeployTriggers:
+			Attack: 50
+	Armament@AIDeploy:
+		Weapon: TSArtilleryDummy
+		RequiresCondition: !deployed && botplayer
+		Name: deployed
+		Turret: deployed
 tsrepair:
 	Inherits: ^TankTS
 	Inherits: ^BiologicalDriver
@@ -1125,6 +1646,48 @@ tsrepair:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Vehicle
 
+#               Variants of Mechas by LKO
+tsjennn:
+	Inherits: tsjenng
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.tsgdi, ~disabled
+		Description: Anti Air light mech
+tsfireflyn:
+	Inherits: tsfireflyg
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.tsgdi, ~disabled
+		Description: Anti Air light mech
+
+tskesselbrutn:
+	Inherits: tskesselbrutg
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.tsnod
+		Description: Anti infantry Mech
+tsbhawkn:
+	Inherits: tsbhawkg
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		BuildPaletteOrder: 30
+		Prerequisites: ~vehicles.tsnod, ~disabled
+		Description: Anti Air light mech
+tscolon:
+	Inherits: tscolog
+	Buildable:
+		Queue: Vehicle, Vehicle.Multi
+		IconPalette: chromets
+		Prerequisites: ~vehicles.tsnod, ~disabled
+	RenderSprites:
+		Image: tscolon
 ###################################################
 #               MUTANT
 ###################################################
@@ -1292,6 +1855,10 @@ tspickf:
 	DamageMultiplier@Deploy:
 		RequiresCondition: deployed
 		Modifier: 50
+	AutoDeployer:
+		DeployChance: 85
+		DeployTicks: 450
+		UndeployTicks: 2500
 tstruckbf:
 	Inherits: ^TankTS
 	Inherits: ^BiologicalDriver

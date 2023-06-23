@@ -42,7 +42,7 @@ TSVulcan:
 	Inherits: ^TSMG
 	Report: chaingn1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 2000
+		Damage: 2500
 
 TSVulcan2:
 	Inherits: ^TSMG
@@ -51,7 +51,7 @@ TSVulcan2:
 	Range: 6c0
 	Report: tsgun4.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 5000
+		Damage: 5500
 
 TSVulcan3:
 	Inherits: ^TSMG
@@ -59,14 +59,14 @@ TSVulcan3:
 	Burst: 3
 	Report: cygun1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000
+		Damage: 1500
 TSVulcan4:
 	Inherits: ^TSMG
 	ReloadDelay: 15
 	Burst: 12
 	Report: cygun1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000
+		Damage: 1500
 
 TSVulcanTower:
 	Inherits: ^TSMG
@@ -74,7 +74,7 @@ TSVulcanTower:
 	Range: 6c0
 	Report: chaingn1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 2000
+		Damage: 3500
 TSVulcanAA:
 	Inherits: ^TSMG
 	ReloadDelay: 7
@@ -245,7 +245,6 @@ TSCommandoGun:
 		ExplosionPalette: tseffect
 	Warhead@3EffWater: CreateEffect
 		Explosions: tssmall_watersplash
-		ExplosionPalette: player
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Vehicle
@@ -272,6 +271,33 @@ TS120mm:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7000
 
+TS120mmPredator:
+	Inherits: ^TSCannon
+	ReloadDelay: 50
+	Projectile: Bullet
+		-Image:
+		Speed: 1c512
+		Blockable: false
+		LaunchAngle: 0
+	Warhead@1Dam: SpreadDamage
+		Damage: 6000
+
+TS120mmProwler:
+	Inherits: ^TSCannon
+	ReloadDelay: 65
+	Projectile: Bullet
+		-Image:
+		Speed: 1c512
+		Blockable: false
+		LaunchAngle: 0
+	Warhead@1Dam: SpreadDamage
+		Damage: 6000
+
+TS120mmProwlerx:
+	Inherits: TS120mmProwler
+	ReloadDelay: 66
+	Burst: 2
+
 TS120mmx:
 	Inherits: ^TSCannon
 	ReloadDelay: 80
@@ -295,8 +321,8 @@ TSRPGTower:
 	Projectile: Bullet
 		Speed: 384
 		Blockable: false
-		Image: canister
-		Palette: player
+		Image: tscanister
+		Palette: tsunit
 	Warhead@1Dam: SpreadDamage
 		Damage: 11000
 		Versus:
@@ -365,6 +391,24 @@ TSJugg90mmsingle:
 	Warhead@1Dam: SpreadDamage
 		Damage: 8000
 
+TSColossusArtillery:
+	Inherits: ^TSArtilleryWeapon
+	ReloadDelay: 80
+	Range: 18c0
+	MinRange: 5c0
+	Burst: 2
+	BurstDelays: 5
+	Report: jugger1-single.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Speed: 384
+		LaunchAngle: 165
+		Inaccuracy: 2c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 7000
+	Warhead@2Eff: CreateEffect
+		Explosions: tssmall_explosion
+		ImpactSounds: expnew13.aud
 TSGrenade:
 	Inherits: ^TSArtilleryWeapon
 	ReloadDelay: 60
@@ -484,7 +528,6 @@ TSGunshipSmallCannon:
 		ExplosionPalette: tseffect
 	Warhead@3EffWater: CreateEffect
 		Explosions: tssmall_watersplash
-		ExplosionPalette: player
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Vehicle
@@ -794,7 +837,47 @@ TSSonicZap:
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 50, 50
-		Damage: 800
+		Damage: 400
+		InvalidTargets: Disruptor # Does not affect friendly disruptors at all
+		AffectsParent: false
+		ValidRelationships: Ally
+		ValidTargets: Ground, Trees
+		Versus:
+			Heavy: 80
+			Concrete: 60
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+
+TSSonicZapSmall:
+	ReloadDelay: 120
+	Range: 6c768
+	Report: sonic4.aud
+	ValidTargets: Ground, Trees
+	Projectile: AreaBeam
+		Speed: 0c128
+		Duration: 30
+		DamageInterval: 5 # Roughly 18 impacts.
+		Width: 200
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		Blockable: true
+		TrackTarget: true
+		Color: 50F5FF45
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 420
+		AffectsParent: false
+		ValidRelationships: Neutral, Enemy
+		ValidTargets: Ground, Trees
+		Versus:
+			Heavy: 80
+			Concrete: 60
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 50, 50
+		Damage: 100
 		InvalidTargets: Disruptor # Does not affect friendly disruptors at all
 		AffectsParent: false
 		ValidRelationships: Ally
@@ -834,7 +917,6 @@ TSAircraftRail:
 		ExplosionPalette: tseffect
 	Warhead@3EffWater: CreateEffect
 		Explosions: tssmall_watersplash
-		ExplosionPalette: player
 		ImpactSounds: ssplash3.aud
 		ValidTargets: Water
 		InvalidTargets: Vehicle
@@ -913,6 +995,42 @@ TSForgottenProton:
 		Amount: 4
 		AimChance: 100
 		AimTargetStances: Enemy, Neutral
+TSIonHotwizer:
+	Inherits: ^TSEnergyBlast
+	ReloadDelay: 120
+	Report: obelray1.aud
+	Range: 14c0
+	ValidTargets: Ground, Trees
+	Projectile: Missile
+		MaximumLaunchSpeed: 192
+		Blockable: false
+		HorizontalRateOfTurn: 8
+		Shadow: true
+		Image: tsionprojectile
+		MinimumLaunchSpeed: 75
+		Speed: 444
+		RangeLimit: 18c0
+		TerrainHeightAware: true
+		Palette: tseffect
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Trees
+		Spread: 1c0
+		Damage: 15000
+		Versus:
+			None: 350
+			Wood: 260
+			Light: 205
+			Medium: 173
+			Heavy: 150
+			Concrete: 80
+		DamageTypes: Prone350Percent, TriggerProne, EnergyDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: tsionringsmall
+		ImpactSounds: expnew12.aud
+		ValidTargets: Ground, Trees
+	Warhead@3EffWater: CreateEffect
+		Explosions: tsionringsmall
+		ImpactSounds: expnew12.aud
 ^TSLaser:
 	Projectile: LaserZap
 		Width: 72
@@ -1134,8 +1252,9 @@ TSBomb:
 	Projectile: GravityBomb
 		Velocity: 72, 0, -90
 		Acceleration: 0, 0, -8
-		Image: 120mm
+		Image: tsbomb
 		Shadow: true
+		Palette: tseffect
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
 		Falloff: 100, 50, 25, 12, 6, 3, 0
@@ -1369,3 +1488,9 @@ TSRepair:
 	ValidTargets: Repair
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Repair
+TSArtilleryDummy:
+	Range: 17c0
+	ReloadDelay: 20
+	ValidTargets: Ground, Trees, Water, Underwater
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage

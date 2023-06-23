@@ -1390,7 +1390,160 @@ resources:
 			JUNGLE: TEMPERAT
 			SNOW: TEMPERAT
 			BARREN: TEMPERAT
-
+	tib01: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 0,0,0
+	tib01_a: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 12,-2,0
+	tib01_b: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -2,12,0
+	tib01_c: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 8,8,0
+	tib01_d: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -12,2,0
+	tib01_f: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 2,-12,0
+	tib01_g: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -8,-8,0
+	tib02: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.62
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 0,0,0
+	tib02_a: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 12,-2,0
+	tib02_b: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -2,12,0
+	tib02_c: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 8,8,0
+	tib02_d: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -12,2,0
+	tib02_f: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 2,-12,0
+	tib02_g: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -8,-8,0
 shroud:
 	Defaults:
 		Scale: 2.0
