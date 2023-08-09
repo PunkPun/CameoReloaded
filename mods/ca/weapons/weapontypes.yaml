@@ -1,25 +1,101 @@
+^ImpactSoundsShell:
+	Warhead@ShellToFlesh: CreateEffect
+		ImpactSounds: ImpactShellFlesh1.aud,ImpactShellFlesh2.aud,ImpactShellFlesh3.aud,ImpactShellFlesh4.aud,ImpactShellFlesh5.aud,ImpactShellFlesh6.aud
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@ShellToHeavyMetal: CreateEffect
+		ImpactSounds: ImpactShellTank1.aud,ImpactShellTank2.aud,ImpactShellTank3.aud,ImpactShellTank4.aud,ImpactShellTank5.aud,ImpactShellTank6.aud,ImpactShellTank7.aud,ImpactShellTank8.aud
+		ValidTargets: Tank, Husk
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@ShellToMetal: CreateEffect
+		ImpactSounds: ImpactShellVehicle1.aud,ImpactShellVehicle2.aud,ImpactShellVehicle3.aud,ImpactShellVehicle4.aud,ImpactShellVehicle5.aud,ImpactShellVehicle6.aud,ImpactShellVehicle7.aud,ImpactShellVehicle8.aud,ImpactShellVehicle9.aud
+		ValidTargets: Vehicle, Husk
+		InvalidTargets: Water, Structure, Wall, Infantry
+	Warhead@ShellToConcrete: CreateEffect
+		ImpactSounds: ImpactShellConcrete1.aud,ImpactShellConcrete2.aud,ImpactShellConcrete3.aud
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@ShellToWater: CreateEffect
+		ImpactSounds: ImpactShellWaterRA1.aud,ImpactShellWaterRA2.aud
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+	Warhead@ShellToGround: CreateEffect
+		ImpactSounds: ImpactBulletRicoGround1.aud,ImpactBulletRicoGround2.aud,ImpactBulletRicoGround3.aud,ImpactBulletRicoGround4.aud,ImpactBulletRicoGround5.aud,ImpactBulletRicoGround6.aud,ImpactBulletRicoGround7.aud,ImpactBulletRicoGround8.aud,ImpactBulletGround1.aud,ImpactBulletGround10.aud,ImpactBulletGround11.aud,ImpactBulletGround12.aud,ImpactBulletGround13.aud,ImpactBulletGround14.aud,ImpactBulletGround15.aud,ImpactBulletGround16.aud,ImpactBulletGround17.aud,ImpactBulletGround2.aud,ImpactBulletGround3.aud,ImpactBulletGround4.aud,ImpactBulletGround5.aud,ImpactBulletGround6.aud,ImpactBulletGround7.aud,ImpactBulletGround8.aud,ImpactBulletGround9.aud
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
+^ImpactSoundsBullet:
+	Warhead@BulletToFlesh: CreateEffect
+		ImpactSounds: ImpactBulletFlesh1.aud, ImpactBulletFlesh2.aud, ImpactBulletFlesh3.aud, ImpactBulletFlesh4.aud, ImpactBulletFlesh5.aud, ImpactBulletFlesh6.aud, ImpactBulletFlesh7.aud, ImpactBulletFlesh8.aud, ImpactBulletFlesh9.aud, ImpactBulletFlesh10.aud
+		ValidTargets: Infantry
+		InvalidTargets: Vehicle, Water, Structure, Wall, Husk
+	Warhead@BulletToMetal: CreateEffect
+		ImpactSounds: ImpactBulletRicoMetal1.aud,ImpactBulletRicoMetal2.aud,ImpactBulletRicoMetal3.aud,ImpactBulletMetal1.aud,ImpactBulletMetal10.aud,ImpactBulletMetal11.aud,ImpactBulletMetal12.aud,ImpactBulletMetal13.aud,ImpactBulletMetal14.aud,ImpactBulletMetal2.aud,ImpactBulletMetal3.aud,ImpactBulletMetal4.aud,ImpactBulletMetal5.aud,ImpactBulletMetal6.aud,ImpactBulletMetal7.aud,ImpactBulletMetal8.aud,ImpactBulletMetal9.aud
+		ValidTargets: Vehicle, Husk, Tank, MetalInfantry
+		InvalidTargets: Water, Structure, Wall
+	Warhead@BulletToConcrete: CreateEffect
+		ImpactSounds: ImpactBulletRicoConcrete1.aud,ImpactBulletRicoConcrete2.aud,ImpactBulletRicoConcrete3.aud,ImpactBulletRicoConcrete4.aud,ImpactBulletRicoConcrete5.aud,ImpactBulletConcrete1.aud,ImpactBulletConcrete10.aud,ImpactBulletConcrete11.aud,ImpactBulletConcrete12.aud,ImpactBulletConcrete15.aud,ImpactBulletConcrete16.aud,ImpactBulletConcrete19.aud,ImpactBulletConcrete2.aud,ImpactBulletConcrete21.aud,ImpactBulletConcrete22.aud,ImpactBulletConcrete25.aud,ImpactBulletConcrete27.aud,mpactBulletConcrete28.aud,ImpactBulletConcrete3.aud,ImpactBulletConcrete30.aud,ImpactBulletConcrete4.aud,ImpactBulletConcrete5.aud,ImpactBulletConcrete6.aud,ImpactBulletConcrete7.aud,ImpactBulletConcrete8.aud,ImpactBulletConcrete9.aud
+		ValidTargets: Structure, Wall
+		InvalidTargets: Water, Vehicle, Husk, Infantry
+	Warhead@BulletToWater: CreateEffect
+		ImpactSounds: ImpactBulletWater1.aud,ImpactBulletWater2.aud,ImpactBulletWater3.aud,ImpactBulletWater4.aud,ImpactBulletWater5.aud
+		ValidTargets: Water
+		InvalidTargets: Vehicle, Husk, Ground, Infantry, Structure, Wall
+	Warhead@BulletToGround: CreateEffect
+		ImpactSounds: ImpactBulletRicoGround1.aud,ImpactBulletRicoGround2.aud,ImpactBulletRicoGround3.aud,ImpactBulletRicoGround4.aud,ImpactBulletRicoGround5.aud,ImpactBulletRicoGround6.aud,ImpactBulletRicoGround7.aud,ImpactBulletRicoGround8.aud,ImpactBulletGround1.aud,ImpactBulletGround10.aud,ImpactBulletGround11.aud,ImpactBulletGround12.aud,ImpactBulletGround13.aud,ImpactBulletGround14.aud,ImpactBulletGround15.aud,ImpactBulletGround16.aud,ImpactBulletGround17.aud,ImpactBulletGround2.aud,ImpactBulletGround3.aud,ImpactBulletGround4.aud,ImpactBulletGround5.aud,ImpactBulletGround6.aud,ImpactBulletGround7.aud,ImpactBulletGround8.aud,ImpactBulletGround9.aud
+		ValidTargets: Ground
+		InvalidTargets: Vehicle, Husk, Water, Infantry, Structure, Wall
+
 ^Dummy:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1
 		Versus:
 			None: 0
 			Wood: 0
+			Heroic: 0
 			Concrete: 0
 			Light: 0
 			Reflector: 0
+			Medium: 0
 			Heavy: 0
 			Brick: 0
+			ElementalFire: 0
+			ElementalWater: 0
+			ElementalIce: 0
+			ElementalDirt: 0
+			ElementalPlant: 0
+			ElementalToxic: 0
+			ElementalGhost: 0
+			ElementalElectro: 0
+			ElementalLight: 0
+			ElementalDarkness: 0
+			ElementalPsychic: 0
+			ElementalInsect: 0
 
 ^InfOnly:
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
+			Heroic: 25
 			Wood: 0
 			Concrete: 0
 			Light: 0
 			Reflector: 0
+			Medium: 0
 			Heavy: 0
 			Brick: 0
+			ElementalFire: 5
+			ElementalWater: 5
+			ElementalIce: 5
+			ElementalDirt: 5
+			ElementalPlant: 5
+			ElementalToxic: 5
+			ElementalGhost: 0
+			ElementalElectro: 5
+			ElementalLight: 5
+			ElementalDarkness: 5
+			ElementalPsychic: 25
+			ElementalInsect: 25
 
 ^AllWeapons:
 	Warhead@anyhit: GrantExternalCondition
@@ -39,11 +115,25 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 180
+			Heroic: 108
 			Light: 50
 			Reflector: 50
+			Medium: 37
 			Heavy: 25
 			Wood: 100
 			Concrete: 30
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
@@ -63,12 +153,26 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 180
+			Heroic: 102
 			Light: 100
 			Reflector: 100
+			Medium: 62
 			Heavy: 25
 			Wood: 100
 			Concrete: 35
 			Brick: 20
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
@@ -86,12 +190,26 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
+			Heroic: 77
 			Light: 85
 			Reflector: 85
+			Medium: 70
 			Heavy: 55
 			Wood: 75
 			Concrete: 25
 			Brick: 25
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
@@ -111,11 +229,25 @@
 		Falloff: 500, 368, 135, 50, 18, 7, 0
 		Versus:
 			None: 180
+			Heroic: 102
 			Light: 100
 			Reflector: 80
+			Medium: 62
 			Heavy: 25
 			Wood: 100
 			Concrete: 35
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Dam: SpreadDamage
 		Spread: 512
@@ -126,10 +258,23 @@
 			None: 180
 			Light: 100
 			Reflector: 80
+			Medium: 62
 			Heavy: 25
 			Wood: 100
 			Concrete: 35
 			Brick: 20
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@3Dam: SpreadDamage
 		Spread: 512
@@ -140,10 +285,23 @@
 			None: 180
 			Light: 100
 			Reflector: 80
+			Medium: 62
 			Heavy: 25
 			Wood: 100
 			Concrete: 35
 			Brick: 20
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@4Dam: SpreadDamage
 		Spread: 512
@@ -154,10 +312,23 @@
 			None: 180
 			Light: 100
 			Reflector: 80
+			Medium: 62
 			Heavy: 25
 			Wood: 100
 			Concrete: 35
 			Brick: 20
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 180
+			ElementalDirt: 10
+			ElementalPlant: 180
+			ElementalToxic: 50
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 180
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
@@ -175,24 +346,52 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 70
+			Heroic: 65
 			Light: 75
 			Reflector: 75
+			Medium: 70
 			Heavy: 65
 			Wood: 100
 			Concrete: 55
 			Brick: 25
+			ElementalFire: 25
+			ElementalWater: 25
+			ElementalIce: 25
+			ElementalDirt: 70
+			ElementalPlant: 50
+			ElementalToxic: 70
+			ElementalGhost: 10
+			ElementalElectro: 25
+			ElementalLight: 25
+			ElementalDarkness: 25
+			ElementalPsychic: 25
+			ElementalInsect: 70
 
 ^Chemical:
 	Inherits: ^ABCPrototype
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 130
+			Heroic: 90
 			Light: 100
 			Reflector: 125
+			Medium: 75
 			Heavy: 50
 			Wood: 75
 			Concrete: 30
 			Brick: 20
+			ElementalFire: 25
+			ElementalWater: 25
+			ElementalIce: 25
+			ElementalDirt: 25
+			ElementalPlant: 90
+			ElementalToxic: 10
+			ElementalGhost: 25
+			ElementalElectro: 25
+			ElementalLight: 25
+			ElementalDarkness: 25
+			ElementalPsychic: 50
+			ElementalInsect: 10
 		DamageTypes: Prone50Percent, TriggerProne, PoisonDeath
 
 ^Cryo:
@@ -202,12 +401,26 @@
 		Falloff: 100, 25, 12, 0
 		Versus:
 			None: 100
+			Heroic: 52
 			Light: 35
 			Reflector: 35
+			Medium: 20
 			Heavy: 5
 			Wood: 15
 			Concrete: 5
 			Brick: 1
+			ElementalFire: 10
+			ElementalWater: 100
+			ElementalIce: 10
+			ElementalDirt: 10
+			ElementalPlant: 100
+			ElementalToxic: 25
+			ElementalGhost: 25
+			ElementalElectro: 25
+			ElementalLight: 25
+			ElementalDarkness: 25
+			ElementalPsychic: 25
+			ElementalInsect: 50
 		DamageTypes: SmallExplosionDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: cryohit
@@ -233,23 +446,49 @@
 		ValidTargets: Infantry
 		Versus:
 			None: 100
+			Heroic: 10
 			Light: 0
 			Reflector: 0
 			Heavy: 0
 			Wood: 0
 			Concrete: 0
+			ElementalFire: 5
+			ElementalWater: 5
+			ElementalIce: 5
+			ElementalDirt: 5
+			ElementalPlant: 5
+			ElementalToxic: 0
+			ElementalGhost: 5
+			ElementalElectro: 5
+			ElementalLight: 5
+			ElementalDarkness: 5
+			ElementalPsychic: 5
+			ElementalInsect: 5
 	Warhead@DriverDam: DriverPoisonDamage
 		Damage: 8000
 		Spread: 128
 		ValidTargets: Vehicle
 		Versus:
 			None: 100
+			Heroic: 75
 			Light: 100
 			Reflector: 20
+			Medium: 75
 			Heavy: 50
 			Wood: 0
 			Concrete: 0
-
+			ElementalFire: 25
+			ElementalWater: 25
+			ElementalIce: 25
+			ElementalDirt: 25
+			ElementalPlant: 25
+			ElementalToxic: 0
+			ElementalGhost: 25
+			ElementalElectro: 25
+			ElementalLight: 25
+			ElementalDarkness: 25
+			ElementalPsychic: 25
+			ElementalInsect: 25
 ^Toxin:
 	Inherits: ^ABCPrototype
 	Warhead@1Dam: SpreadDamage
@@ -260,56 +499,113 @@
 		ValidTargets: Infantry
 		Versus:
 			None: 100
+			Heroic: 10
 			Light: 0
 			Reflector: 0
+			Medium: 0
 			Heavy: 0
 			Wood: 0
 			Concrete: 0
+			ElementalFire: 5
+			ElementalWater: 5
+			ElementalIce: 5
+			ElementalDirt: 5
+			ElementalPlant: 5
+			ElementalToxic: 0
+			ElementalGhost: 5
+			ElementalElectro: 5
+			ElementalLight: 5
+			ElementalDarkness: 5
+			ElementalPsychic: 5
+			ElementalInsect: 5
 	Warhead@DriverDam: DriverPoisonDamage
 		Damage: 2500
 		Spread: 128
 		ValidTargets: Vehicle
 		Versus:
 			None: 100
+			Heroic: 50
 			Wood: 0
 			Concrete: 0
 			Light: 100
+			Medium: 100
 			Reflector: 100
 			Heavy: 100
-
+			ElementalFire: 50
+			ElementalWater: 50
+			ElementalIce: 50
+			ElementalDirt: 50
+			ElementalPlant: 25
+			ElementalToxic: 0
+			ElementalGhost: 50
+			ElementalElectro: 50
+			ElementalLight: 50
+			ElementalDarkness: 50
+			ElementalPsychic: 50
+			ElementalInsect: 50
 ^BulletPrototype:
 	Inherits: ^AllWeapons
+	Inherits@Impact: ^ImpactSoundsBullet
 
 ^Bullet:
 	Inherits: ^BulletPrototype
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 140
+			Heroic: 75
 			Light: 40
 			Reflector: 50
+			Medium: 25
 			Heavy: 10
 			Wood: 10
 			Concrete: 5
 			Brick: 5
-
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 ^BulletHeavy:
 	Inherits: ^BulletPrototype
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
 			Brick: 5
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 
 ^Gatling:
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
@@ -319,12 +615,26 @@
 		Delay: 2
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
 			Brick: 5
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@4Eff_2: CreateEffect
 		Explosions: piffs
@@ -340,12 +650,26 @@
 		Delay: 4
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
 			Brick: 5
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@6Eff_3: CreateEffect
 		Explosions: piffs
@@ -361,12 +685,26 @@
 		Delay: 6
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
 			Brick: 5
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@8Eff_4: CreateEffect
 		Explosions: piffs
@@ -382,12 +720,26 @@
 		Delay: 8
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
 			Brick: 5
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@10Eff_5: CreateEffect
 		Explosions: piffs
@@ -403,12 +755,26 @@
 		Delay: 10
 		Versus:
 			None: 110
+			Heroic: 70
 			Light: 75
 			Reflector: 100
+			Medium: 52
 			Heavy: 30
 			Wood: 60
 			Concrete: 10
 			Brick: 5
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 10
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@12Eff_6: CreateEffect
 		Explosions: piffs
@@ -422,7 +788,11 @@
 
 ^ShellPrototype:
 	Inherits: ^AllWeapons
-
+	Inherits@Impact: ^ImpactSoundsShell
+	Warhead@Flashes: CreateEffect
+		Explosions: flashorange
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
 ^Shell:
 	Inherits: ^ShellPrototype
 	Report: cannon2.aud
@@ -434,12 +804,26 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 10
+			Heroic: 10
 			Light: 100
 			Reflector: 100
+			Medium: 87
 			Heavy: 75
 			Wood: 50
 			Concrete: 25
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
@@ -464,12 +848,26 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 10
+			Heroic: 10
 			Light: 100
 			Reflector: 100
+			Medium: 110
 			Heavy: 120
 			Wood: 50
 			Concrete: 50
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
@@ -494,12 +892,26 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 80
+			Heroic: 65
 			Light: 150
 			Reflector: 150
+			Medium: 100
 			Heavy: 50
 			Wood: 100
 			Concrete: 25
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 30
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -525,12 +937,26 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 10
+			Heroic: 10
 			Light: 75
 			Reflector: 75
+			Medium: 150
 			Heavy: 200
 			Wood: 50
 			Concrete: 25
 			Brick: 35
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
@@ -560,12 +986,26 @@
 		Falloff: 100, 55, 20, 5
 		Versus:
 			None: 60
+			Heroic: 50
 			Light: 100
 			Reflector: 100
+			Medium: 72
 			Heavy: 45
 			Wood: 100
 			Concrete: 100
 			Brick: 100
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: large_explosion
@@ -577,7 +1017,11 @@
 
 ^MissilePrototype:
 	Inherits: ^AllWeapons
-
+	Inherits@Impact: ^ImpactSoundsShell
+	Warhead@Flashes: CreateEffect
+		Explosions: flashorange
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
 ^Missile:
 	Inherits: ^MissilePrototype
 	Report: missile6.aud
@@ -597,11 +1041,25 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 10
+			Heroic: 10
 			Light: 75
 			Reflector: 75
+			Medium: 87
 			Heavy: 100
 			Wood: 75
 			Concrete: 75
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -635,11 +1093,25 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 5
+			Heroic: 5
 			Light: 50
 			Reflector: 50
+			Medium: 100
 			Heavy: 150
 			Wood: 50
 			Concrete: 50
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -673,11 +1145,25 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 70
+			Heroic: 60
 			Light: 150
 			Reflector: 150
+			Medium: 100
 			Heavy: 50
 			Wood: 100
 			Concrete: 25
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -711,11 +1197,25 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 60
+			Heroic: 50
 			Light: 100
 			Reflector: 100
+			Medium: 75
 			Heavy: 50
 			Wood: 100
 			Concrete: 100
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -754,12 +1254,26 @@
 		Falloff: 100, 50, 25, 0
 		Versus:
 			None: 60
+			Heroic: 50
 			Light: 90
 			Reflector: 50
+			Medium: 80
 			Heavy: 70
 			Wood: 25
 			Concrete: 75
 			Brick: 1
+			ElementalFire: 25
+			ElementalWater: 120
+			ElementalIce: 25
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 25
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		DamageTypes: FrozenDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: cryoblast
@@ -780,16 +1294,31 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 130
+			Heroic: 90
 			Light: 100
 			Reflector: 125
+			Medium: 75
 			Heavy: 50
 			Wood: 100
-			Concrete: 100
+			Concrete: 75
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 80
+			ElementalToxic: 15
+			ElementalGhost: 75
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 	Warhead@2Dam: SpreadDamage
 		Versus:
 			None: 130
 			Light: 100
 			Reflector: 125
+			Medium: 75
 			Heavy: 50
 			Wood: 75
 			Concrete: 30
@@ -799,6 +1328,7 @@
 			None: 130
 			Light: 100
 			Reflector: 125
+			Medium: 75
 			Heavy: 50
 			Wood: 75
 			Concrete: 30
@@ -808,6 +1338,7 @@
 			None: 130
 			Light: 100
 			Reflector: 125
+			Medium: 75
 			Heavy: 50
 			Wood: 75
 			Concrete: 30
@@ -827,12 +1358,26 @@
 		Falloff: 1000, 368, 135, 50, 18, 0
 		Versus:
 			None: 100
+			Heroic: 90
 			Light: 120
 			Reflector: 120
+			Medium: 100
 			Heavy: 80
 			Wood: 60
 			Concrete: 40
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 80
+			ElementalToxic: 25
+			ElementalGhost: 75
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		ValidTargets: Ground, Trees, Water, Air
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
@@ -877,12 +1422,26 @@
 		Falloff: 1000, 368, 135, 50, 18, 0
 		Versus:
 			None: 80
+			Heroic: 70
 			Light: 100
 			Reflector: 100
+			Medium: 90
 			Heavy: 80
 			Wood: 60
 			Concrete: 40
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 80
+			ElementalToxic: 25
+			ElementalGhost: 75
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		ValidTargets: Ground, Trees, Water, Air
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
@@ -924,12 +1483,26 @@
 		Falloff: 100, 50, 30, 15, 0
 		Versus:
 			None: 50
+			Heroic: 40
 			Light: 100
 			Reflector: 100
+			Medium: 90
 			Heavy: 80
 			Wood: 60
 			Concrete: 40
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 80
+			ElementalToxic: 25
+			ElementalGhost: 75
+			ElementalElectro: 75
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 75
 		Delay: 5
 		ValidTargets: Ground, Trees, Water, Underwater, Air
 		AffectsParent: true
@@ -955,17 +1528,33 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 60
+			Heroic: 60
 			Light: 125
 			Reflector: 25
+			Medium: 112
 			Heavy: 100
 			Wood: 100
 			Concrete: 25
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
 	Warhead@2Dam: SpreadDamage
 		Versus:
 			None: 70
+			Heroic: 70
 			Light: 125
 			Reflector: 25
+			Medium: 112
 			Heavy: 100
 			Wood: 60
 			Concrete: 25
@@ -974,8 +1563,10 @@
 		ValidTargets: Vehicle
 		Versus:
 			None: 70
+			Heroic: 70
 			Light: 125
 			Reflector: 25
+			Medium: 112
 			Heavy: 100
 			Wood: 0
 			Concrete: 0
@@ -986,17 +1577,33 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 120
+			Heroic: 120
 			Light: 100
 			Reflector: 25
+			Medium: 70
 			Heavy: 40
 			Wood: 75
 			Concrete: 15
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
 	Warhead@2Dam: SpreadDamage
 		Versus:
 			None: 140
+			Heroic: 140
 			Light: 100
 			Reflector: 25
+			Medium: 70
 			Heavy: 40
 			Wood: 75
 			Concrete: 15
@@ -1005,8 +1612,10 @@
 		ValidTargets: Vehicle
 		Versus:
 			None: 140
+			Heroic: 140
 			Light: 100
 			Reflector: 25
+			Medium: 70
 			Heavy: 50
 			Wood: 0
 			Concrete: 0
@@ -1017,27 +1626,57 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 65
+			Heroic: 65
 			Light: 150
 			Reflector: 25
+			Medium: 112
 			Heavy: 75
 			Wood: 100
 			Concrete: 100
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
 	Warhead@2Dam: SpreadDamage
 		Versus:
 			None: 75
+			Heroic: 75
 			Light: 150
 			Reflector: 25
+			Medium: 112
 			Heavy: 75
 			Wood: 100
 			Concrete: 100
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
 	Warhead@DriverDam: DriverPoisonDamage
 		ValidTargets: Vehicle
 		Versus:
 			None: 75
+			Heroic: 75
 			Light: 150
 			Reflector: 25
+			Medium: 112
 			Heavy: 75
 			Wood: 0
 			Concrete: 0
@@ -1048,28 +1687,353 @@
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 10
+			Heroic: 10
 			Light: 75
 			Reflector: 25
+			Medium: 112
 			Heavy: 150
 			Wood: 75
 			Concrete: 35
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
 	Warhead@2Dam: SpreadDamage
 		Versus:
 			None: 15
+			Heroic: 15
 			Light: 75
 			Reflector: 25
+			Medium: 112
 			Heavy: 150
 			Wood: 75
 			Concrete: 35
 			Brick: 45
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
 	Warhead@DriverDam: DriverPoisonDamage
 		ValidTargets: Vehicle
 		Versus:
 			None: 15
 			Light: 75
 			Reflector: 25
+			Medium: 112
 			Heavy: 150
 			Wood: 0
 			Concrete: 0
 			Brick: 0
+^Railguns:
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 15000
+		AffectsParent: false
+		Versus:
+			None: 100
+			Heroic: 90
+			Wood: 130
+			Light: 150
+			Medium: 150
+			Heavy: 110
+			Concrete: 25
+			ElementalFire: 75
+			ElementalWater: 75
+			ElementalIce: 75
+			ElementalDirt: 75
+			ElementalPlant: 75
+			ElementalToxic: 75
+			ElementalGhost: 75
+			ElementalElectro: 25
+			ElementalLight: 75
+			ElementalDarkness: 75
+			ElementalPsychic: 75
+			ElementalInsect: 100
+		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
+	Warhead@2Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 50, 50 # Only does half damage to friendly units
+		Damage: 15000
+		AffectsParent: false
+		ValidRelationships: Ally
+		Versus:
+			None: 50
+			Heroic: 45
+			Wood: 65
+			Light: 75
+			Heavy: 55
+			Concrete: 12
+			ElementalFire: 45
+			ElementalWater: 45
+			ElementalIce: 45
+			ElementalDirt: 45
+			ElementalPlant: 45
+			ElementalToxic: 45
+			ElementalGhost: 45
+			ElementalElectro: 12
+			ElementalLight: 45
+			ElementalDarkness: 45
+			ElementalPsychic: 45
+			ElementalInsect: 50
+		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
+
+^SpellElementalFire:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 10
+			ElementalWater: 10
+			ElementalIce: 200
+			ElementalDirt: 100
+			ElementalPlant: 200
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 200
+
+^SpellElementalWater:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 200
+			ElementalWater: 10
+			ElementalIce: 10
+			ElementalDirt: 200
+			ElementalPlant: 10
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
+
+^SpellElementalIce:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 100
+			ElementalWater: 10
+			ElementalIce: 10
+			ElementalDirt: 200
+			ElementalPlant: 10
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
+
+^SpellElementalDirt:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 200
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 10
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 150
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
+
+^SpellElementalPlant:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 100
+			ElementalWater: 200
+			ElementalIce: 50
+			ElementalDirt: 200
+			ElementalPlant: 100
+			ElementalToxic: 50
+			ElementalGhost: 100
+			ElementalElectro: 100
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
+
+^SpellElementalToxic:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 200
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 200
+			ElementalToxic: 10
+			ElementalGhost: 100
+			ElementalElectro: 100
+			ElementalLight: 150
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
+
+^SpellElementalGhost:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 50
+			Wood: 50
+			Heroic: 50
+			Concrete: 12
+			Light: 50
+			Reflector: 25
+			Medium: 25
+			Heavy: 12
+			Brick: 12
+			ElementalFire: 100
+			ElementalWater: 100
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 100
+			ElementalLight: 10
+			ElementalDarkness: 10
+			ElementalPsychic: 200
+			ElementalInsect: 100
+
+^SpellElementalElectro:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 100
+			ElementalWater: 200
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 10
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100
+
+^SpellElementalElectro:
+	Inherits: ^ABCPrototype
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		Versus:
+			None: 100
+			Wood: 100
+			Heroic: 75
+			Concrete: 25
+			Light: 100
+			Reflector: 50
+			Medium: 50
+			Heavy: 25
+			Brick: 25
+			ElementalFire: 100
+			ElementalWater: 200
+			ElementalIce: 100
+			ElementalDirt: 100
+			ElementalPlant: 100
+			ElementalToxic: 100
+			ElementalGhost: 100
+			ElementalElectro: 10
+			ElementalLight: 100
+			ElementalDarkness: 100
+			ElementalPsychic: 100
+			ElementalInsect: 100

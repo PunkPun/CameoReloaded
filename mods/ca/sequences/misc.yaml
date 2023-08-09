@@ -42,6 +42,7 @@ explosion:
 	Defaults:
 		Length: *
 		ZOffset: 2047
+		Scale: 2.0
 	piff: piff
 	piffs: piffpiff
 	water_piff: wpiff
@@ -326,6 +327,18 @@ explosion:
 		Tick: 80
 		BlendMode: Additive
 		ZOffset: 511
+	flashblue: flashblue
+		Scale: 0.9
+		ZOffset: -512
+	flashgreen: flashgreen
+		Scale: 0.9
+		ZOffset: -512
+	flashorange: flashorange
+		Scale: 0.9
+		ZOffset: -512
+	flashred: flashred
+		Scale: 0.9
+		ZOffset: -512
 
 laserfired2k:
 	idle: DATA.R8
@@ -510,6 +523,8 @@ thawk:
 		ZOffset: 1023
 
 rallypoint:
+	Defaults:
+		Scale: 2.0
 	flag: flagfly
 		Length: *
 		Offset: 11,-5
@@ -695,6 +710,8 @@ litning:
 		ZOffset: 1023
 
 fb1:
+	Defaults:
+		Scale: 2.0
 	idle: fb1
 		Length: *
 		ZOffset: 1023
@@ -740,6 +757,8 @@ tabs:
 		Start: 1
 
 sputnik:
+	Defaults:
+		Scale: 2.0
 	idle: sputnik
 		Length: *
 		Offset: -4,0
@@ -757,21 +776,29 @@ dd-crnr:
 		Start: 3
 
 fb2:
+	Defaults:
+		Scale: 2.0
 	idle: fb2
 		Length: *
 		ZOffset: 1023
 
 fb3:
+	Defaults:
+		Scale: 2.0
 	idle: fb3
 		Facings: 32
 		ZOffset: 1023
 
 fb4:
+	Defaults:
+		Scale: 2.0
 	idle: fb4
 		Length: *
 		ZOffset: 1023
 
 scrate:
+	Defaults:
+		Scale: 2.0
 	Defaults: scrate
 		ZOffset: -511
 	idle: scrate
@@ -783,6 +810,8 @@ scrate:
 		Tick: 500
 
 wcrate:
+	Defaults:
+		Scale: 2.0
 	Defaults: wcrate
 		ZOffset: -511
 	idle: wcrate
@@ -792,6 +821,8 @@ wcrate:
 		Tick: 500
 
 xcratea:
+	Defaults:
+		Scale: 2.0
 	idle: xcratea
 		ZOffset: -511
 	land: xcratea
@@ -804,6 +835,8 @@ xcratea:
 		ZOffset: -511
 
 xcrateb:
+	Defaults:
+		Scale: 2.0
 	idle: xcrateb
 		ZOffset: -511
 	land: xcrateb
@@ -816,6 +849,8 @@ xcrateb:
 		ZOffset: -511
 
 xcratec:
+	Defaults:
+		Scale: 2.0
 	idle: xcratec
 		ZOffset: -511
 	land: xcratec
@@ -828,6 +863,8 @@ xcratec:
 		ZOffset: -511
 
 xcrated:
+	Defaults:
+		Scale: 2.0
 	idle: xcrated
 		ZOffset: -511
 	land: xcrated
@@ -843,6 +880,7 @@ crate-effects:
 	Defaults:
 		ZOffset: 2047
 		Length: *
+		Scale: 2.0
 	speed: speed
 	dollar: dollar
 	reveal-map: earth
@@ -865,6 +903,8 @@ crate-effects:
 		Tick: 200
 
 parach:
+	Defaults:
+		Scale: 2.0
 	open: parach
 		Length: 5
 	idle: parach
@@ -872,6 +912,8 @@ parach:
 		Length: 11
 
 parachl:
+	Defaults:
+		Scale: 2.0
 	open: parachl
 		Length: 5
 	idle: parachl
@@ -879,6 +921,8 @@ parachl:
 		Length: 11
 
 parach-shadow:
+	Defaults:
+		Scale: 2.0
 	idle: parach-shadow
 		Length: *
 
@@ -916,6 +960,8 @@ b2bomb:
 		ZOffset: 1023
 
 smokland:
+	Defaults:
+		Scale: 2.0
 	open: playersmoke
 		Length: 60
 		Tick: 120
@@ -927,6 +973,8 @@ smokland:
 		ZOffset: 1023
 
 fire:
+	Defaults:
+		Scale: 2.0
 	Defaults:
 		Length: *
 		Offset: 0,-3
@@ -944,6 +992,8 @@ fire:
 		FlipX: true
 
 rank:
+	Defaults:
+		Scale: 2.0
 	rank-veteran-1: rank
 	rank-veteran-2: rank
 		Start: 1
@@ -965,6 +1015,8 @@ iconoverlays:
 		Offset: -2, -2
 
 atomic:
+	Defaults:
+		Scale: 2.0
 	up: atomicup
 		Length: *
 		ZOffset: 1023
@@ -973,6 +1025,8 @@ atomic:
 		ZOffset: 1023
 
 empicbm:
+	Defaults:
+		Scale: 2.0
 	up: atomicupcnc
 		Length: *
 		ZOffset: 511
@@ -981,6 +1035,8 @@ empicbm:
 		ZOffset: 511
 
 chemicbm:
+	Defaults:
+		Scale: 2.0
 	up: atomicupcnc
 		Length: *
 		ZOffset: 511
@@ -989,6 +1045,8 @@ chemicbm:
 		ZOffset: 511
 
 deathhand:
+	Defaults:
+		Scale: 2.0
 	up: atomicupcnc
 		Length: *
 		ZOffset: 511
@@ -997,6 +1055,8 @@ deathhand:
 		ZOffset: 511
 
 ionsfx:
+	Defaults:
+		Scale: 2.0
 	idle: ionsfx
 		Length: *
 		Offset: 0, -78
@@ -1030,6 +1090,8 @@ satscan:
 		ZOffset: 1023
 
 gpsdot:
+	Defaults:
+		Scale: 2.0
 	Infantry: gpsdot
 	Vehicle: gpsdot
 		Start: 1
@@ -1129,16 +1191,19 @@ lar2:
 minp:
 	idle: minp
 		ZOffset: -512
+		Scale: 2.0
 	icon: jmin
 
 minv:
 	idle: minv
 		ZOffset: -512
+		Scale: 2.0
 	icon: jmin
 
 minvs:
 	idle: minvs
 		ZOffset: -512
+		Scale: 2.0
 	icon: jmin
 
 mins:
@@ -1146,16 +1211,19 @@ mins:
 		ZOffset: -512
 		Length: *
 		Tick: 400
+		Scale: 2.0
 	icon: jmin
 
 minsf:
 	idle: minsf
 		ZOffset: -512
+		Scale: 2.0
 	icon: jmin
 
 overlay:
 	Defaults: trans.icn
 		AddExtension: False
+		Scale: 2.0
 	build-valid:
 	build-invalid:
 		Start: 2
@@ -1168,6 +1236,7 @@ overlay:
 editor-overlay:
 	Defaults: trans.icn
 		AddExtension: False
+		Scale: 2.0
 	copy:
 	paste:
 		Start: 2
@@ -1176,6 +1245,7 @@ resources:
 	Defaults:
 		Length: *
 		UseTilesetExtension: true
+		Scale: 2.0
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 			JUNGLE: TEMPERAT
@@ -1320,8 +1390,163 @@ resources:
 			JUNGLE: TEMPERAT
 			SNOW: TEMPERAT
 			BARREN: TEMPERAT
-
+	tib01: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 0,0,0
+	tib01_a: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 12,-2,0
+	tib01_b: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -2,12,0
+	tib01_c: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 8,8,0
+	tib01_d: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -12,2,0
+	tib01_f: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 2,-12,0
+	tib01_g: tib01
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -8,-8,0
+	tib02: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.62
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 0,0,0
+	tib02_a: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 12,-2,0
+	tib02_b: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -2,12,0
+	tib02_c: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 8,8,0
+	tib02_d: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.55
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -12,2,0
+	tib02_f: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.5
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: 2,-12,0
+	tib02_g: tib02
+		Length: 12
+		ShadowStart: 12
+		Scale: 1.6
+		TilesetOverrides:
+			JUNGLE: TEMPERAT
+			SNOW: TEMPERAT
+			BARREN: TEMPERAT
+			INTERIOR: TEMPERAT
+			DESERT: TEMPERAT
+		Offset: -8,-8,0
 shroud:
+	Defaults:
+		Scale: 2.0
 	shroud: shadow
 		Length: *
 
@@ -1333,6 +1558,7 @@ scorches:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+		Scale: 2.0
 	sc1: sc1
 	sc2: sc2
 	sc3: sc3
@@ -1346,6 +1572,7 @@ craters:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+		Scale: 2.0
 	cr1: cr1
 	cr2: cr2
 	cr3: cr3
@@ -1570,6 +1797,7 @@ split2:
 			WINTER: SNOW
 			BARREN: SNOW
 			INTERIOR: TEMPERAT
+		Scale: 2.0
 	make:
 		Length: 30
 	active:
@@ -1588,6 +1816,7 @@ split3:
 			WINTER: SNOW
 			BARREN: DESERT
 			INTERIOR: DESERT
+		Scale: 2.0
 	make:
 		Length: 30
 	active:
@@ -1940,3 +2169,29 @@ squad.airborne.tank:
 
 empty:
 	idle: empty
+energyshields:
+	shield-complete: modshields
+		Start: 200
+		Length: 30
+		ZOffset: 1023
+		Reverses: True
+		Scale: 0.6
+		Tick: 50
+		Alpha: 0.25
+		BlendMode: Alpha
+	shield-damaged: modshields
+		Start: 222
+		Length: 30
+		ZOffset: 1023
+		Reverses: True
+		Scale: 0.6
+		Tick: 50
+		Alpha: 0.25
+		BlendMode: Alpha
+	shield-starts: modshields
+		Length: *
+		ZOffset: 1023
+		Scale: 0.6
+		Tick: 50
+		Alpha: 0.25
+		BlendMode: Alpha

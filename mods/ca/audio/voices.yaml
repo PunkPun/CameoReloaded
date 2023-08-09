@@ -239,9 +239,9 @@ CyborgVoice:
 		Attack: 22-i008, 22-i010, 22-i012, 22-i018
 		Action: 22-i008, 22-i010, 22-i014, 22-i016, 22-i020
 		Die: 22-n104, 22-n106, 22-n108
-		Burned: 22-n104, 22-n106, 22-n108
 		Zapped: 22-n104, 22-n106, 22-n108
 		Poisoned: 22-n104, 22-n106, 22-n108
+		Burned: 22-n104, 22-n106, 22-n108
 
 CyborgCommandoVoice:
 	Voices:
@@ -250,9 +250,9 @@ CyborgCommandoVoice:
 		Attack: 23-i014, 23-i018, 23-i020, 23-i022
 		Action: 23-i008, 23-i010, 23-i012, 23-i016
 		Die: 22-n104, 22-n106, 22-n108
-		Burned: 22-n104, 22-n106, 22-n108
 		Zapped: 22-n104, 22-n106, 22-n108
 		Poisoned: 22-n104, 22-n106, 22-n108
+		Burned: 22-n104, 22-n106, 22-n108
 
 TTruckVoice:
 	Voices:
@@ -739,3 +739,15 @@ GrizzlyVoice:
 		Action: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
 		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
 		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate
+
+NewScrinVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vgrasea, vgraseb, vgrasec, vgrased, vgrasee
+		Action: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
+		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
+		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate
+		Die: scrin-die1, scrin-die2, scrin-die3, scrin-die4, scrin-die5
+		Burned: scrin-firedeath
+		Zapped: scrin-die2, scrin-die5
+		Poisoned: scrin-die2, scrin-die5

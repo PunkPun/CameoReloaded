@@ -1,0 +1,1529 @@
+###################################################
+#               Technical
+###################################################
+^TSInfantry:
+	SpawnActorOnDeath@viceroid:
+		Probability: 35
+		Actor: vice
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: playerra2
+		DeathPaletteIsPlayerPalette: true
+	SpawnActorOnDeath@flameguy:
+		Probability: 50
+		Actor: tsflameguy
+		OwnerType: Victim
+		DeathType: FireDeath 
+	Voiced:
+		VoiceSet: TSInfantry
+tsflameguy:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Mobile:
+		Speed: 36
+		Locomotor: foot
+	HiddenUnderFog:
+	WithInfantryBody:
+		IdleSequences: run
+	Health:
+		HP: 16000
+	ChangesHealth:
+		Step: -1000
+		StartIfBelow: 101
+	ScaredyCat:
+		PanicSequencePrefix:
+	WithDeathAnimation:
+		FallbackSequence: die
+		UseDeathTypeSuffix: false
+	HitShape:
+	MapEditorData:
+		Categories: System
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: playerra2
+
+^TSCyborg:
+	Inherits@1: ^Infantry
+	Inherits@2: ^EmpDisable
+	Inherits@3: ^HealsOnTiberium
+	Inherits@4: ^TSInfantry
+	Inherits@11: ^NaniteRepair
+	DeathSounds:
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+	TakeCover:
+		RequiresCondition: critical
+		Duration: -1
+		DamageModifiers:
+			Prone50Percent: 50
+			Prone60Percent: 60
+			Prone70Percent: 70
+			Prone100Percent: 100
+			Prone350Percent: 350
+		ProneOffset: 100,0,0
+		ProneSequencePrefix: crippled-
+	-WithInfantryBody:
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+		IdleSequences: idle1, idle2
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critical
+		ValidDamageStates: Critical
+		GrantPermanently: true
+	Mobile:
+		PauseOnCondition: empdisable
+	Targetable@REPAIR:
+		RequiresCondition: !parachute && damaged && !being-warped
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
+	Targetable@MetalInfantry:
+		TargetTypes: MetalInfantry
+^HealsOnTiberium:
+	DamagedByTerrain:
+		Damage: -200
+		DamageInterval: 16
+		Terrain: Tiberium, BlueTiberium
+
+###################################################
+#               GDI
+###################################################
+tse1.gdi:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.tsgdi
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: Light Infantry
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 12500
+	Mobile:
+		Speed: 71
+	Armament@PRIMARY:
+		Weapon: TSMinigun
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSM1Carbine
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	-WithInfantryBody:
+tse2:
+	Inherits: ^Soldier
+	Inherits: ^PrioArtillery
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 40
+		Prerequisites: ~infantry.tsgdi
+		Description: Infantry armed with grenades.\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Disc Thrower
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Mobile:
+		Speed: 56
+	Armament@PRIMARY:
+		Weapon: TSGrenade
+		LocalOffset: 0,0,555
+		FireDelay: 15
+	Armament@Garrison:
+		Name: mounted
+		Weapon: GrenadeE
+		LocalOffset: 0,0,555
+		FireDelay: 15
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+		Chance: 33
+		DamageSource: Killer
+		RequiresCondition: !being-warped
+
+
+tsengineer.gdi:
+	Inherits: ^Soldier
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.tsengineer.gdi
+		IconPalette: chromets
+		Description: Infiltrates and captures\nenemy structures.\n  Can repair friendly structures & bridges.\n  Special Ability: Repair\n  Unarmed
+	Selectable:
+		Class: tsengineer
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Engineer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	WithInfantryBody:
+	Passenger:
+		CustomPipType: yellow
+	EngineerRepair:
+	RepairsBridges:
+	CaptureManager:
+	Captures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 100
+	Voiced:
+		VoiceSet: TSEngineer
+	Selectable:
+		Priority: 5
+	Targetable:
+		TargetTypes: Ground, Infantry, Disguise, ChaosImmune
+tsmedic:
+	Inherits: ^Soldier
+	Inherits: ^InfantrySupportUnit
+	Inherits@TS: ^TSInfantry
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Medic
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 50
+		Prerequisites: ~infantry.tsgdi
+		IconPalette: chromets
+		Description: Heals nearby infantry.\n  Unarmed
+	Voiced:
+		VoiceSet: TSMedic
+	RevealsShroud:
+		Range: 6c0
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 12500
+	Crushable:
+		CrushSound: squishy2.aud
+	Armament:
+		Weapon: Heal
+		Name: primary
+		Cursor: heal
+		OutsideRangeCursor: heal
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	AttackFrontal:
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: heal
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	ChangesHealth:
+		Step: 500
+		Delay: 60
+	Passenger:
+		CustomPipType: blue
+tsghost:
+	Inherits: ^Soldier
+	Inherits: ^PrioAntiLight
+	Inherits@detect: ^SensorEquipment
+	Inherits@COMMANDOSKULL: ^CommandoSkull
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@TS: ^TSInfantry
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Ghost Stalker
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 90
+		Prerequisites: ~infantry.tsghost, tech
+		BuildLimit: 1
+		IconPalette: chromets
+		Description: Elite commando infantry, armed with\na railgun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n  Special Ability: Destroy Building with C4\nMaximum 1 can be trained.
+	Voiced:
+		VoiceSet: TSGhost
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 20000
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	Armament:
+		Weapon: TSLtRail
+		LocalOffset: 120,0,543
+	TakeCover:
+		ProneOffset: 256,32,-384
+	Crushable:
+		CrushSound: squishy2.aud
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	Demolition:
+		DetonationDelay: 45
+		Voice: Attack
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+###################################################
+#               Nod
+###################################################
+tse1.nod:
+	Inherits: tse1.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.tsnod
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: Light Infantry
+tse1.pilot.nod:
+	Inherits: tse1.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.tsnod, ~disabled
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: Vehicle Pilot
+tse3:
+	Inherits: ^Soldier
+	Inherits: ^WhiteFlash
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod
+		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+		IconPalette: chromets
+	Selectable:
+		Class: tse3
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Rocket Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 10000
+	Mobile:
+		speed: 56
+	Armament@PRIMARY:
+		Weapon: TSBazooka
+		LocalOffset: 356,0,967
+	TakeCover:
+		ProneOffset: 384,0,-395
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+
+tsengineer.nod:
+	Inherits: tsengineer.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		Prerequisites: ~infantry.tsnod
+	Selectable:
+		Class: tsengineer
+tsmhijack:
+	Inherits: ^Soldier
+	Inherits@2: ^HealsOnTiberium
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 80
+		Prerequisites: ~infantry.tsmhijack
+		BuildLimit: 1
+		Description: Hijacks enemy vehicles.\n  Unarmed
+		IconPalette: chromets
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mutant Hijacker
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Voiced:
+		VoiceSet: TSHijacker
+	Health:
+		HP: 30000
+	Mobile:
+		Speed: 105
+	-Crushable:
+	CaptureManager:
+	Captures:
+		CaptureTypes: Vehicle
+		PlayerExperience: 50
+	RevealsShroud:
+		Range: 6c0
+
+tschamspy:
+	Inherits: ^Soldier
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 50
+		Prerequisites: ~infantry.tschamspy
+		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Loses disguise when attacking.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguise
+		IconPalette: chromets
+	Valued:
+		Cost: 700
+	DisguiseTooltip:
+		Name: Chameleon Spy
+	Voiced:
+		VoiceSet: TSSpy
+	Health:
+		HP: 12000
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 9c0
+	Passenger:
+	Disguise:
+		DisguisedCondition: disguise
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: effect
+		Position: TopRight
+		RequiresCondition: disguise
+	Infiltrates:
+		Types: SpyInfiltrate
+		Notification: BuildingInfiltrated
+		PlayerExperience: 50
+	WithDisguisingInfantryBody:
+		IdleSequences: idle1, idle2
+	Targetable:
+		TargetTypes: Ground, Infantry, Disguise, ChaosImmune
+	Tooltip:
+		Name: Charmeleon Spy
+tselitcadre:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod, anyhq
+		Description: Elite infantry after CABAL revelion, used to replace CABAL cyborg army
+		IconPalette: chromets
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Elite Cadre
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 30000
+	Mobile:
+		Speed: 71
+	Armament@PRIMARY:
+		Weapon: TSVulcan3
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSVulcan3
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	-WithInfantryBody:
+
+tsnodflame:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod
+		Description: Elite infantry after CABAL revelion, used to replace CABAL cyborg army
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Flamer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 20000
+	Mobile:
+		Speed: 71
+	Armament@PRIMARY:
+		Weapon: TSFireballSmall
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSFireballSmall
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	-WithInfantryBody:
+tslasgunner:
+	Inherits: ^Soldier
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod, anyhq
+		Description: Elite infantry after CABAL revelion, used to replace CABAL cyborg army
+		IconPalette: chromets
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Laser Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 30000
+	Mobile:
+		Speed: 71
+	Armament@PRIMARY:
+		Weapon: TSPortableLaserFire
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSPortableLaserFire
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	-WithInfantryBody:
+
+tshgunner:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod, anyhq
+		Description: Armed with Recoiless Cannon
+		IconPalette: chromets
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Heavy Gunner
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 30000
+	Mobile:
+		Speed: 71
+	Armament@PRIMARY:
+		Weapon: TS90mmx
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TS90mmx
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	-WithInfantryBody:
+
+###################################################
+#               MUTANT
+###################################################
+tsumagon:
+	Inherits: ^Soldier
+	Inherits: ^PrioAntiLight
+	Inherits@detect: ^SensorEquipment
+	Inherits@COMMANDOSKULL: ^CommandoSkull
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 90
+		Prerequisites: ~infantry.forgotten, tech
+		BuildLimit: 1
+		IconPalette: chromets
+		Description: Elite sniper infantry, armed with\na long ranged snuper.\n  Strong vs Infantry\n  Weak vs Buildings, Aircraft\n  Special Ability: Snipe Tanks\nMaximum 1 can be trained.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Umagon
+	Voiced:
+		VoiceSet: TSUmagon
+	Mobile:
+		Speed: 72
+	Health:
+		HP: 15000
+	Passenger:
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: TSSniperE
+	Armament@AA:
+		Weapon: TSSniperEAA
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Cloak:
+		InitialDelay: 55
+		CloakDelay: 55
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || empdisable
+		CloakType: nod-stealth
+tsmutant:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.forgotten, ~!commander_tree.forgotten.doctrine.scrap, , ~!commander_tree.forgotten.doctrine.terror
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Mutant
+	Voiced:
+		VoiceSet: TSMutant
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: TSVulcan
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSM1Carbine
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+tsshotmut:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.forgotten, ~commander_tree.forgotten.doctrine.scrap
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Shotgunner
+	Voiced:
+		VoiceSet: TSUmagon
+	Health:
+		HP: 7500
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: TSShotgun
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSSuperShotgun
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+tsmwmn:
+	Inherits: ^Soldier
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.forgotten, anyhq
+		Description: Basic Sniper unit.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Mutant Sniper
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: TSSniper
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Voiced:
+		VoiceSet: TSUmagon
+tsmutant3:
+	Inherits: ^Soldier
+	Inherits: ^PrioArtillery
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 20
+		Prerequisites: ~infantry.forgotten, anyhq
+		Description: Combination of GDI Grenadier and Light Infantry.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Mutant Sergeant
+	Voiced:
+		VoiceSet: TSMutant
+	Health:
+		HP: 12500
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: TSVulcan
+	Armament@PRIMARY:
+		Weapon: TSGrenade
+		LocalOffset: 0,0,555
+		FireDelay: 15
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+tsweedguy:
+	Inherits: ^Soldier
+	Inherits: ^PrioAntiInfantry
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 40
+		Prerequisites: ~infantry.forgotten, ~commander_tree.forgotten.doctrine.terror
+		Description: Chemical Trooper, uses toxines.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Chem Spray Infantry
+	Voiced:
+		VoiceSet: TSSeed
+	Mobile:
+		Speed: 42
+	Health:
+		HP: 13000
+	Crushable:
+		CrushSound: squishy2.aud
+	Armament:
+		Weapon: TSChemicalLauncher
+		LocalOffset: 317,0,400
+	TakeCover:
+		ProneOffset: 128,0,-320
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+tsmutant4:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.forgotten, ~commander_tree.forgotten.doctrine.terror, tscalifeform
+		Description: Mutant stripped of his mind and completely wild.\n  Unlike their more conscious brothers, they suffered worse mutations, affecting their intellect, now they only serve the forgotten as a furious horde, effective in groups
+		IconPalette: chromets
+	Armor:
+		Type: ElementalToxic
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Zombie Mutant
+	Voiced:
+		VoiceSet: TSMutantZombie
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: TSMutantAttack
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+tshgrunt:
+	Inherits: tse1.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.forgotten, ~disabled
+		Description: Soldier, Mercenary and other type of man, this militar guy dont have a specific army like GDI or Nod
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: Grunt
+	Selectable:
+		Class: TSE1
+	Armament:
+		Weapon: TSM1Carbine
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSM1Carbine
+
+tsmassn:
+	Inherits: tse1.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.forgotten, ~commander_tree.forgotten.doctrine.terror
+		Description: Soldier, Mercenary and other type of man, this militar guy dont have a specific army like GDI or Nod
+		IconPalette: chromets
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Assasin
+	Selectable:
+		Class: TSE1
+	Armament:
+		Weapon: TSAssasinGun
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSAssasinGun
+	Cloak:
+		InitialDelay: 88
+		CloakDelay: 88
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || empdisable
+		CloakType: nod-stealth
+
+
+tscengie:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 40
+		Prerequisites: ~infantry.forgotten
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Armed Engineer
+	Voiced:
+		VoiceSet: TSMutant
+	Health:
+		HP: 5000
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: TSStrongPistola
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSStrongPistola
+	AttackFrontal:
+		Voice: Action
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Voiced:
+		VoiceSet: TSEngineer
+	Passenger:
+		CustomPipType: yellow
+	EngineerRepair:
+	RepairsBridges:
+	CaptureManager:
+	Captures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 100
+	Selectable:
+		Priority: 5
+	Targetable:
+		TargetTypes: Ground, Infantry, Disguise, ChaosImmune
+###################################################
+#               CABAL
+###################################################
+tscyborg:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Armored Cyborg
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.cabal, anyhq
+		Description: Cybernetic infantry unit, with Portable cannon, has more armor than a common Cyborg
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 60000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TS90mmx
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+tscyborg2:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Cyborg
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 20
+		Prerequisites: ~infantry.cabal
+		Description: Cybernetic infantry unit.\n  Strong vs Infantry, Light armor\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 30000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSVulcan3
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+tscybass:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Cyborg Infiltrator
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 40
+		Prerequisites: ~infantry.cabal, anyhq
+		Description: This Cyborg is equiped with Hacking equipement, equivalent to Charmeleon Spy
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborgInfiltrator
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 42000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSVulcan3
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	Infiltrates:
+		Types: SpyInfiltrate
+		Notification: BuildingInfiltrated
+		PlayerExperience: 50
+
+tscygrl:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@PLD: ^PointLaserDefenseSystem
+	Inherits@COMMANDOSKULL: ^CommandoSkull
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Scorpetta
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 40
+		Prerequisites: ~infantry.cabal, tech
+		Description: Scorpetta
+		IconPalette: chromets
+		BuildLimit: 1
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 155
+	Health:
+		HP: 75000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSSlimeAttack
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+tscyc2:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COMMANDOSKULL: ^CommandoSkull
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Cyborg Commando
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 100
+		Prerequisites: ~infantry.cabal, tech
+		BuildLimit: 1
+		IconPalette: chromets
+		Description: Elite cybernetic infantry unit.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nMaximum 1 can be trained.
+	Voiced:
+		VoiceSet: TSCyborgCommando
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 50000
+	Passenger:
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: TSCyCannon
+		LocalOffset: 240,120,450
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+
+tscengineer:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Cyborg Engineer
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.cabal
+		IconPalette: chromets
+		Description: Can capture buildings like a normal engineer, can floats like a hovercraft and repair units
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 56
+		Locomotor: seal
+	Health:
+		HP: 60000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: Repair
+		Name: primary
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+	AttackFrontal:
+		Voice: Action
+		FacingTolerance: 0
+	Passenger:
+		CustomPipType: yellow
+	EngineerRepair:
+	RepairsBridges:
+	CaptureManager:
+	Captures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 100
+tschijacker:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Vehicle Hacker
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.cabal, anyhq
+		Description: Controls vehicles
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 70
+	Health:
+		HP: 38000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSHack
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	MindController:
+		ArmamentNames: primary
+		Capacity: -1
+		TicksToControl: 40
+		TicksToRevoke: 25
+		InitSounds: hacker-init.aud
+		InitSoundControllerOnly: true
+		ControlSounds: hacker-hacked.aud
+		ControllingCondition: hacked-in
+		UndeployOnControl: true
+	WithDecoration@HACKEDIN:
+		Image: hacking
+		Sequence: hacking
+		RequiresCondition: hacked-in
+		Position: BottomRight
+		Palette: effect
+		ValidRelationships: Ally, Neutral, Enemy
+	WithMindControlArc@HACK:
+		Color: 1ce312
+		Transparency: 65
+		Angle: 60
+		Width: 86
+		Offset: 0,0,50
+	RenderRangeCircle:
+		Color: 00cc00
+tsdevout:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Devout
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 20
+		Prerequisites: ~infantry.cabal, ~infantry.tsdevout
+		Description: A Upgraded Cyborg Infantry
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 60
+	Health:
+		HP: 52000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSVulcan4
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+tsascended:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Ascended
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 20
+		Prerequisites: ~infantry.cabal, ~infantry.tsascended
+		Description: A Upgraded Cyborg Infantry
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 60
+	Health:
+		HP: 50000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSAscendedTusk
+		LocalOffset: 88,-204,509, 88,204,509
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+
+tsenlighted:
+	Inherits: ^TSCyborg
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@EXPHOSPITAL: ^InfantryExperienceHospitalOverrides
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Armor:
+		Type: Light
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Enlighted
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.cabal, ~infantry.tsenlighted, tech
+		Description: A Upgraded Cyborg Infantry
+		IconPalette: chromets
+	Voiced:
+		VoiceSet: TSCyborg
+	Mobile:
+		Speed: 60
+	Health:
+		HP: 50000
+	Passenger:
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TSEnlightedLaserFire
+		LocalOffset: 300,204,300
+		RequiresCondition: !critical
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 5
+		RequiresCondition: !critical
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+###################################################
+#               Civilian
+###################################################
+tsciv1:
+	Inherits: ^CivInfantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	Armament:
+		Weapon: TSPistola
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	Inherits@TS: ^TSInfantry
+	Voiced:
+		VoiceSet: TSCivilian1
+	-RenderSprites:
+	RenderSprites:
+		PlayerPalette: playerra2
+tsciv2:
+	Inherits: ^CivInfantry
+	Inherits@TS: ^TSInfantry
+	Voiced:
+		VoiceSet: TSCivilian2
+	-RenderSprites:
+	RenderSprites:
+		PlayerPalette: playerra2
+tsciv3:
+	Inherits: ^CivInfantry
+	Inherits@TS: ^TSInfantry
+	Voiced:
+		VoiceSet: TSCivilian3
+	-RenderSprites:
+	RenderSprites:
+		PlayerPalette: playerra2
+tsctech:
+	Inherits: tsciv3
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	Armament:
+		Weapon: TSPistola
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	Inherits@TS: ^TSInfantry
+	Voiced:
+		VoiceSet: TSCivilianTechnician
+	RenderSprites:
+		PlayerPalette: playerra2
+		Image: tsciv3
+tsmutciv4:
+	Inherits: tsciv3
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithSplitAttackPaletteInfantryBody:
+		DefaultAttackSequence: attack
+	Armament:
+		Weapon: TSPistola
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 0
+	Inherits@TS: ^TSInfantry
+	Voiced:
+		VoiceSet: TSCivilianTechnician
+	RenderSprites:
+		PlayerPalette: playerra2
+		Image: tsmutciv4
+###################################################
+#               Creatures
+###################################################
+###################################################
+#               Unused
+###################################################
+tssplntcl1:
+	Inherits: tse1.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.forgotten, ~disabled
+		Description: Soldier, Mercenary and other type of man, this militar guy dont have a specific army like GDI or Nod
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Splinter Cell
+	Armament:
+		Weapon: TSAssasinGun
+	Armament@Garrison:
+		Name: mounted
+		Weapon: TSAssasinGun
+	Cloak:
+		InitialDelay: 88
+		CloakDelay: 88
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		Palette: cloak
+		IsPlayerPalette: false
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Damage, Heal
+		PauseOnCondition: cloak-force-disabled || empdisable
+		CloakType: nod-stealth
+tse1.nod2:
+	Inherits: tse1.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.tsnod, ~disabled
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: Light Infantry
+tse3.nod2:
+	Inherits: tse3
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod, ~disabled
+		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+tse3.nod3:
+	Inherits: tse3
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.tsnod, ~disabled
+		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+		IconPalette: chromets
+	Selectable:
+		Class: TSE1
+
+tsengineer.nod2:
+	Inherits: tsengineer.gdi
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		Prerequisites: ~infantry.tsnod, ~disabled
+	Selectable:
+		Class: tsengineer

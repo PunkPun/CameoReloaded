@@ -1,8 +1,5 @@
 mcv.camea:
 	Inherits: MCV
-	Inherits: ^VehicleTD
-	Inherits: ^BigVehicle
-	#Inherits@MM: ^MM
     Valued:
         Cost: 2000
 	Transforms:
@@ -12,50 +9,30 @@ mcv.camea:
 	Buildable:
 		BuildPaletteOrder: 10
 		Description: Transforms into Construction Yard
-        Queue: Vehicle.camea, RAVehicle.camea
-        Prerequisites: FIX.camea
-	ProvidesPrerequisite@faction:
-		Prerequisite: mmgdi
+		Queue: Vehicle, Vehicle.Multi
+		Prerequisites: rafix.camea, ~vehicles.camea
 	RenderSprites:
-		Image: mm1mcv
-
-mcv.camea.Bot:
-    Inherits: mcv.camea
-	Buildable:
-		BuildPaletteOrder: 100
-        BuildLimit: 1
-		Prerequisites: RAFIX.camea, ~botplayer, allowsMCV
+		Image: mcv
+		PlayerPalette: overlayplayer
 
 E7.camea:
 	Inherits: E7
 	Buildable:
-		Queue: Infantry.camea, RAInfantry.camea
+		Queue: Infantry, Infantry.Multi
 		BuildPaletteOrder: 120
-		Prerequisites: stek.camea, ~techlevel.high
+		Prerequisites: stek.camea, ~commander_tree.advanced_infantry_training
     RenderSprites:
         Image: E7
         
 SHOK.camea:
 	Inherits: SHOK
 	Buildable:
-		Queue: Infantry.camea, RAInfantry.camea
+		Queue: Infantry, Infantry.Multi
 		BuildPaletteOrder: 130
-		Prerequisites: stek.camea, ~techlevel.high
+		Prerequisites: ~stek.camea, ~commander_tree.advanced_infantry_training
     RenderSprites:  
         Image: SHOK
-        
-E1.para:
-    Inherits: E1
-    -Buildable:
-    GrantConditionOnPrerequisite@camea:
-        Prerequisites: faction.camea
-        Condition: faction.camea  
-    ReloadDelayMultiplier:
-        Modifier: 80
-        RequiresCondition: faction.camea  
-    RenderSprites: 
-        Image: E1
-        
+
 RMBO.camea:
 	Inherits: RMBO
 	Valued:
@@ -66,8 +43,8 @@ RMBO.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: stek.camea, ~techlevel.high
-		Queue: Infantry.camea, RAInfantry.camea
+		Prerequisites: ~stek.camea, ~commander_tree.advanced_infantry_training
+		Queue: Infantry, Infantry.Multi
 		Description: Elite Stealthed sniper infantry unit.\n  Strong vs Infantry\n  Weak vs Vehicles
 	Mobile:
 		Speed: 75
@@ -84,7 +61,7 @@ RMBO.camea:
 	AutoTarget:
 		ScanRadius: 8
 	Armament:
-		Weapon: camea_sniper
+		Weapon: Sniper
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: Sniper
@@ -98,7 +75,6 @@ RMBO.camea:
 	AnnounceOnKill:
 	Voiced:
 		VoiceSet: CommandoVoice
-	Inherits@EXT: ^ExternalConditions					##########
 	AcceptsDeliveredExperience:							##########
 		ValidTypes: infantry							##########
     Cloak@cameacloak:
@@ -112,20 +88,15 @@ RMBO.camea:
 MECH.camea:
 	Inherits: MECH
 	Buildable:
-		Queue: Infantry.camea, RAInfantry.camea
+		Queue: Infantry, Infantry.Multi
 		BuildPaletteOrder: 100
-		Prerequisites: hq.camea, ~techlevel.medium
+		Prerequisites: ~vehicles.camea, ~commander_tree.advanced_infantry_training
 		Description: Repairs nearby vehicles.\n  Unarmed
 	RenderSprites:
         Image: MECH
-    Armament@GARRISONED:						##########
-		Name: garrisoned
-		Weapon: Repair
        
 JEEP.camea:
-	Inherits: ^Vehicle
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits: HMMV
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -134,7 +105,8 @@ JEEP.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 20
-		Queue: Vehicle.camea, RAVehicle.camea
+		Queue: Vehicle, Vehicle.Multi
+		Prerequisites: ~vehicles.camea
 		Description: Fast scout.\nWeaponry depends on infantry garissoned\n  Strong vs Infantry\n  Weak vs Tanks
         BuildDuration: 300
         BuildDurationModifier: 100
@@ -142,21 +114,17 @@ JEEP.camea:
 		TurnSpeed: 16
 		Speed: 156
 	Health:
-		HP: 16000
+		HP: 35000
 	Repairable:
 		HpPerStep: 1819
 	Armor:
 		Type: Light
 	RevealsShroud:
 		Range: 8c0
-    AttackFrontal:
+	AttackFrontal:
    	Turreted:
 		TurnSpeed: 10
-		Offset: -85,0,128
-	Armament@mg:
-		Weapon: MachineGunH
-		LocalOffset: 171,0,85
-		MuzzleSequence: muzzle
+		Offset: -85,0,200
 	WithMuzzleOverlay:
 	WithSpriteTurret:     
     Cargo:
@@ -164,23 +132,29 @@ JEEP.camea:
 		MaxWeight: 1
 		PipCount: 1
 		EjectOnDeath: false
-	AttackOpenTopped:
-        PortOffsets: 0,0,0
-		Armaments: garrisoned
-		Voice: Attack
-		PauseOnCondition: chronobeamed
 	RevealOnFire:
 		ArmamentNames: primary, garrisoned
-	#SpawnActorOnDeath:
-	#	Actor: JEEP.Husk
-	#	OwnerType: InternalName
-	#	EffectiveOwnerFromOwner: true
-	Inherits@EXT: ^ExternalConditions					##########
+	SpawnActorOnDeath:
+		Actor: JEEP.camea.Husk
+		OwnerType: InternalName
+		EffectiveOwnerFromOwner: true
 	AcceptsDeliveredExperience:							##########
 		ValidTypes: vehicle								##########
     RenderSprites:
-        Image: JEEP
-        
+        Image: newhumvee
+
+JEEP.camea.Husk:
+	Inherits: ^HuskTD
+	Tooltip:
+		Name: Husk (Hum-Vee)
+	TransformOnCapture:
+		IntoActor: JEEP.camea
+	InfiltrateForTransform:
+		IntoActor: JEEP.camea
+	RenderSprites:
+		Image: newhumvee
+		PlayerPalette: overlayplayertd
+
 FTNK.camea:
 	Inherits: FTNK
 	Valued:
@@ -191,12 +165,11 @@ FTNK.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: ~techlevel.medium
-		Queue: Vehicle.camea, RAVehicle.camea
+		Prerequisites: weap.camea, ~vehicles.camea
+		Queue: Vehicle, Vehicle.Multi
 		Description: Heavily armored toxic-throwing vehicle.\n  Strong vs Infantry\n  Weak vs Tanks
         BuildDuration: 350
         BuildDurationModifier: 100
-
 	Mobile:
 		Speed: 99
 	Health:
@@ -208,7 +181,7 @@ FTNK.camea:
 	RevealsShroud:
 		Range: 5c0  
     Armament:
-		Weapon: GLTractorToxinBeta
+		Weapon: ChemballLauncher
 		LocalOffset: 512,128,42, 512,-128,42
 		-MuzzleSequence:  
     RenderSprites:
@@ -225,8 +198,8 @@ HTNK.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 60
-		Prerequisites: stek.camea
-		Queue: Vehicle.camea, RAVehicle.camea
+		Prerequisites: stek.camea, ~vehicles.camea
+		Queue: Vehicle, Vehicle.Multi
 		Description: Heavily armored GDI Tank.\nCan attack Aircraft.\n  Strong vs Everything
 	Mobile:
 		Locomotor: heavytracked
@@ -244,22 +217,9 @@ HTNK.camea:
 		Range: 6c0
 	Turreted:
 		TurnSpeed: 3
-	SelfHealing:
-		Step: 500
-		Delay: 10
-		HealIfBelow: 50
-		DamageCooldown: 200
-	Explodes:
-		Weapon: UnitExplodeMech
-		EmptyWeapon: UnitExplodeMech
-	#SpawnActorOnDeath:
-	#	Actor: HTNK.Husk
-	#	OwnerType: InternalName
-	#	EffectiveOwnerFromOwner: true
 	SelectionDecorations:
     RenderSprites:
         Image: HTNK
-        Scale: 1.1
         
 STNK.camea:
 	Inherits: STNK
@@ -271,8 +231,8 @@ STNK.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 90
-		Prerequisites: stek.camea
-		Queue: Vehicle.camea, RAVehicle.camea
+		Prerequisites: stek.camea, ~vehicles.camea
+		Queue: Vehicle, Vehicle.Multi
 		Description: Long-range missile tank that can cloak.\nCan attack Aircraft.\nHas weak armor. Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry.
 	Mobile:
 		Locomotor: heavywheeled
@@ -293,7 +253,7 @@ STNK.camea:
 		PauseOnCondition: cloak-force-disabled || base-reveal || disabled
 		IsPlayerPalette: true
 	Armament:
-		Weapon: 227mm.stnk
+		Weapon: StnkMissile
 		LocalOffset: 213,43,128, 213,-43,128
     RenderSprites:
         Image: STNK
@@ -301,14 +261,14 @@ STNK.camea:
 TTNK.camea:
 	Inherits: TTNK
 	Buildable:
-		Queue: Vehicle.camea, RAVehicle.camea
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 170
-		Prerequisites: rafix.camea, hq.camea, ~techlevel.high
-		Description: Tank with mounted Tesla coil.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
+		Prerequisites: rafix.camea, hq.camea, ~vehicles.camea
+		Description: Tank with mounted Tesla coil tower.\nCan be Buffed using Tesla Troopers.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Light Tesla Tank
+		Name: Prototype Tesla Tank
 		GenericName: Tank
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -327,15 +287,46 @@ TTNK.camea:
 		Weapon: TTankZap
 		LocalOffset: 0,0,213
     RenderSprites:
-        Image: TTNK
-        Scale: 0.7
-        
+        Image: ttnkcamea
+	ExternalCondition@CHARGED:
+		Condition: charged
+	WithDecoration@CHARGED:
+		Image: poweroff
+		Sequence: offline
+		Palette: chrome
+		Position: BottomLeft
+		ValidRelationships: Ally
+		RequiresCondition: charged
+		BlinkInterval: 64
+		RequiresSelection: true
+	Targetable@TeslaBoost:
+		TargetTypes: TeslaBoost
+		RequiresCondition: !powerdown
+	FirepowerMultiplier@Charg1:
+		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+		Modifier: 120
+	FirepowerMultiplier@Charg2:
+		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+		Modifier: 140
+	FirepowerMultiplier@Charg3:
+		RequiresCondition: !lowpower && charged >= 3
+		Modifier: 160
+	ReloadDelayMultiplier@Charg1:
+		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+		Modifier: 80
+	ReloadDelayMultiplier@Charg2:
+		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+		Modifier: 70
+	ReloadDelayMultiplier@Charg3:
+		RequiresCondition: !lowpower && charged >= 3
+		Modifier: 50
+
 CTNK.camea:
 	Inherits: CTNK
 	Buildable:
-		Queue: Vehicle.camea, RAVehicle.camea
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 200
-		Prerequisites: rafix.camea
+		Prerequisites: rafix.camea, ~vehicles.camea
 		BuildDurationModifier: 50
 		Description: Armed with anti-ground missiles.\nTeleports to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special ability: Can teleport
 	Valued:
@@ -365,38 +356,36 @@ CTNK.camea:
 		LocalYaw: -60
     RenderSprites:
         Image: CTNK
-        Scale: 0.8
     
 raapc.camea:
 	Inherits: APC
     Valued:
         Cost: 2000
     Buildable:
-        Queue: Vehicle.camea, RAVehicle.camea
-		Prerequisites: barracks
+		Queue: Vehicle, Vehicle.Multi
+		Prerequisites: barracks, ~vehicles.camea
 	Cargo:
-		InitialUnits: rae1, rae1, rae3, rae3, medi
+		InitialUnits: e1, e1, e3, e3, medi
     ProductionCostMultiplier:
 		Multiplier: 120
-    AIDeployNotifier:
-		DeployChance: 100
-		DeployTicks: 0
+    RenderSprites:
+        Image: APC
 
 MNLY.camea:
-	Inherits: MNLY
+	Inherits: APC
 	Buildable:
-		Queue: Vehicle.camea, RAVehicle.camea
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 310
-		Prerequisites: ~techlevel.medium
+		Prerequisites: ~techlevel.medium, ~vehicles.camea
 		Description: Lays mines to destroy\nunwary enemy units.\nCan detect and clear mines.\n  Unarmed
     RenderSprites:
-        Image: MNLY
+        Image: APC
         
 DTRK.camea:
 	Inherits: DTRK
 	Buildable:
-		Queue: Vehicle.camea, RAVehicle.camea
-		Prerequisites: mslo.camea, ~techlevel.high
+		Queue: Vehicle, Vehicle.Multi
+		Prerequisites: ~mslo.camea, ~vehicles.camea
 		Description: Truck with actively armed nuclear\nexplosives. Has very weak armor.
     RenderSprites:
         Image: DTRK    
@@ -411,8 +400,8 @@ MSAM.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 50
-		Prerequisites: stek.camea
-		Queue: Vehicle.camea, RAVehicle.camea
+		Prerequisites: stek.camea, ~vehicles.camea
+		Queue: Vehicle, Vehicle.Multi
 		Description: Long range rocket artillery.\n  Strong vs all Ground units.
     RenderSprites:
         Image: MSAM
@@ -423,18 +412,19 @@ RAARTY.camea:
     Valued:
         Cost: 650
 	Buildable:
-		Queue: Vehicle.camea, RAVehicle.camea
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 70
 		Description: Long-range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
         BuildDuration: 500
         BuildDurationModifier: 100
+		Prerequisites: ~vehicles.camea
 	Health:
 		HP: 11000
 	Mobile:
 		Speed: 75
 		Locomotor: lighttracked
-    RenderSprites:
-        Image: RAARTY
+	RenderSprites:
+		Image: ARTY
                
 MSSM.camea:
 	Inherits: MLRS
@@ -445,8 +435,8 @@ MSSM.camea:
 		Name: SSM Launcher
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: stek.camea
-		Queue: Vehicle.camea, RAVehicle.camea
+		Prerequisites: stek.camea, ~vehicles.camea
+		Queue: Vehicle, Vehicle.Multi
 		Description: Long-range rocket artillery.\n  Strong vs Buildings\n  Weak vs Aircraft
 		Icon: icon
  	Health:
@@ -457,14 +447,13 @@ MSSM.camea:
 		Weapon: HonestJohnCamea
 	RenderSprites:
 		Image: mlrs
-        Scale: 0.9
         
 HIND.camea:
 	Inherits: HIND
 	Buildable:
-		Queue: Aircraft.camea, RAAircraft.camea
+		Queue: Aircraft, Aircraft.Multi
 		BuildPaletteOrder: 20
-		Prerequisites: ~techlevel.medium
+		Prerequisites: ~aircraft.camea, hpad
 		Description: Helicopter gunship armed\nwith dual chainguns.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
     RenderSprites:  
         Image: HIND
@@ -479,8 +468,8 @@ ORCA.camea:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: ~techlevel.medium
-		Queue: Aircraft.camea, RAAircraft.camea
+		Prerequisites: ~aircraft.camea, hpad
+		Queue: Aircraft, Aircraft.Multi
 		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry
     RenderSprites:
         Image: ORCA
@@ -488,9 +477,9 @@ ORCA.camea:
 MIG.camea:
 	Inherits: MIG
 	Buildable:
-		Queue: Aircraft.camea, RAAircraft.camea
+		Queue: Aircraft, Aircraft.Multi
 		BuildPaletteOrder: 50
-		Prerequisites: stek.camea, ~techlevel.high
+		Prerequisites: stek.camea, ~aircraft.camea, afld
 		Description: Multirole jet fighter.\n  Strong vs Aircraft, Vehicles\n  Weak vs Infantry
     RenderSprites:  
         Image: MIG
@@ -499,8 +488,8 @@ TRAN.camea:
 	Inherits: TRAN
 	Buildable:
 		BuildPaletteOrder: 10
-		Prerequisites: ~techlevel.medium
-		Queue: Aircraft.camea, RAAircraft.camea
+		Prerequisites: ~aircraft.camea
+		Queue: Aircraft, Aircraft.Multi
 		Description: Fast Infantry Transport Helicopter.\nAlready with 10 crewmen on board\n  Unarmed
 	Cargo:
 		InitialUnits: e5, e5, e5, e5, e3, e3, e5, e5, e5, e5
@@ -513,8 +502,8 @@ HARV.camea:
 	Inherits: HARV
 	Buildable:
 		BuildPaletteOrder: 10
-		Prerequisites: raproc.camea
-		Queue: Vehicle.camea, RAVehicle.camea
+		Prerequisites: proc.camea, ~vehicles.camea
+		Queue: Vehicle, Vehicle.Multi
 		BuildDurationModifier: 40
 	Health:
 		HP: 72500

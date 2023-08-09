@@ -4,7 +4,7 @@ V2RL:
 	Inherits: ^PrioArtillery
 	Inherits: ^SovietArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 115
 		Prerequisites: dome, ~vehicles.soviet
 		Description: Long-range rocket artillery.\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft
@@ -42,7 +42,7 @@ V2RL:
 	Inherits: ^PrioAntiHeavy
 	Inherits@vision: ^ImprovedVision
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 50
 		Prerequisites: weap, ~vehicles.allies, ~!commander_tree.scout_tank_pld, ~!commander_tree.scout_tank.reflector
 		Description: Fast tank, good for scouting.\n  Strong vs Light Armor\n  Weak vs Infantry, Tanks, Aircraft\n  Special Ability: Amphibious
@@ -92,7 +92,7 @@ V2RL:
 	Inherits: 1TNK
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 50
 		IconPalette: chrometd
 		Prerequisites: weap, ~vehicles.allies, ~commander_tree.scout_tank_pld
@@ -110,7 +110,7 @@ V2RL:
 	Inherits: 1TNK
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 50
 		Prerequisites: weap, ~vehicles.allies, ~commander_tree.scout_tank.reflector
 		Description: Fast tank, good for scouting.\nHas Reflector Armor, which is very good vs. Energy Weapons. \n  Strong vs Light Armor, Energy Weapons\n  Weak vs Infantry, Tanks, Aircraft\n  Special Ability: Amphibious
@@ -122,7 +122,7 @@ V2RL:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 70
 		Prerequisites: vehicles.any, ~vehicles.allies, ~!vehicles.england
 		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -152,6 +152,7 @@ V2RL:
 		Actor: 2TNK.Husk
 		RequiresCondition: !being-warped
 
+# Grizzly needs replacement
 GTNK:
 	Inherits: 2TNK
 	-Buildable:
@@ -195,7 +196,7 @@ GTNK.squad:
 	Tooltip:
 		Name: Airdrop: Grizzly Tanks
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildAtProductionType: Paradrop
 		BuildPaletteOrder: 0
 		Prerequisites: dome, ~vehicles.england, orep
@@ -308,7 +309,7 @@ GTNK.squad:
 		FactionImages:
 			iraq: 3tnki
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.reflector, ~!commander_tree.yuri
 		Description: Soviet main battle tank with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -358,7 +359,7 @@ GTNK.squad:
 		FactionImages:
 			iraq: 3tnki.pld
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.reflector, ~!commander_tree.yuri
 		Description: Soviet main battle tank with dual cannons.\n  Has Point Laser Defense.  \n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft, Energy Weapons
@@ -377,7 +378,7 @@ GTNK.squad:
 		FactionImages:
 			iraq: 3tnki.ap
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.reflector, ~!commander_tree.yuri
 		Description: Soviet main battle tank with dual cannons.\n  Has armor piercing shells.  \n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft, Point Laser Defense
@@ -399,7 +400,7 @@ GTNK.squad:
 		FactionImages:
 			iraq: 3tnki.ap
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~commander_tree.heavy_tank.reflector, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.yuri
 		Description: Soviet main battle tank with dual cannons.\n  Has Reflector Armor, which is very good vs. Energy Weapons. \n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -410,12 +411,13 @@ GTNK.squad:
 		Name: Atomic Heavy Tank (Reflector)
 		RequiresCondition: iraqtank
 
+# Lasher needs replacement
 3TNK.YURI:
 	Inherits: 3TNK
 	RenderSprites:
 		-FactionImages:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 91
 		Prerequisites: ~commander_tree.yuri, ~vehicles.3tnk, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.reflector
 		Description: Heavy tank with infantry crushing improvements.\n  Strong vs Vehicles\n  Weak vs Defenses, Aircraft
@@ -449,12 +451,17 @@ GTNK.squad:
 	PeriodicExplosion@LASHER:
 		LocalOffset: 896, 0, 0
 		Weapon: Lasher
-
+	Buildable:
+		IconPalette: chrometd
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDamageOverlay:
+		Image: smoke_mtd
 3TNK.YURI.PLD:
 	Inherits: 3TNK.YURI
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.reflector, ~commander_tree.yuri
 		Description: Heavy tank with infantry crushing improvements.\n  Has Point Laser Defense.  \n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft, Energy Weapons
@@ -470,7 +477,7 @@ GTNK.squad:
 3TNK.YURI.AP:
 	Inherits: 3TNK.YURI
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.reflector, ~commander_tree.yuri
 		Description: Heavy tank with infantry crushing improvements.\n  Has armor piercing shells.  \n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft, Point Laser Defense
@@ -489,7 +496,7 @@ GTNK.squad:
 	Inherits: 3TNK.YURI
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
 		Prerequisites: vehicles.any, ~vehicles.3tnk, ~commander_tree.heavy_tank.reflector, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~commander_tree.yuri
 		Description: Heavy tank with infantry crushing improvements.\n  Has Reflector Armor, which is very good vs. Energy Weapons. \n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -509,7 +516,7 @@ GTNK.squad:
 		FactionImages:
 			iraq: 4tnki
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 180
 		Prerequisites: stek, ~vehicles.soviet, ~!filler.sovietmammoth
 		Description: Big and slow tank, with anti-air.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Energy Weapons
@@ -575,7 +582,7 @@ GTNK.squad:
 	RenderSprites:
 		-FactionImages:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		BuildPaletteOrder: 180
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.mammoth_tank.pt, ~!filler.sovietmammoth2
@@ -611,7 +618,7 @@ GTNK.squad:
 	Inherits: 4TNK.Speaker
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.mammoth_tank.pld, ~commander_tree.mammoth_tank.pt
 		Description: Big and slow tank, with anti-air and point laser defense capability.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Energy Weapons
@@ -632,7 +639,7 @@ GTNK.squad:
 	RenderSprites:
 		-FactionImages:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		BuildPaletteOrder: 180
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.mammoth_tank.ns, ~!filler.sovietmammoth2
@@ -672,7 +679,7 @@ GTNK.squad:
 	Inherits: 4TNK.Nuke
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.mammoth_tank.pld, ~commander_tree.mammoth_tank.ns
 		Description: Big and slow tank, with anti-air and point laser defense capability.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Energy Weapons
@@ -693,7 +700,7 @@ GTNK.squad:
 	RenderSprites:
 		-FactionImages:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		BuildPaletteOrder: 180
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.mammoth_tank.tt, ~!filler.sovietmammoth2
@@ -733,7 +740,7 @@ GTNK.squad:
 	Inherits: 4TNK.Tesla
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.mammoth_tank.pld, ~commander_tree.mammoth_tank.tt
 		Description: Big and slow tank, with anti-air and point laser defense capability.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Energy Weapons
@@ -753,7 +760,7 @@ ARTY:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 110
 		Prerequisites: weap, ~vehicles.allies
 		Description: Long-range artillery.\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft
@@ -793,13 +800,13 @@ ARTY.nod:
 		Prerequisites: ~vehicles.nod, ~!vehicles.legion
 	Armament:
 		Weapon: 155mmTD
-
+# Hotwizer needs replacement
 HOWI:
 	Inherits: ARTY.nod
 	RenderSprites:
 		Image: howi
 	Tooltip:
-		Name: Howitzer
+		Name: Mobile Artillery
 	Buildable:
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.legion
@@ -809,6 +816,7 @@ HOWI:
 	AttackTurreted:
 	Turreted:
 		TurnSpeed: 8
+		Offset: -298,0,298
 	Armament:
 		Weapon: 155mmTDM
 		LocalOffset: 624,0,208
@@ -833,7 +841,7 @@ ARTY.Chrono:
 		Weapon: UnitExplodeWarpOut
 		EmptyWeapon: UnitExplodeWarpOut
 		RequiresCondition: warpout
-
+# ISU needs replacement
 ISU:
 	Inherits: ^Tank
 	Inherits: ^BigVehicle
@@ -842,7 +850,7 @@ ISU:
 	Inherits: ^PrioArtillery
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 175
 		Prerequisites: weap, radar, ~commander_tree.isu, ~!commander_tree.isu_concussion
 		Description: Powerful Medium-range artillery with PDL defense.\n  Strong vs Buildings, Infantry, Projectile Weapons \n  Weak vs Aircraft
@@ -880,7 +888,7 @@ ISU:
 ISU.Concussion:
 	Inherits: ISU
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 175
 		IconPalette: chrometd
 		Prerequisites: weap, radar, ~commander_tree.isu_concussion
@@ -934,7 +942,7 @@ HARV:
 	-Crushable:
 	-Carryable:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~proc, ~vehicles.ra, ~!orep
 		Description: Collects Ore, Gems and Tiberium for processing.\n  Unarmed
@@ -968,10 +976,11 @@ HARV:
 		Weapon: HarvSwap
 		RequiresCondition: orep-upgrade
 
+# Chrono needs replacement
 HARV.Chrono:
 	Inherits: HARV
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~proc, ~orep, ~vehicles.allies
 		Description: Collects Ore, Gems and Tiberium for processing.\n  Unarmed\n  Special Ability: Teleport
@@ -1019,7 +1028,7 @@ MCV:
 	Inherits: ^BigVehicle
 	Inherits: ^BiologicalDriver
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 300
 		Prerequisites: fix, ~vehicles.ra
 		Description: Deploys into another Construction Yard.\n  Unarmed
@@ -1059,7 +1068,7 @@ JEEP:
 	Inherits@detect: ^SensorEquipment
 	Inherits: ^PrioAntiInfantry
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 15
 		Prerequisites: weap, ~vehicles.allies
 		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -1091,7 +1100,7 @@ APC:
 	Inherits@TRANSPORT: ^Transport
 	Inherits: ^PrioAntiInfantry
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 40
 		Prerequisites: tent, ~weap, ~!vehicles.soviet
 		Description: Tough infantry transport.\n  Strong vs Infantry\n  Weak vs Tanks, Aircraft
@@ -1131,7 +1140,7 @@ TRUK:
 	Inherits: ^Vehicle
 	Inherits: ^BiologicalDriver
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 280
 		Prerequisites: ~commander_tree.oil_pumps, ~disabled
 		Description: Transports cash to other players.\n  Unarmed
@@ -1184,7 +1193,7 @@ MGG:
 	Inherits: ^Vehicle
 	Inherits: ^BiologicalDriver
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 245
 		Prerequisites: atek, ~vehicles.allies
 		Description: Regenerates the shroud nearby, obscuring the area.\n  Unarmed
@@ -1220,7 +1229,7 @@ MRJ:
 	Tooltip:
 		Name: Mobile Radar Jammer
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 235
 		Prerequisites: techcenter, ~vehicles.mrj
 		Description: Jams nearby enemy radar systems.\n  Unarmed\n  Special Ability: Jams Missile-Lock Systems
@@ -1245,7 +1254,7 @@ TTNK:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioEnergyWeapon
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 125
 		Prerequisites: ~vehicles.soviet, dome, ~!commander_tree.tesla_tank_arc
 		Description: Tank with mounted Tesla coil.\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Aircraft\n  Special Ability: Jams Radar
@@ -1279,7 +1288,7 @@ TTNK:
 TTNK.Arc:
 	Inherits: TTNK
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 125
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.soviet, dome, ~commander_tree.tesla_tank_arc
@@ -1297,7 +1306,7 @@ TTNK.RA2:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioEnergyWeapon
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 200
 		IconPalette: chrome
 		Prerequisites: dome, ~vehicles.russia, ~!commander_tree.tesla_tank_arc
@@ -1337,7 +1346,7 @@ TTNK.RA2:
 TTNK.RA2.Arc:
 	Inherits: TTNK.RA2
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		Prerequisites: ~vehicles.russia, dome, ~commander_tree.tesla_tank_arc
 		Description: Tank with mounted Tesla coil.\n  Tesla Zaps have improved Arcing.\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Aircraft\n
 	Valued:
@@ -1353,7 +1362,7 @@ DTRK:
 	Inherits: ^PrioAntiLight
 	Inherits@UNLOAD: ^UnloadCondition
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 265
 		Prerequisites: stek, ~vehicles.soviet
 		Description: Truck with actively armed nuclear\nexplosives. Has very weak armor.
@@ -1424,7 +1433,7 @@ CTNK:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 175
 		Prerequisites: atek, ~vehicles.allies, ~commander_tree.chrono_tank, ~!commander_tree.chrono_tank_pld, ~!commander_tree.chrono_tank.reflector
 		Description: Advanced tank armed with anti-ground missiles.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special Ability: Teleport
@@ -1462,7 +1471,7 @@ CTNK.PLD:
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Inherits: CTNK
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 175
 		Prerequisites: atek, ~vehicles.allies, ~commander_tree.chrono_tank_pld
 		Description: Advanced tank armed with anti-ground missiles.\nHas Point Laser Defense System\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft, Energy Weapons\n  Special Ability: Teleport
@@ -1475,7 +1484,7 @@ CTNK.Reflector:
 	Inherits: CTNK
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 175
 		Prerequisites: atek, ~vehicles.allies, ~commander_tree.chrono_tank.reflector
 		Description: Advanced tank armed with anti-ground missiles.\nHas Reflector Armor, which is very good vs. Energy Weapons.\n  Strong vs Vehicles, Energy Weapons\n  Weak vs Infantry, Aircraft\n  Special Ability: Teleport
@@ -1487,7 +1496,7 @@ AMCV:
 	Inherits: ^BigVehicle
 	Inherits: ^BiologicalDriver
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 300
 		Prerequisites: rep, ~vehicles.td
 		IconPalette: chrometd
@@ -1529,7 +1538,7 @@ HMMV:
 	Inherits: ^PrioAntiInfantry
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
 		Prerequisites: weap.td, ~vehicles.eagle
@@ -1568,7 +1577,7 @@ BGGY:
 	Inherits: ^PrioAntiInfantry
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.nod, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
@@ -1599,7 +1608,7 @@ BGGY.PLD:
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Inherits: BGGY
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
 		Prerequisites: bio.nod, ~vehicles.nod, ~commander_tree.buggy_pld
@@ -1615,7 +1624,7 @@ BGGY.AA:
 	Inherits: BGGY
 	Inherits: ^PrioAntiLightAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
 		Prerequisites: bio.nod, ~vehicles.nod, ~commander_tree.buggy_aa
@@ -1643,7 +1652,7 @@ APC2:
 			legion: apc2.nod
 			marked: apc2.nod
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicles.td, ~vehicles.apc2, infantry.any, ~!commander_tree.apc_vulcan
 		IconPalette: chrometd
@@ -1700,7 +1709,7 @@ VULC:
 	Inherits@TRANSPORT: ^Transport
 	Inherits: ^PrioAntiLight
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicles.gdi, ~gtek, ~commander_tree.apc_vulcan, ~infantry.any
 		IconPalette: chrometd
@@ -1820,7 +1829,7 @@ LTNK:
 	Inherits: ^PrioAntiHeavy
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 55
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.nod
@@ -1832,7 +1841,7 @@ LTNK:
 	Health:
 		HP: 41250
 	Mobile:
-		Locomotor: Amphibious
+		Locomotor: hover
 		Speed: 100
 	GrantConditionOnTerrain:
 		TerrainTypes: Water
@@ -1875,12 +1884,12 @@ LTNK:
 		RequiresCondition: !onwater && !being-warped
 
 LTNK.Laser:
-	Inherits: ^Tank
+	Inherits: ^TankTD
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioEnergyAntiHeavy
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 40
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.nod, tmpl, ~commander_tree.light_tank_laser
@@ -1946,7 +1955,7 @@ MTNK:
 			legion: mtnk.nod
 			marked: mtnk.nod
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicles.td, ~vehicles.mtnk, vehicles.any, ~!commander_tree.medium_tank_pld, ~!commander_tree.medium_tank.reflector
 		IconPalette: chrometd
@@ -1984,7 +1993,7 @@ MTNK.PLD:
 	Inherits: MTNK
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicles.td, ~vehicles.mtnk, vehicles.any, ~commander_tree.medium_tank_pld
 		IconPalette: chrometd
@@ -2012,7 +2021,7 @@ MTNK.Drone:
 	Inherits: ^DronePairing
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 85
 		Prerequisites: ~vehicles.zocom, weap.td, radar, ~!commander_tree.medium_tank_pld, ~!commander_tree.medium_tank.reflector
 		IconPalette: chrometd
@@ -2058,7 +2067,7 @@ MTNK.Drone.PLD:
 	Inherits: MTNK.Drone
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 85
 		Prerequisites: ~vehicles.zocom, weap.td, ~commander_tree.medium_tank_pld
 		IconPalette: chrometd
@@ -2085,7 +2094,7 @@ HTNK:
 	Inherits: ^DronePairing
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 185
 		IconPalette: chrometd
 		Prerequisites: techcenter, ~vehicles.htnk, ~!filler.gdimammoth
@@ -2283,7 +2292,7 @@ MSAM:
 	Buildable:
 		BuildPaletteOrder: 120
 		Prerequisites: hq, ~vehicles.msam, ~vehicles.td, ~!commander_tree.hover_mlrs, ~!commander_tree.hailstorm_mlrs
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Multiple Launch Rocket System.\nLong-range guided artillery.\n  Can attack Aircraft.\n  Has weak armor.\n  Strong vs Buildings, Infantry, Vehicles
 	Mobile:
@@ -2321,7 +2330,7 @@ MSAM.Hailstorm:
 	Buildable:
 		BuildPaletteOrder: 120
 		Prerequisites: hq, ~vehicles.msam, ~vehicles.td, gtek, ~commander_tree.hailstorm_mlrs
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Multiple Launch Rocket System.\nLong-range unguided multiple rocket artillery.\n  Has weak armor.\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs. Aircraft, Heavy Tanks
 	Armament@PRIMARY:
@@ -2340,7 +2349,7 @@ MLRS:
 	Buildable:
 		BuildPaletteOrder: 150
 		Prerequisites: tmpl, ~vehicles.nod, ~!vehicles.blackh, ~!commander_tree.ssm_toxin_launcher, ~!commander_tree.ssm_multi_launcher
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Long-range incendiary rocket artillery.\n  Has weak armor.\n  Strong vs Buildings, Infantry\n  Weak vs Tanks, Aircraft
 	Mobile:
@@ -2387,7 +2396,7 @@ MLRS.Toxin:
 	Buildable:
 		BuildPaletteOrder: 91
 		Prerequisites: tmpl, ~vehicles.nod, ~commander_tree.ssm_toxin_launcher
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Long-range chemical rocket artillery.\n  Strong vs Infantry, Vehicles and Buildings
 	Tooltip:
@@ -2427,7 +2436,7 @@ STNK:
 	Buildable:
 		BuildPaletteOrder: 130
 		Prerequisites: hq, ~vehicles.nod, ~!commander_tree.stealth_tank.ap, ~!commander_tree.stealth_tank.scrin, ~!commander_tree.stealth_tank.explosive_rockets
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Medium-range missile tank that can cloak.\n  Can attack Aircraft.\n  Has weak armor.\n  Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry.
 	Mobile:
@@ -2473,7 +2482,7 @@ STNK.Scrin:
 	Buildable:
 		BuildPaletteOrder: 130
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.stealth_tank.scrin, ~!filler.stealthtank2
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Cloaked tank that fires Scrin torpedoes.\n  Has weak armor.\n  Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft, Reflector Armor.
 	Valued:
@@ -2513,7 +2522,7 @@ STNK.HE:
 	Buildable:
 		BuildPaletteOrder: 130
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.stealth_tank.explosive_rockets, ~!filler.stealthtank2
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Medium-range high explosive missile tank that can cloak.\n  Can attack Aircraft.\n  Has weak armor.\n  Can be spotted by infantry and defense structures.\n  Strong vs Vehicles, Aircraft\n  Weak vs Heavy Tanks.
 	Valued:
@@ -2599,7 +2608,7 @@ BIKE:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~!commander_tree.recon_bike.rocket_hail, ~!commander_tree.recon_bike.scrin, ~!commander_tree.recon_bike.explosive
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast scout vehicle, armed with\nrockets.\n  Can attack Aircraft.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry
 	Mobile:
@@ -2630,7 +2639,7 @@ BIKE.Scrin:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.scrin, ~!commander_tree.recon_bike.scrin.reflector, ~!commander_tree.recon_bike.scrin.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast scout vehicle, armed with energy balls.\n  Strong vs Vehicles, Tanks\n  Weak vs Infantry, Aircraft
 	Valued:
@@ -2674,7 +2683,7 @@ BIKE.RocketHail:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.rocket_hail, ~!commander_tree.recon_bike.rocket_hail.reflector, ~!commander_tree.recon_bike.rocket_hail.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast artillery vehicle, armed with\n many rockets.\n   Strong vs Vehicles, Tanks\n  Weak vs Infantry, Aircraft
 	Valued:
@@ -2691,7 +2700,7 @@ BIKE.RocketHail.PLD:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.rocket_hail.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast scout vehicle, armed with explosive rockets.\n  Can attack Aircraft.\n  Has Point Laser Defense.\n  Strong vs Vehicles, Projectiles\n  Weak vs Infantry, Aircraft, Energy Weapons
 	Valued:
@@ -2716,7 +2725,7 @@ BIKE.Explosive:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.explosive, ~!commander_tree.recon_bike.explosive.pld, ~!commander_tree.recon_bike.explosive.reflector
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast scout vehicle, armed with\n explosive rockets.\n  Can attack Aircraft.\n  Strong vs Light Vehicles, Aircraft, Infantry\n  Weak vs Heavy Vehicles, PLD
 	Valued:
@@ -2734,7 +2743,7 @@ BIKE.Explosive.PLD:
 	Buildable:
 		BuildPaletteOrder: 30
 		Prerequisites: ~vehicles.nod, ~commander_tree.recon_bike.explosive.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast scout vehicle, armed with explosive rockets.\n  Can attack Aircraft.\n  Has Point Laser Defense.\n  Strong vs Light Vehicles, Aircraft, Infantry\n  Weak vs Heavy Vehicles, Energy Weapons
 	Valued:
@@ -2766,7 +2775,7 @@ FTNK:
 	Buildable:
 		BuildPaletteOrder: 65
 		Prerequisites: hq, ~vehicles.nod, ~!commander_tree.flame_tank.pld, ~!commander_tree.flame_tank.reflector
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Heavily armored flame-throwing vehicle.\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Heavy Tanks, Aircraft
 	Mobile:
@@ -2807,7 +2816,7 @@ FTNK.PLD:
 	Buildable:
 		BuildPaletteOrder: 65
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.flame_tank.pld, ~!commander_tree.chem_tank, ~!commander_tree.fireball_tank
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Heavily armored flame-throwing vehicle.\nHas Point Laser Defense\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Heavy Tanks, Aircraft, Energy Weapons
 	Valued:
@@ -2823,7 +2832,7 @@ FTNK.PLD.Chem:
 	Buildable:
 		BuildPaletteOrder: 65
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.chem_tank, ~commander_tree.flame_tank.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Heavily armored chemical-throwing vehicle.\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Heavy Tanks, Aircraft
 	Valued:
@@ -2861,7 +2870,7 @@ FTNK.PLD.Fireball:
 	Buildable:
 		BuildPaletteOrder: 65
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.fireball_tank, ~commander_tree.flame_tank.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Heavily armored fireball-throwing vehicle.\n  Strong vs Infantry, Buildings, Vehicles\n  Heavy Tanks, Aircraft
 	Valued:
@@ -2904,7 +2913,7 @@ HAR2:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: ~proc.td, ~vehicles.td
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Collects Tiberium, Ore and Gems for processing.\n  Unarmed
 	Mobile:
@@ -2941,7 +2950,7 @@ BTR:
 	Inherits@TRANSPORT: ^Transport
 	Inherits: ^PrioAntiHeavyAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 45
 		Prerequisites: barr, ~vehicles.soviet, ~commander_tree.btr
 		Description: Tough infantry transport.\n  Can attack Aircraft.\n  Strong vs Light Armor, Aircraft\n  Weak vs Tanks
@@ -2956,7 +2965,7 @@ BTR:
 		PauseOnCondition: notmobile || being-captured || empdisable || being-warped || driver-dead
 	Turreted:
 		TurnSpeed: 80
-		Offset: 5,0,0
+		Offset: 5,0,80
 	Armament@1:
 		Weapon: IFVRockets
 		LocalOffset: 192,10,176, 192,-10,176
@@ -2993,7 +3002,7 @@ BTR.Surveillance:
 	Inherits@radar: ^MobileDeployableRadar
 	Inherits@TRANSPORT: ^Transport
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 45
 		Prerequisites: barr, ~vehicles.soviet, ~commander_tree.surveillance_btr
 		Description: Tough infantry transport.\n  Can detect stealth units.\n  Is unarmed.
@@ -3008,7 +3017,7 @@ BTR.Surveillance:
 		PauseOnCondition: notmobile || being-captured || empdisable || being-warped || driver-dead
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
-		Offset: 0,0,256
+		Offset: 0,0,286
 		PauseOnCondition: empdisable || being-warped
 	Cargo:
 		Types: Infantry
@@ -3029,7 +3038,7 @@ NonaSVK:
 	Inherits: BTR
 	Inherits: ^PrioArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 45
 		Prerequisites: ~vehicles.soviet, ~commander_tree.nona_svk
 		Description: Light Artillery.\n  Highly mobile artillery unit.\n  Strong vs Light Armor, Infantry, Buildings \n  Weak vs Tanks, Aircraft
@@ -3067,7 +3076,7 @@ IFV:
 		RequiresCondition: cryoturr
 	-WithRangeCircle@pld:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 60
 		Prerequisites: infantry.any, ~vehicles.ifv
 		Description: Adaptable infantry transport.\n  Can attack Aircraft.\n  Strong vs Light Armor, Aircraft\n  Weak vs Infantry, Tanks\n  Special Ability: Transform
@@ -3325,7 +3334,7 @@ IFV.AI:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavyAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 60
 		Prerequisites: ~tent, ~vehicles.allies, ~botplayer
 		Description: Adaptable infantry transport.\n  Can attack Aircraft.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks, Aircraft\n  Special Ability: Transform
@@ -3389,7 +3398,7 @@ TITN:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiLightAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 195
 		IconPalette: chrometd
 		Prerequisites: gtek, ~vehicles.talon, ~!filler.titan
@@ -3453,7 +3462,7 @@ TITN:
 TITN.Battle:
 	Inherits: TITN
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 195
 		IconPalette: chrometd
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.titan.battle, ~!filler.titan2
@@ -3471,7 +3480,7 @@ TITN.Battle.PLD:
 	Inherits: TITN.Battle
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 195
 		IconPalette: chrometd
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.titan.pld, ~commander_tree.titan.battle
@@ -3494,7 +3503,7 @@ TITN.Railgun:
 	Inherits: TITN
 	Inherits: ^PrioEnergyAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 195
 		IconPalette: chrometd
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.titan.railgun, ~!filler.titan2
@@ -3511,7 +3520,7 @@ TITN.Railgun.PLD:
 	Inherits: TITN.Railgun
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 195
 		IconPalette: chrometd
 		Prerequisites: ~gtek, ~vehicles.gdi, ~commander_tree.titan.pld, ~commander_tree.titan.railgun
@@ -3539,7 +3548,7 @@ JUGG:
 	Tooltip:
 		Name: Juggernaut
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 195
 		IconPalette: chrometd
 		Prerequisites: gtek, ~vehicles.talon
@@ -3613,7 +3622,7 @@ DISR:
 	Tooltip:
 		Name: Disruptor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 220
 		IconPalette: chrometd
 		Prerequisites: gtek, ~vehicles.zocom
@@ -3682,7 +3691,7 @@ HMLRS:
 	Buildable:
 		BuildPaletteOrder: 165
 		Prerequisites: ~vehicles.gdi, gtek, ~commander_tree.hover_mlrs, ~!commander_tree.hover_mlrs.reflector, ~!commander_tree.hover_mlrs.pld
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Prototype Hover Multiple Launch Rocket System.\nLong-range guided artillery.\n  Can attack Aircraft.\n  Has weak armor.\n  Strong vs Infantry, Vehicles, Buildings
 	Mobile:
@@ -3755,7 +3764,7 @@ RTNK:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiLight
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 75
 		Prerequisites: weap, ~vehicles.england, ~!commander_tree.mirage_pld, ~!commander_tree.mirage_fire_rate, ~!commander_tree.mirage.reflector
 		Description: Advanced Battle tank that can cloak when stationary.\nHas high explosive shells.\n  Strong vs Light Vehicles\n  Weak vs Aircraft.
@@ -3827,7 +3836,7 @@ RTNK.PLD:
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Inherits: RTNK
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 75
 		IconPalette: chrometd
 		Prerequisites: weap, ~commander_tree.mirage_pld
@@ -3840,7 +3849,7 @@ RTNK.PLD:
 RTNK.Firerate:
 	Inherits: RTNK
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 75
 		IconPalette: chrometd
 		Prerequisites: weap, ~commander_tree.mirage_fire_rate
@@ -3869,7 +3878,7 @@ V3RL:
 	Inherits: ^PrioArtillery
 	Inherits: ^SovietArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 160
 		Prerequisites: techcenter, ~vehicles.v3rl, ~commander_tree.v3_launcher
 		Description: Extreme long-range rocket artillery.\n  Rockets can be shot down by anti-air.\n  Strong vs Buildings, Infantry\n  Weak vs Tanks, Aircraft
@@ -3946,12 +3955,12 @@ V3:
 	WithFacingSpriteBody:
 
 KATY:
-	Inherits: ^Vehicle
+	Inherits: ^VehicleTD
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioArtillery
 	Inherits: ^SovietArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 150
 		IconPalette: chrometd
 		Prerequisites: dome, ~commander_tree.katyusha
@@ -3969,21 +3978,22 @@ KATY:
 	Armament:
 		Weapon: KatyushaRockets
 		PauseOnCondition: empdisable || being-warped
-	AttackFrontal:
+	AttackTurreted:
 		TargetFrozenActors: True
-		ForceFireIgnoresActors: True
 		PauseOnCondition: empdisable || being-warped
-		FacingTolerance: 0
 	SelectionDecorations:
 	Explodes:
 		Weapon: BarrelExplode
-
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 80
+		Offset: -222,0,52
 TNKD:
 	Inherits: ^Tank
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicles.germany, ~!vehicles.germany, dome
 		Description: German tank destroyer.\n  Strong vs Heavy Armor\n  Weak vs Infantry, Light Armor, Aircraft
@@ -4039,7 +4049,7 @@ TNKD2:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicles.germany, dome, ~!commander_tree.tank_destroyer_pld, ~!commander_tree.tank_destroyer_burst, ~!commander_tree.tank_destroyer.reflector
 		Description: German tank destroyer.\n  Strong vs Heavy Armor\n  Weak vs Infantry, Light Armor, Aircraft
@@ -4087,7 +4097,7 @@ TNKD2.PLD:
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Inherits: TNKD2
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 90
 		IconPalette: chrometd
 		Prerequisites: dome, ~commander_tree.tank_destroyer_pld
@@ -4100,7 +4110,7 @@ TNKD2.PLD:
 TNKD2.Burstfire:
 	Inherits: TNKD2
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 90
 		IconPalette: chrometd
 		Prerequisites: dome, ~commander_tree.tank_destroyer_burst
@@ -4117,7 +4127,7 @@ TNKD2.Reflector:
 	Inherits: TNKD2
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 90
 		IconPalette: chrometd
 		Prerequisites: dome, ~commander_tree.tank_destroyer.reflector
@@ -4138,7 +4148,7 @@ MSAR:
 		Name: Mobile Sensor Array (deployed)
 		RequiresCondition: deployed
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 240
 		IconPalette: chrometd
 		Prerequisites: hq, ~vehicles.gdi, ~!commander_tree.mobile_sensor_pld
@@ -4186,7 +4196,7 @@ MSAR:
 MSAR.Nod:
 	Inherits: MSAR
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 240
 		IconPalette: chrometd
 		Prerequisites: hq, ~vehicles.nod, ~!commander_tree.mobile_sensor_pld
@@ -4200,7 +4210,7 @@ MSAR.PLD:
 	Inherits: MSAR
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 240
 		IconPalette: chrometd
 		Prerequisites: hq, ~vehicles.gdi, ~commander_tree.mobile_sensor_pld
@@ -4213,7 +4223,7 @@ MSAR.PLD.Nod:
 	Inherits: MSAR
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 240
 		IconPalette: chrometd
 		Prerequisites: hq, ~vehicles.nod, ~commander_tree.mobile_sensor_pld
@@ -4229,7 +4239,7 @@ PTNK:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiLight
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 135
 		IconPalette: chrome
 		Prerequisites: radar, ~vehicles.ptnk, ~commander_tree.prism_tank
@@ -4323,7 +4333,7 @@ WTNK:
 	RenderSprites:
 		Image: mwtnk
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 210
 		IconPalette: chrometd
 		Prerequisites: tmpl, ~vehicles.legion
@@ -4371,7 +4381,7 @@ BATF:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavyAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.missile, ~!filler.batf2
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4462,7 +4472,7 @@ BATF.PLD:
 	Inherits: BATF
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.missile, ~commander_tree.battle_fortress.pld
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Has Point Laser Defense System \n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4475,7 +4485,7 @@ BATF.Reflector:
 	Inherits: BATF
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.missile, ~commander_tree.battle_fortress.reflector
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Has Reflector Armor. \n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4486,7 +4496,7 @@ BATF.Prism:
 	Inherits: BATF
 	Inherits: ^PrioEnergyWeapon
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.prism, ~!filler.batf2
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4541,7 +4551,7 @@ BATF.Prism.PLD:
 	Inherits: BATF.Prism
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.prism, ~commander_tree.battle_fortress.pld
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Has Point Laser Defense System \n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4554,7 +4564,7 @@ BATF.Prism.Reflector:
 	Inherits: BATF.Prism
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.prism, ~commander_tree.battle_fortress.reflector
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Has Reflector Armor. \n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4565,7 +4575,7 @@ BATF.Artillery:
 	Inherits: BATF
 	Inherits: ^PrioArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.arty, ~!filler.batf2
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4618,7 +4628,7 @@ BATF.Artillery.PLD:
 	Inherits: BATF.Artillery
 	Inherits@PLD: ^PointLaserDefenseSystem
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.arty, ~commander_tree.battle_fortress.pld
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Has Point Laser Defense System \n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4631,7 +4641,7 @@ BATF.Artillery.Reflector:
 	Inherits: BATF.Artillery
 	Inherits: ^ReflectorArmor
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: tent, radar, ~weap, ~commander_tree.battle_fortress.arty, ~commander_tree.battle_fortress.reflector
 		Description: Tough infantry transport\nneeds infantry to operate its turrets.\n Has Reflector Armor. \n Special Ability: Can crush enemy vehicles.\n Strong vs Vehicles\n  Weak vs Infantry, Aircraft
@@ -4646,7 +4656,7 @@ BATF.Bunker:
 	Inherits@TRANSPORT: ^Transport
 	Inherits@CARGO: ^AttackingCargo
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: ~vehicles.france, tent, radar, ~weap, ~!filler.batf
 		Description: Tough infantry transport\nwith weapon ports for infantry. \n  Special Ability: Can crush enemy vehicles.
@@ -4700,7 +4710,7 @@ BATF.Arty:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 230
 		Prerequisites: ~disabled, tent, radar, ~weap, ~commander_tree.battle_fortress.artillery
 		Description: Tough artillery tank.\n  Special Ability: Can crush enemy vehicles.
@@ -4745,7 +4755,7 @@ MEMP:
 	Inherits: ^TankTD
 	Inherits: ^RobotDriver
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 260
 		IconPalette: chrometd
 		Prerequisites: gtek, ~vehicles.gdi, ~commander_tree.mobile_emp, ~!commander_tree.mobile_emp_volatile_reactor, ~!commander_tree.mobile_emp_stable_reactor
@@ -4816,7 +4826,7 @@ MEMP:
 MEMP.Volatile:
 	Inherits: MEMP
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 260
 		IconPalette: chrometd
 		Prerequisites: gtek, ~vehicles.gdi, ~commander_tree.mobile_emp_volatile_reactor
@@ -4838,7 +4848,7 @@ MEMP.Volatile:
 MEMP.Stable:
 	Inherits: MEMP
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 260
 		IconPalette: chrometd
 		Prerequisites: gtek, ~vehicles.gdi, ~commander_tree.mobile_emp_stable_reactor
@@ -4898,7 +4908,7 @@ CDRN:
 		ValidTargets: Infantry, Vehicle, Water, Underwater
 		InvalidTargets: NoAutoTarget, ChaosImmune
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 270
 		IconPalette: chrometd
 		Prerequisites: stek, ~vehicles.soviet, ~commander_tree.yuri
@@ -4965,7 +4975,7 @@ CHPR:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioEnergyWeapon
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 225
 		IconPalette: chrometd
 		Prerequisites: atek, ~commander_tree.chrono_prison, ~!commander_tree.chrono_prison_range, ~!commander_tree.chrono_prison_aa
@@ -5038,7 +5048,7 @@ CHPR:
 CHPR.Range:
 	Inherits: CHPR
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 225
 		IconPalette: chrometd
 		Prerequisites: atek, ~commander_tree.chrono_prison_range
@@ -5064,7 +5074,7 @@ CHPR.AA:
 	Inherits: CHPR
 	Inherits: ^PrioEnergyAntiHeavyAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 225
 		IconPalette: chrometd
 		Prerequisites: atek, ~commander_tree.chrono_prison_aa
@@ -5112,7 +5122,7 @@ CHPR.AA:
 	Inherits: ^PrioArtillery
 	Inherits: ^SovietArtillery
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 120
 		Prerequisites: dome, ~commander_tree.akatsiya
 		Description: Heavy artillery that fires shells with cluster warheads.\n  Strong vs Buildings, Infantry\n  Weak vs Tanks, Aircraft
@@ -5158,7 +5168,7 @@ CRYO:
 	Buildable:
 		BuildPaletteOrder: 170
 		Prerequisites: radar, ~vehicles.allies, ~commander_tree.cryo_launcher
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Long-range support artillery that slows enemies\nand makes them take more damage.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
 	Mobile:
@@ -5190,7 +5200,7 @@ SLNG:
 	Buildable:
 		BuildPaletteOrder: 130
 		Prerequisites: gtek, ~commander_tree.slingshot
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		IconPalette: chrometd
 		Description: Fast, lightly armoured anti-air unit.\n  Strong vs Aircraft\n Weak vs Infantry, Vehicles, Buildings
 	Mobile:
@@ -5232,7 +5242,7 @@ FTRK:
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiLightAA
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: ~vehicles.soviet, ~!commander_tree.flak_track.barrage
 		Description: Mobile unit with mounted Flak cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
@@ -5266,7 +5276,7 @@ FTRK.Barrage:
 	Inherits: FTRK
 	Inherits: ^BiologicalDriver
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 130
 		Prerequisites: ~vehicles.soviet, ~commander_tree.flak_track.barrage
 		Description: Mobile unit with mounted Flak cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
@@ -5295,7 +5305,7 @@ COORDINATOR:
 	Tooltip:
 		Name: Reinforcements Coordinator
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 235
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.nod, ~commander_tree.reinforcements_coordinator
@@ -5384,7 +5394,7 @@ Beam_Cannon:
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 210
 		IconPalette: chrometd
 		Prerequisites: tmpl, ~vehicles.nod, ~commander_tree.beam_cannon
@@ -5514,7 +5524,7 @@ MAMMOTHMK2:
 		BuildPaletteOrder: 220
 		IconPalette: chrometd
 		Prerequisites: ~vehicles.gdi, ~commander_tree.mammoth_mkii, miss.gdi
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		Description: Slow heavy walker.\nArmed with dual railguns and rocket launchers.\n  Strong vs Infantry, Vehicles and Buildings\n  Weak vs Artillery, Masses of Aircraft
 	Mobile:
 		Locomotor: heavytracked
@@ -5581,7 +5591,7 @@ APOC:
 		FactionImages:
 			iraq: apoci
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 300
 		Prerequisites: indp, ~vehicles.soviet, ~commander_tree.apocalypse
 		Description: Enormous slow tank with uranium shells and Drozd countermeasure system .\n  The Drozd system fires chaff, which is good at depleting PLD systems.\n  Can crush small vehicles.???\n  Strong vs Vehicles, PLD\n  Weak vs Aircraft
@@ -5658,7 +5668,7 @@ XO:
 	Inherits: ^PrioAntiLight
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 15
 		IconPalette: chrome
 		Prerequisites: weap.td, ~vehicles.talon
@@ -5711,7 +5721,7 @@ HFTK:
 	Inherits: ^PrioAntiLight
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 131
 		IconPalette: chrometd
 		Prerequisites: radar, ~vehicles.blackh
@@ -5765,7 +5775,7 @@ MDRN:
 	Tooltip:
 		Name: Mini Drone
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 105
 		Prerequisites: radar, ~vehicles.zocom
 		Description: Hovering drone with machine gun.\n  Attaches to certain vehicles to provide support and repairs.\n  Strong vs Infantry\n  Weak vs Vehicles, Buildings, Aircraft
@@ -5866,7 +5876,7 @@ GDRN:
 	Inherits: ^PrioAntiHeavy
 	RenderSprites:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 22
 		IconPalette: chrome
 		Prerequisites: ~vehicles.zocom
@@ -5914,7 +5924,7 @@ MSG:
 	Inherits: ^BiologicalDriver
 	Inherits@autodeploy: ^AutoDeployIdler
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 385
 		Prerequisites: tmpl, ~vehicles.blackh
 		Description: Cloaks nearby units and buildings.\n  Unarmed
@@ -5978,7 +5988,7 @@ SAPC:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-DamagedByTintedCells@TOXIN:
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 255
 		Prerequisites: tmpl, infantry.any, ~vehicles.legion, ~disabled
 		Description: Stealth chemical emitting vehicle. Deploy to unleash toxic clouds.\n  Strong vs Massed Units\n  Weak vs Detection, Defenses, Aircraft

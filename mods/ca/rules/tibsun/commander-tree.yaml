@@ -1,0 +1,312 @@
+commander_tree.tsgdi.keeper:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Keeper
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: reserve vehicles that appear when your base is attacked, are used for defense and as a countermeasure in case of emergency they are equivalent to a light tank, without much more purpose
+	RenderSprites:
+		Image: tskeeper
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tskeeper
+commander_tree.tsgdi.tsgdie3:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Missile Soldier
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: reserve vehicles that appear when your base is attacked, are used for defense and as a countermeasure in case of emergency they are equivalent to a light tank, without much more purpose
+	RenderSprites:
+		Image: tsgdie3
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tsgdie3
+
+commander_tree.forgotten.doctrine.gdi:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Doctrine: GDI
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.forgotten
+		Description: Unlocks the previus tech from Fist Tiberian War and other tech from GDI.
+	TooltipExtras:
+		New Infantry 1: • Ghost Stalker
+		New Vehicle 1: • APC
+		New Vehicle 2: • Humvee (Replaces Car)
+		New Vehicle 3: • Medium Tank
+		New Vehicle 4: • Mammoth Tank
+	ProvidesPrerequisite@1:
+		Prerequisite: commander_tree.forgotten.doctrine.gdi
+	ProvidesPrerequisite@2:
+		Prerequisite: commander_tree.forgotten.doctrine.1
+	ProvidesPrerequisite@3:
+		Prerequisite: infantry.tsghost
+commander_tree.forgotten.tshmmv:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Humvee
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~commander_tree.forgotten.doctrine.gdi
+		Description: Replaces Combat cars with stronger Humvees
+	RenderSprites:
+		Image: tshmmv
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tshmmv
+
+commander_tree.forgotten.tshmmv2:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Advanced Humvee
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~vehicle.tshmmv
+		Description: Adds Tow Missile, and Transport to Humvees
+	RenderSprites:
+		Image: tshmmv2
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tshmmv2
+
+commander_tree.forgotten.doctrine.nod:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Doctrine: Nod
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.forgotten
+		Description: Unlocks the previus tech from Fist Tiberian War and other tech from Nod.
+	TooltipExtras:
+		New Infantry 1: • Charmeleon Spy
+		New Infantry 2: • Hihacker
+		New Vehicle 1: • Light Tank
+		New Vehicle 2: • Flame Tank
+	ProvidesPrerequisite@1:
+		Prerequisite: commander_tree.forgotten.doctrine.nod
+	ProvidesPrerequisite@2:
+		Prerequisite: commander_tree.forgotten.doctrine.1
+	ProvidesPrerequisite@3:
+		Prerequisite: infantry.tsmhijack
+	ProvidesPrerequisite@4:
+		Prerequisite: infantry.tschamspy
+
+commander_tree.forgotten.ts1tnk:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Bradley
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~commander_tree.forgotten.doctrine.nod
+		Description: Replaces the Combat Tank with a highly prepared vehicle, with Tow Missiles and Sensors
+	RenderSprites:
+		Image: ts1tnk
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.ts1tnk
+commander_tree.forgotten.doctrine.terror:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Doctrine: Terrorist
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.forgotten
+		Description: Unlocks Chemical weapons and other chaotic tech.
+	TooltipExtras:
+		New Infantry 1: • Chemical Sprayer
+		New Infantry 2: • Mutant Zombie
+		New Vehicle 1: • Demolition Truck
+	ProvidesPrerequisite@1:
+		Prerequisite: commander_tree.forgotten.doctrine.terror
+	ProvidesPrerequisite@2:
+		Prerequisite: commander_tree.forgotten.doctrine.1
+
+commander_tree.forgotten.doctrine.scrap:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Doctrine: Scavengers
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.forgotten
+		Description: Unlocks Junk and other Original Weapons made of different items.
+	TooltipExtras:
+		New Infantry 1: • Shotgunner
+		New Vehicle 1: • Catapult
+		New Vehicle 2: • Vulkan Tank
+	ProvidesPrerequisite@1:
+		Prerequisite: commander_tree.forgotten.doctrine.scrap
+	ProvidesPrerequisite@2:
+		Prerequisite: commander_tree.forgotten.doctrine.1
+
+
+
+commander_tree.forgotten.tspickf:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Siege Pickup
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~commander_tree.forgotten.doctrine.scrap
+		Description: Siege vehicle, can be deployed in artillery mode
+	RenderSprites:
+		Image: tspickf
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tspickf
+
+
+commander_tree.cabal.crossed:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Crossed Production
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: Enable the production of lighter vehicles in Cyborg Factories, like Cyborg Reapers and Sentry Drones
+	RenderSprites:
+		Image: commander_tree.cabal.crossed
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tscrossed
+
+commander_tree.cabal.tscyborgrep:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Armored Cyborg (Repeater)
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: Upgrades the Recoiless cannon into a Repeater cannon
+	RenderSprites:
+		Image: tscyborgrep
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tscyborgrep
+
+commander_tree.cabal.tscyborg2gat:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Cyborg (Gattling)
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal, ~!infantry.tscyborg2gre
+		Description: Upgrades the Chainguns from Cyborgs to Gattling system.
+	RenderSprites:
+		Image: tscyborg2gat
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tscyborg2gat
+
+commander_tree.cabal.tscyborg2gre:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Cyborg (Grenade)
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal, ~!infantry.tscyborg2gat
+		Description: Attatch a Grenade Launcher into the Cyborg arm.
+	RenderSprites:
+		Image: tscyborg2gre
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tscyborg2gre
+
+commander_tree.cabal.tsdevout:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Devout
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: Powerful Anti Infantry Cyborg, has fast Chainguns.
+	RenderSprites:
+		Image: tsdevout
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tsdevout
+
+commander_tree.cabal.tsascended:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Ascended
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: Powerful Anti Air/Vehicle Cyborg, shoots a bunch of rockets.
+	RenderSprites:
+		Image: tsascended
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tsascended
+
+commander_tree.cabal.tsenlighted:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Enlighted
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: Powerful Anti Tank Laser Cyborg, shoots a powerful Ray.
+	RenderSprites:
+		Image: tsenlighted
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tsenlighted
+
+commander_tree.cabal.tscrys.laser:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Armed Crystals
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: New Crystals adds a small laser in the top.
+	RenderSprites:
+		Image: tscrys.laser
+	ProvidesPrerequisite@1:
+		Prerequisite: structure.tscrys.laser

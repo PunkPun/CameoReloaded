@@ -13,15 +13,15 @@ Player:
 		Bots: vhard
 	BaseBuilderBotModuleCA@brutal-vhard:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai
-		BuildingQueues: Building, Commander_Tree
+		BuildingQueues: Building, Building.Multi, Commander_Tree, Defense, Defense.Multi
 		MinimumExcessPower: 50
 		MaximumExcessPower: 350
 		ExcessPowerIncrement: 10
 		ExcessPowerIncreaseThreshold: 1
 		PlaceDefenseTowardsEnemyChance: 75
-		ConstructionYardTypes: fact,afac,sfac,chcommand
-		RefineryTypes: proc,proc.td,proc.scrin,chsupply
-		PowerTypes: powr,apwr,nuke,nuk2,tpwr,reac,rea2,chpower,chpower2
+		ConstructionYardTypes: fact,afac,sfac,chcommand, camea_conyard
+		RefineryTypes: proc,proc.td,proc.scrin,chsupply, proc.camea
+		PowerTypes: powr,apwr,nuke,nuk2,tpwr,reac,rea2,chpower,chpower2,powr.camea,nuk2.camea
 		BarracksTypes: barr,tent,hand,pyle,port,chsyrd,chbarracks
 		VehiclesFactoryTypes: weap,airs,weap.td,wsph,chweap
 		ProductionTypes: barr,tent,hand,pyle,port,airs,weap,weap.td,wsph,afld,afld.gdi,afld.allies,chairport,hpad,hpad.td,grav,chbarracks,chairport,chweap
@@ -192,11 +192,12 @@ Player:
 			hold.strat: 1
 	UnitBuilderBotModuleCA@brutal-vhard:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai
+		UnitQueues: Vehicle, Vehicle.Multi, Infantry, Infantry.Multi, Aircraft, Aircraft.Multi, Ship, Ship.Multi, Defense, Defense.Multi,  Building, Building.Multi
 		IdleBaseUnitsMaximum: 50
 		UnitBuilderMinCredits: 1800
 		MaxAircraft: 8
 		MaintainAirSuperiority: true
-		AirToAirUnits: heli, yak, mig, orca, apch, scrn, venm, stmr, enrv, a10.upg, harr, chmig.aa
+		AirToAirUnits: heli, yak, mig, orca, apch, scrn, venm, stmr, enrv, a10.upg, harr, chmig.aa, orca.camea
 		AirThreatUnits: heli, yak, mig, orca, apch, scrn, venm, stmr, enrv, a10.upg, harr, pac, deva, kiro, mshp, chmig, chmig.aa
 		UnitIntervals:
 			mshp: 7500
@@ -227,10 +228,12 @@ Player:
 			n1c: 65
 			n3c: 40
 			s1: 65
+			s7: 65
 			s2: 40
 			s3: 40
 			s4: 15
 			s6: 5
+			s8: 40
 			rmbc: 15
 			mort: 15
 			medi: 3
@@ -274,6 +277,8 @@ Player:
 			3tnk: 70
 			4tnk: 40
 			tpod: 40
+			ltpod: 35
+			stpod: 35
 			rptp: 40
 			ltnk: 40
 			mtnk: 70
@@ -370,7 +375,7 @@ Player:
 		SquadValueRandomBonus: 2500
 		SquadSize: 22
 		SquadSizeRandomBonus: 9
-		ExcludeFromSquadsTypes: harv, har2, harv.scrin, harv.chrono, chharv, chnmcv, mcv, amcv, smcv, dog, e6, n6, s6
+		ExcludeFromSquadsTypes: harv, har2, harv.scrin, harv.chrono, chharv, chnmcv, mcv, amcv, smcv, dog, e6, n6, s6, mcv.camea, harv.camea
 		ExcludeFromAirSquadsTypes: deva, pac, jjet, bjet
 		NavalUnitsTypes: ss,msub,dd,ca,lst,pt,dd2,pt2,ss2,isub,sb,seas
 		NavalProductionTypes: syrd, spen, syrd.gdi, spen.nod, chsyrd

@@ -31,56 +31,88 @@
 		BlendMode: Alpha
 		Offset: 0, 0
 
+prop_light_effect_scrin:
+	light-medium: animated_light_scrin
+		Length: 8
+		Scale: 0.18
+		ZOffset: -1020
+		Offset: 0,6
+	damaged-light-medium: animated_light_damaged_scrin
+		Length: 12
+		Scale: 0.18
+		ZOffset: -1020
+		Offset: 0,6
+	light-big: animated_light_scrin
+		Length: 8
+		Scale: 0.22
+		ZOffset: -1020
+		Offset: 0,4
+	damaged-light-big: animated_light_damaged_scrin
+		Length: 12
+		Scale: 0.22
+		ZOffset: -1020
+		Offset: 0,4
 s1:
 	Inherits: ^ScrinCommonDeaths
-	stand: s1
-		Facings: 8
-	stand2: s1
-		Facings: 8
-	run: s1
-		Start: 8
-		Length: 4
-		Facings: 8
-		Tick: 120
-	shoot: s1
-		Start: 40
-		Length: 4
-		Facings: 8
-	idle1: s1
-		Length: 1
-		Tick: 120
-	idle2: s1
-		Start: 2
-		Length: 1
-		Tick: 120
-	idle3: s1
-		Start: 3
-		Length: 1
-		Tick: 120
-	idle4: s1
-		Start: 4
-		Length: 1
-		Tick: 120
-	die1: s1
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_war
 		Start: 72
-		Length: 8
-		Tick: 80
-	die2: s1
-		Start: 80
-		Length: 8
-		Tick: 80
-	die3: s1
-		Start: 88
-		Length: 8
-		Tick: 80
-	die4: s1
-		Start: 88
-		Length: 8
-		Tick: 80
-	die7: s1
+		Length: 11
+		Facings: 8
+		Tick: 99999
+	stand2: modscrin_war
 		Start: 72
-		Length: 8
-		Tick: 80
+		Length: 11
+		Facings: 8
+		Tick: 99999
+	run: modscrin_war
+		Length: 9
+		Facings: 8
+		Tick: 60
+	shoot: modscrin_war
+		Start: 72
+		Length: 11
+		Facings: 8
+		Tick: 50
+	idle1: modscrin_war
+		Length: 9
+		Facings: 8
+		Tick: 60
+	idle2: modscrin_war
+		Length: 9
+		Facings: 8
+		Tick: 60
+	idle3: modscrin_war
+		Start: 72
+		Length: 11
+		Facings: 8
+		Tick: 50
+	idle4: modscrin_war
+		Start: 72
+		Length: 11
+		Facings: 8
+		Tick: 50
+	die1: modscrin_war
+		Start: 160
+		Length: 20
+		Tick: 60
+	die2: modscrin_war
+		Start: 160
+		Length: 20
+		Tick: 60
+	die3: modscrin_war
+		Start: 160
+		Length: 20
+		Tick: 60
+	die4: modscrin_war
+		Start: 160
+		Length: 20
+		Tick: 60
+	die7: modscrin_war
+		Start: 160
+		Length: 20
+		Tick: 60
 	muzzle: scrinmuzz1
 		Length: 4
 		Facings: 8
@@ -100,55 +132,62 @@ s1:
 
 s2:
 	Inherits: ^ScrinCommonDeaths
-	stand: s2
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_ravager
+		Length: 13
 		Facings: 8
-	stand2: s2
+		Tick: 9999
+	stand2: modscrin_ravager
+		Length: 13
 		Facings: 8
-	run: s2
-		Start: 8
-		Length: 4
+		Tick: 9999
+	run: modscrin_ravager
+		Length: 13
+		Facings: 8
+		Tick: 35
+	shoot: modscrin_ravager
+		Start: 104
+		Length: 6
+		Facings: 8
+		Tick: 80
+	idle1: modscrin_ravager
+		Start: 104
+		Length: 6
 		Facings: 8
 		Tick: 120
-	shoot: s2
-		Start: 40
-		Length: 4
+	idle2: modscrin_ravager
+		Start: 104
+		Length: 6
 		Facings: 8
-		Tick: 80
-	idle1: s2
-		Start: 1
-		Length: 1
 		Tick: 120
-	idle2: s2
-		Start: 3
-		Length: 1
+	idle3: modscrin_ravager
+		Length: 13
+		Facings: 8
 		Tick: 120
-	idle3: s2
-		Start: 5
-		Length: 1
+	idle4: modscrin_ravager
+		Length: 13
+		Facings: 8
 		Tick: 120
-	idle4: s2
-		Start: 7
-		Length: 1
-		Tick: 120
-	die1: s2
-		Start: 72
-		Length: 8
+	die1: modscrin_ravager
+		Start: 152
+		Length: 15
 		Tick: 80
-	die2: s2
-		Start: 80
-		Length: 8
+	die2: modscrin_ravager
+		Start: 152
+		Length: 15
 		Tick: 80
-	die3: s2
-		Start: 88
-		Length: 8
+	die3: modscrin_ravager
+		Start: 152
+		Length: 15
 		Tick: 80
-	die4: s2
-		Start: 88
-		Length: 8
+	die4: modscrin_ravager
+		Start: 152
+		Length: 15
 		Tick: 80
-	die7: s2
-		Start: 72
-		Length: 8
+	die7: modscrin_ravager
+		Start: 152
+		Length: 15
 		Tick: 80
 	muzzle: scrinmuzz3
 		Length: 2
@@ -168,54 +207,63 @@ s2:
 
 s3:
 	Inherits: ^ScrinCommonDeaths
-	stand: s3
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_ap
+		Length: 11
 		Facings: 8
-	stand2: s3
+		Tick: 9999
+	stand2: modscrin_ap
+		Length: 11
 		Facings: 8
-	run: s3
-		Start: 8
-		Length: 4
+		Tick: 9999
+	run: modscrin_ap
+		Length: 11
 		Facings: 8
-		Tick: 120
-	shoot: s3
-		Start: 40
-		Length: 4
-		Facings: 8
-	idle1: s3
-		Length: 1
-		Tick: 120
-	idle2: s3
-		Start: 2
-		Length: 1
-		Tick: 120
-	idle3: s3
-		Start: 3
-		Length: 1
-		Tick: 120
-	idle4: s3
-		Start: 4
-		Length: 1
-		Tick: 120
-	die1: s3
-		Start: 72
-		Length: 8
-		Tick: 80
-	die2: s3
-		Start: 80
-		Length: 8
-		Tick: 80
-	die3: s3
+		Tick: 24
+	shoot: modscrin_ap
 		Start: 88
-		Length: 8
-		Tick: 80
-	die4: s3
+		Length: 10
+		Facings: 8
+		Tick: 60
+	idle1: modscrin_ap
+		Length: 11
+		Facings: 8
+		Tick: 60
+	idle2: modscrin_ap
+		Length: 11
+		Facings: 8
+		Tick: 60
+	idle3: modscrin_ap
 		Start: 88
-		Length: 8
-		Tick: 80
-	die7: s3
-		Start: 72
-		Length: 8
-		Tick: 80
+		Length: 11
+		Facings: 8
+		Tick: 60
+	idle4: modscrin_ap
+		Start: 88
+		Length: 11
+		Facings: 8
+		Tick: 60
+	die1: modscrin_ap
+		Start: 168
+		Length: 20
+		Tick: 70
+	die2: modscrin_ap
+		Start: 168
+		Length: 20
+		Tick: 70
+	die3: modscrin_ap
+		Start: 168
+		Length: 20
+		Tick: 70
+	die4: modscrin_ap
+		Start: 168
+		Length: 20
+		Tick: 70
+	die7: modscrin_ap
+		Start: 168
+		Length: 20
+		Tick: 70
 	chrono-overlay: chronofade_small
 		Length: *
 		BlendMode: Additive
@@ -227,53 +275,73 @@ s3:
 
 s4:
 	Inherits: ^ScrinCommonDeaths
-	stand: s4
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_intruder
+		Start: 0
+		Length: 21
 		Facings: 8
-	stand2: s4
+		Tick: 9999
+	stand2: modscrin_intruder
+		Start: 0
+		Length: 21
 		Facings: 8
-	run: s4
-		Start: 8
+		Tick: 9999
+	run: modscrin_intruder
+		Start: 0
+		Length: 21
+		Facings: 8
+		Tick: 15
+	shoot: modscrin_intruder
+		Start: 168
+		Length: 21
+		Facings: 8
+		Tick: 50
+	idle1: modscrin_intruder
+		Start: 0
+		Length: 21
+		Facings: 8
+		Tick: 60
+	idle2: modscrin_intruder
+		Start: 168
+		Length: 21
+		Facings: 8
+		Tick: 60
+	idle3: modscrin_intruder
+		Start: 336
+		Length: 15
+		Tick: 80
+	idle4: modscrin_intruder
+		Start: 351
+		Length: 15
+		Tick: 80
+	die1: modscrin_intruder
+		Start: 366
+		Length: 15
+		Tick: 65
+	die2: modscrin_intruder
+		Start: 366
+		Length: 15
+		Tick: 65
+	die3: modscrin_intruder
+		Start: 366
+		Length: 15
+		Tick: 65
+	die4: modscrin_intruder
+		Start: 366
+		Length: 15
+		Tick: 65
+	die7: modscrin_intruder
+		Start: 366
+		Length: 15
+		Tick: 65
+	muzzle: scrinmuzz1
 		Length: 4
 		Facings: 8
-		Tick: 120
-	shoot: s4
-		Start: 40
+		Tick: 80
+	garrison-muzzle: scrinmuzz1
 		Length: 4
 		Facings: 8
-	idle1: s4
-		Length: 1
-		Tick: 120
-	idle2: s4
-		Start: 2
-		Length: 1
-		Tick: 120
-	idle3: s4
-		Start: 3
-		Length: 1
-		Tick: 120
-	idle4: s4
-		Start: 4
-		Length: 1
-		Tick: 120
-	die1: s4
-		Start: 72
-		Length: 8
-		Tick: 80
-	die2: s4
-		Start: 80
-		Length: 8
-		Tick: 80
-	die3: s4
-		Start: 88
-		Length: 8
-		Tick: 80
-	die4: s4
-		Start: 88
-		Length: 8
-		Tick: 80
-	die7: s4
-		Start: 72
-		Length: 8
 		Tick: 80
 	chrono-overlay: chronofade_small
 		Length: *
@@ -338,6 +406,161 @@ s6:
 		ZOffset: 512
 		Tick: 80
 	icon: s6icon
+s7:
+	Inherits: ^ScrinCommonDeaths
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_shard
+		Start: 0
+		Length: 15
+		Facings: 16
+		Tick: 100
+	stand2: modscrin_shard
+		Start: 0
+		Length: 15
+		Facings: 16
+		Tick: 100
+	run: modscrin_shard
+		Start: 0
+		Length: 15
+		Facings: 16
+		Tick: 120
+	shoot: modscrin_shard
+		Start: 257
+		Length: 14
+		Facings: 8
+		Tick: 60
+	idle1: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	idle2: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	idle3: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 50
+	idle4: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 50
+	die1: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	die2: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	die3: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	die4: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	die7: modscrin_shard
+		Start: 240
+		Length: 17
+		Tick: 60
+	muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
+		Tick: 80
+	garrison-muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
+		Tick: 80
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	icon: s1icon
+s8:
+	Inherits: ^ScrinCommonDeaths
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_trooper
+		Start: 0
+		Length: 21
+		Facings: 8
+		Tick: 9999
+	stand2: modscrin_trooper
+		Start: 0
+		Length: 21
+		Facings: 8
+		Tick: 9999
+	run: modscrin_trooper
+		Start: 0
+		Length: 21
+		Facings: 8
+		Tick: 15
+	shoot: modscrin_trooper
+		Start: 168
+		Length: 21
+		Facings: 8
+		Tick: 50
+	idle1: modscrin_trooper
+		Start: 0
+		Length: 21
+		Facings: 8
+		Tick: 60
+	idle2: modscrin_trooper
+		Start: 168
+		Length: 21
+		Facings: 8
+		Tick: 60
+	idle3: modscrin_trooper
+		Start: 336
+		Length: 15
+		Tick: 80
+	idle4: modscrin_trooper
+		Start: 351
+		Length: 15
+		Tick: 80
+	die1: modscrin_trooper
+		Start: 366
+		Length: 15
+		Tick: 65
+	die2: modscrin_trooper
+		Start: 366
+		Length: 15
+		Tick: 65
+	die3: modscrin_trooper
+		Start: 366
+		Length: 15
+		Tick: 65
+	die4: modscrin_trooper
+		Start: 366
+		Length: 15
+		Tick: 65
+	die7: modscrin_trooper
+		Start: 366
+		Length: 15
+		Tick: 65
+	muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
+		Tick: 80
+	garrison-muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
+		Tick: 80
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	icon: s1icon
+
 feed:
 	Inherits: ^ScrinCommonDeaths
 	idle: feed
@@ -599,7 +822,9 @@ mast:
 
 harv.scrin:
 	Inherits: ^VehicleOverlays
-	idle: harvscrin
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_harv
 		Facings: 32
 		UseClassicFacings: True
 	harvest: scrinharvest
@@ -617,15 +842,21 @@ harv.scrin.destroyed:
 
 gunw:
 	Inherits: ^VehicleOverlays
-	idle: gunw
-		Facings: 32
-		UseClassicFacings: True
-	move: gunw
-		Start: 32
-		Facings: 32
-		Length: 2
-		Tick: 80
-		UseClassicFacings: True
+	Defaults:
+		Scale: 0.6
+	idle: modscrin_gunwalk
+		Facings: 8
+		Length: 11
+		Tick: 9999
+	move: modscrin_gunwalk
+		Facings: 8
+		Length: 11
+		Tick: 40
+	shoot: modscrin_gunwalk
+		Start: 88
+		Facings: 8
+		Length: 11
+		Tick: 60
 	muzzle: scrinmuzz1
 		Length: 4
 		Facings: 8
@@ -638,19 +869,21 @@ gunw.sensor:
 
 gunw.destroyed:
 	Inherits: ^VehicleOverlays
-	idle: gunw
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
+	idle: modscrin_gunwalk
+		Facings: 8
+		Length: 11
+		Tick: 9999
 
 seek:
 	Inherits: ^VehicleOverlays
-	idle: seek
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_seek
 		Facings: 32
 		UseClassicFacings: True
-	turret: seek
-		Start: 32
+	turret: modscrin_seek
 		Facings: 32
+		Start: 32
 		UseClassicFacings: True
 	icon: seekicon
 
@@ -664,22 +897,25 @@ seek.reflector:
 
 seek.destroyed:
 	Inherits: ^VehicleOverlays
-	idle: seek
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_seek
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: seek
-		Start: 32
+	turret: modscrin_seek_tower
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 lace:
 	Inherits: ^VehicleOverlays
-	idle: lace
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_lace
 		Facings: 32
 		UseClassicFacings: True
-	turret: lace
+	turret: modscrin_lace
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -699,7 +935,9 @@ lace.ap:
 
 intl:
 	Inherits: ^VehicleOverlays
-	idle: intl
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_transport
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: scrinmuzz3
@@ -723,15 +961,21 @@ intl.destroyed:
 
 corr:
 	Inherits: ^VehicleOverlays
-	idle: corr
-		Facings: 32
-		UseClassicFacings: True
-	move: corr
-		Start: 32
-		Facings: 32
-		Length: 2
-		Tick: 150
-		UseClassicFacings: True
+	Defaults:
+		Scale: 0.6
+	idle: modscrin_corrupt
+		Facings: 8
+		Length: 11
+		Tick: 9999
+	move: modscrin_corrupt
+		Facings: 8
+		Length: 11
+		Tick: 40
+	shoot: modscrin_corrupt
+		Start: 88
+		Facings: 8
+		Length: 11
+		Tick: 60
 	icon: corricon
 
 corr.area:
@@ -744,21 +988,17 @@ corr.range:
 
 corr.destroyed:
 	Inherits: ^VehicleOverlays
-	idle: corr
-		Facings: 32
-		UseClassicFacings: True
-		ZOffset: -512
+	idle: modscrin_corrupt
+		Facings: 8
+		Length: 11
+		Tick: 9999
 
 lchr:
 	Inherits: ^VehicleOverlays
-	idle: lchr
+	Defaults:
+		Scale: 0.6
+	idle: modscrin_leech
 		Facings: 32
-		UseClassicFacings: True
-	move: lchr
-		Start: 32
-		Facings: 32
-		Length: 2
-		Tick: 120
 		UseClassicFacings: True
 	icon: lchricon
 
@@ -788,10 +1028,13 @@ stcr.reflector:
 
 devo:
 	Inherits: ^VehicleOverlays
-	idle: devo
-		Facings: 1
+	Defaults:
+		Scale: 0.68
+	idle: modscrin_devo
+		Facings: 32
+		UseClassicFacings: True
+	turret: modscrin_devo
 		Start: 32
-	turret: devo
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: scrinmuzz3
@@ -871,21 +1114,85 @@ atmz:
 
 tpod:
 	Inherits: ^VehicleOverlays
-	idle: tpod
-		Facings: 1
-		Start: 32
-	turret: tpod
+	Defaults:
+		Scale: 0.45
+	idle: modscrin_tripodbase
+		Facings: 8
+		Length: 19
+		Tick: 99999
+	turret: modscrin_tripodtur
 		Facings: 32
 		UseClassicFacings: True
-	move: tpod
-		Start: 33
+	move: modscrin_tripodbase
 		Facings: 8
-		Length: 14
+		Length: 19
 		Tick: 60
 	muzzle: scrinmuzz2
 		Length: 5
 	icon: tpodicon
-
+ltpod:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Scale: 1.2
+	idle: modscrin_light_tripod
+		Facings: -8
+		Start: 192
+		ShadowStart: 519
+	move: modscrin_light_tripod
+		Facings: -8
+		Length: 24
+		Tick: 40
+		ShadowStart: 327
+	shoot: modscrin_light_tripod
+		Start: 200
+		Facings: -8
+		Length: 5
+		Tick: 60
+		ShadowStart: 527
+	die: modscrin_light_tripod
+		Start: 240
+		Length: 48
+		ShadowStart: 567
+	muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
+		Tick: 80
+	icon: gunwicon
+stpod:
+	Inherits: ^VehicleOverlays
+	Defaults:
+		Scale: 0.84
+	idle: modscrin_strider_tripod
+		Facings: -8
+		Start: 96
+		ShadowStart: 200
+	move: modscrin_strider_tripod
+		Facings: -8
+		Length: 12
+		Tick: 60
+		ShadowStart: 104
+	shoot: modscrin_strider_tripod
+		Facings: -8
+		Start: 96
+		ShadowStart: 200
+	idle-water: modscrin_strider_tripod_water
+		Facings: -8
+		Start: 96
+		ShadowStart: 200
+	move-water: modscrin_strider_tripod_water
+		Facings: -8
+		Length: 12
+		Tick: 60
+		ShadowStart: 104
+	shoot-water: modscrin_strider_tripod_water
+		Facings: -8
+		Start: 96
+		ShadowStart: 200
+	muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
+		Tick: 80
+	icon: gunwicon
 tpod.chain:
 	Inherits: tpod
 	icon: tpodchainericon
@@ -931,17 +1238,18 @@ tpod.destroyed:
 
 rptp:
 	Inherits: ^VehicleOverlays
-	idle: tpod
-		Facings: 1
-		Start: 32
-	turret: rptp
+	Defaults:
+		Scale: 0.45
+	idle: modscrin_tripodbase
+		Facings: 8
+		Length: 19
+		Tick: 99999
+	turret: modscrin_tripodtur2
 		Facings: 32
 		UseClassicFacings: True
-		Offset: 0,-25
-	move: tpod
-		Start: 33
+	move: modscrin_tripodbase
 		Facings: 8
-		Length: 14
+		Length: 19
 		Tick: 60
 	muzzle: scrinmuzz3
 		Length: 5
@@ -1005,7 +1313,9 @@ smcv.destroyed:
 
 stmr:
 	Inherits: ^VehicleOverlays
-	idle: stmr
+	Defaults:
+		Scale: 0.68
+	idle: modscrin_storm
 		Facings: 32
 		UseClassicFacings: True
 	icon: stmricon
@@ -1031,7 +1341,9 @@ enrv:
 
 deva:
 	Inherits: ^VehicleOverlays
-	idle: deva
+	Defaults:
+		Scale: 0.8
+	idle: modscrin_lobster
 		Facings: 32
 		UseClassicFacings: True
 	icon: devaicon
@@ -1046,15 +1358,15 @@ deva.rift:
 
 pac:
 	Inherits: ^VehicleOverlays
-	idle: pac
+	Defaults:
+		Scale: 0.8
+	idle: modscrin_carrier
 		Facings: 32
 		UseClassicFacings: True
-	half-deployed: pac
-		Start: 32
+	half-deployed: modscrin_carrier
 		Facings: 32
 		UseClassicFacings: True
-	fully-deployed: pac
-		Start: 64
+	fully-deployed: modscrin_carrier
 		Facings: 32
 		UseClassicFacings: True
 	icon: pacicon
@@ -1073,7 +1385,9 @@ pac.suicide:
 
 inva:
 	Inherits: ^VehicleOverlays
-	idle: inva
+	Defaults:
+		Scale: 0.6
+	idle: modscrin_bee
 		Facings: 32
 		UseClassicFacings: True
 	icon: wipicon

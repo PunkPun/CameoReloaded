@@ -717,3 +717,461 @@ ARCO:
 	Tooltip:
 		Name: Oil Pump
 		ShowOwnerRow: True
+
+#New Civilian Cars for Maps
+civcar_car1:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car1_bomb
+
+civcar_car1_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_car2:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car2_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car2_bomb
+
+civcar_car2_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car2
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_car3:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car3_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car3_bomb
+
+civcar_car3_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car3
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_car4:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car4_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car4_bomb
+
+civcar_car4_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car4
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_car5:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car5_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car5_bomb
+
+civcar_car5_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car5
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_car6:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car6_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car6_bomb
+
+civcar_car6_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car6
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_car7:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car7_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car7_bomb
+
+civcar_car7_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car7
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_car8:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car8_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car8_bomb
+
+civcar_car8_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car8
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_car9:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_car9_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_car9_bomb
+
+civcar_car9_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_car9
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_suv1:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_suv1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_suv1_bomb
+
+civcar_suv1_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_suv1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_pik1:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_pik1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_pik1_bomb
+
+civcar_pik1_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_pik1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_pik2:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_pik2_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_pik2_bomb
+
+civcar_pik2_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_pik2
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_pik3:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_pik3_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_pik3_bomb
+
+civcar_pik3_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_pik3
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_pik4:
+	Inherits: ^CivilianCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_pik4_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_pik4_bomb
+
+civcar_pik4_bomb:
+	Inherits: ^CivilianCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_pik4
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_sport1:
+	Inherits: ^CivilianSportCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_sport1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_sport1_bomb
+
+civcar_sport1_bomb:
+	Inherits: ^CivilianSportCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_sport1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_sport2:
+	Inherits: ^CivilianSportCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_sport2_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_sport2_bomb
+
+civcar_sport2_bomb:
+	Inherits: ^CivilianSportCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_sport2
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_sport3:
+	Inherits: ^CivilianSportCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_sport3_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_sport3_bomb
+
+civcar_sport3_bomb:
+	Inherits: ^CivilianSportCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_sport3
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_sport4:
+	Inherits: ^CivilianSportCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_sport4_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_sport4_bomb
+
+civcar_sport4_bomb:
+	Inherits: ^CivilianSportCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_sport4
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_sport5:
+	Inherits: ^CivilianSportCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_sport5_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_sport5_bomb
+
+civcar_sport5_bomb:
+	Inherits: ^CivilianSportCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_sport5
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_sport6:
+	Inherits: ^CivilianSportCar
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_sport6_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_sport6_bomb
+
+civcar_sport6_bomb:
+	Inherits: ^CivilianSportCar
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_sport6
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_van1:
+	Inherits: ^CivilianSmallTruck
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_van1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_van1_bomb
+
+civcar_van1_bomb:
+	Inherits: ^CivilianSmallTruck
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_van1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_van2:
+	Inherits: ^CivilianSmallTruck
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_van2_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_van2_bomb
+
+civcar_van2_bomb:
+	Inherits: ^CivilianSmallTruck
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_van2
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_van3:
+	Inherits: ^CivilianSmallTruck
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_van3_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_van3_bomb
+
+civcar_van3_bomb:
+	Inherits: ^CivilianSmallTruck
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_van3
+	-InfiltrateForTransform@terror:
+	-Capturable:
+civcar_truck1:
+	Inherits: ^CivilianSmallTruck
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_truck1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_truck1_bomb
+
+civcar_truck1_bomb:
+	Inherits: ^CivilianSmallTruck
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_truck1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_bus1:
+	Inherits: ^CivilianBigTruck
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_bus1_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_bus1_bomb
+
+civcar_bus1_bomb:
+	Inherits: ^CivilianBigTruck
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_bus1
+	-InfiltrateForTransform@terror:
+	-Capturable:
+
+civcar_bus2:
+	Inherits: ^CivilianBigTruck
+	IgnoresDisguise:
+	TransformOnCapture@terror:
+		IntoActor: civcar_bus2_bomb
+		CaptureTypes: terroristcar
+	InfiltrateForTransform:
+		IntoActor: civcar_bus2_bomb
+
+civcar_bus2_bomb:
+	Inherits: ^CivilianBigTruck
+	Inherits@Terr: ^TerroristCar
+	IgnoresDisguise:
+	RenderSprites:
+		Image: civcar_bus2
+	-InfiltrateForTransform@terror:
+	-Capturable:

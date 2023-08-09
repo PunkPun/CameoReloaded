@@ -35,6 +35,11 @@ Metrics:
 	FactionSuffix-glatoxin: gla
 	FactionSuffix-glademo: gla
 	FactionSuffix-glacamo: gla
+	FactionSuffix-camea: nod
+	FactionSuffix-forgotten: forgotten
+	FactionSuffix-cabal: cabal
+	FactionSuffix-tsgdi: tsgdi
+	FactionSuffix-tsnod: tsnod
 	IncompatibleProtectedGameColor: B22222
 	IncompatibleVersionColor: D3D3D3
 	TextfieldColorHighlight: 562020

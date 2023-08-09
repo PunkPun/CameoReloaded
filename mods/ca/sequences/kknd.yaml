@@ -1,0 +1,68 @@
+^muzzle_16_directions:
+	muzzle: kknd1|22.mobd
+		Length: 2
+		Facings: -16
+		Tick: 60
+		AddExtension: False
+
+^muzzle_8_directions:
+	muzzle: kknd1|22.mobd
+		Start: 32
+		Length: 2
+		Facings: -16
+		Tick: 60
+		AddExtension: False
+
+^muzzle_flamethrower:
+	muzzle: sprites.lvl|Flame.mobd
+		Length: 9
+		Facings: -16
+		Tick: 60
+		ZOffset: 1000
+		AddExtension: False
+
+survivors_vehicle_4x4pickup:
+	Inherits@muzzle: ^muzzle_16_directions
+	Inherits: ^VehicleOverlays
+	# Original also uses the MonsterTruck turret, cause the Pickup turret has a broken north-frame.
+	#turret: kknd1|54.mobd
+	turret: kknd1|47.mobd
+		Facings: -16
+		AddExtension: False
+		Scale: 1.4
+	idle: kknd1|54.mobd
+		Frames: 63,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30
+		Facings: -16
+		AddExtension: False
+		Scale: 1.4
+	move: kknd1|54.mobd
+		Frames: 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62
+		Length: 2
+		Tick: 120
+		Facings: -16
+		AddExtension: False
+		Scale: 1.4
+	icon: bits/kknd/kkndpickup.png
+		AddExtension: False
+
+survivors_vehicle_allterrainvehicle:
+	Inherits@muzzle: ^muzzle_16_directions
+	Inherits: ^VehicleOverlays
+	turret: sprites.lvl|24.mobd
+		Facings: -16
+		AddExtension: False
+		Scale: 1.4
+	idle: sprites.lvl|24.mobd
+		Frames: 63,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30
+		Facings: -16
+		AddExtension: False
+		Scale: 1.4
+	move: sprites.lvl|24.mobd
+		Frames: 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62
+		Length: 2
+		Tick: 120
+		Facings: -16
+		AddExtension: False
+		Scale: 1.4
+	icon: bits/kknd/kkndpickup.png
+		AddExtension: False

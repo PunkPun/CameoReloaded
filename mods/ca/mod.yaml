@@ -5,7 +5,7 @@ Metadata:
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 	WindowTitle: OpenRA Combined Arms
 
-PackageFormats: Mix
+PackageFormats: Mix, LvlPackage
 
 Packages:
 	~^SupportDir|Content/ca
@@ -57,8 +57,23 @@ Packages:
 	ca|bits/allies
 	ca|bits/gdi
 	ca|bits/nod
+	ca|bits/apolytoneffects
 	ca|bits/generals
+	ca|bits/315tiles
+	ca|bits/starwars
+	ca|bits/cameoassets
+	ca|bits/tibsun
+	ca|bits/tibsun/tssounds.mix
 	ca|scripts
+	ca|audio/music
+	ca|bits/starcraft
+    ca|bits/kknd/sprites.lvl: kknd1
+    ca|bits/kknd/surv.slv: surv.slv
+    ca|bits/kknd/mute.slv: mute.slv
+    ca|bits/kknd/gamesprt.lpk: kknd2
+    ca|bits/kknd/surv.spk
+    ca|bits/kknd/mute.spk
+    ca|bits/kknd/robo.spk
 
 Translations:
 	ca|languages/en.ftl
@@ -94,7 +109,7 @@ Rules:
 	ca|rules/allies/defaults.yaml
 	ca|rules/soviet/defaults.yaml
 	ca|rules/soviet/structures.yaml
-	ca|rules/soviet/vehicles.yaml
+	#ca|rules/soviet/vehicles.yaml
 	ca|rules/china.yaml #this should be removed
 	ca|rules/china/ai.yaml
 	ca|rules/china/defaults.yaml
@@ -106,14 +121,24 @@ Rules:
 	ca|rules/china/misc.yaml
 	ca|rules/gdi/defaults.yaml
 	ca|rules/nod/defaults.yaml
-	ca|rules/nod/infantry.yaml
+	#ca|rules/nod/infantry.yaml
 	ca|rules/scrin/defaults.yaml
 	ca|rules/world.yaml
 	ca|rules/camea/defaults.yaml
 	ca|rules/camea/structures.yaml
 	ca|rules/camea/units.yaml
+	ca|rules/camea/vehicles.yaml
+	ca|rules/camea/ai.yaml
+	ca|rules/starwars/units.yaml
 	#ca|rules/defaults/defaults.yaml
-	
+	ca|rules/tibsun/infantry.yaml
+	ca|rules/tibsun/structures.yaml
+	ca|rules/tibsun/vehicles.yaml
+	ca|rules/tibsun/aircraft.yaml
+	ca|rules/tibsun/commander-tree.yaml
+	ca|rules/starcraft/units.yaml
+	ca|rules/kknd/palettes.yaml
+	ca|rules/kknd/units.yaml
 
 Sequences:
 	ca|sequences/defaults.yaml
@@ -130,6 +155,10 @@ Sequences:
 	ca|sequences/china.yaml
 	ca|sequences/soviet.yaml
 	ca|sequences/gla.yaml
+	ca|sequences/starwars.yaml
+	ca|sequences/tibsun.yaml
+	ca|sequences/starcraft.yaml
+	ca|sequences/kknd.yaml
 
 ModelSequences:
 	ca|sequences/voxels.yaml
@@ -142,6 +171,8 @@ TileSets:
 	ca|tilesets/jungle.yaml
 	ca|tilesets/winter.yaml
 	ca|tilesets/barren.yaml
+	ca|tilesets/315tiles.yaml
+	ca|tilesets/arrakis.yaml
 
 Cursors:
 	ca|cursors.yaml
@@ -221,16 +252,23 @@ Weapons:
 	ca|rules/nod/weapons.yaml
 	ca|rules/china/weapons.yaml
 	ca|rules/soviet/weapons.yaml
+	ca|rules/starwars/weapons.yaml
+	ca|rules/camea/weapons.yaml
+	ca|rules/tibsun/weapons.yaml
+	ca|rules/kknd/weapons.yaml
 
 Voices:
 	ca|audio/voices.yaml
 	ca|audio/generals.yaml
+	ca|rules/starwars/voices.yaml
+	ca|rules/tibsun/voices.yaml
 
 Notifications:
 	ca|audio/notifications.yaml
 
 Music:
 	ca|audio/music.yaml
+	ca|audio/cameomusic.yaml
 
 Translations:
 	ca|languages/english.yaml
@@ -249,7 +287,7 @@ Hotkeys:
 
 LoadScreen: FitImageLoadScreen
 	Image: ca|bits/load/chopper.png,ca|bits/load/outpost.png,ca|bits/load/battleships.png,ca|bits/load/aftermath.png,ca|bits/load/ambush.png,ca|bits/load/defense.png,ca|bits/load/assault.png,ca|bits/load/scouts.png,ca|bits/load/factory.png,ca|bits/load/tankhit.png,ca|bits/load/toughguys.png,ca|bits/load/outskirts.png,ca|bits/load/hangar.png,ca|bits/load/airfuture.png,ca|bits/load/warroom.png,ca|bits/load/hangar2.png,ca|bits/load/airshow.png,ca|bits/load/nightfire.png,ca|bits/load/evacuation.png,ca|bits/load/napalm.png,ca|bits/load/heli.png,ca|bits/load/explosion.png,ca|bits/load/tankbattle.png,ca|bits/load/tankbattle2.png,ca|bits/load/tankbattle3.png,ca|bits/load/tankbattle4.png,ca|bits/load/prone.png,ca|bits/load/warishell.png,ca|bits/load/warishell2.png,ca|bits/load/warishell3.png,ca|bits/load/warishell4.png,ca|bits/load/warishell5.png,ca|bits/load/apocalypse.png,ca|bits/load/apocalypse2.png,ca|bits/load/apocalypse3.png,ca|bits/load/apocalypse4.png
-	Text: Mining Bitcoin..., Installing Malware..., Encrypting HDD..., Downloading Credit Card Data..., Doxing your grandma...
+	Text: Cameo Growing Larger..., Stealing your Assets..., Cameo is Bigger than UCM..., We are like Blood Ravens..., We Steal some Relics..., Your 90s games are a Relic..., We combine all arms..., Please, share your Assets..., Cameo is not Canon..., Who can win? Star Wars or Warhammer40k...
 
 ServerTraits:
 	LobbyCommands
@@ -308,7 +346,7 @@ SupportsMapsFrom: ca, ra
 
 SoundFormats: Aud, Wav, Mp3
 
-SpriteFormats: ShpD2, R8, ShpTD, TmpRA, TmpTD, ShpTS
+SpriteFormats: ShpD2, R8, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet, Mobd
 
 SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 	TilesetExtensions:
@@ -319,6 +357,8 @@ SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 		JUNGLE: .jun
 		WINTER: .win
 		BARREN: .bar
+		C315TILES: .tem
+		ARRAKIS: .tem
 
 ModelSequenceFormat: VoxelModelSequence
 
@@ -327,8 +367,8 @@ VideoFormats: Vqa, Wsa
 TerrainFormat: DefaultTerrain
 
 AssetBrowser:
-	SpriteExtensions: .shp, .tmp, .tem, .win, .sno, .des, .int, .jun, .r8
-	AudioExtensions: .aud, .wav, .v00, .v01, .v02, .v03, .var
+	SpriteExtensions: .shp, .tmp, .tem, .win, .sno, .des, .int, .jun, .r8, .png, .mobd
+	AudioExtensions: .aud, .wav, .v00, .v01, .v02, .v03, .var, .mp3, .soun
 	VideoExtensions: .vqa, .wsa
 
 GameSpeeds:

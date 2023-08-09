@@ -461,6 +461,204 @@ command-button-china-disabled:
 	Inherits@2: ^SidebarCHI
 command-button-china-highlighted-disabled:
 	Inherits: sidebar-button-china-disabled
+# TS GDI
+^SidebarTSGDI:
+	Image: sidebar-tsgdi.png
+sidebar-tsgdi:
+	Inherits: sidebar-cameo
+	Inherits@2: ^SidebarTSGDI
+sidebar-button-tsgdi:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarTSGDI
+sidebar-button-tsgdi-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarTSGDI
+sidebar-button-tsgdi-pressed:
+	Inherits: sidebar-button-tsgdi
+sidebar-button-tsgdi-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarTSGDI
+sidebar-button-tsgdi-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarTSGDI
+sidebar-button-tsgdi-highlighted-pressed:
+	Inherits: sidebar-button-tsgdi-highlighted
+sidebar-button-tsgdi-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarTSGDI
+sidebar-button-tsgdi-highlighted-disabled:
+	Inherits: sidebar-button-tsgdi-disabled
+
+command-button-tsgdi:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarTSGDI
+command-button-tsgdi-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarTSGDI
+command-button-tsgdi-pressed:
+	Inherits: sidebar-button-tsgdi
+command-button-tsgdi-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarTSGDI
+command-button-tsgdi-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarTSGDI
+command-button-tsgdi-highlighted-pressed:
+	Inherits: sidebar-button-tsgdi-highlighted
+command-button-tsgdi-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarTSGDI
+command-button-tsgdi-highlighted-disabled:
+	Inherits: sidebar-button-tsgdi-disabled
+# TS Nod
+^SidebarTSNod:
+	Image: sidebar-tsnod.png
+sidebar-tsnod:
+	Inherits: sidebar-cameo
+	Inherits@2: ^SidebarTSNod
+sidebar-button-tsnod:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarTSNod
+sidebar-button-tsnod-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarTSNod
+sidebar-button-tsnod-pressed:
+	Inherits: sidebar-button-tsnod
+sidebar-button-tsnod-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarTSNod
+sidebar-button-tsnod-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarTSNod
+sidebar-button-tsnod-highlighted-pressed:
+	Inherits: sidebar-button-tsnod-highlighted
+sidebar-button-tsnod-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarTSNod
+sidebar-button-tsnod-highlighted-disabled:
+	Inherits: sidebar-button-tsnod-disabled
+
+command-button-tsnod:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarTSNod
+command-button-tsnod-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarTSNod
+command-button-tsnod-pressed:
+	Inherits: sidebar-button-tsnod
+command-button-tsnod-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarTSNod
+command-button-tsnod-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarTSNod
+command-button-tsnod-highlighted-pressed:
+	Inherits: sidebar-button-tsnod-highlighted
+command-button-tsnod-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarTSNod
+command-button-tsnod-highlighted-disabled:
+	Inherits: sidebar-button-tsnod-disabled
+
+# TS CABAL
+^SidebarCABAL:
+	Image: sidebar-cabal.png
+sidebar-cabal:
+	Inherits: sidebar-cameo
+	Inherits@2: ^SidebarCABAL
+sidebar-button-cabal:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarCABAL
+sidebar-button-cabal-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarCABAL
+sidebar-button-cabal-pressed:
+	Inherits: sidebar-button-cabal
+sidebar-button-cabal-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarCABAL
+sidebar-button-cabal-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarCABAL
+sidebar-button-cabal-highlighted-pressed:
+	Inherits: sidebar-button-cabal-highlighted
+sidebar-button-cabal-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarCABAL
+sidebar-button-cabal-highlighted-disabled:
+	Inherits: sidebar-button-cabal-disabled
+
+command-button-cabal:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarCABAL
+command-button-cabal-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarCABAL
+command-button-cabal-pressed:
+	Inherits: sidebar-button-cabal
+command-button-cabal-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarCABAL
+command-button-cabal-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarCABAL
+command-button-cabal-highlighted-pressed:
+	Inherits: sidebar-button-cabal-highlighted
+command-button-cabal-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarCABAL
+command-button-cabal-highlighted-disabled:
+	Inherits: sidebar-button-cabal-disabled
+
+# TS Forgotten
+^SidebarForgotten:
+	Image: sidebar-forgotten.png
+sidebar-forgotten:
+	Inherits: sidebar-cameo
+	Inherits@2: ^SidebarForgotten
+sidebar-button-forgotten:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarForgotten
+sidebar-button-forgotten-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarForgotten
+sidebar-button-forgotten-pressed:
+	Inherits: sidebar-button-forgotten
+sidebar-button-forgotten-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarForgotten
+sidebar-button-forgotten-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarForgotten
+sidebar-button-forgotten-highlighted-pressed:
+	Inherits: sidebar-button-forgotten-highlighted
+sidebar-button-forgotten-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarForgotten
+sidebar-button-forgotten-highlighted-disabled:
+	Inherits: sidebar-button-forgotten-disabled
+
+command-button-forgotten:
+	Inherits: sidebar-cameo-button
+	Inherits@2: ^SidebarForgotten
+command-button-forgotten-hover:
+	Inherits: sidebar-cameo-button-hover
+	Inherits@2: ^SidebarForgotten
+command-button-forgotten-pressed:
+	Inherits: sidebar-button-forgotten
+command-button-forgotten-highlighted:
+	Inherits: sidebar-cameo-button-highlighted
+	Inherits@2: ^SidebarForgotten
+command-button-forgotten-highlighted-hover:
+	Inherits: sidebar-cameo-button-highlighted-hover
+	Inherits@2: ^SidebarForgotten
+command-button-forgotten-highlighted-pressed:
+	Inherits: sidebar-button-forgotten-highlighted
+command-button-forgotten-disabled:
+	Inherits: sidebar-cameo-button-disabled
+	Inherits@2: ^SidebarForgotten
+command-button-forgotten-highlighted-disabled:
+	Inherits: sidebar-button-forgotten-disabled
 
 
 sidebar-bits:
@@ -798,6 +996,10 @@ flags:
 		glacamo: 224, 128, 32, 16
 		glademo: 224, 112, 32, 16
 		camea: 0, 224, 32, 16
+		forgotten: 32, 96, 32, 16
+		cabal: 32, 112, 32, 16
+		tsgdi: 32, 64, 32, 16
+		tsnod: 32, 80, 32, 16
 
 games:
 	Inherits: ^Glyphs
@@ -812,6 +1014,7 @@ games:
 		Nod: 195, 161, 30, 15
 		Scrin: 164, 177, 30, 15
 		Soviet: 226, 193, 30, 15
+		Tiberian Sun: 226, 241, 30, 15
 
 music:
 	Inherits: ^Glyphs

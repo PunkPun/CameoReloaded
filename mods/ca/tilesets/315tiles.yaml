@@ -1,0 +1,195 @@
+General:
+	Name: Temperate
+	Id: C315TILES
+	SheetSize: 1024
+	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge
+	HeightDebugColors: AA0000
+
+Terrain:
+	TerrainType@Beach:
+		Type: Beach
+		TargetTypes: Ground
+		Color: B09C78
+	TerrainType@Bridge:
+		Type: Bridge
+		TargetTypes: Ground, Bridge
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 606060
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 284428
+		RestrictPlayerColor: true
+	TerrainType@Gems:
+		Type: Gems
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 8470FF
+		RestrictPlayerColor: true
+	TerrainType@Ore:
+		Type: Ore
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 948060
+		RestrictPlayerColor: true
+	TerrainType@River:
+		Type: River
+		TargetTypes: Ground
+		Color: 5C8CB4
+	TerrainType@Road:
+		Type: Road
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 5E430D
+	TerrainType@Rock:
+		Type: Rock
+		TargetTypes: Ground
+		Color: 44443C
+	TerrainType@Rough:
+		Type: Rough
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 44443C
+	TerrainType@Tree:
+		Type: Tree
+		TargetTypes: Ground
+		Color: 1C2024
+	TerrainType@Wall:
+		Type: Wall
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: D0C0A0
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Water
+		Color: 5C74A4
+		RestrictPlayerColor: true
+	TerrainType@BlueTiberium:
+		Type: BlueTiberium
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 54FCFC
+		RestrictPlayerColor: true
+	TerrainType@Tiberium:
+		Type: Tiberium
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A1E21C
+		RestrictPlayerColor: true
+	TerrainType@Tunnel:
+		Type: Tunnel
+		TargetTypes: Ground
+		Color: 606060
+	TerrainType@Ford:
+		Type: Ford
+		TargetTypes: Ground
+		Color: B09C78
+
+Templates:
+	Template@255:
+		Id: 255
+		Images: tilegrass.shp
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Tiles:
+			0: Clear
+			1: Clear
+			2: Clear
+			3: Clear
+			4: Clear
+			5: Clear
+			6: Clear
+			7: Clear
+			8: Clear
+			9: Clear
+			10: Clear
+			11: Clear
+			12: Clear
+			13: Clear
+			14: Clear
+			15: Clear
+	Template@65535:
+		Id: 65535
+		Images: tilegrass.shp
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Tiles:
+			0: Clear
+			1: Clear
+			2: Clear
+			3: Clear
+			4: Clear
+			5: Clear
+			6: Clear
+			7: Clear
+			8: Clear
+			9: Clear
+			10: Clear
+			11: Clear
+			12: Clear
+			13: Clear
+			14: Clear
+			15: Clear
+	Template@0:
+		Images: tilegrass1.shp
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Tiles:
+			0: Clear
+			1: Clear
+			2: Clear
+			3: Clear
+	Template@1:
+		Id: 1
+		Images: tilewater.shp
+		Size: 1,1
+		Categories: Terrain
+		Tiles:
+			0: Water
+	Template@2:
+		Id: 2
+		Images: tilewater.shp
+		Size: 2,2
+		Categories: Terrain
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+	Template@3:
+		Id: 3
+		Images: tilesand2.shp
+		Size: 1,1
+		PickAny: True
+		Categories: Sand
+		Tiles:
+			0: Clear
+			1: Clear
+			2: Clear
+			3: Clear
+	Template@4:
+		Id: 4
+		Images: tilewater2.shp
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water
+	Template@5:
+		Id: 5
+		Images: tilewater3.shp
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Tiles:
+			0: Water
+			1: Water
+			2: Water
+			3: Water

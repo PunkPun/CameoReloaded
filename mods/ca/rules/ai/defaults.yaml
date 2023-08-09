@@ -1,8 +1,8 @@
 Player:
 	HarvesterBotModuleCA:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai || enable-naval-ai
-		HarvesterTypes: harv,har2,harv.scrin,harv.chrono,chharv
-		RefineryTypes: proc,proc.td,proc.scrin,chsupply
+		HarvesterTypes: harv,har2,harv.scrin,harv.chrono,chharv, harv.camea
+		RefineryTypes: proc,proc.td,proc.scrin,chsupply, proc.camea
 	CaptureManagerBotModuleCA:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai
 		CapturingActorTypes: e6, n6, s6, che6
@@ -14,17 +14,17 @@ Player:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai || enable-naval-ai
 	McvManagerBotModuleCA@upper:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai
-		McvTypes: mcv, amcv, smcv, chnmcv
-		ConstructionYardTypes: fact, afac, sfac, chcommand
-		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand
+		McvTypes: mcv, amcv, smcv, chnmcv, mcv.camea
+		ConstructionYardTypes: fact, afac, sfac, chcommand, camea_conyard
+		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand, weap.camea
 		ScanForNewMcvInterval: 80
 		MaxBaseRadius: 25
 		MinimumConstructionYardCount: 2
 	McvManagerBotModuleCA@lower:
 		RequiresCondition: enable-normal-ai || enable-easy-ai || enable-naval-ai
-		McvTypes: mcv, amcv, smcv, chnmcv
-		ConstructionYardTypes: fact, afac, sfac, chcommand
-		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand
+		McvTypes: mcv, amcv, smcv, chnmcv, mcv.camea
+		ConstructionYardTypes: fact, afac, sfac, chcommand, camea_conyard
+		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand, weap.camea
 	AutoDeployManager:
 	SupportPowerBotModule:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai || enable-naval-ai

@@ -1,0 +1,39 @@
+World:
+  	FactionCA@camea:
+		Name: Camea
+		InternalName: camea
+		Game: Generic
+		Side: Boss Factions
+		Description: Camea\nGeneral having forces of GDI, NOD, Allies and Soviets at her disposal\nSupport powers: Spy Plane, Airstrike, Chronosphere, Paratroopers, Nuclear Strike            
+        
+	StartingUnits@mcvonlycamea:
+		Class: none
+		ClassName: MCV Only
+		Factions: camea
+		BaseActor: mcv.camea
+
+	StartingUnits@defaultcamea:
+		Class: light
+		ClassName: Light Support
+		Factions: camea
+		BaseActor: mcv.camea
+		SupportActors: e1,e1,e1,e1,e1,e3,e3,jeep
+
+	StartingUnits@heavycamea:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: camea
+		BaseActor: mcv.camea
+		SupportActors: e1,e1,e1,e1,e3,e3,jeep,mtnk,mtnk
+
+Player:
+    ExternalCondition@BuildingsOwned:
+        Condition: BuildingsOwned
+    ProvidesPrerequisite@BuildingsOwned
+        Prerequisite: allowsMCV
+        RequiresCondition: BuildingsOwned < 5
+
+^BuildingCamea:
+	Inherits: ^BuildingTD
+	SpawnActorsOnSell:
+		ActorTypes: che1,che1,che1,che1,che1,che1,che1,che1,che1,che1,c1,c1,c1,c1,c7,c7,c7,c7,c10,c10

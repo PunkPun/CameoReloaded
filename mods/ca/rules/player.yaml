@@ -13,14 +13,9 @@ EditorPlayer:
 
 Player:
 	Inherits: ^BasePlayer
-	LobbyPrerequisiteCheckbox@CLASSICPRODUCTIONQUEUES:
-		ID: classicproductionqueues
-		Label: Classic Queues
-		Description: Build units and buildings of the same category in one queue.
-		DisplayOrder: 12
-		Prerequisites: classicproductionqueues
 	ClassicProductionQueue@Building:
 		Type: Building
+		Group: Building
 		DisplayOrder: 0
 		LowPowerModifier: 300
 		ReadyAudio: ConstructionComplete
@@ -35,6 +30,7 @@ Player:
 		InfiniteBuildLimit: 10
 	ClassicProductionQueue@Defense:
 		Type: Defense
+		Group: Defense
 		DisplayOrder: 1
 		LowPowerModifier: 300
 		ReadyAudio: ConstructionComplete
@@ -49,6 +45,7 @@ Player:
 		InfiniteBuildLimit: 10
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
+		Group: Vehicle
 		DisplayOrder: 3
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
@@ -63,6 +60,7 @@ Player:
 		InfiniteBuildLimit: 10
 	ClassicProductionQueue@Infantry:
 		Type: Infantry
+		Group: Infantry
 		DisplayOrder: 2
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
@@ -77,6 +75,7 @@ Player:
 		InfiniteBuildLimit: 10
 	ClassicProductionQueue@Ship:
 		Type: Ship
+		Group: Ship
 		DisplayOrder: 5
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
@@ -91,6 +90,7 @@ Player:
 		InfiniteBuildLimit: 10
 	ClassicProductionQueue@Aircraft:
 		Type: Aircraft
+		Group: Aircraft
 		DisplayOrder: 4
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
@@ -201,6 +201,13 @@ Player:
 		Enabled: True
 		DisplayOrder: 16
 		Prerequisites: global.balancedharvesting
+	LobbyPrerequisiteCheckbox@CLASSICPRODUCTIONQUEUES:
+		ID: classicproductionqueues
+		Label: Classic Queues
+		Description: Build units and buildings of the same category in one queue.
+		DisplayOrder: 12
+		Prerequisites: classicproductionqueues
+		Enabled: True
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:

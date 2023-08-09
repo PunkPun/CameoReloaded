@@ -89,7 +89,7 @@ Terrain:
 Templates:
 	Template@255:
 		Id: 255
-		Images: clear1.bar
+		Images: clear_barr.shp
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -112,7 +112,7 @@ Templates:
 			15: Clear
 	Template@65535:
 		Id: 65535
-		Images: clear1.bar
+		Images: clear_barr.shp
 		Size: 1,1
 		PickAny: True
 		Categories: Terrain
@@ -135,14 +135,18 @@ Templates:
 			15: Clear
 	Template@1:
 		Id: 1
-		Images: w1.bar
+		Images: w1_barr.shp
 		Size: 1,1
 		Categories: Terrain
+		PickAny: True
 		Tiles:
 			0: Water
+			1: Water
+			2: Water
+			3: Water
 	Template@2:
 		Id: 2
-		Images: w2.bar
+		Images: w2_barr.shp
 		Size: 2,2
 		Categories: Terrain
 		Tiles:
@@ -205,7 +209,7 @@ Templates:
 			12: Water
 	Template@6:
 		Id: 6
-		Images: sh04.bar
+		Images: sh04_barr.shp
 		Size: 3,3
 		Categories: Beach
 		Tiles:
@@ -1007,7 +1011,7 @@ Templates:
 			1: Rock
 	Template@135:
 		Id: 135
-		Images: s01.bar
+		Images: s01_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1017,7 +1021,7 @@ Templates:
 			3: Rock
 	Template@136:
 		Id: 136
-		Images: s02.bar
+		Images: s02_barr.shp
 		Size: 2,3
 		Categories: Cliffs
 		Tiles:
@@ -1029,7 +1033,7 @@ Templates:
 			5: Rock
 	Template@137:
 		Id: 137
-		Images: s03.bar
+		Images: s03_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1039,7 +1043,7 @@ Templates:
 			3: Rock
 	Template@138:
 		Id: 138
-		Images: s04.bar
+		Images: s04_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1049,7 +1053,7 @@ Templates:
 			3: Rock
 	Template@139:
 		Id: 139
-		Images: s05.bar
+		Images: s05_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1059,7 +1063,7 @@ Templates:
 			3: Rock
 	Template@140:
 		Id: 140
-		Images: s06.bar
+		Images: s06_barr.shp
 		Size: 2,3
 		Categories: Cliffs
 		Tiles:
@@ -1068,9 +1072,10 @@ Templates:
 			2: Rock
 			3: Rock
 			4: Rock
+			5: Rock
 	Template@141:
 		Id: 141
-		Images: s07.bar
+		Images: s07_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1090,7 +1095,7 @@ Templates:
 			3: Rock
 	Template@143:
 		Id: 143
-		Images: s09.bar
+		Images: s09_barr.shp
 		Size: 3,2
 		Categories: Cliffs
 		Tiles:
@@ -1102,7 +1107,7 @@ Templates:
 			5: Rock
 	Template@144:
 		Id: 144
-		Images: s10.bar
+		Images: s10_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1112,7 +1117,7 @@ Templates:
 			3: Rock
 	Template@145:
 		Id: 145
-		Images: s11.bar
+		Images: s11_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1122,7 +1127,7 @@ Templates:
 			3: Rock
 	Template@146:
 		Id: 146
-		Images: s12.bar
+		Images: s12_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1163,7 +1168,7 @@ Templates:
 			3: Rock
 	Template@150:
 		Id: 150
-		Images: s16.bar
+		Images: s16_barr.shp
 		Size: 2,3
 		Categories: Cliffs
 		Tiles:
@@ -1173,7 +1178,7 @@ Templates:
 			5: Rock
 	Template@151:
 		Id: 151
-		Images: s17.bar
+		Images: s17_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1183,7 +1188,7 @@ Templates:
 			3: Rock
 	Template@152:
 		Id: 152
-		Images: s18.bar
+		Images: s18_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1193,7 +1198,7 @@ Templates:
 			3: Rock
 	Template@153:
 		Id: 153
-		Images: s19.bar
+		Images: s19_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1203,7 +1208,7 @@ Templates:
 			3: Rock
 	Template@154:
 		Id: 154
-		Images: s20.bar
+		Images: s20_barr.shp
 		Size: 2,3
 		Categories: Cliffs
 		Tiles:
@@ -1230,7 +1235,7 @@ Templates:
 			1: Rock
 	Template@157:
 		Id: 157
-		Images: s23.bar
+		Images: s23_barr.shp
 		Size: 3,2
 		Categories: Cliffs
 		Tiles:
@@ -1242,7 +1247,7 @@ Templates:
 			5: Rough
 	Template@158:
 		Id: 158
-		Images: s24.bar
+		Images: s24_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1252,7 +1257,7 @@ Templates:
 			3: Rock
 	Template@159:
 		Id: 159
-		Images: s25.bar
+		Images: s25_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1262,7 +1267,7 @@ Templates:
 			3: Rock
 	Template@160:
 		Id: 160
-		Images: s26.bar
+		Images: s26_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1293,7 +1298,7 @@ Templates:
 			3: Rock
 	Template@163:
 		Id: 163
-		Images: s29.bar
+		Images: s29_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1303,7 +1308,7 @@ Templates:
 			3: Rock
 	Template@164:
 		Id: 164
-		Images: s30.bar
+		Images: s30_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1313,7 +1318,7 @@ Templates:
 			3: Rock
 	Template@165:
 		Id: 165
-		Images: s31.bar
+		Images: s31_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
@@ -1323,13 +1328,14 @@ Templates:
 			3: Rock
 	Template@166:
 		Id: 166
-		Images: s32.bar
+		Images: s32_barr.shp
 		Size: 2,2
 		Categories: Cliffs
 		Tiles:
 			0: Rock
 			1: Rock
-			2: Rough
+			2: Rock
+			3: Rock
 	Template@167:
 		Id: 167
 		Images: s33.bar

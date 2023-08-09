@@ -1,0 +1,3521 @@
+###################################################
+#               Technical
+###################################################
+^TSBuilding:
+	RenderSprites:
+		PlayerPalette: playerts
+	WithDeathAnimation:
+		DeathSequencePalette: playerts
+	SpawnActorsOnSell:
+		ActorTypes: tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tsctech,tsctech,tsctech,tsctech,tsctech,tsctech,tsctech,tsctech,tsengineer.gdi
+	Building:
+		BuildSounds: place2.aud
+		UndeploySounds: cashturn.aud
+	GrantConditionOnPrerequisite@keeperunlock:
+		Condition: keeperunlock
+		Prerequisites: vehicle.tskeeper
+
+^TSBuildingForgotten:
+	Inherits: ^TSBuilding
+	SpawnActorsOnSell:
+		ActorTypes: tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutciv4,tsmutciv4,tsmutciv4,tsmutciv4,tsmutciv4,tsmutciv4,tsmutciv4,tsmutciv4,tsengineer.gdi
+
+^TSCivBuilding:
+	RenderSprites:
+		Palette: tsisotem
+	SpawnRandomActorOnDeath@1:
+		Actors: tsciv1,tsciv2,tsciv3
+		Probability: 40
+	SpawnRandomActorOnDeath@2:
+		Actors: tsciv1,tsciv2,tsciv3
+		Probability: 20
+	SpawnRandomActorOnDeath@3:
+		Actors: tsciv1,tsciv2,tsciv3
+		Probability: 15
+	Health:
+		HP: 90000
+	Armor:
+		Type: Wood
+
+^TSCivProps:
+	RenderSprites:
+		Palette: tsisotem
+	Health:
+		HP: 90000
+	Armor:
+		Type: Wood
+World:
+  	FactionCA@forgotten:
+		Name: Forgotten
+		InternalName: forgotten
+		Game: Tiberian Sun
+		Side: ts
+		Description: Forgotten\nGeneral having forces of GDI, NOD, Allies and Soviets at her disposal\nSupport powers: Spy Plane, Airstrike, Chronosphere, Paratroopers, Nuclear Strike            
+        
+	StartingUnits@mcvonlyforgotten:
+		Class: none
+		ClassName: MCV Only
+		Factions: forgotten
+		BaseActor: tsmcv.gdi
+
+	StartingUnits@defaultforgotten:
+		Class: light
+		ClassName: Light Support
+		Factions: forgotten
+		BaseActor: tsmcv.gdi
+		SupportActors: tsmutant,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant3,tsmutant3,tscarf
+
+	StartingUnits@heavyforgotten:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: forgotten
+		BaseActor: tsmcv.gdi
+		SupportActors: tsmutant,tsmutant,tsmutant,tsmutant,tsmutant3,tsmutant3,tscarf,ts1tnk,ts2tnk
+
+  	FactionCA@cabal:
+		Name: CABAL
+		InternalName: cabal
+		Game: Tiberian Sun
+		Side: ts
+		Description: CABAL\nGeneral having forces of GDI, NOD, Allies and Soviets at her disposal\nSupport powers: Spy Plane, Airstrike, Chronosphere, Paratroopers, Nuclear Strike            
+        
+	StartingUnits@mcvonlycabal:
+		Class: none
+		ClassName: MCV Only
+		Factions: cabal
+		BaseActor: tsmcv.nod
+
+	StartingUnits@defaultcabal:
+		Class: light
+		ClassName: Light Support
+		Factions: cabal
+		BaseActor: tsmcv.nod
+		SupportActors: tscyborg2,tscyborg2,tscyborg2,tscyborg,tscyborg,tssentryd
+
+	StartingUnits@heavycabal:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: cabal
+		BaseActor: tsmcv.nod
+		SupportActors: tscyborg2,tscyborg2,tscyborg2,tscyborg,tscyborg,tssentryd,ts23tnk,ts23tnk
+
+  	FactionCA@tsgdi:
+		Name: GDI
+		InternalName: tsgdi
+		Game: Tiberian Sun
+		Side: ts
+		Description: Tiberian Sun GDI\nGeneral having forces of GDI, NOD, Allies and Soviets at her disposal\nSupport powers: Spy Plane, Airstrike, Chronosphere, Paratroopers, Nuclear Strike            
+        
+	StartingUnits@mcvonlytsgdi:
+		Class: none
+		ClassName: MCV Only
+		Factions: tsgdi
+		BaseActor: tsmcv.gdi
+
+	StartingUnits@defaulttsgdi:
+		Class: light
+		ClassName: Light Support
+		Factions: tsgdi
+		BaseActor: tsmcv.gdi
+		SupportActors: tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse2,tse2,tssmech
+
+	StartingUnits@heavytsgdi:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: tsgdi
+		BaseActor: tsmcv.gdi
+		SupportActors: tse1.gdi,tse1.gdi,tse1.gdi,tse1.gdi,tse2,tse2,tssmech,tsmmch,tshvr
+
+  	FactionCA@tsnod:
+		Name: Nod
+		InternalName: tsnod
+		Game: Tiberian Sun
+		Side: ts
+		Description: Tiberian Sun Nod\nGeneral having forces of GDI, NOD, Allies and Soviets at her disposal\nSupport powers: Spy Plane, Airstrike, Chronosphere, Paratroopers, Nuclear Strike            
+        
+	StartingUnits@mcvonlytsnod:
+		Class: none
+		ClassName: MCV Only
+		Factions: tsnod
+		BaseActor: tsmcv.nod
+
+	StartingUnits@defaulttsnod:
+		Class: light
+		ClassName: Light Support
+		Factions: tsnod
+		BaseActor: tsmcv.nod
+		SupportActors: tse1.nod,tse1.nod,tse1.nod,tse1.nod,tse1.nod,tse3,tse3,tsbggy
+
+	StartingUnits@heavytsnod:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: tsnod
+		BaseActor: tsmcv.nod
+		SupportActors: tse1.nod,tse1.nod,tse1.nod,tse1.nod,tse3,tse3,tsbggy,tsbggy,tsbike,tsttnk
+
+###################################################
+#               GDI
+###################################################
+tsgtcnst:
+	Inherits: ^Building
+	Inherits: ^3x3Shape
+	Inherits@Armor: ^ConcreteArmor
+	Inherits@BuildingProd: ^StructureProduction
+	Inherits: ^BotFallbackInsurance
+	Inherits: ^TSBuilding
+	Building:
+		Footprint: xxx xxx xxx
+		BuildSounds: facbld1.aud
+		Dimensions: 3,3
+	Buildable:
+		Queue: Building, Building.Multi
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description: Builds base structures.
+		IconPalette: chromets
+	Health:
+		HP: 150000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Construction Yard
+	CustomSellValue:
+		Value: 2500
+	BaseBuilding:
+	Transforms:
+		RequiresCondition: factundeploy
+		PauseOnCondition: empdisable || being-demolished || build-incomplete
+		IntoActor: tsmcv.gdi
+		Offset: 1,1
+		Facing: 384
+		DeployCursor: deploy
+	TransformsIntoTransforms:
+		RequiresCondition: factundeploy && build-incomplete
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	WithIdleOverlay@TOP:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top
+	WithIdleOverlay@TOP-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top-bright
+	WithIdleOverlay@SIDE:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-side
+	WithIdleOverlay@FRONT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-front
+	WithIdleOverlay@FRONT-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-front-bright
+	WithMakeOverlay@MAKE-BRIGHT:
+		Sequence: make-bright
+	WithBuildingPlacedOverlay:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@gdi:
+		Factions: tsgdi
+		Prerequisite: structures.tsgdi
+	ProvidesPrerequisite@nod:
+		Factions: tsnod
+		Prerequisite: structures.tsnod
+	ProvidesPrerequisite@forgotten:
+		Factions: forgotten
+		Prerequisite: structures.forgotten
+	ProvidesPrerequisite@cabal:
+		Factions: cabal
+		Prerequisite: structures.cabal
+	ProvidesPrerequisite@sharedcabal:
+		Factions: cabal, tsnod
+		Prerequisite: structures.sharedcabal
+	RenderSprites:
+		PlayerPalette: playerts
+	WithDeathAnimation:
+		DeathSequencePalette: playerts
+	SpawnActorOnDeath@GDI1:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+	SpawnActorOnDeath@GDI2:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+	SpawnActorOnDeath@GDI3:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsgtpowr:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building, Building.Multi
+		BuildPaletteOrder: 10
+		Prerequisites: ~structures.tsgdi
+		Description: Provides power for other structures.
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: GDI Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+		IsPlayerPalette: True
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	WithIdleOverlay@PLUG:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: empdisable
+		Sequence: idle-plug
+	WithMakeOverlay@MAKE-BRIGHT:
+		Sequence: make-bright
+	Power:
+		Amount: 100
+		RequiresCondition: !empdisable
+	PowerTooltip:
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	Pluggable@pluga:
+		Offset: 0,1
+		Conditions:
+			powrup: powrup.a
+		Requirements:
+			powrup: !build-incomplete && !powrup.a
+		EditorOptions:
+			powrup: Power Turbine
+	Power@pluga:
+		RequiresCondition: !empdisable && powrup.a
+		Amount: 50
+	WithIdleOverlay@pluga:
+		RequiresCondition: !build-incomplete && powrup.a
+		PauseOnCondition: empdisable
+		Sequence: idle-powrupa
+	Pluggable@plugb:
+		Offset: 1,1
+		Conditions:
+			powrup: powrup.b
+		Requirements:
+			powrup: !build-incomplete && !powrup.b
+		EditorOptions:
+			powrup: Power Turbine
+	WithIdleOverlay@plugb:
+		RequiresCondition: !build-incomplete && powrup.b
+		PauseOnCondition: empdisable
+		Sequence: idle-powrupb
+	Power@plugb:
+		RequiresCondition: !empdisable && powrup.b
+		Amount: 50
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@pluggable:
+		RequiresCondition: !powrup.a || !powrup.b
+		Prerequisite: tsgtpowr.socket
+	SpawnActorOnDeath@GDI:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+	SpawnActorOnDeath@GDI:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock && powrup.b
+tsgtpowr.socket:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: GDI Power Plant socket
+
+tsgtpowrup:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Power Turbine
+	Buildable:
+		Queue: Building, Building.Multi
+		BuildPaletteOrder: 11
+		Prerequisites: tsgtpowr.socket, ~structures.tsgdi
+		Description: Provides extra power generation.
+		IconPalette: chromets
+	Plug:
+		Type: powrup
+	Power:
+		Amount: 50
+	RenderSprites:
+		PlayerPalette: playerts
+tsgtpile:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@InfantryProduction: ^InfantryProduction
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: anypower, ~structures.tsgdi
+		Description: Produces infantry.
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: GDI Barracks
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 80000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+	ExitsDebugOverlay:
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-bright
+	WithIdleOverlay@LIGHT-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-light-bright
+	WithIdleOverlay@FLAG:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-flag
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: infantry.tsgdi
+	SpawnActorOnDeath@GDI:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsgtweap:
+	Inherits: ^Building
+	Inherits@shape: ^3x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@VehicleProduction: ^VehicleProduction
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: GDI War Factory
+	ProvidesPrerequisite:
+		Prerequisite: factory
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: proc, ~structures.tsgdi
+		Description: Produces vehicles.
+		IconPalette: chromets
+	Building:
+		Footprint: xxX+ xxX+ xxX+
+		Dimensions: 4,3
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	Armor:
+		Type: Heavy
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -384,-384,0
+		ExitCell: 3,1
+		ExitDelay: 5
+	ExitsDebugOverlay:
+	WithIdleOverlay@ROOF:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-roof
+	WithProductionDoorOverlay@DOOR:
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@WHITELIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-white
+		IsPlayerPalette: True
+	WithIdleOverlay@WHITELIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-white-bright
+	WithIdleOverlay@REDLIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-red
+		IsPlayerPalette: True
+	WithIdleOverlay@REDLIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-red-bright
+	WithIdleOverlay@TURBINES:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-turbines
+	WithMakeOverlay@MAKE-BRIGHT:
+		Sequence: make-bright
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Prerequisite: vehicles.tsgdi
+	SpawnActorOnDeath@GDI1:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+	SpawnActorOnDeath@GDI2:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsgtweap.fist:
+	Inherits: tsgtweap
+	Tooltip:
+		Name: Mobile War Factory
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: proc, ~structures.tsgdi, ~disabled
+	RenderSprites:
+		Image: tsgtweap
+	Transforms:
+		PauseOnCondition: empdisable || being-demolished || build-incomplete
+		IntoActor: tsfist.gdi
+		Offset: 1,1
+		Facing: 384
+		DeployCursor: deploy
+tsgthpad:
+	Inherits: ^BuildingTD
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+	Inherits@AirProd: ^AircraftProduction
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		BuildPaletteOrder: 80
+		Queue: Building
+		Prerequisites: anyhq, ~structures.tsgdi
+		Description: Produces, rearms and\nrepairs helicopters.
+		IconPalette: chromets
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		Facing: 896
+	ExitsDebugOverlay:
+	RallyPoint:
+		SpawnOffset: 0,-256,0
+		ExitCell: 0,0
+		Facing: 224
+	Reservable:
+	WithIdleOverlay@PLATFORM:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-platform
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	WithDeathAnimation@BIB:
+		DeathSequence: dead-platform
+		UseDeathTypeSuffix: false
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@tsgdi:
+		Prerequisite: aircraft.tsgdi
+	SpawnActorOnDeath@GDI:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsgtradr:
+	Inherits: ^Building
+	Inherits: ^TechLevelBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDownOrForceDisable
+	Inherits: ^RadarStation
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: proc, ~structures.tsgdi
+		Description: Provides an overview of the battlefield.\nCan detect cloaked units.\nRequires power to operate.
+		IconPalette: chromets
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: GDI Radar
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ProvidesRadar:
+		RequiresCondition: !disabled && !empdisable
+	InfiltrateForExploration:
+	DetectCloaked:
+		Range: 10c0
+	RenderDetectionCircle:
+	RevealsShroud:
+		Range: 10c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@DISH:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		Sequence: idle-dish
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	Power:
+		Amount: -50
+	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath@GDI1:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsgttech:
+	Inherits: ^ScienceBuilding
+	Inherits: ^TechLevelBuilding
+	Inherits: ^Tier3Tech
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: anyhq, ~structures.tsgdi
+		Description: Provides access to advanced GDI technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: GDI Tech Center
+	ProvidesPrerequisite:
+		Prerequisite: tech
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath@GDI1:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+	SpawnActorOnDeath@GDI2:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsproc.gdi:
+	Inherits: ^Building
+	Inherits@2: ^BotIncome
+	Inherits@shape: ^4x2Shape
+	Inherits@Refinery: ^Refinery
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Tiberium Refinery
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower, ~structures.tsgdi
+		Description: Processes raw Tiberium\ninto useable resources.
+		IconPalette: chromets
+	Building:
+		Footprint: xxX+ xx++ xxX+
+		Dimensions: 4,3
+	Health:
+		HP: 90000
+	RevealsShroud:
+		Range: 6c0
+		MaxHeightDelta: 3
+	Refinery:
+		DockAngle: 640
+		DockOffset: 2,1
+	StoresResources:
+		Capacity: 2000
+	CustomSellValue:
+		Value: 600
+	FreeActor:
+		Actor: tsharv.gdi
+		SpawnOffset: 2,1
+		Facing: 640
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-bright
+	WithIdleOverlay@BIB:
+		RequiresCondition: !build-incomplete
+		Sequence: bib
+	WithDockedOverlay@FLAME:
+		RequiresCondition: !build-incomplete
+		Sequence: flame
+		Palette: tseffect
+	WithDockingOverlay@UNLOAD:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	GrantConditionOnPlayerResources:
+		Condition: contains-tiberium
+	ProvidesPrerequisite:
+		Prerequisite: proc
+	SpawnActorOnDeath@GDI:
+		Actor: tskeeper
+		Probability: 99
+		RequiresCondition: !being-warped && keeperunlock
+tsgtctwr:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits: ^TSBuilding
+	WithMakeAnimation:
+		BodyNames: make
+	WithSpriteBody:
+		Name: make
+		Sequence: invisible
+	WithWallSpriteBody:
+		RequiresCondition: !build-incomplete
+		Type: wall
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Component Tower
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 70
+		Prerequisites: ~structures.tsgdi
+		Description: Modular tower for base defenses.
+		IconPalette: chromets
+	Health:
+		HP: 60000
+	Armor:
+		Type: Light
+	BlocksProjectiles:
+		Height: 768
+	BodyOrientation:
+		QuantizedFacings: 32
+	DetectCloaked:
+		RequiresCondition: !empdisable && !disabled && (tower.vulcan || tower.rocket || tower.sam)
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		RealignDelay: -1
+	AttackTurreted:
+		RequiresCondition: !build-incomplete && (tower.vulcan || tower.rocket || tower.sam)
+		PauseOnCondition: empdisable || disabled
+	WithSpriteTurret@VULC:
+		RequiresCondition: !build-incomplete && tower.vulcan
+		Recoils: false
+		Sequence: turret-vulcan
+	WithSpriteTurret@ROCKET:
+		RequiresCondition: !build-incomplete && tower.rocket
+		Recoils: false
+		Sequence: turret-rocket
+	WithSpriteTurret@SAM:
+		RequiresCondition: !build-incomplete && tower.sam
+		Recoils: false
+		Sequence: turret-sam
+	Armament@VULCPRIMARY:
+		RequiresCondition: tower.vulcan
+		Weapon: TSVulcanTower
+		LocalOffset: 480,120,200
+		MuzzleSequence: muzzle
+	Armament@VULCSECONDARY:
+		RequiresCondition: tower.vulcan
+		Name: secondary
+		Weapon: TSVulcanTower
+		LocalOffset: 480,-120,200
+		MuzzleSequence: muzzle
+	Armament@ROCKET:
+		RequiresCondition: tower.rocket
+		Weapon: TSRPGTower
+		LocalOffset: 272,-92,200
+		MuzzleSequence: muzzle-rpg
+	Armament@SAM:
+		RequiresCondition: tower.sam
+		Weapon: TSRedEye2
+		LocalOffset: 543,0,200
+	WithMuzzleOverlay:
+		RequiresCondition: !build-incomplete && tower.vulcan
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+		Palette: playerts
+		IsPlayerPalette: True
+	LineBuildNode:
+		Types: turret
+	Power@base:
+		RequiresCondition: !disabled
+		Amount: -10
+	Power@turrets:
+		RequiresCondition: !disabled && (tower.vulcan || tower.rocket || tower.sam)
+		Amount: -20
+	Power@samextra:
+		RequiresCondition: !disabled && tower.sam
+		Amount: -10
+	Pluggable:
+		Conditions:
+			tower.vulcan: tower.vulcan
+			tower.rocket: tower.rocket
+			tower.sam: tower.sam
+		Requirements:
+			tower.vulcan: !build-incomplete && !tower.vulcan && !tower.rocket && !tower.sam
+			tower.rocket: !build-incomplete && !tower.rocket && !tower.vulcan && !tower.sam
+			tower.sam: !build-incomplete && !tower.vulcan && !tower.rocket && !tower.sam
+		EditorOptions:
+			tower.vulcan: Vulcan Tower
+			tower.rocket: RPG Upgrade
+			tower.sam: SAM Upgrade
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@pluggable:
+		RequiresCondition: !build-incomplete && !tower.vulcan && !tower.rocket && !tower.sam
+		Prerequisite: tsgactwr.socket
+	Replacement:
+		ReplaceableTypes: GDITower
+
+tsgactwr.socket:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Component Tower (unupgraded)
+
+tsgtvulc:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Vulcan Tower
+	Buildable:
+		IconPalette: chromets
+		Queue: Defense
+		BuildPaletteOrder: 71
+		Prerequisites: ~structures.tsgdi, ~tsgactwr.socket
+		Description: Basic base defense.\nDoes not require power to operate.\n  Strong vs Infantry, Light armor\n  Weak vs Aircraft
+	Plug:
+		Type: tower.vulcan
+	Power:
+		Amount: -20
+
+tsgtrock:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: RPG Upgrade
+	Buildable:
+		IconPalette: chromets
+		Queue: Defense
+		BuildPaletteOrder: 71
+		Prerequisites: ~structures.tsgdi, ~tsgactwr.socket
+		Description: GDI Advanced base defense.\nDoes not require power to operate.\n  Strong vs Armored ground units\n  Weak vs Aircraft
+	Plug:
+		Type: tower.rocket
+	Power:
+		Amount: -20
+
+tsgtcsam:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: SAM Upgrade
+	Buildable:
+		IconPalette: chromets
+		Queue: Defense
+		BuildPaletteOrder: 71
+		Prerequisites: ~structures.tsgdi, anyhq, ~tsgactwr.socket
+		Description: GDI Anti-Air base defense.\nDoes not require power to operate.\n  Strong vs Aircraft\n  Weak vs Ground units
+	Plug:
+		Type: tower.sam
+	Power:
+		Amount: -30
+
+
+tsgtsilo.gdi:
+	Inherits: ^Building
+	Inherits@SHAPE: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Defense
+		Prerequisites: proc, ~structures.tsgdi
+		BuildPaletteOrder: 60
+		Description: Stores excess Tiberium.
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Silo
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	-GivesBuildableArea:
+	Health:
+		HP: 30000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithResourceLevelOverlay@FILLSTAGE:
+		RequiresCondition: !build-incomplete
+		Sequence: stages
+	WithSpriteBody:
+		Sequence: idle-underlay
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-bright
+		Palette: tsunit
+	StoresResources:
+		Capacity: 1500
+	Power:
+		Amount: -10
+	WithResourceStoragePipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-yellow
+###################################################
+#               Nod
+###################################################
+tsgtcnst.nod:
+	Inherits: tsgtcnst
+	Transforms:
+		IntoActor: tsmcv.nod
+	RenderSprites:
+		Image: tsgtcnst
+
+tsntpowr:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 10
+		Prerequisites: ~structures.tsnod
+		Description: Provides power for other structures.
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Nod Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: 100
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+
+tsntapwr:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 70
+		Prerequisites: anyhq, ~structures.tsnod
+		Description: Provides twice as much power as\nthe normal Power Plant.
+		IconPalette: chromets
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: 200
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+	ProvidesPrerequisite@buildingname:
+
+tsnthand:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@InfantryProduction: ^InfantryProduction
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: anypower, ~structures.tsnod
+		Description: Produces infantry.
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Hand of Nod
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 80000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 384,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 384,768,0
+		ExitCell: 1,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: -1086,-362,0
+		ExitCell: 0,2
+	ExitsDebugOverlay:
+	RallyPoint:
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	WithIdleOverlay@LIGHT-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-light-bright
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: infantry.tsnod
+tsntweap:
+	Inherits: ^Building
+	Inherits@shape: ^3x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@VehicleProduction: ^VehicleProduction
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Nod War Factory
+	ProvidesPrerequisite:
+		Prerequisite: factory
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: proc, ~structures.tsnod
+		Description: Produces vehicles.
+		IconPalette: chromets
+	Building:
+		Footprint: xxX+ xxX+ xxX+
+		Dimensions: 4,3
+	Health:
+		HP: 100000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -384,-384,0
+		ExitCell: 3,1
+		ExitDelay: 5
+	ExitsDebugOverlay:
+	WithIdleOverlay@ROOF:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-roof
+	WithProductionDoorOverlay@DOOR:
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+tsntweap.fist:
+	Inherits: tsntweap
+	Tooltip:
+		Name: Fist of Nod
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: proc, ~structures.tsnod, ~disabled
+	RenderSprites:
+		Image: tsntweap
+	Transforms:
+		PauseOnCondition: empdisable || being-demolished || build-incomplete
+		IntoActor: tsfist.nod
+		Offset: 1,1
+		Facing: 384
+		DeployCursor: deploy
+tsnthpad:
+	Inherits: ^BuildingTD
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+	Inherits@AirProd: ^AircraftProduction
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		BuildPaletteOrder: 80
+		Queue: Building
+		Prerequisites: garadr, ~structures.sharedcabal
+		Description: Produces, rearms and\nrepairs helicopters.
+		IconPalette: chromets
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		Facing: 896
+	ExitsDebugOverlay:
+	RallyPoint:
+		SpawnOffset: 0,-256,0
+		ExitCell: 0,0
+		Facing: 224
+	Reservable:
+	WithIdleOverlay@PLATFORM:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-platform
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	WithDeathAnimation@BIB:
+		DeathSequence: dead-platform
+		UseDeathTypeSuffix: false
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@nod:
+		Factions: tsnod
+		Prerequisite: aircraft.tsnod
+	ProvidesPrerequisite@cabal:
+		Factions: cabal
+		Prerequisite: aircraft.cabal
+tsntradr:
+	Inherits: ^Building
+	Inherits: ^TechLevelBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDownOrForceDisable
+	Inherits: ^RadarStation
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: proc, ~structures.sharedcabal
+		Description: Provides an overview of the battlefield.\nCan detect cloaked units.\nRequires power to operate.
+		IconPalette: chromets
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Radar
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ProvidesRadar:
+		RequiresCondition: !disabled && !empdisable
+	InfiltrateForExploration:
+	DetectCloaked:
+		Range: 10c0
+	RenderDetectionCircle:
+	RevealsShroud:
+		Range: 10c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@DISH:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		Sequence: idle-dish
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+
+tsnttech:
+	Inherits: ^ScienceBuilding
+	Inherits: ^TechLevelBuilding
+	Inherits: ^Tier3Tech
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: anyhq, ~structures.tsnod
+		Description: Provides access to advanced Nod technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Nod Tech Center
+	ProvidesPrerequisite:
+		Prerequisite: tech
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+
+tsntlasr:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Laser Turret
+	Buildable:
+		Queue: Defense
+		Prerequisites: barracks, ~structures.tsnod
+		BuildPaletteOrder: 90
+		Description: Basic base defense.\nRequires power to operate.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Health:
+		HP: 70000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 7c0
+	DetectCloaked:
+		Range: 3c0
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		Offset: 298,-100,0
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+	Armament:
+		Weapon: TSTurretLaserFire
+		LocalOffset: 498,0,317
+	RenderVoxels:
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -40
+	BodyOrientation:
+		QuantizedFacings: 0
+
+tsntobel:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SHAPE: ^2x2Shape
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Obelisk of Light
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 160
+		Prerequisites: tech, ~structures.tsnod
+		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 95500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: TSObeliskLaserFire
+		LocalOffset: 1980,297,1131
+	AttackCharges:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+		ChargeLevel: 65
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging && !disabled
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithChargeOverlay:
+		RequiresCondition: !build-incomplete
+		Palette: playerts
+		IsPlayerPalette: true
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	Power:
+		Amount: -150
+
+tsntsam:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: S.A.M. Site
+	Buildable:
+		Queue: Defense
+		Prerequisites: anyhq, ~structures.nod
+		BuildPaletteOrder: 100
+		Description: Nod Anti-Air base defense.\nRequires power to operate.\n  Strong vs Aircraft\n  Weak vs Ground units
+	Health:
+		HP: 60000
+	Armor:
+		Type: Wood
+	BodyOrientation:
+		QuantizedFacings: 32
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+		Weapon: TSRedEye2
+		LocalOffset: 543,0,815
+	Power:
+		Amount: -30
+
+tsgtsilo.nod:
+	Inherits: ^Building
+	Inherits@SHAPE: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Defense
+		Prerequisites: proc, ~structures.sharedcabal
+		BuildPaletteOrder: 60
+		Description: Stores excess Tiberium.
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Silo
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	-GivesBuildableArea:
+	Health:
+		HP: 30000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithResourceLevelOverlay@FILLSTAGE:
+		RequiresCondition: !build-incomplete
+		Sequence: stages
+	WithSpriteBody:
+		Sequence: idle-underlay
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-bright
+		Palette: tsunit
+	StoresResources:
+		Capacity: 1500
+	Power:
+		Amount: -10
+	WithResourceStoragePipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-yellow
+
+###################################################
+#               Forgotten
+###################################################
+tsmaweap:
+	Inherits: ^Building
+	Inherits@shape: ^3x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits: ^TSBuildingForgotten
+	Inherits@VehicleProduction: ^VehicleProduction
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Forgotten War Factory
+	ProvidesPrerequisite@factory:
+		Prerequisite: factory
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: tsmaproc.forgot, ~structures.forgotten
+		Description: Produces vehicles.
+		IconPalette: chromets
+	Building:
+		Footprint: xxX+ xxX+ xxX+
+		Dimensions: 4,3
+	Health:
+		HP: 100000
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	Armor:
+		Type: Heavy
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -384,-500,0
+		ExitCell: 3,1
+		ExitDelay: 5
+	ExitsDebugOverlay:
+	WithIdleOverlay@ROOF:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-roof
+	WithProductionDoorOverlay@DOOR:
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@WHITELIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-white
+		IsPlayerPalette: True
+	WithIdleOverlay@WHITELIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-white-bright
+	WithIdleOverlay@REDLIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-red
+		IsPlayerPalette: True
+	WithIdleOverlay@REDLIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-red-bright
+	WithIdleOverlay@TURBINES:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-turbines
+	WithMakeOverlay@MAKE-BRIGHT:
+		Sequence: make-bright
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: vehicles.forgotten
+	InfiltrateForSupportPower:
+		Proxy: vehicles.upgraded
+		Types: SpyInfiltrate
+	InfiltrateForSupportPower@veh:
+		Types: SabInfiltrate
+		Proxy: veh.soviet.stolen
+
+tsmaproc.forgot:
+	Inherits: ^Building
+	Inherits@2: ^BotIncome
+	Inherits@shape: ^4x2Shape
+	Inherits@Refinery: ^Refinery
+	Inherits: ^TSBuildingForgotten
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Tiberium Refinery
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower, ~structures.forgotten
+		Description: Processes raw Tiberium\ninto useable resources.
+		IconPalette: chromets
+	Building:
+		Footprint: xxX+ xx++ xxX+
+		Dimensions: 4,3
+	Health:
+		HP: 90000
+	RevealsShroud:
+		Range: 6c0
+		MaxHeightDelta: 3
+	Refinery:
+		DockAngle: 640
+		DockOffset: 2,1
+	StoresResources:
+		Capacity: 2000
+	CustomSellValue:
+		Value: 600
+	FreeActor:
+		Actor: tsharv.forgotten
+		SpawnOffset: 2,1
+		Facing: 640
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-bright
+	WithIdleOverlay@BIB:
+		RequiresCondition: !build-incomplete
+		Sequence: bib
+	WithDockingOverlay@UNLOAD:
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@LIGHTS2:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights2
+	WithIdleOverlay@LIGHTS-BRIGHT2:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights-bright2
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	GrantConditionOnPlayerResources:
+		Condition: contains-tiberium
+	ProvidesPrerequisite:
+		Prerequisite: proc
+tsmilp:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@InfantryProduction: ^InfantryProduction
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: anypower, ~structures.forgotten
+		Description: Produces infantry.
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Forgotten Barracks
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 80000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+	ExitsDebugOverlay:
+	WithIdleOverlay@FLAG:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-flag
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: infantry.forgotten
+tsflam:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Defense, Defense.Multi
+		BuildPaletteOrder: 70
+		Prerequisites: tsmilp, ~structures.forgotten
+		Description: Adapted thr Flame tank weapon, and attached to a turret, effective vs infantries
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Flame Turret
+	Building:
+	Health:
+		HP: 40000
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 7c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	Turreted:
+		TurnSpeed: 48
+		InitialFacing: 56
+		PauseOnCondition: empdisable || being-warped
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+		PauseOnCondition: empdisable || being-warped
+	Armament:
+		Weapon: TSFireballTurret
+		LocalOffset: 512,0,112
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: empdisable || being-warped
+	Power:
+		Amount: -20
+		RequiresCondition: !being-warped
+	BodyOrientation:
+		UseClassicFacings: True
+
+
+tsgtwr:
+	Inherits: ^DefenseTD
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Defense, Defense.Multi
+		BuildPaletteOrder: 50
+		Prerequisites: tsmilp, ~structures.forgotten
+		IconPalette: chromets
+		Description: Anti-infantry base defense.\n  Can detect cloaked units.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Guard Tower
+	Building:
+	Health:
+		HP: 45000
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	Armament:
+		Weapon: TSVulcanTower
+		LocalOffset: 256,0,256
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: empdisable || being-warped
+	AutoTarget:
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithMuzzleOverlay:
+	Turreted:
+		TurnSpeed: 1000
+	Power:
+		Amount: -20
+		RequiresCondition: !being-warped
+tsgtspot:
+	Inherits: ^DefenseTD
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Defense, Defense.Multi
+		BuildPaletteOrder: 50
+		Prerequisites: anyhq, ~structures.forgotten
+		IconPalette: chromets
+		Description: Anti-infantry base defense.\n  Can detect cloaked units.\n  Strong vs Infantry, Light Armor\n  Weak vs Tanks
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Sniper Tower
+	Building:
+	Health:
+		HP: 55000
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	Armament:
+		Weapon: TSSniperTower
+		LocalOffset: 200,0,600
+		MuzzleSequence: muzzle
+	Armament@AA:
+		Weapon: TSSniperTowerAA
+		LocalOffset: 200,0,600
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: empdisable || being-warped
+	AutoTarget:
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithMuzzleOverlay:
+	Turreted:
+		TurnSpeed: 1000
+	Power:
+		Amount: -30
+		RequiresCondition: !being-warped
+tscgpad:
+	Inherits: ^BuildingTD
+	Inherits@shape: ^3x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+	Inherits@AirProd: ^AircraftProduction
+	Inherits: ^TSBuildingForgotten
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		BuildPaletteOrder: 80
+		Queue: Building
+		Prerequisites: anyhq, ~structures.forgotten
+		Description: Produces, rearms and\nrepairs helicopters.
+		IconPalette: chromets
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		Facing: 896
+	ExitsDebugOverlay:
+	RallyPoint:
+		SpawnOffset: 0,-256,0
+		ExitCell: 0,0
+		Facing: 224
+	Reservable:
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: aircraft.forgotten
+tsmapowr2:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 10
+		Prerequisites: ~structures.forgotten
+		Description: Provides twice as much power as\nthe normal Power Plant.
+		IconPalette: chromets
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Adaptable Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: 150
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@pluggable:
+		RequiresCondition: !powrup.a && !powrup.b
+		Prerequisite: tsmapowr2.socket
+	Pluggable@pluga:
+		Offset: 0,1
+		Conditions:
+			tsmapowr2solar: powrup.a
+		Requirements:
+			tsmapowr2solar: !build-incomplete && !powrup.a && !powrup.b
+		EditorOptions:
+			tsmapowr2solar: Solar Panel
+	Power@pluga:
+		RequiresCondition: !empdisable && powrup.a
+		Amount: 50
+	WithIdleOverlay@pluga:
+		RequiresCondition: !build-incomplete && powrup.a && !powrup.b
+		PauseOnCondition: empdisable
+		Sequence: idle-powrupa
+	Pluggable@plugb:
+		Offset: 0,1
+		Conditions:
+			tsmapowr2nuke: powrup.b
+		Requirements:
+			tsmapowr2nuke: !build-incomplete && !powrup.b && !powrup.a
+		EditorOptions:
+			tsmapowr2nuke: Nuclear Plant
+	WithIdleOverlay@plugb:
+		RequiresCondition: !build-incomplete && powrup.b && !powrup.a
+		PauseOnCondition: empdisable
+		Sequence: idle-powrupb
+	Power@plugb:
+		RequiresCondition: !empdisable && powrup.b
+		Amount: 150
+tsmapowr2.socket:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Empy Adaptable Plant
+
+tsmapowr2.solar:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Solar Panel Addon
+	Buildable:
+		Queue: Building, Building.Multi
+		BuildPaletteOrder: 11
+		Prerequisites: tsmapowr2.socket, ~structures.forgotten
+		Description: Provides extra power generation.
+		IconPalette: chromets
+	Plug:
+		Type: tsmapowr2solar
+	Power:
+		Amount: 50
+	RenderSprites:
+		PlayerPalette: playerts
+
+tsmapowr2.nuke:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Nuclear Addon
+	Buildable:
+		Queue: Building, Building.Multi
+		BuildPaletteOrder: 11
+		Prerequisites: tsmapowr2.socket, ~structures.forgotten, tsmctarmor
+		Description: Provides extra power generation.
+		IconPalette: chromets
+	Plug:
+		Type: tsmapowr2nuke
+	Power:
+		Amount: 150
+	RenderSprites:
+		PlayerPalette: playerts
+tsmctarmor:
+	Inherits: ^ScienceBuilding
+	Inherits: ^TechLevelBuilding
+	Inherits: ^Tier3Tech
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: tsmaradr, ~structures.forgotten
+		Description: Provides access to advanced Weapon technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Logistic Center
+	ProvidesPrerequisite:
+		Prerequisite: tech
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+
+tsmaradr:
+	Inherits: ^Building
+	Inherits: ^TechLevelBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDownOrForceDisable
+	Inherits: ^RadarStation
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: tsmaproc.forgot, ~structures.forgotten
+		Description: Provides an overview of the battlefield.\nCan detect cloaked units.\nRequires power to operate.
+		IconPalette: chromets
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Radar
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ProvidesRadar:
+		RequiresCondition: !disabled && !empdisable
+	InfiltrateForExploration:
+	DetectCloaked:
+		Range: 10c0
+	RenderDetectionCircle:
+	RevealsShroud:
+		Range: 10c0
+		MaxHeightDelta: 3
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+
+tscalifeform:
+	Inherits: ^ScienceBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^4x2Shape
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: tsmaradr, ~structures.forgotten
+		Description: Provides access to advanced Weapon technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Tiberium Cultivation
+	Building:
+		Footprint: xxxx xxxx xxxx
+		Dimensions: 4,3
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+	ParatroopersPower@Creature:
+		OrderName: mutatelife
+		Prerequisites: ~structures.forgotten
+		Icon: stormtroopers
+		ChargeInterval: 9000
+		Name: Creature Mutate
+		Description: A Badger drops a squad of mercenaries\nanywhere on the map.
+		SquadSize: 3
+		SquadOffset: 0,1792,0
+		DropItems: tsdoggie,tsdoggie,tsdoggie,tsdoggieblue,tsdoggieblue,tsparasuar
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+tsmutantmercenary:
+	Inherits: ^ScienceBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^4x2Shape
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: tsmaradr, ~structures.forgotten
+		Description: Provides access to advanced Weapon technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Mercenary Camp
+	Building:
+		Footprint: xxxx xxxx xxxx
+		Dimensions: 4,3
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+	ParatroopersPower@Mercenary:
+		OrderName: forgottenmercenarys
+		Prerequisites: ~structures.forgotten
+		Icon: stormtroopers
+		ChargeInterval: 9000
+		Name: Mutant Mercenary
+		Description: A Badger drops a squad of mercenaries\nanywhere on the map.
+		SquadSize: 3
+		SquadOffset: 0,1792,0
+		DropItems: tsshotmut,tsshotmut,tsmutant,tsmutant,tsmutant,tsmutant,tsmutant
+		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+###################################################
+#               Steampunk
+###################################################
+tssteamsilo:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits: ^TSBuildingForgotten
+	Buildable:
+		Queue: Defense, Defense.Multi
+		BuildPaletteOrder: 35
+		Prerequisites: proc, ~structures.steampunk
+		Description: Stores excess refined\nTiberium, Ore and Gems.
+	Valued:
+		Cost: 400
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack
+	Tooltip:
+		Name: Silo
+	-GivesBuildableArea:
+	Health:
+		HP: 70000
+	RevealsShroud:
+		Range: 4c0
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Sequence: stages
+	StoresResources:
+		Capacity: 8000
+	-MustBeDestroyed:
+	-SpawnActorsOnSell:
+	Power:
+		Amount: -10
+		RequiresCondition: !being-warped
+	Explodes:
+		Weapon: SmallBuildingExplode
+		EmptyWeapon: SmallBuildingExplode
+	WithResourceStoragePipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
+		FullSequence: pip-yellow
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+tssteampower:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 70
+		Prerequisites: anyhq, ~structures.steampunk
+		Description: Provides twice as much power as\nthe normal Power Plant.
+		IconPalette: chromets
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Tiberium Crystal Reactor
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	Power:
+		Amount: 200
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+	ProvidesPrerequisite@buildingname:
+
+tssteamchurch:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@InfantryProduction: ^InfantryProduction
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: anypower, ~structures.steampunk
+		Description: Produces infantry.
+		IconPalette: chromets
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Steam Church
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 80000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 384,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 384,768,0
+		ExitCell: 1,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: -1086,-362,0
+		ExitCell: 0,2
+	ExitsDebugOverlay:
+	RallyPoint:
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: infantry.tsnod
+###################################################
+#               CABAL
+###################################################
+tsproc.cabal:
+	Inherits: tsproc.gdi
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower, ~structures.cabal
+		Description: Processes raw Tiberium\ninto useable resources.
+		IconPalette: chromets
+	FreeActor:
+		Actor: tsharv.cabal
+	ProvidesPrerequisite:
+		Prerequisite: proc
+	RenderSprites:
+		Image: tsproc.gdi
+tscrys:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 10
+		Prerequisites: ~structures.cabal, ~!structure.tscrys.laser
+		Description: Provides power for other structures.
+		IconPalette: chromets
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: Crystal Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: 175
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+tscrys.laser:
+	Inherits: ^ArmedBaseBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@SHAPE: ^2x2Shape
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Crystal Plant (Armed)
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 10
+		Prerequisites: ~structures.cabal, ~structure.tscrys.laser
+		Description: Provides power for other structures.
+		IconPalette: chromets
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: TSLaserSentry
+		LocalOffset: 1980,297,1131
+	AttackCharges:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+		ChargeLevel: 62
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging && !disabled
+		SoundFiles: obelpowr.aud
+		ChargeLevel: 50
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: 175
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+
+tscybbar:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@InfantryProduction: ^InfantryProduction
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: anypower, ~structures.cabal
+		Description: Produces infantry.
+		IconPalette: chromets
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Cyborg Factory
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 85000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 384,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 384,768,0
+		ExitCell: 1,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: -1086,-362,0
+		ExitCell: 0,2
+	ExitsDebugOverlay:
+	RallyPoint:
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	WithIdleOverlay@LIGHTS-BRIGHT2:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright2
+	WithIdleOverlay@LIGHTS-BRIGHT3:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright3
+	Power:
+		Amount: -20
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: infantry.cabal
+
+tsmechfact:
+	Inherits: ^Building
+	Inherits@shape: ^3x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@VehicleProduction: ^VehicleProduction
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: CABAL Mech Factory
+	ProvidesPrerequisite:
+		Prerequisite: factory
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: proc, ~structures.cabal
+		Description: Produces vehicles.
+		IconPalette: chromets
+	Building:
+		Footprint: xxX+ xxX+ xxX+
+		Dimensions: 4,3
+	Health:
+		HP: 175000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -384,-384,0
+		ExitCell: 3,1
+		ExitDelay: 5
+	ExitsDebugOverlay:
+	WithIdleOverlay@ROOF:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-roof
+	WithProductionDoorOverlay@DOOR:
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@forgotten:
+		Prerequisite: vehicles.cabal
+tscore:
+	Inherits: ^ScienceBuilding
+	Inherits: ^TechLevelBuilding
+	Inherits: ^Tier3Tech
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: anyhq, ~structures.cabal
+		Description: Provides access to advanced GDI technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: CABAL Core
+	ProvidesPrerequisite:
+		Prerequisite: tech
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights-bright
+	WithIdleOverlay@LIGHTS-c:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights-c
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+
+tsobl2:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@SHAPE: ^1x1Shape
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Obelisk of Darkness
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 120
+		Prerequisites: anyhq, ~structures.cabal
+		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 95500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: TSDarkObeliskLaser
+		LocalOffset: 1980,297,1131
+	AttackCharges:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+		ChargeLevel: 65
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging && !disabled
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithChargeOverlay:
+		RequiresCondition: !build-incomplete
+		Palette: playerts
+		IsPlayerPalette: true
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	Power:
+		Amount: -100
+tsobl3:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SHAPE: ^2x2Shape
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Armored Obelisk
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 160
+		Prerequisites: tech, ~structures.cabal
+		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 240000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: TSObeliskLaserFire2
+		LocalOffset: 1980,297,1131
+	AttackCharges:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+		ChargeLevel: 62
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging && !disabled
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithChargeOverlay:
+		RequiresCondition: !build-incomplete
+		Palette: playerts
+		IsPlayerPalette: true
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	Power:
+		Amount: -150
+
+tskpr:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^3x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 70
+		Prerequisites: anyhq, ~structures.cabal
+		Description: Provides twice as much power as\nthe normal Power Plant.
+		IconPalette: chromets
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Armored Crystal Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 175000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: 500
+		RequiresCondition: !empdisable
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	ScalePowerWithHealth:
+	PowerTooltip:
+	ProvidesPrerequisite@buildingname:
+
+tsgtfort:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SHAPE: ^2x2Shape
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Barrage Defense Turret
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Buildable:
+		Queue: Defense
+		Prerequisites: barracks, ~structures.cabal
+		BuildPaletteOrder: 90
+		Description: Basic base defense.\nRequires power to operate.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Health:
+		HP: 145000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 7c0
+	DetectCloaked:
+		Range: 3c0
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		Offset: 1,1,1
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: empdisable || disabled || build-incomplete
+	Armament:
+		Weapon: TSBarrageTurret
+		LocalOffset: 498,111,666, 498,-111,666
+	RenderVoxels:
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -40
+	BodyOrientation:
+		QuantizedFacings: 0
+
+###################################################
+#               Civilian
+###################################################
+tsgtlite:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Light Post
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+tsctbhut:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Engineering Hut
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 9999999
+TSCITY01:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Connelly Court Apts.
+	Building:
+		Footprint: xxxX XxxX
+		Dimensions: 4, 2
+	Armor:
+		Type: wood
+	Health:
+		HP: 40000
+
+TSCITY02:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Lightner's Luxury Suites
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2, 3
+	Armor:
+		Type: heavy
+	Health:
+		HP: 70000
+TSCITY03:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Office Building
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 50000
+TSCITY04:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Westwood Stock Exchange
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 60000
+
+TSCITY05:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Daily Sun Times
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 60000
+
+TSCITY06:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: YEO-CA Cola Corp.
+	Building:
+		Footprint: xxxx XxxX
+		Dimensions: 4, 2
+	Armor:
+		Type: concrete
+	Health:
+		HP: 50000
+
+TSCITY07:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Urban Housing
+	Building:
+		Footprint: xxxx xxxx
+		Dimensions: 4, 2
+	Armor:
+		Type: wood
+	Health:
+		HP: 40000
+
+TSCITY08:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Yee's Discount Liquor
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCITY09:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Abandoned Warehouse
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: wood
+	Health:
+		HP: 40000
+
+TSCITY10:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Urban Storefront
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCITY11:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Ambrose Lounge
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 50000
+
+TSCITY12:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Bostic Tower
+	Building:
+		Footprint: xX xx
+		Dimensions: 2, 2
+	Armor:
+		Type: concrete
+	Health:
+		HP: 60000
+
+TSCITY13:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Hewitt Hair Salon
+	Building:
+		Footprint: xX Xx
+		Dimensions: 2, 2
+	Armor:
+		Type: wood
+	Health:
+		HP: 50000
+
+TSCITY14:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Business Offices
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: heavy
+	Health:
+		HP: 60000
+
+TSCITY15:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: 2nd National Bank
+	Building:
+		Footprint: xxxX xxxX
+		Dimensions: 4, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 50000
+
+TSCITY16:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Highrise Hotel
+	Building:
+		Footprint: xxxx xxxx
+		Dimensions: 4, 2
+	Armor:
+		Type: wood
+	Health:
+		HP: 50000
+
+TSCITY17:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x3Shape
+	Tooltip:
+		Name: The Projects
+	Building:
+		Footprint: XxxX xxxx xxxX
+		Dimensions: 4, 3
+	Armor:
+		Type: wood
+	Health:
+		HP: 30000
+
+TSCITY18:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^4x3Shape
+	Tooltip:
+		Name: Archer Asylum
+	Building:
+		Footprint: xxx xxx xxx xxx xxX
+		Dimensions: 3, 5
+	Armor:
+		Type: concrete
+	Health:
+		HP: 60000
+
+TSCITY19:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Fill'er Up-Pump'N'Go
+	Building:
+		Footprint: xx xX
+		Dimensions: 2, 2
+	Armor:
+		Type: wood
+
+TSCITY20:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Gas Pump
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: wood
+
+TSCITY21:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Gas Station Sign
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: none
+
+TSCITY22:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Church
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: none
+	Health:
+		HP: 10000
+
+TSCT0001:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Rade's Roadhouse
+	Building:
+		Footprint: xxX xxX XXX
+		Dimensions: 3, 3
+	Armor:
+		Type: heavy
+	Health:
+		HP: 40000
+
+TSCT0002:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Sandberg and Son's
+	Building:
+		Footprint: xxX xxx Xxx
+		Dimensions: 3, 3
+	Armor:
+		Type: heavy
+	Health:
+		HP: 40000
+TSCT0003:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Temp Housing
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+TSCT0004:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Waystation
+	Building:
+		Footprint: xx xX
+		Dimensions: 2, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+TSCT0005:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Ferbie's 4 Sale
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+TSCT0006:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Deluxe Accomodations
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCT0007:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Field Generator
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 40000
+	Power:
+		Amount: 100
+TSCT0008:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Subterranean Dwelling
+	Building:
+		Footprint: xX xX xx
+		Dimensions: 2, 3
+	Armor:
+		Type: heavy
+	Health:
+		HP: 40000
+
+TSCT0009:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Subterranean Dwelling
+	Building:
+		Footprint: xX xx xX
+		Dimensions: 2, 3
+	Armor:
+		Type: heavy
+	Health:
+		HP: 40000
+
+TSCT0010:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Leary Traveller Inn
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCT0011:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Water Tank
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: heavy
+	Health:
+		HP: 20000
+
+TSCT0012:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Greenhouse
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 10000
+
+
+TSCT0013:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^2x1Shape
+	Tooltip:
+		Name: Water Purifier
+	Building:
+		Footprint: xx
+		Dimensions: 2, 1
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCT0014:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Observation Tower
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCT0015:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Port-A-Shack
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+TSCT0016:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Port-A-Shack Deluxe
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+
+TSCT0017:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivBuilding
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Energy Transformer
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: heavy
+	Health:
+		HP: 30000
+
+TSCT0018:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -512,-512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	Power:
+		Amount: 50
+TSCT0019:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -512,-512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	Power:
+		Amount: 50
+TSCT0020:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	Power:
+		Amount: 50
+TSCT0021:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Solar Panel
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	Power:
+		Amount: 50
+###################################################
+#               Civilian Extras
+###################################################
+tsfarm1:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Tractors
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: tsunit
+tspillbox:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^1x1Shape
+	Tooltip:
+		Name: Pillbox
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Armor:
+		Type: light
+	Health:
+		HP: 30000
+	RenderSprites:
+		Palette: tsunit
+tstankbar2:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Tank Traps
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: tsunit
+tstankbar1:
+	Inherits: ^CivBuilding
+	Inherits@1: ^TSCivProps
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,512,0
+	Tooltip:
+		Name: Tank Traps
+	Building:
+		Footprint: x x
+		Dimensions: 1, 2
+	Armor:
+		Type: light
+	Health:
+		HP: 20000
+	RenderSprites:
+		Palette: tsunit

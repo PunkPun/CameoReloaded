@@ -1,0 +1,2191 @@
+empire_e1:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swempire
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: empire_e1
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Stormtrooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: SWLaserPistol
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWMachinegunLaser
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: playerra2
+	Voiced:
+		VoiceSet: SWStormtrooperVoice
+empire_e3:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swempire
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: empire_e3
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Heavy  Missile Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: SWrBigRedLaser
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWrBigRedLaser
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Voiced:
+		VoiceSet: SWStormtrooperVoice
+empire_tie_fighter:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Tie Fighter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad.td, ~aircraft.swempire
+		IconPalette: chrometd
+		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Aircraft:
+		AltitudeVelocity: 0c100
+		TurnSpeed: 20
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		Speed: 186
+	Health:
+		HP: 22000
+	RevealsShroud:
+		Range: 12c0
+		MinRange: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: TieFighterLaser
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: TieFighterLaserAA
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		AttackType: Hover
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	AmmoPool:
+		Ammo: 16
+		ReloadCount: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCA.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCA.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCA.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	Rearmable:
+		RearmActors: hpad, hpad.td
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+
+empire_tie_bomber:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavy
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 40
+		Prerequisites: ~hpad.td, ~aircraft.swempire, gtek,
+		IconPalette: chrometd
+		Description: VTOL bomber armed with EMP bombs.\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft, Infantry
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: Tie Bomber
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 36000
+	RevealsShroud:
+		Range: 10c0
+		MinRange: 8c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 8c0
+		Type: GroundPosition
+	Armament:
+		Weapon: OrcaBomb
+		LocalOffset: 2,-256,-43, 2,256,-43
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		Voice: Attack
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	Aircraft:
+		CruiseAltitude: 2560
+		AltitudeVelocity: 0c120
+		TurnSpeed: 16
+		Speed: 180
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		CanHover: False
+		CanSlide: False
+		Voice: Move
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 8
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCB.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCB.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCB.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCB.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	Rearmable:
+		RearmActors: hpad.td, hpad
+	Voiced:
+		VoiceSet: OrcaVoice
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+
+empire_at_at:
+	Inherits: ^TankTD
+	Inherits: ^BigVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackFrontalVoice
+	Valued:
+		Cost: 7500
+	Tooltip:
+		Name: AT-AT Walker
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 195
+		Prerequisites: techcenter, ~vehicles.bantha, ~!commander_tree.tripod.chainer, ~!commander_tree.tripod.acid
+		Description: Heavy assault walker with laser weapons.\n  Strong vs Vehicles.\n  Weak vs Aircraft
+		IconPalette: chrome
+	Mobile:
+		Locomotor: heavytracked
+		Speed: 35
+		TurnSpeed: 5
+	Passenger:
+		Weight: 25
+	Health:
+		HP: 750000
+	Repairable:
+		HpPerStep: 3333
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Weapon: ATATLaser
+		LocalOffset: 1100,85,700, 1100,-85,700
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ATATLaserSmall
+		LocalOffset: 1100,44,700, 1100,-44,700
+		LocalYaw: -100, 100
+		Recoil: 10
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 25
+	WithMuzzleOverlay:
+	SelectionDecorations:
+	-Crushable:
+	Cargo:
+		Types: Infantry, Hacker, Fremen
+		MaxWeight: 10
+		PipCount: 5
+		LoadingCondition: notmobile
+		InitialUnits: empire_e3, empire_e3, empire_e3, empire_e3, empire_e3, empire_e1, empire_e1, empire_e1, empire_e1, empire_e1
+	WithMoveAnimation:
+		ValidMovementTypes: Horizontal, Vertical, Turn
+	GrantRandomCondition@dieanimationa:
+		Conditions: animdie1, animdie2, animdie3, animdie4, animdie5, animdie6, animdie7, animdie
+	WithDeathAnimation@0:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die3
+		FallbackSequence: die3
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie
+	WithDeathAnimation@1:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die1
+		FallbackSequence: die1
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie1
+	WithDeathAnimation@2:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die2
+		FallbackSequence: die2
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie2
+	WithDeathAnimation@3:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die3
+		FallbackSequence: die3
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie3
+	WithDeathAnimation@4:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die4
+		FallbackSequence: die4
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie4
+	WithDeathAnimation@5:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die5
+		FallbackSequence: die5
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie5
+	WithDeathAnimation@6:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die6
+		FallbackSequence: die6
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie6
+	WithDeathAnimation@7:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die7
+		FallbackSequence: die7
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie7
+	Voiced:
+		VoiceSet: SWATATVoice
+empire_at_st:
+	Inherits: ^TankTD
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackFrontalVoice
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: AT-ST Walker
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 195
+		Prerequisites: techcenter, ~vehicles.bantha, ~!commander_tree.tripod.chainer, ~!commander_tree.tripod.acid
+		Description: Heavy assault walker with laser weapons.\n  Strong vs Vehicles.\n  Weak vs Aircraft
+		IconPalette: chrome
+	Mobile:
+		Speed: 68
+		TurnSpeed: 22
+	Passenger:
+		Weight: 4
+	Health:
+		HP: 150000
+	Repairable:
+		HpPerStep: 3333
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Weapon: AATMainCannon
+		LocalOffset: 1100,85,400, 1100,-85,400
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 25
+	WithMuzzleOverlay:
+	SelectionDecorations:
+	-Crushable:
+	Cargo:
+		Types: Infantry, Hacker, Fremen
+		MaxWeight: 2
+		PipCount: 2
+		LoadingCondition: notmobile
+		InitialUnits: empire_e1, empire_e1
+	WithMoveAnimation:
+		ValidMovementTypes: Horizontal, Vertical, Turn
+	WithDeathAnimation@0:
+		UseDeathTypeSuffix: False
+		CrushedSequence: die
+		FallbackSequence: die
+		DeathSequencePalette: overlayplayertd
+		RequiresCondition: animdie
+	Voiced:
+		VoiceSet: SWATATVoice
+	WithAttackAnimation:
+		Sequence: shoot
+empire_aac:
+	Inherits: republic_aac
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrepublic
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: AAC Hover Tank
+empire_saber:
+	Inherits: republic_saber
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrepublic
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Saber Hover Tank
+
+empire_crawler:
+	Inherits: ^TankTD
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swempire
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Tie Crawler
+	Health:
+		HP: 55250
+	Mobile:
+		Speed: 110
+	Turreted:
+		TurnSpeed: 56
+		Offset: 90,0,75
+	Armament@AG:
+		Weapon: SWQuadCannonLaser
+		LocalOffset: -200,400,85, -200,-400,85
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 75
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		RequiresCondition: !onwater && !being-warped
+empire_mauler:
+	Inherits: ^TankTD
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swempire
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Tie Mauler
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 130
+	Turreted:
+		TurnSpeed: 56
+		Offset: 90,0,75
+	Armament@AG:
+		Weapon: TieFighterLaser
+		LocalOffset: -200,400,85, -200,-400,85
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 5
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		RequiresCondition: !onwater && !being-warped
+
+empire_mauler_shield:
+	Inherits: empire_mauler
+	Inherits@SHIELD: ^WithShieldUnit
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 130
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swempire
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Tie Mauler (Energy Shields)
+clone_e1:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swrepublic
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: clone_e1
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Clone Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 7000
+	Armament@PRIMARY:
+		Weapon: SWLaserClonePistol
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWMachinegunLaserClones
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: playerra2
+	Voiced:
+		VoiceSet: SWStormtrooperVoice
+
+clone_e3:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swrepublic
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: clone_e1
+	Valued:
+		Cost: 320
+	Tooltip:
+		Name: Anti Tank Clone
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 7000
+	Armament@PRIMARY:
+		Weapon: SWCloneAntiTank
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWCloneAntiTank
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: playerra2
+	Voiced:
+		VoiceSet: SWStormtrooperVoice
+republic_juggernaut:
+	Inherits: ^TankTD
+	Inherits: ^BigVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@TRANSPORT: ^Transport
+	Inherits@CARGO: ^AttackingCargo
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 230
+		Prerequisites: ~vehicles.swrepublic, tent, radar, ~weap, ~!filler.batf
+		Description: Tough infantry transport\nwith weapon ports for infantry. \n  Special Ability: Can crush enemy vehicles.
+	Valued:
+		Cost: 2200
+	Tooltip:
+		Name: Juggernaut Transport
+	Health:
+		HP: 250000
+	Mobile:
+		Locomotor: sheavytracked
+		Speed: 48
+		PauseOnCondition: notmobile || being-captured || empdisable || being-warped
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Cargo:
+		InitialUnits: clone_e3, clone_e3, clone_e3, clone_e3, clone_e1
+	Armament:
+		Weapon: ZSU-23
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+		PauseOnCondition: empdisable || being-warped
+	AttackFrontal:
+		TargetFrozenActors: True
+		ForceFireIgnoresActors: True
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 0
+	WithMuzzleOverlay:
+	Carryable:
+		LocalOffset: 0,0,500
+	-Crushable:
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !loaded-air
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && !loaded-air
+	AutoTargetPriority@DEFAULT_AIR:
+		RequiresCondition: !stance-attackanything && !assault-move && loaded-air
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_AIR:
+		RequiresCondition: (stance-attackanything || assault-move) && loaded-air
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	Voiced:
+		VoiceSet: BattleFortressVoice
+
+republic_bike:
+	Inherits: ^VehicleTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrepublic, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
+		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Hover Bike
+	Health:
+		HP: 14000
+	Mobile:
+		Speed: 157
+	Turreted@PRIMARY:
+		TurnSpeed: 80
+		Offset: -43,0,128
+	Armament@PRIMARY:
+		Weapon: SWMachinegunLaser
+		Turret: primary
+		LocalOffset: 171,0,43
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 0
+	WithMuzzleOverlay:
+	IgnoresDisguise:
+
+republic_laat:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Laat Gunship
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad.td, ~aircraft.swrepublic
+		IconPalette: chrometd
+		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Aircraft:
+		AltitudeVelocity: 0c100
+		TurnSpeed: 20
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		Speed: 156
+	Health:
+		HP: 22000
+	RevealsShroud:
+		Range: 12c0
+		MinRange: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: SWLaatMissilesAG
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: SWLaatMissilesAA
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	Armament@Laser:
+		Weapon: SWLaatSmallLaser
+		LocalOffset: 0,-120,111, 0,120,111
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		AttackType: Hover
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	AmmoPool:
+		Ammo: 16
+		ReloadCount: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCA.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCA.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCA.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	Rearmable:
+		RearmActors: hpad, hpad.td
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+
+republic_aac:
+	Inherits: ^TankTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrepublic
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: AAC Hover Tank
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 90
+	Turreted:
+		TurnSpeed: 56
+		Offset: 90,0,75
+	Armament@AA:
+		Weapon: SWAACMissilesAA
+		LocalOffset: -200,400,85, -200,-400,85
+	Armament@AG:
+		Weapon: SWAACMissilesAG
+		LocalOffset: -200,400,85, -200,-400,85
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 6
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		RequiresCondition: !onwater && !being-warped
+republic_saber:
+	Inherits: ^TankTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrepublic
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Saber Hover Tank
+	Health:
+		HP: 55250
+	Mobile:
+		Speed: 90
+	Turreted:
+		TurnSpeed: 56
+		Offset: 90,0,75
+	Armament@AG:
+		Weapon: T3BLaserCannon
+		LocalOffset: -200,400,85, -200,-400,85
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 15
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		RequiresCondition: !onwater && !being-warped
+
+republic_at_te:
+	Inherits: ^TankTD
+	Inherits: ^BigVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Valued:
+		Cost: 4500
+	Tooltip:
+		Name: AT-TE Walker
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 195
+		Prerequisites: techcenter, ~vehicles.bantha, ~!commander_tree.tripod.chainer, ~!commander_tree.tripod.acid
+		Description: Heavy assault walker with laser weapons.\n  Strong vs Vehicles.\n  Weak vs Aircraft
+		IconPalette: chrome
+	Mobile:
+		Locomotor: heavytracked
+		Speed: 40
+		TurnSpeed: 5
+	Passenger:
+		Weight: 25
+	Health:
+		HP: 520000
+	Repairable:
+		HpPerStep: 3333
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Weapon: AATMainCannon
+		LocalOffset: 300,0,50
+		Recoil: 170
+		RecoilRecovery: 42
+		MuzzleSequence: muzzle
+	Turreted:
+		TurnSpeed: 56
+		Offset: 289,15,720
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped || parachute
+	WithSpriteTurret:
+	WithMuzzleOverlay:
+	SelectionDecorations:
+	-Crushable:
+	Cargo:
+		Types: Infantry, Hacker, Fremen
+		MaxWeight: 10
+		PipCount: 5
+		LoadingCondition: notmobile
+		InitialUnits: clone_e3, clone_e3, clone_e3, clone_e3, clone_e3, clone_e1, clone_e1, clone_e1, clone_e1, clone_e1
+	-WithFacingSpriteBody:
+	WithInfantryBody:
+		IdleSequences: idle
+
+republic_artillery:
+	Inherits: ^TankTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrepublic
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Sonic Artillery
+	Health:
+		HP: 35000
+	Mobile:
+		Speed: 90
+	Turreted:
+		TurnSpeed: 56
+		Offset: 90,0,75
+	Armament@PRIMARY:
+		Weapon: SonicZap
+		LocalOffset: 11,0,400
+	Armament@SECONDARY:
+		Weapon: SonicZapVisual
+		Name: secondary
+		LocalOffset: 11,0,400
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 6
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		RequiresCondition: !onwater && !being-warped
+republic_arc:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: ARC Starfighter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad.td, ~aircraft.swrepublic
+		IconPalette: chrometd
+		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Aircraft:
+		AltitudeVelocity: 0c100
+		TurnSpeed: 20
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		Speed: 186
+	Health:
+		HP: 33000
+	RevealsShroud:
+		Range: 12c0
+		MinRange: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: SWXWingGun
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: SWXWingGunAA
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		AttackType: Hover
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	AmmoPool:
+		Ammo: 16
+		ReloadCount: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCA.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCA.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCA.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	Rearmable:
+		RearmActors: hpad, hpad.td
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+rebel_landspeeder:
+	Inherits: ^VehicleTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrebels, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
+		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Landspeeder
+	Health:
+		HP: 14000
+	Mobile:
+		Speed: 157
+	Turreted@PRIMARY:
+		TurnSpeed: 80
+		Offset: -43,0,128
+	Armament@PRIMARY:
+		Weapon: SWMachinegunLaser
+		Turret: primary
+		LocalOffset: 171,0,43
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	IgnoresDisguise:
+
+rebel_t2b:
+	Inherits: ^VehicleTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiLightAA
+	Inherits@vo: ^AttackTurretedVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 130
+		Prerequisites: ~vehicles.swrebels, ~!commander_tree.flak_track.barrage
+		Description: Mobile unit with mounted Flak cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: TB-2 Hover Tank
+	Health:
+		HP: 19000
+	Mobile:
+		TurnSpeed: 48
+		Speed: 118
+	Turreted:
+		TurnSpeed: 48
+		Offset: -298,0,200
+	Armament@AA:
+		Weapon: SWQuadCannonLaserAA
+		Recoil: 85
+		LocalOffset: 300,0,192
+		MuzzleSequence: muzzle
+	Armament@AG:
+		Weapon: SWQuadCannonLaser
+		Recoil: 85
+		LocalOffset: 300,0,192
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	Voiced:
+		VoiceSet: SWRebelTankVoice
+rebel_t2b_shield:
+	Inherits: rebel_t2b
+	Inherits@SHIELD: ^WithShieldUnit
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 130
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrebels
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: TB-2 Hover Tank (Energy Shields)
+rebel_t1b:
+	Inherits: ^TankTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackTurretedVoice
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrebels
+		Description: Fast, light tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n  Special Ability: Amphibious
+	Valued:
+		Cost: 625
+	Tooltip:
+		Name: T1-B Hover Tank
+	Health:
+		HP: 55250
+	Mobile:
+		Speed: 100
+	Turreted:
+		TurnSpeed: 56
+		Offset: 90,0,75
+	Armament:
+		Weapon: T1BLaserCannon
+		Recoil: 85
+		RecoilRecovery: 17
+		LocalOffset: 720,0,90
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped || parachute
+	AttackCharges:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: LTNK.Husk
+		RequiresCondition: !onwater && !being-warped
+	Voiced:
+		VoiceSet: SWRebelTankVoice
+rebel_t1b_shield:
+	Inherits: rebel_t1b
+	Inherits@SHIELD: ^WithShieldUnit
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 55
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swrebels
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: T1-B Hover Tank (Energy Shields)
+rebel_t3b:
+	Inherits: ^TankTD
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackTurretedVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swrebels, ~vehicles.3tnk, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.reflector, ~!commander_tree.yuri
+		Description: Soviet main battle tank with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: T3-B Heavy Tank
+	Health:
+		HP: 60000
+	Mobile:
+		Speed: 68
+	Turreted:
+		TurnSpeed: 48
+		Offset: 112,0,250
+	Armament:
+		Weapon: T3BLaserCannon
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 555,85,90, 555,-85,90
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: 3TNK.Husk
+		RequiresCondition: !iraqtank && !being-warped
+	Voiced:
+		VoiceSet: SWRebelHeavyTankVoice
+rebel_t3b_missile_x1:
+	Inherits: rebel_t3b
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swrebels, ~vehicles.rebel_t3b_missile_x1, ~!vehicles.rebel_t3b_missile_x2
+		Description: Soviet main battle tank with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: T3-B Heavy Tank
+	Armament@Left:
+		Weapon: SWLaatMissilesAG
+		LocalOffset: 0,300,85, 0,400,85
+	SpawnActorOnDeath:
+		Actor: 3TNK.Husk
+		RequiresCondition: !iraqtank && !being-warped
+
+rebel_t3b_missile_x2:
+	Inherits: rebel_t3b
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swrebels, ~vehicles.rebel_t3b_missile_x2
+		Description: Soviet main battle tank with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: T3-B Heavy Tank
+	Armament@Left:
+		Weapon: SWLaatMissilesAG
+		LocalOffset: 0,300,85, 0,400,85
+	Armament@Right:
+		Weapon: SWLaatMissilesAG
+		LocalOffset: 0,-300,85, 0,-300,85
+	SpawnActorOnDeath:
+		Actor: 3TNK.Husk
+		RequiresCondition: !iraqtank && !being-warped
+
+rebel_t4b:
+	Inherits: ^TankTD
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackTurretedVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swrebels, ~vehicles.3tnk, ~!commander_tree.heavy_tank.pld, ~!commander_tree.heavy_tank.ap, ~!commander_tree.heavy_tank.reflector, ~!commander_tree.yuri
+		Description: Soviet main battle tank with dual cannons.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: T4-B Heavy Tank
+	Health:
+		HP: 65000
+	Mobile:
+		Speed: 90
+	Turreted:
+		TurnSpeed: 48
+		Offset: -10,0,200
+	Armament:
+		Weapon: T4BTwinCannon
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 555,185,90, 555,-185,90
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: 3TNK.Husk
+		RequiresCondition: !iraqtank && !being-warped
+	Voiced:
+		VoiceSet: SWRebelHeavyTankVoice
+rebel_awing:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 1300
+	Tooltip:
+		Name: A Wing
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad.td, ~aircraft.swempire
+		IconPalette: chrometd
+		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Aircraft:
+		AltitudeVelocity: 0c100
+		TurnSpeed: 20
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		Speed: 186
+	Health:
+		HP: 22000
+	RevealsShroud:
+		Range: 12c0
+		MinRange: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: SWAWingGun
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: SWAWingGunAA
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		AttackType: Hover
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	AmmoPool:
+		Ammo: 16
+		ReloadCount: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCA.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCA.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCA.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	Rearmable:
+		RearmActors: hpad, hpad.td
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+rebel_snowspeeder:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Snowspeeder
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad.td, ~aircraft.swempire
+		IconPalette: chrometd
+		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Aircraft:
+		AltitudeVelocity: 0c100
+		TurnSpeed: 9
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		Speed: 100
+	Health:
+		HP: 33000
+	RevealsShroud:
+		Range: 12c0
+		MinRange: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: TieFighterLaser
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		AttackType: Hover
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	AmmoPool:
+		Ammo: 8
+		ReloadCount: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCA.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCA.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCA.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	Rearmable:
+		RearmActors: hpad, hpad.td
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+
+rebel_e1:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swempire
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: rebel_e1
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Rebel Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: SWLaserPistol
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWMachinegunLaser
+	WithInfantryBody:
+		IdleSequences: stand
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Voiced:
+		VoiceSet: SWRebelTrooperVoice
+droid_aat:
+	Inherits: ^VehicleTD
+	Inherits: ^RobotDriver
+	Inherits: ^HoverVehicle
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 70
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: AAT Tank
+		GenericName: Tank
+	Health:
+		HP: 45000
+	Mobile:
+		Speed: 82
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: AATMainCannon
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 15
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: SWDroidTankVoice
+
+droid_aat_arty:
+	Inherits: droid_aat
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: AAT Tank (Siege Cannon)
+	Armament:
+		Weapon: AATArtilleryCannon
+
+droid_aat_grenade:
+	Inherits: droid_aat
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: AAT Tank (Grenade Launchers)
+	Armament@GRENADE:
+		Weapon: SWAATGrenades.area1
+	Armament@SECONDARY:
+		Weapon: SWAATGrenades.area2
+	Armament@TERTIARY:
+		Weapon: SWAATGrenades.area3
+	Armament@QUARTIARY:
+		Weapon: SWAATGrenades.area4
+
+droid_aat_minilaser:
+	Inherits: droid_aat
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: AAT Tank (Anti Personel Laser)
+	Armament@SECONDARY:
+		Weapon: SWAATMachinegun
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,130,80, 720,-130,80
+droid_transport:
+	Inherits: ^VehicleTD
+	Inherits: ^RobotDriver
+	Inherits: ^HoverVehicle
+	Inherits: ^PrioAntiHeavy
+	Inherits@TRANSPORT: ^Transport
+	Inherits: ^BigVehicle
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 70
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Droid Transport
+		GenericName: Tank
+	Health:
+		HP: 65000
+	Mobile:
+		Speed: 50
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: SWMachinegunLaser
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,200,80, 720,-200,80
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 5
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: 2TNK.Husk
+		RequiresCondition: !being-warped
+	Cargo:
+		InitialUnits: droid_e1, droid_e1, droid_e1, droid_e1, droid_e1, droid_e1, droid_e1, droid_e1, droid_e1, droid_e1
+		MaxWeight: 10
+	Voiced:
+		VoiceSet: SWDroidTankVoice
+
+droid_transport_e3:
+	Inherits: droid_transport
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: AAT Tank (Missile Droids)
+	Cargo:
+		InitialUnits: droid_e3, droid_e3, droid_e3, droid_e3, droid_e3, droid_e3, droid_e3, droid_e3, droid_e3, droid_e3
+
+droid_transport_assault:
+	Inherits: droid_transport
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: AAT Tank (Assault Lasers)
+        
+droid_nrn99:
+	Inherits: ^VehicleTD
+	Inherits: ^RobotDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits: ^BigVehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 70
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: NR-N99 Heavy Tank
+		GenericName: Tank
+	Health:
+		HP: 65000
+	Mobile:
+		Speed: 72
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: T4BTwinCannon
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 710,200,80, 710,-200,80, 720,200,220, 720,-200,220
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 5
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: 2TNK.Husk
+		RequiresCondition: !being-warped
+droid_hellfire:
+	Inherits: ^VehicleTD
+	Inherits: ^RobotDriver
+	Inherits: ^PrioAntiHeavy
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 70
+		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Hellfire Tank
+		GenericName: Tank
+	Health:
+		HP: 30000
+	Mobile:
+		Speed: 75
+	Turreted:
+		TurnSpeed: 48
+		Offset: 0,0,20
+	Armament:
+		Weapon: SWHellfireMissiles
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: -400,100,120, -400,-100,120, -400,100,222, -400,-100,222
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 15
+	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: 2TNK.Husk
+		RequiresCondition: !being-warped
+	Voiced:
+		VoiceSet: SWDroidInfantryRocketVoice
+droid_e1:
+	Inherits: ^RobotInfantry
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swdroid
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: droid_e1
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Droid B1
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 3000
+	Armament@PRIMARY:
+		Weapon: SWLaserPistol
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWMachinegunLaser
+	WithInfantryBody:
+		IdleSequences: stand
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Voiced:
+		VoiceSet: SWDroidInfantryVoice
+droid_e3:
+	Inherits: ^RobotInfantry
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swdroid
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: droid_e3
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Droid B1 Rocket
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 3000
+	Armament@PRIMARY:
+		Weapon: SWrBigRedLaser
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWrBigRedLaser
+	WithInfantryBody:
+		IdleSequences: stand
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Voiced:
+		VoiceSet: SWDroidInfantryRocketVoice
+droid_e6:
+	Inherits: ^Soldier
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.swdroid
+		Description: Trade federation Specialist \nInfiltrates and captures\nenemy structures.\n  Can repair friendly structures & bridges.\n  Special Ability: Repair\n  Unarmed
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Neimoidian Technician
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	WithInfantryBody:
+	Passenger:
+		CustomPipType: yellow
+	EngineerRepair:
+	RepairsBridges:
+	CaptureManager:
+	Captures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		CaptureDelay: 100
+	Voiced:
+		VoiceSet: EngineerVoice
+	Selectable:
+		Priority: 5
+	Targetable:
+		TargetTypes: Ground, Infantry, Disguise, ChaosImmune
+droid_droideka:
+	Inherits: ^RobotInfantry
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@SHIELD: ^WithShieldUnit
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Droideka
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swdroid
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Health:
+		HP: 40000
+	Mobile:
+		TurnSpeed: 3
+		Speed: 125
+	Armor:
+		Type: Light		#Wood
+	Armament@PRIMARY:							##########
+		Weapon: SWDDroidLaser
+		LocalOffset: 768,85,90, 768,-85,90, 768,111,90, 768,-111,90
+	Armament@GARRISONED:						##########
+		Name: garrisoned
+		Weapon: SWDDroidLaser
+		MuzzleSequence: garrison-muzzle
+	Voiced:
+		VoiceSet: SWDroidekaVoice
+	WithInfantryBody:
+		IdleSequences: stand
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	RenderSprites:
+		PlayerPalette: playerra2
+
+pirate_swampspeeder:
+	Inherits: ^VehicleTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swpirates, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
+		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Swamp Speeder
+	Health:
+		HP: 35000
+	Mobile:
+		Speed: 137
+	Armament@PRIMARY:
+		Weapon: SWMachinegunLaser
+		Turret: primary
+		LocalOffset: 171,140,43, 171,-140,43
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 15
+	WithMuzzleOverlay:
+	IgnoresDisguise:
+
+naboo_gianspeeder:
+	Inherits: ^VehicleTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits@detect: ^SensorEquipment
+	Inherits: ^PrioAntiInfantry
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swnaboo, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
+		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Gianspeeder
+	Health:
+		HP: 35000
+	Mobile:
+		Speed: 147
+	Armament@PRIMARY:
+		Weapon: SWMachinegunLaser
+		Turret: primary
+		LocalOffset: 171,0,43
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 15
+	WithMuzzleOverlay:
+	IgnoresDisguise:
+
+naboo_gianspeeder2:
+	Inherits: ^VehicleTD
+	Inherits: ^HoverVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiInfantry
+	RenderSprites:
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		IconPalette: chrometd
+		Prerequisites: ~vehicles.swnaboo, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
+		Description: Small Armored combat hovercar.\n  uses purpose of the tank.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Armored Gianspeeder
+	Health:
+		HP: 60000
+	Mobile:
+		Speed: 130
+	Armament@PRIMARY:
+		Weapon: T1BLaserCannon
+		Turret: primary
+		LocalOffset: 171,0,43
+		MuzzleSequence: muzzle
+	AttackFrontal:
+		Armaments: primary, secondary
+		PauseOnCondition: empdisable || being-warped
+		FacingTolerance: 15
+	WithMuzzleOverlay:
+
+naboo_starfighter:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Naboo Starfighter
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad.td, ~aircraft.swnaboo
+		IconPalette: chrometd
+		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Aircraft:
+		AltitudeVelocity: 0c100
+		TurnSpeed: 20
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		Speed: 186
+	Health:
+		HP: 33000
+	RevealsShroud:
+		Range: 12c0
+		MinRange: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
+	Armament@PRIMARY:
+		Weapon: SWXWingGun
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: SWXWingGunAA
+		LocalOffset: 0,-213,-85, 0,213,-85
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		AttackType: Hover
+		PersistentTargeting: false
+		OpportunityFire: false
+		PauseOnCondition: empdisable || being-warped
+	AmmoPool:
+		Ammo: 16
+		ReloadCount: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		PipCount: 4
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	SpawnActorOnDeath:
+		Actor: ORCA.Husk
+		RequiresCondition: ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@Empty:
+		Actor: ORCA.Husk.empty
+		RequiresCondition: !ammo && !empdisable && !being-warped
+	SpawnActorOnDeath@EMP:
+		Actor: ORCA.Husk.EMP
+		RequiresCondition: ammo && empdisable && !being-warped
+	SpawnActorOnDeath@EmptyEMP:
+		Actor: ORCA.Husk.empty.EMP
+		RequiresCondition: !ammo && empdisable && !being-warped
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	Rearmable:
+		RearmActors: hpad, hpad.td
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+bantha_idle:
+	Inherits: ^Tank
+	Inherits: ^BigVehicle
+	Inherits: ^BiologicalDriver
+	Inherits: ^PrioAntiHeavy
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 195
+		Prerequisites: techcenter, ~vehicles.bantha, ~!commander_tree.tripod.chainer, ~!commander_tree.tripod.acid
+		Description: Heavy assault walker with beam weapons.\n  Strong vs Vehicles.\n  Weak vs Aircraft
+		IconPalette: chrome
+	Voiced:
+		VoiceSet: TripodVoice
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Bantha
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 80000
+	Mobile:
+		Locomotor: heavytracked
+		Speed: 48
+		TurnSpeed: 1000
+	Passenger:
+		Weight: 3
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Armament@PRIMARY:
+		Weapon: TripodLaser
+		LocalOffset: 650,420,1000, 650,-420,1000
+		MuzzleSequence: muzzle
+		MuzzlePalette: scrin
+	WithMuzzleOverlay:
+	Carryable:
+		LocalOffset: 0,0,700
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	TurretedFloating:
+		TurnSpeed: 48
+		Offset: 0,0,0
+	AttackTurreted:
+		PauseOnCondition: empdisable || being-warped
+		Armaments: primary
+	WithSpriteTurret:
+	QuantizeFacingsFromSequence:
+		Sequence: idle
+	WithFacingSpriteBody:
+		Sequence: idle
+	WithMoveAnimation:
+	DeathSounds:
+		Voice: Die
+	SpawnActorOnDeath:
+		Actor: TPOD.Husk
+		RequiresCondition: !being-warped
+	GrantConditionOnFaction@TRAVELERSPEED:
+		Condition: travelerspeed
+		Factions: traveler
+	SpeedMultiplier@TRAVELERSPEED:
+		RequiresCondition: travelerspeed
+		Modifier: 115
+
+rcorp_e1:
+	Inherits: ^Soldier
+	Inherits: ^ScoutEquipment
+	Inherits: ^PrioAntiInfantry
+	Inherits@BERSERK: ^Berserk
+	Inherits@BOTHELPER: ^BotCaptureHelper
+	Inherits@vo: ^AttackFrontalVoice
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.swempire
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: rcorp_e1
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Rcorp Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 12000
+	Armament@PRIMARY:
+		Weapon: M1Carbine
+		LocalOffset: 5,0,300
+	Armament@Garrison:
+		Name: mounted
+		Weapon: SWMachinegunLaser
+	WithInfantryBody:
+		IdleSequences: stand
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Voiced:
+		VoiceSet: SWRebelTrooperVoice

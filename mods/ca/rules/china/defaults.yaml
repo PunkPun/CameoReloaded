@@ -204,28 +204,28 @@ Player:
 		PauseOnCondition: empdisable || being-warped
 	Armament@GAT0:
 		Weapon: ChinaMGatt.0
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 370,-65,333, 300,65,444
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling == 0
 		PauseOnCondition: engage-ground
 		ReloadingCondition: engage-air
 	Armament@GAT1:
 		Weapon: ChinaMGatt.1
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 370,-65,333, 370,65,444
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling == 1
 		PauseOnCondition: engage-ground
 		ReloadingCondition: engage-air
 	Armament@GAT2:
 		Weapon: ChinaMGatt.2
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 370,-65,333, 370,65,444
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling == 2
 		PauseOnCondition: engage-ground
 		ReloadingCondition: engage-air
 	Armament@GAT3:
 		Weapon: ChinaMGatt.3
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 370,-333,50, 370,65,444
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling == 3
 		PauseOnCondition: engage-ground
@@ -233,7 +233,7 @@ Player:
 	Armament@GAT0G:
 		Name: secondary
 		Weapon: ChinaMGatt.0G
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 480,-65,150, 480,65,188
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling-ground == 0
 		PauseOnCondition: engage-air
@@ -241,7 +241,7 @@ Player:
 	Armament@GAT1G:
 		Name: secondary
 		Weapon: ChinaMGatt.1G
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 480,-65,150, 480,65,188
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling-ground == 1
 		PauseOnCondition: engage-air
@@ -249,7 +249,7 @@ Player:
 	Armament@GAT2G:
 		Name: secondary
 		Weapon: ChinaMGatt.2G
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 480,-65,150, 480,65,188
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling-ground == 2
 		ReloadingCondition: engage-ground
@@ -257,7 +257,7 @@ Player:
 	Armament@GAT3G:
 		Name: secondary
 		Weapon: ChinaMGatt.3G
-		LocalOffset: 300,-100,50, 300,100,50
+		LocalOffset: 480,-65,150, 480,65,188
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling-ground == 3
 		ReloadingCondition: engage-ground

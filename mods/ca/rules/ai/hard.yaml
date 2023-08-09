@@ -7,7 +7,7 @@ Player:
 		Bots: hard
 	BaseBuilderBotModuleCA@hard:
 		RequiresCondition: enable-hard-ai
-		BuildingQueues: Building, Commander_Tree
+		BuildingQueues: Building, Building.Multi, Commander_Tree
 		MinimumExcessPower: 50
 		MaximumExcessPower: 290
 		ExcessPowerIncrement: 30
@@ -182,6 +182,7 @@ Player:
 	UnitBuilderBotModuleCA@hard:
 		RequiresCondition: enable-hard-ai
 		IdleBaseUnitsMaximum: 50
+		UnitQueues: Vehicle, Vehicle.Multi, Infantry, Infantry.Multi, Aircraft, Aircraft.Multi, Ship, Ship.Multi, Defense, Defense.Multi,  Building, Building.Multi
 		MaxAircraft: 6
 		MaintainAirSuperiority: true
 		MaxAirSuperiority: 8

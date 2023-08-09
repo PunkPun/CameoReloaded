@@ -3,7 +3,7 @@ DOG:
 	Inherits: ^PrioAntiInfantry
 	Inherits: ^SovietInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 50
 		Prerequisites: ~kenn
@@ -80,7 +80,7 @@ E1:
 	Inherits@BERSERK: ^Berserk
 	Inherits@BOTHELPER: ^BotCaptureHelper
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~infantry.ra
@@ -118,7 +118,7 @@ E2:
 	Inherits: ^SovietInfantry
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 40
 		Prerequisites: ~barr, ~commander_tree.advanced_infantry_training
@@ -163,7 +163,7 @@ E3:
 	Inherits@TargetRelay: ^RelayTargeting
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
 		Prerequisites: ~infantry.allies, ~!infantry.germany, ~!commander_tree.advanced_infantry_training
@@ -297,7 +297,7 @@ U3:
 	Tooltip:
 		Name: Guardian G.I.
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
 		Prerequisites: ~infantry.germany
@@ -490,7 +490,7 @@ E4:
 	Inherits: ^SovietInfantry
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~barr, ~!infantry.iraq, ~commander_tree.advanced_infantry_training
@@ -533,7 +533,7 @@ E6:
 	Inherits: ^Soldier
 	Inherits: ^SovietInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Prerequisites: ~infantry.ra
@@ -564,7 +564,7 @@ E6:
 SPY:
 	Inherits: ^Soldier
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
 		Prerequisites: ~infantry.allies, dome, ~tent, ~commander_tree.advanced_infantry_training
@@ -617,7 +617,7 @@ E7:
 	Inherits@detect: ^SensorEquipment
 	Inherits@COMMANDOSKULL: ^CommandoSkull
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 120
 		Prerequisites: ~tent, atek, ~commander_tree.advanced_infantry_training
@@ -687,7 +687,7 @@ MEDI:
 	Inherits: ^Soldier
 	Inherits: ^InfantrySupportUnit
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 40
 		Prerequisites: infantry.any, ~infantry.medi, ~commander_tree.advanced_infantry_training
@@ -735,7 +735,7 @@ MECH:
 	Inherits: ^Soldier
 	Inherits: ^TankSupportUnit
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: repair, ~infantry.mech, ~commander_tree.advanced_infantry_training
@@ -892,7 +892,7 @@ THF:
 	Inherits: ^Soldier
 	Inherits: ^SovietInfantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 110
 		Prerequisites: ~barr, dome, ~commander_tree.advanced_infantry_training
@@ -959,7 +959,7 @@ SHOK:
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 115
 		Prerequisites: ~infantry.any, dome, ~infantry.shok, ~commander_tree.advanced_infantry_training
@@ -1017,7 +1017,7 @@ N1:
 	Inherits@BERSERK: ^Berserk
 	Inherits@BOTHELPER: ^BotCaptureHelper
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~!bio.nod, infantry.any, ~infantry.td
@@ -1059,7 +1059,7 @@ N2:
 	Inherits: ^PrioArtillery
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 40
 		Prerequisites: infantry.any, ~infantry.gdi, ~!commander_tree.advanced_infantry_training
@@ -1131,7 +1131,7 @@ N3:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
 		Prerequisites: ~!bio.nod, infantry.any, ~infantry.td
@@ -1207,7 +1207,7 @@ N4:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~infantry.nod, ~!bio.nod, hand, ~commander_tree.advanced_infantry_training
@@ -1257,7 +1257,7 @@ N5:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BioDamageImmune: ^BioDamageImmune
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~bio.nod, ~hand, ~commander_tree.advanced_infantry_training
@@ -1343,7 +1343,7 @@ RMBO:
 	Buildable:
 		BuildPaletteOrder: 120
 		Prerequisites: ~infantry.gdi, techcenter, ~commander_tree.advanced_infantry_training
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		IconPalette: chrometd
 		BuildLimit: 1
 		Description: Elite infantry unit. Armed with\na Grenadelauncher and C4.\n  Can detect cloaked units.\n  Maximum 1 can be trained.\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n  Special Ability: C4 Explosives
@@ -1411,7 +1411,7 @@ RMBO:
 N6:
 	Inherits: ^Soldier
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Prerequisites: infantry.any, ~infantry.td
@@ -1479,7 +1479,7 @@ SNIP:
 	RenderSprites:
 		Image: sniper
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 55
 		Prerequisites: ~infantry.england, dome, ~commander_tree.advanced_infantry_training
@@ -1551,7 +1551,7 @@ BORI:
 	RenderSprites:
 		Image: boris
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 120
 		Prerequisites: ~infantry.soviet, stek, ~commander_tree.advanced_infantry_training, ~!commander_tree.yuri
@@ -1623,7 +1623,7 @@ Mortar:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 40
 		Prerequisites: ~commander_tree.mortar, ~infantry.soviet
@@ -1664,7 +1664,7 @@ Mortar.Chemical:
 	Inherits@GAINSEXPERIENCE: ^GainsExperience
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 40
 		Prerequisites: ~commander_tree.chemical_mortar, ~infantry.nod
@@ -1706,7 +1706,7 @@ SAB:
 	Inherits@BERSERK: ^Berserk
 	Inherits@CloakedInfiltrator: ^CloakedInfiltrator
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
 		Prerequisites: hq, ~infantry.nod, ~commander_tree.advanced_infantry_training
@@ -1762,7 +1762,7 @@ SpecOps:
 	Inherits: SAB
 	Inherits@CloakedAttacker: ^CloakedAttacker
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.allies, atek, ~commander_tree.advanced_infantry_training, ~commander_tree.spec_ops
@@ -1788,7 +1788,7 @@ ACOL:
 	Inherits: ^Soldier
 	Inherits: ^PrioEnergyWeapon
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 115
 		IconPalette: chrometd
@@ -1850,7 +1850,7 @@ JJET:
 	Inherits@BERSERK: ^Berserk
 	Inherits@EMP: ^EmpDisable
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 59
 		Prerequisites: ~pyle, hq, ~infantry.gdi, ~commander_tree.jumpjet, ~!commander_tree.jumpjet_railgun, ~!commander_tree.jumpjet_rockets
@@ -1969,7 +1969,7 @@ JJET.Rocket:
 	Inherits: JJET
 	Inherits: ^PrioAntiHeavyAA
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 59
 		Prerequisites: ~pyle, hq, ~infantry.gdi, ~commander_tree.jumpjet_rockets
@@ -2008,7 +2008,7 @@ JJET.Railgun:
 	Inherits: JJET
 	Inherits: ^PrioEnergyAntiHeavy
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 59
 		Prerequisites: ~pyle, hq, ~infantry.gdi, ~commander_tree.jumpjet_railgun
@@ -2036,7 +2036,7 @@ E8:
 	Inherits: ^PrioAntiInfantry
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~infantry.iraq, radar, ~commander_tree.advanced_infantry_training
@@ -2111,7 +2111,7 @@ N1C:
 	Inherits@BioDamageImmune: ^BioDamageImmune
 	RenderSprites:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildPaletteOrder: 10
 		Prerequisites: ~bio.nod, ~hand
 		IconPalette: chrometd
@@ -2152,7 +2152,7 @@ N3C:
 	Inherits@BioDamageImmune: ^BioDamageImmune
 	RenderSprites:
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildPaletteOrder: 20
 		Prerequisites: ~bio.nod, ~hand
 		IconPalette: chrometd
@@ -2234,7 +2234,7 @@ RMBC:
 	RenderSprites:
 		PlayerPalette: playerd2k
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildPaletteOrder: 121
 		Prerequisites: bio.nod, ~hand, ~commander_tree.elite_cyborg
 		IconPalette: chrometd
@@ -2326,7 +2326,7 @@ CRYOT:
 	Inherits: ^PrioAntiHeavy
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 50
 		Prerequisites: ~infantry.allies, dome, ~tent, ~commander_tree.advanced_infantry_training
@@ -2363,7 +2363,7 @@ Railgunner:
 	Inherits: ^PrioEnergyAntiHeavy
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 50
 		Prerequisites: ~pyle, hq, ~infantry.gdi, ~commander_tree.railgunner, ~!commander_tree.railgunner.no_crush
@@ -2415,7 +2415,7 @@ LEADER:
 	Inherits: ^InfantrySupportUnit
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		IconPalette: chrometd
@@ -2462,7 +2462,7 @@ IVAN:
 	Inherits: ^SovietInfantry
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 40
 		Prerequisites: ~infantry.ukraine, weap, ~commander_tree.advanced_infantry_training
@@ -2508,6 +2508,15 @@ IVAN:
 		RequiresCondition: !being-warped
 	Voiced:
 		VoiceSet: CrazyIvanVoice
+	CaptureManager:
+	Captures:
+		CaptureTypes: terroristcar
+		PlayerExperience: 25
+	Infiltrates:
+		Types: terroristcar
+		ValidRelationships: Ally
+		EnterCursor: nuke
+		PlayerExperience: 25
 
 BRUT:
 	Inherits: ^Soldier
@@ -2517,7 +2526,7 @@ BRUT:
 		ScanRadius: 4
 		InitialStance: AttackAnything
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 85
 		Prerequisites: radar, ~commander_tree.yuri, ~commander_tree.advanced_infantry_training
@@ -2716,7 +2725,7 @@ SHAD.Commando:
 	Tooltip:
 		Name: Shadow Commando
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		IconPalette: chrome
 		BuildPaletteOrder: 85
@@ -2894,7 +2903,7 @@ BH:
 	Inherits: ^PrioAntiLight
 	Inherits@BERSERK: ^Berserk
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 150
 		Prerequisites: radar, ~infantry.blackh
@@ -2954,7 +2963,7 @@ YURI:
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: mindcontrolling < 3 && !stance-attackanything && !assault-move
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 190
 		Prerequisites: ~barr, stek, ~commander_tree.yuri
@@ -3078,7 +3087,7 @@ SEAL:
 	Buildable:
 		BuildPaletteOrder: 185
 		Prerequisites: ~infantry.allies, ~commander_tree.advanced_infantry_training techcenter
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		IconPalette: chrome
 		BuildLimit: -1
 		Description: Elite infantry unit. Armed with\na SMG and C4.\n  Can detect cloaked units.\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n  Special Ability: C4 Explosives
@@ -3148,7 +3157,7 @@ HACK:
 	Inherits: ^Soldier
 	Inherits: ^PrioAntiHeavy
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry, Infantry.Multi
 		Prerequisites: ~disabled
 		BuildAtProductionType: Soldier
 	Valued:

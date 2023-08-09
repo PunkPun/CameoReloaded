@@ -1,4 +1,6 @@
 ^StructureOverlays:
+	Defaults:
+		Scale: 2.0
 	emp-overlay: emp_fx01
 		Length: *
 		BlendMode: Additive
@@ -979,37 +981,46 @@ miss.destroyed:
 brik:
 	idle: brik
 		Length: 16
+		Scale: 2.0
 	scratched-idle: brik
 		Start: 16
 		Length: 16
+		Scale: 2.0
 	damaged-idle: brik
 		Start: 32
 		Length: 16
+		Scale: 2.0
 	icon: brikicon
 
 vgate:
 	make: vgate
 		Length: 7
+		Scale: 2.0
 	idle: vgate
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
 		ZOffset: -1c511
+		Scale: 2.0
 	damaged-idle: vgate
 		Frames: 13, 12, 11, 10, 9, 8, 7
 		Length: 7
 		ZOffset: -1c511
+		Scale: 2.0
 
 agate:
 	make: agate
 		Length: 7
+		Scale: 2.0
 	idle: agate
 		Frames: 6, 5, 4, 3, 2, 1, 0
 		Length: 7
 		ZOffset: -1c511
+		Scale: 2.0
 	damaged-idle: agate
 		Frames: 13, 12, 11, 10, 9, 8, 7
 		Length: 7
 		ZOffset: -1c511
+		Scale: 2.0
 
 sgate:
 	Inherits: agate
@@ -1017,19 +1028,23 @@ sgate:
 sbag:
 	idle: sbag
 		Length: 16
+		Scale: 2.0
 	icon: sbagicon
 
 fenc:
 	idle: fenc
 		Length: 16
+		Scale: 2.0
 	icon: fencicon
 
 cycl:
 	idle: cycl
 		Length: 16
+		Scale: 2.0
 	damaged-idle: cycl
 		Start: 16
 		Length: 16
+		Scale: 2.0
 
 pyle:
 	Inherits: ^StructureOverlays
@@ -2214,3 +2229,25 @@ swiss_bank:
 		Length: *
 		Offset: 0,12
 	icon: swissbankicon
+mammothbunker:
+	Inherits: ^StructureOverlays
+	idle: pbox
+		Scale: 3.0
+	damaged-idle: pbox
+		Start: 1
+		Scale: 3.0
+	make: pboxmake
+		Length: *
+		Scale: 3.0
+	turret: 4tnk
+		Start: 32
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	bib: mbGUN
+		Length: *
+		Offset: -1,-1
+		UseTilesetExtension: true
+		TilesetOverrides:
+			BARREN: TEMPERAT
+	icon: gunicon

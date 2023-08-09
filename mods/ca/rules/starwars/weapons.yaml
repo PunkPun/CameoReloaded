@@ -1,0 +1,506 @@
+^SWHeavyLasers:
+	Inherits: ^ShellHE
+	Projectile: Bullet
+		Speed: 682
+		ContrailLength: 5
+		ContrailUsePlayerColor: false
+		ContrailColor: FF0000
+	Warhead@3Eff: CreateEffect
+		Explosions: small_explosion
+		ImpactSounds: kaboom12.aud
+		ValidTargets: Ground, Ship, Trees
+	Warhead@4EffWater: CreateEffect
+		Explosions: small_explosion
+		ImpactSounds: kaboom12.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@Flashes: CreateEffect
+		Explosions: flashred
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
+
+^SWSmallLasers:
+	Inherits: ^BulletHeavy
+	ValidTargets: Ground, Water
+	Projectile: Bullet
+		Speed: 682
+		RangeLimit: 12c512
+		Inaccuracy: 666
+		ContrailLength: 4
+		ContrailEndColor: FF0000
+		ContrailColor: EA2700
+		ContrailWidth: 0c32
+		ContrailStartColor: EA2700
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@Flashes: CreateEffect
+		Explosions: flashred
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
+ATATLaser:
+	Inherits: ^SWHeavyLasers
+	ValidTargets: Ground, Water, Air
+	ReloadDelay: 33
+	Report: swtnkfire4.aud
+	Burst: 2
+	Range: 8c0
+	Projectile: Bullet
+		Speed: 682
+		RangeLimit: 12c512
+		Inaccuracy: 512
+		ContrailLength: 5
+		ContrailEndColor: FF0000
+		ContrailColor: FF0000
+		ContrailStartColor: EA2700
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 12345
+		ValidTargets: Ground, Water, Air
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+
+ATATLaserSmall:
+	Inherits: ^SWSmallLasers
+	ValidTargets: Infantry, Air
+	ReloadDelay: 55
+	Report: swlaser.aud
+	Burst: 4
+	Range: 8c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 6000
+		ValidTargets: Ground, Water, Air
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		Versus:
+			None: 100
+			Wood: 90
+			Light: 80
+			Heavy: 25
+
+TieFighterLaser:
+	Inherits: ^SWHeavyLasers
+	ValidTargets: Ground, Water
+	ReloadDelay: 33
+	Report: swtielaser.wav
+	Burst: 2
+	Range: 6c0
+	Projectile: Bullet
+		Speed: 682
+		RangeLimit: 12c512
+		Inaccuracy: 512
+		ContrailLength: 4
+		ContrailEndColor: 4FFF54
+		ContrailColor: 4FFF54
+		ContrailStartColor: 18FF73
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4500
+		ValidTargets: Ground, Water
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@Flashes: CreateEffect
+		Explosions: flashgreen
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
+
+TieFighterLaserAA:
+	Inherits: TieFighterLaser
+	ValidTargets: Air
+	ReloadDelay: 15
+	Report: swtielaser.wav
+	Burst: 2
+	Range: 7c0
+	Projectile: Bullet
+		Speed: 777
+	Warhead@1Dam: SpreadDamage
+		Spread: 750
+		Damage: 5500
+		ValidTargets: Air
+
+SWMachinegunLaser:
+	Inherits: ^SWSmallLasers
+	ReloadDelay: 45
+	Range: 5c0
+	Burst: 5
+	Report: swmgun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+
+SWAWingGun:
+	Inherits: SWMachinegunLaser
+	ReloadDelay: 16
+	Burst: 2
+	BurstDelays: 2
+	Range: 4c0
+	MinRange: 0c768
+	Report: swramgun2.aud
+	Projectile: Bullet
+		Blockable: false
+		Inaccuracy: 256
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 4092
+		Versus:
+			None: 100
+			Wood: 33
+			Light: 75
+			Medium: 66
+			Heavy: 50
+			Concrete: 25
+		DamageTypes: Prone80Percent, TriggerProne, RippedApartDeath
+
+SWAWingGunAA:
+	Inherits: SWAWingGun
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+SWXWingGun:
+	Inherits: SWAWingGun
+	Report: swxwinglaser.wav
+	Burst: 4
+	Range: 6c5
+
+SWXWingGunAA:
+	Inherits: SWAWingGunAA
+	Report: swxwinglaser.wav
+	Burst: 4
+	Range: 6c5
+SWLaserPistol:
+	Inherits: ^SWSmallLasers
+	ReloadDelay: 40
+	Range: 5c0
+	Burst: 1
+	Report: swlaser.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+SWLaserRifle:
+	Inherits: SWLaserPistol
+	Burst: 2
+SWLaserClonePistol:
+	Inherits: SWLaserPistol
+	Warhead@1Dam: SpreadDamage
+		Damage: 3800
+	Projectile: Bullet
+		ContrailEndColor: 1569C7
+		ContrailColor: 1569C7
+		ContrailStartColor: 00BFFF
+	Warhead@Flashes: CreateEffect
+		Explosions: flashblue
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
+SWLaserCloneRifle:
+	Inherits: SWLaserClonePistol
+	Burst: 2
+
+SWMachinegunLaserClones:
+	Inherits: SWLaserClonePistol
+	ReloadDelay: 45
+	Range: 5c0
+	Burst: 5
+	Report: swmgun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+
+SWDDroidLaser:
+	Inherits: SWLaserPistol
+	ReloadDelay: 25
+	Burst: 4
+	BurstDelays: 4
+	Range: 4c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 25
+		Damage: 3500
+		Versus:
+			None: 100
+			Wood: 60
+			Light: 100
+			Medium: 90
+			Heavy: 80
+			Concrete: 50
+	Report: swdroidekasound.wav
+AATMainCannon:
+	Inherits: ^SWHeavyLasers
+	ValidTargets: Ground, Water
+	ReloadDelay: 44
+	Report: swgrenade.aud
+	Burst: 1
+	Range: 7c0
+	Projectile: Bullet
+		Speed: 700
+		RangeLimit: 12c512
+		Inaccuracy: 512
+		ContrailLength: 5
+		ContrailEndColor: 4FFF54
+		ContrailColor: 4FFF54
+		ContrailStartColor: 18FF73
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 5500
+		ValidTargets: Ground, Water
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@Flashes: CreateEffect
+		Explosions: flashgreen
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground
+T1BLaserCannon:
+	Inherits: ^SWHeavyLasers
+	ValidTargets: Ground, Water
+	ReloadDelay: 35
+	Report: swlaser2.aud
+	Burst: 1
+	Range: 5c0
+	Projectile: Bullet
+		Speed: 700
+		RangeLimit: 12c512
+		Inaccuracy: 512
+		ContrailLength: 4
+		ContrailEndColor: 4FFF54
+		ContrailColor: 4FFF54
+		ContrailStartColor: 18FF73
+		ContrailWidth: 0c38
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 3500
+		ValidTargets: Ground, Water
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+
+T3BLaserCannon:
+	Inherits: T1BLaserCannon
+	ValidTargets: Ground, Water
+	ReloadDelay: 35
+	Report: swlaser2.aud
+	Burst: 2
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4000
+T4BTwinCannon:
+	Inherits: AATMainCannon
+	ValidTargets: Ground, Water
+	ReloadDelay: 44
+	Report: swgrenade.aud
+	Burst: 2
+SWQuadCannonLaser:
+	Inherits: ^SWSmallLasers
+	ReloadDelay: 7
+	Range: 5c0
+	Report: swmgun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+		Versus:
+			None: 100
+			Wood: 90
+			Light: 80
+			Heavy: 40
+
+SWQuadCannonLaserAA:
+	Inherits: SWQuadCannonLaser
+	ValidTargets: Air
+	ReloadDelay: 6
+	Range: 8c0
+	Projectile: Bullet
+		Speed: 777
+	Warhead@1Dam: SpreadDamage
+		Spread: 750
+		Damage: 4000
+		ValidTargets: Air
+SWLaatMissilesAA:
+	Inherits: RedEye
+	Report: bazook1.aud
+	Burst: 2
+	BurstDelays: 5
+	Projectile: MissileCA
+		ContrailEndColor: 7FC3FF
+		ContrailColor: 7FC3FF
+		ContrailStartColor: 7FC3FF
+		ContrailLength: 4
+	Warhead@1Dam: SpreadDamage
+		Damage: 4444
+
+SWLaatMissilesAG:
+	Inherits: Dragon
+	Report: bazook1.aud
+	Burst: 2
+	BurstDelays: 5
+	Projectile: MissileCA
+		ContrailEndColor: 7FC3FF
+		ContrailColor: 7FC3FF
+		ContrailStartColor: 7FC3FF
+		ContrailLength: 4
+	Warhead@1Dam: SpreadDamage
+		Damage: 4444
+SWAACMissilesAA:
+	Inherits: RedEye
+	Report: bazook1.aud
+	Burst: 4
+	BurstDelays: 5
+	Projectile: MissileCA
+		ContrailEndColor: 7FC3FF
+		ContrailColor: 7FC3FF
+		ContrailStartColor: 7FC3FF
+		ContrailLength: 4
+	Warhead@1Dam: SpreadDamage
+		Damage: 4444
+
+SWAACMissilesAG:
+	Inherits: Dragon
+	Report: bazook1.aud
+	Burst: 4
+	BurstDelays: 5
+	Projectile: MissileCA
+		ContrailEndColor: 7FC3FF
+		ContrailColor: 7FC3FF
+		ContrailStartColor: 7FC3FF
+		ContrailLength: 4
+	Warhead@1Dam: SpreadDamage
+		Damage: 4444
+SWHellfireMissiles:
+	Inherits: ^AntiGroundMissile
+	Inherits: ^MissileAP
+	ReloadDelay: 100
+	Range: 16c0
+	MinRange: 1c256
+	Burst: 8
+	BurstDelays: 7
+	Projectile: MissileCA
+		Speed: 256
+		HorizontalRateOfTurn: 40
+		RangeLimit: 18c512
+		ContrailEndColor: F867ED
+		ContrailColor: B32DF2
+		ContrailStartColor: B32DF2
+	Warhead@1Dam: SpreadDamage
+		Damage: 4600
+
+SWLaatSmallLaser:
+	Inherits: ^SWSmallLasers
+	ValidTargets: Infantry
+	ReloadDelay: 45
+	Range: 6c0
+	Burst: 2
+	Report: swmgun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+		Versus:
+			None: 100
+			Wood: 90
+			Light: 80
+			Heavy: 25
+
+SWrBigRedLaser:
+	Inherits: ^AntiGroundMissile
+	ValidTargets: Air, Ground
+	ReloadDelay: 75
+	Report: swrocket1.aud
+	Range: 7c0
+	Projectile: MissileCA
+		Image: starwars_hvymissile
+		ContrailLength: 4
+		-TrailImage: smokey
+		ContrailEndColor: FF4900
+		ContrailColor: FF4900
+		ContrailWidth: 0c32
+		ContrailStartColor: FF0074
+		Palette: chrometd
+	Warhead@1Dam: SpreadDamage
+		Spread: 1000
+		Damage: 6000
+		ValidTargets: Ground, Water, Air
+
+SWAATGrenades:
+	Inherits: 155mm
+	Report: bazook1.aud
+	ReloadDelay: 110
+	Range: 7c0
+	Burst: 2
+	Projectile: Bullet
+		Speed: 130
+	Warhead@1Dam: SpreadDamage
+		Damage: 1250
+		Spread: 341
+		DamageTypes: Prone50Percent, TriggerProne, RadiationDeath
+	Warhead@Flames: FireCluster
+		Weapon: BurnFx
+		RandomClusterCount: 2
+		Dimensions: 2,2
+		Footprint: xx xx
+
+SWAATGrenades.area1:
+	Inherits: SWAATGrenades
+	Projectile: Bullet
+		Speed: 90
+		Inaccuracy: 256
+	FirstBurstTargetOffset: -1000,-1800,0
+	FollowingBurstTargetOffset: 100,180,0
+	Burst: 2
+	BurstDelays: 12
+
+SWAATGrenades.area2:
+	Inherits: SWAATGrenades.area1
+	FirstBurstTargetOffset: 0,0,0
+	FollowingBurstTargetOffset: -100,180,0
+
+SWAATGrenades.area3:
+	Inherits: SWAATGrenades.area1
+	FirstBurstTargetOffset: -800,2400,0
+	FollowingBurstTargetOffset: 120,-240,0
+
+SWAATGrenades.area4:
+	Inherits: SWAATGrenades.area1
+	FirstBurstTargetOffset: 1000,0,0
+	FollowingBurstTargetOffset: -120,-240,0
+AATArtilleryCannon:
+	Inherits: AATMainCannon
+	ValidTargets: Ground, Water
+	ReloadDelay: 70
+	Report: swgrenade.aud
+	Burst: 1
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 7900
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeat
+	Warhead@3Eff: CreateEffect
+		Explosions: large_explosion
+		ImpactSounds: kaboom25.aud
+SWAATMachinegun:
+	Inherits: ^SWSmallLasers
+	ReloadDelay: 45
+	Range: 7c0
+	Burst: 4
+	Report: swmgun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+		Versus:
+			None: 100
+			Wood: 90
+			Light: 80
+			Heavy: 25
+SWCloneAntiTank:
+	Inherits: ^SWHeavyLasers
+	ValidTargets: Ground, Water, Air
+	ReloadDelay: 44
+	Report: swgrenade.aud
+	Burst: 1
+	Range: 7c0
+	Projectile: Bullet
+		Speed: 700
+		RangeLimit: 12c512
+		Inaccuracy: 512
+		ContrailLength: 5
+		ContrailEndColor: 3687E3
+		ContrailColor: 3687E3
+		ContrailStartColor: 64FFFD
+	Warhead@1Dam: SpreadDamage
+		Spread: 222
+		Damage: 5500
+		ValidTargets: Ground, Water, Air
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@Flashes: CreateEffect
+		Explosions: flashblue
+		ExplosionPalette: tsunit-ignore-lighting-alpha25
+		ValidTargets: Ground

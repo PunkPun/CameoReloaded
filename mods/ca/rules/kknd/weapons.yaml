@@ -1,0 +1,19 @@
+survivors_vehicle_4x4pickup:
+	Inherits: ^LightMG
+	Range: 4c0
+	Burst: 10
+	BurstDelays: 19
+	ReloadDelay: 25
+	Report: surv.slv|5.wav
+	Warhead@Damage: SpreadDamage
+		Damage: 1000
+
+survivors_vehicle_allterrainvehicle:
+	Inherits: ^HeavyMG
+	Range: 5c0
+	Burst: 10
+	BurstDelays: 13
+	ReloadDelay: 38
+	Report: surv.slv|8.wav
+	Warhead@Damage: SpreadDamage
+		Damage: 1000
