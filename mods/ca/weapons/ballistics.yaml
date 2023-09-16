@@ -30,6 +30,12 @@
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
 
+25mmft:
+	Inherits: 25mm
+	Burst: 3
+	ReloadDelay: 80
+	Report: cannon2.aud
+
 30mm:
 	Inherits: 25mm
 	ReloadDelay: 36
@@ -211,6 +217,19 @@ TitanGun.Concussion:
 		Inaccuracy: 2c138
 	Warhead@1Dam: SpreadDamage
 		Damage: 6500
+
+Flak88gun:
+	Inherits: ^Artillery
+	Inherits: ^ShellAP
+	ReloadDelay: 120
+	MinRange: 3c0
+	Report: tank5.aud
+	TargetActorCenter: true
+	Projectile: BulletCA
+		Speed: 900
+		Inaccuracy: 2c138
+	Warhead@1Dam: SpreadDamage
+		Damage: 14500
 
 155mm.Nona:
 	Inherits: 155mm

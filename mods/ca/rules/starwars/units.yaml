@@ -1544,8 +1544,8 @@ droid_aat:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
-		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Prerequisites: ~vehicles.swdroid
+		Description: Droid Army main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -1577,7 +1577,7 @@ droid_aat_arty:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Prerequisites: ~vehicles.swdroid
 	Valued:
 		Cost: 950
 	Tooltip:
@@ -1590,7 +1590,7 @@ droid_aat_grenade:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Prerequisites: ~vehicles.swdroid
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -1609,7 +1609,7 @@ droid_aat_minilaser:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Prerequisites: ~vehicles.swdroid
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -1630,8 +1630,8 @@ droid_transport:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
-		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Prerequisites: ~vehicles.swdroid
+		Description: Droid transport.\n  Strong vs Infantry\n  Weak vs Vehicle
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1669,7 +1669,7 @@ droid_transport_e3:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Prerequisites: ~vehicles.swdroid
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1682,7 +1682,7 @@ droid_transport_assault:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
+		Prerequisites: ~vehicles.swdroid
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1696,8 +1696,8 @@ droid_nrn99:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
-		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Prerequisites: ~vehicles.swdroid
+		Description: Confederancy Heavy Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 1400
 	Tooltip:
@@ -1732,8 +1732,8 @@ droid_hellfire:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
-		Prerequisites: vehicles.swdroid, ~vehicles.allies, ~!vehicles.england
-		Description: Allied main battle tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Prerequisites: ~vehicles.swdroid
+		Description: Droids Missile Artillery.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -1916,8 +1916,8 @@ pirate_swampspeeder:
 		Queue: Vehicle
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
-		Prerequisites: ~vehicles.swpirates, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
-		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Prerequisites: ~vehicles.swpirates
+		Description: Some pirate factions use this like a Recon Vehicle
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1949,8 +1949,8 @@ naboo_gianspeeder:
 		Queue: Vehicle
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
-		Prerequisites: ~vehicles.swnaboo, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
-		Description: Fast scout & anti-infantry vehicle.\n  Can detect spies and cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Prerequisites: ~vehicles.swnaboo
+		Description: An scout vehicle used by Royal Naboo Guard
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1981,8 +1981,8 @@ naboo_gianspeeder2:
 		Queue: Vehicle
 		BuildPaletteOrder: 15
 		IconPalette: chrometd
-		Prerequisites: ~vehicles.swnaboo, ~!commander_tree.buggy_pld, ~!commander_tree.buggy_aa
-		Description: Small Armored combat hovercar.\n  uses purpose of the tank.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Prerequisites: ~vehicles.swnaboo
+		Description: An military variant of Royal Naboo Gianspeeder
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -2016,7 +2016,7 @@ naboo_starfighter:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 20
-		Prerequisites: ~hpad.td, ~aircraft.swnaboo
+		Prerequisites: ~aircraft.swnaboo
 		IconPalette: chrometd
 		Description: Standard Fighter Aircraft\nwith multi-purpose lasers.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
 	Aircraft:

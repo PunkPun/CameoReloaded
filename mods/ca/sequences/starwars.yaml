@@ -296,7 +296,7 @@ empire_saber:
 		Scale: 0.8
 	muzzle: gunfire2
 		Length: *
-	icon: jeepicon
+	icon: empire_saber_icon
 empire_mauler:
 	Inherits: ^VehicleOverlays
 	idle: empire_mauler
@@ -309,7 +309,7 @@ empire_mauler:
 		Scale: 0.8
 	muzzle: gunfire2
 		Length: *
-	icon: jeepicon
+	icon: empire_tie_maulericon
 empire_mauler_shield:
 	Inherits: ^VehicleOverlays
 	idle: empire_mauler
@@ -322,7 +322,7 @@ empire_mauler_shield:
 		Scale: 0.8
 	muzzle: gunfire2
 		Length: *
-	icon: jeepicon
+	icon: empire_tie_maulericon
 empire_crawler:
 	Inherits: ^VehicleOverlays
 	idle: empire_crawler
@@ -335,7 +335,7 @@ empire_crawler:
 		Scale: 0.8
 	muzzle: gunfire2
 		Length: *
-	icon: jeepicon
+	icon: empire_tie_crawlericon
 clone_e1:
 	Inherits: ^CommonDeaths
 	Defaults:
@@ -589,7 +589,7 @@ republic_saber:
 		Scale: 0.8
 	muzzle: gunfire2
 		Length: *
-	icon: jeepicon
+	icon: republic_saber_icon
 republic_at_te:
 	Inherits: ^VehicleOverlays
 	Defaults:
@@ -725,7 +725,7 @@ rebel_t2b:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon: rebel_2tnk_icon
 rebel_t2b_shield:
 	Inherits: ^VehicleOverlays
 	idle: rebel_t2b
@@ -739,7 +739,7 @@ rebel_t2b_shield:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon: rebel_2tnk_icon
 
 rebel_t1b:
 	Inherits: ^VehicleOverlays
@@ -782,7 +782,7 @@ rebel_t3b:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon: rebel_3tnk_icon
 
 rebel_t3b_missile_x1:
 	Inherits: ^VehicleOverlays
@@ -798,7 +798,7 @@ rebel_t3b_missile_x1:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon: rebel_3tnk_icon
 
 rebel_t3b_missile_x2:
 	Inherits: ^VehicleOverlays
@@ -814,7 +814,7 @@ rebel_t3b_missile_x2:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon: rebel_3tnk_icon
 
 rebel_t4b:
 	Inherits: ^VehicleOverlays
@@ -829,7 +829,7 @@ rebel_t4b:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: jeepicon
+	icon: rebel_4tnk_icon
 
 rebel_awing:
 	Inherits: ^VehicleOverlays
@@ -1054,7 +1054,7 @@ droid_aat:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_aat_icon
 droid_aat_arty:
 	Inherits: ^VehicleOverlays
 	idle: droid_aat
@@ -1067,7 +1067,7 @@ droid_aat_arty:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_aat_icon
 droid_aat_grenade:
 	Inherits: ^VehicleOverlays
 	idle: droid_aat
@@ -1080,7 +1080,7 @@ droid_aat_grenade:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_aat_icon
 droid_aat_minilaser:
 	Inherits: ^VehicleOverlays
 	idle: droid_aat
@@ -1093,7 +1093,7 @@ droid_aat_minilaser:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_aat_icon
 droid_transport:
 	Inherits: ^VehicleOverlays
 	idle: droid_transport
@@ -1106,7 +1106,7 @@ droid_transport:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_mtt_icon
 droid_transport_e3:
 	Inherits: ^VehicleOverlays
 	idle: droid_transport
@@ -1119,7 +1119,7 @@ droid_transport_e3:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_mtt_icon
 droid_transport_assault:
 	Inherits: ^VehicleOverlays
 	idle: droid_transport
@@ -1132,7 +1132,7 @@ droid_transport_assault:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_mtt_icon
 droid_nrn99:
 	Inherits: ^VehicleOverlays
 	idle: droid_nrn99
@@ -1145,7 +1145,7 @@ droid_nrn99:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_nrn99_icon
 droid_hellfire:
 	Inherits: ^VehicleOverlays
 	idle: droid_hellfire
@@ -1158,7 +1158,7 @@ droid_hellfire:
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 2tnkicon
+	icon: droid_hellfire_icon
 droid_droideka:
 	Inherits: ^CommonDeaths
 	Inherits@2: ^VehicleOverlays

@@ -1,15 +1,17 @@
 Container@PLAYER_WIDGETS:
+	Logic: LoadIngameChatLogic
 	Children:
+		Container@CHAT_ROOT:
+		LogicKeyListener@PLAYER_KEYHANDLER:
+			Logic: RemoveFromControlGroupHotkeyLogic
+				RemoveFromControlGroupKey: RemoveFromControlGroup
+		ControlGroups@CONTROLGROUPS:
+			SelectGroupKeyPrefix: ControlGroupSelect
+			CreateGroupKeyPrefix: ControlGroupCreate
+			AddToGroupKeyPrefix: ControlGroupAddTo
+			CombineWithGroupKeyPrefix: ControlGroupCombineWith
+			JumpToGroupKeyPrefix: ControlGroupJumpTo
 		LogicTicker@SIDEBAR_TICKER:
-		Container@PRODUCTION_BACKGROUND:
-			X: WINDOW_RIGHT - 5 - 18 - 210
-			Y: 0
-			Children:
-				Background@ICON_TEMPLATE:
-					Logic: AddFactionSuffixLogic
-					Width: 0
-					Height: 0
-					Background: sidebar-button
 		Container@SUPPORT_POWERS:
 			Logic: SupportPowerBinLogic
 			X: 10
@@ -34,6 +36,135 @@ Container@PLAYER_WIDGETS:
 							IgnoreMouseOver: true
 							ImageCollection: sidebar
 							ImageName: background-supportoverlay
+		Background@SELECTION_TOOLTIP:
+			Logic: SelectionTooltipLogic
+			Background: dialog4
+			X: WINDOW_RIGHT
+			Y: WINDOW_BOTTOM
+			Width: 200
+			Height: 65
+			Children:
+				Label@NAME:
+					X: 7
+					Y: 3
+					Height: 23
+					Font: Bold
+				Label@DESC:
+					X: 7
+					Y: 27
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@STRENGTHS:
+					X: 7
+					Y: 29
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+					TextColor: 33DD33
+				Label@WEAKNESSES:
+					X: 7
+					Y: 30
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+					TextColor: EE5555
+				Label@ATTRIBUTES:
+					X: 7
+					Y: 31
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+					TextColor: FFFF00
+				Label@VERSUS:
+					X: 7
+					Y: 32
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@VSNONE:
+					X: 7
+					Y: 32
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@EFFECTVSNONE:
+					X: 55
+					Y: 32
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@VSLIGHT:
+					X: 7
+					Y: 33
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@EFFECTVSLIGHT:
+					X: 55
+					Y: 33
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@VSHEAVY:
+					X: 7
+					Y: 34
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@EFFECTVSHEAVY:
+					X: 55
+					Y: 34
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@VSREFLECTOR:
+					X: 7
+					Y: 35
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@EFFECTVSREFLECTOR:
+					X: 55
+					Y: 35
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@VSWOOD:
+					X: 7
+					Y: 36
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@EFFECTVSWOOD:
+					X: 55
+					Y: 36
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@VSCONCRETE:
+					X: 7
+					Y: 37
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Label@EFFECTVSCONCRETE:
+					X: 55
+					Y: 37
+					Height: 2
+					Font: TinyBold
+					VAlign: Top
+				Image@ARMORTYPE_ICON:
+					X: 3
+					Y: 7
+					Width: 16
+					Height: 16
+					ImageCollection: sidebar-bits
+					ImageName: production-tooltip-armor
+				Label@ARMORTYPE:
+					Y: 42
+					Height: 16
+					Font: Bold
 		SupportPowerTimer@SUPPORT_POWER_TIMER:
 			X: 80
 			Y: 10
@@ -54,6 +185,7 @@ Container@PLAYER_WIDGETS:
 			Children:
 				LogicKeyListener@MODIFIER_OVERRIDES:
 				Button@ATTACK_MOVE:
+					Logic: AddFactionSuffixLogic
 					Width: 34
 					Height: 26
 					VisualHeight: 0
@@ -71,6 +203,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: attack-move
 				Button@FORCE_MOVE:
+					Logic: AddFactionSuffixLogic
 					X: 34
 					Width: 34
 					Height: 26
@@ -88,6 +221,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: force-move
 				Button@FORCE_ATTACK:
+					Logic: AddFactionSuffixLogic
 					X: 68
 					Width: 34
 					Height: 26
@@ -105,6 +239,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: force-attack
 				Button@GUARD:
+					Logic: AddFactionSuffixLogic
 					X: 102
 					Width: 34
 					Height: 26
@@ -122,6 +257,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: guard
 				Button@DEPLOY:
+					Logic: AddFactionSuffixLogic
 					X: 136
 					Width: 34
 					Height: 26
@@ -140,6 +276,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: deploy
 				Button@SCATTER:
+					Logic: AddFactionSuffixLogic
 					X: 170
 					Width: 34
 					Height: 26
@@ -158,6 +295,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: scatter
 				Button@STOP:
+					Logic: AddFactionSuffixLogic
 					X: 204
 					Width: 34
 					Height: 26
@@ -176,6 +314,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: command-icons
 							ImageName: stop
 				Button@QUEUE_ORDERS:
+					Logic: AddFactionSuffixLogic
 					X: 238
 					Width: 34
 					Height: 26
@@ -200,6 +339,7 @@ Container@PLAYER_WIDGETS:
 			Height: 26
 			Children:
 				Button@STANCE_ATTACKANYTHING:
+					Logic: AddFactionSuffixLogic
 					Width: 34
 					Height: 26
 					VisualHeight: 0
@@ -217,6 +357,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: stance-icons
 							ImageName: attack-anything
 				Button@STANCE_DEFEND:
+					Logic: AddFactionSuffixLogic
 					X: 34
 					Width: 34
 					Height: 26
@@ -235,6 +376,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: stance-icons
 							ImageName: defend
 				Button@STANCE_RETURNFIRE:
+					Logic: AddFactionSuffixLogic
 					X: 68
 					Width: 34
 					Height: 26
@@ -253,6 +395,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: stance-icons
 							ImageName: return-fire
 				Button@STANCE_HOLDFIRE:
+					Logic: AddFactionSuffixLogic
 					X: 102
 					Width: 34
 					Height: 26
@@ -270,6 +413,26 @@ Container@PLAYER_WIDGETS:
 							Y: 5
 							ImageCollection: stance-icons
 							ImageName: hold-fire
+		Container@MUTE_INDICATOR:
+			Logic: MuteIndicatorLogic
+			X: WINDOW_RIGHT - WIDTH - 260
+			Y: 10
+			Width: 200
+			Height: 25
+			Children:
+				Image@ICON:
+					X: PARENT_RIGHT - WIDTH
+					Y: 1
+					Width: 24
+					Height: 24
+					ImageCollection: sidebar-bits
+					ImageName: indicator-muted
+				Label@LABEL:
+					Width: PARENT_RIGHT - 30
+					Height: 25
+					Align: Right
+					Text: Audio Muted
+					Contrast: true
 		Image@SIDEBAR_BACKGROUND_TOP:
 			Logic: AddFactionSuffixLogic
 			X: WINDOW_RIGHT - 250
@@ -286,7 +449,7 @@ Container@PLAYER_WIDGETS:
 					Y: 7
 					Children:
 						Button@BEACON_BUTTON:
-							Logic: BeaconOrderButtonLogic
+							Logic: BeaconOrderButtonLogic, AddFactionSuffixLogic
 							Width: 28
 							Height: 28
 							Background: sidebar-button
@@ -300,7 +463,7 @@ Container@PLAYER_WIDGETS:
 									Y: 6
 									ImageCollection: order-icons
 						Button@SELL_BUTTON:
-							Logic: SellOrderButtonLogic
+							Logic: SellOrderButtonLogic, AddFactionSuffixLogic
 							X: 32
 							Width: 28
 							Height: 28
@@ -315,7 +478,7 @@ Container@PLAYER_WIDGETS:
 									Y: 6
 									ImageCollection: order-icons
 						Button@POWER_BUTTON:
-							Logic: PowerdownOrderButtonLogic
+							Logic: PowerdownOrderButtonLogic, AddFactionSuffixLogic
 							X: 64
 							Width: 28
 							Height: 28
@@ -330,7 +493,7 @@ Container@PLAYER_WIDGETS:
 									Y: 6
 									ImageCollection: order-icons
 						Button@REPAIR_BUTTON:
-							Logic: RepairOrderButtonLogic
+							Logic: RepairOrderButtonLogic, AddFactionSuffixLogic
 							X: 96
 							Width: 28
 							Height: 28
@@ -345,6 +508,7 @@ Container@PLAYER_WIDGETS:
 									Y: 6
 									ImageCollection: order-icons
 						MenuButton@OPTIONS_BUTTON:
+							Logic: AddFactionSuffixLogic
 							X: 192
 							Width: 28
 							Height: 28
@@ -380,12 +544,18 @@ Container@PLAYER_WIDGETS:
 							SoundUp: RadarUp
 							SoundDown: RadarDown
 							Children:
+						VideoPlayer@PLAYER:
+							X: 1
+							Y: 1
+							Width: 220
+							Height: 220
+							Skippable: false
 		Container@SIDEBAR_PRODUCTION:
 			Logic: ClassicProductionLogic
 			X: WINDOW_RIGHT - 250
-			Y: 320
+			Y: 300
 			Width: 238
-			Height: 273
+			Height: 250
 			Children:
 				Container@PALETTE_BACKGROUND:
 					Children:
@@ -400,7 +570,7 @@ Container@PLAYER_WIDGETS:
 						Image@BOTTOM_CAP:
 							Logic: AddFactionSuffixLogic
 							Width: 238
-							Height: 31
+							Height: 8
 							ClickThrough: false
 							ImageCollection: sidebar
 							ImageName: background-bottom
@@ -573,19 +743,6 @@ Container@PLAYER_WIDGETS:
 									Y: 3
 									ImageCollection: scrollpanel-decorations
 									ImageName: down
-									X: 6
-									Y: 3
-									ImageCollection: scrollbar
-									ImageName: down_arrow
-		Image@SIDEBAR_MONEYBIN_BACK:
-			Logic: AddFactionSuffixLogic
-			X: WINDOW_RIGHT - 250
-			Y: 292
-			Width: 238
-			Height: 27
-			ImageCollection: sidebar
-			ImageName: background-moneybin
-			ClickThrough: false
 		Image@SIDEBAR_MONEYBIN:
 			Logic: AddFactionSuffixLogic
 			X: WINDOW_RIGHT - 250
@@ -637,14 +794,22 @@ Container@PLAYER_WIDGETS:
 							Y: 4
 							ImageCollection: power-icons
 							ImageName: power-normal
-		ProductionTabs@PRODUCTION_TABS:
-			Logic: ProductionTabsLogic
-			PaletteWidget: PRODUCTION_PALETTE
-			TypesContainer: PRODUCTION_TYPES
-			BackgroundContainer: PRODUCTION_BACKGROUND
-			PreviousProductionTabKey: PreviousProductionTab
-			NextProductionTabKey: NextProductionTab
-			X: WINDOW_RIGHT - 210
-			Y: 299
-			Width: 194
-			Height: 20
+		Container@HPF_OVERLAY:
+			Logic: HierarchicalPathFinderOverlayLogic
+			X: WINDOW_RIGHT - WIDTH - 260
+			Y: 40
+			Width: 175
+			Height: 60
+			Children:
+				DropDownButton@HPF_OVERLAY_LOCOMOTOR:
+					Y: PARENT_TOP
+					Width: PARENT_RIGHT
+					Height: 25
+					Text: Select Locomotor
+					Font: Regular
+				DropDownButton@HPF_OVERLAY_CHECK:
+					Y: PARENT_TOP + 35
+					Width: PARENT_RIGHT
+					Height: 25
+					Text: Select BlockedByActor
+					Font: Regular

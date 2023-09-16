@@ -1,0 +1,11 @@
+ZombieVoice:
+	Voices:
+		Select: fiend2
+		Move: fiend1
+		Attack: fiend1
+		Action: fiend1
+		Die: fiend2
+		Burned: fiend1
+		Zapped: fiend1
+		Poisoned: fiend1
+		Build: fiend1

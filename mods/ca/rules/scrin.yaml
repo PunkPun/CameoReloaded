@@ -142,9 +142,9 @@ S2:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	RenderSprites:
-		PlayerPalette: overlayplayertd
+		PlayerPalette: playerra2
 	WithDeathAnimation:
-		DeathSequencePalette: overlayplayertd
+		DeathSequencePalette: playerra2
 
 S3:
 	Inherits@SCRININFANTRY: ^ScrinInfantry
@@ -263,7 +263,10 @@ S6:
 		VoiceSet: AssimilatorVoice
 	Targetable:
 		TargetTypes: Ground, Infantry, Disguise, ChaosImmune
-
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
 FEED:
 	Inherits@SCRININFANTRY: ^ScrinInfantry
 	Inherits: ^PrioEnergyAntiLight
@@ -352,6 +355,10 @@ FEED:
 		Position: BottomLeft
 		RequiresSelection: true
 		PipCount: 7
+	RenderSprites:
+		PlayerPalette: overlayplayertd
+	WithDeathAnimation:
+		DeathSequencePalette: overlayplayertd
 
 SMEDI:
 	Inherits@SCRININFANTRY: ^ScrinInfantry
@@ -951,9 +958,6 @@ INTL:
 		LoadedCondition: cargo
 	Hovers:
 		BobDistance: -25
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
 	Capturable:
 		RequiresCondition: !being-warped && !cargo
 	Capturable@DRIVER_DEAD:
@@ -1144,6 +1148,7 @@ STCR:
 	Inherits: ^HoverVehicle
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiLight
+	Inherits@Lights: ^ScrinLightsMedium
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Valued:
@@ -1179,16 +1184,14 @@ STCR:
 		PauseOnCondition: empdisable || being-warped
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	WithShadow:
-		Offset: 80, 80, 0
-		ZOffset: -81
 	ChangesHealth:
 		PercentageStep: 1
 		Delay: 10
 		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: !empdisable && !being-warped
-
+	RenderSprites:
+		PlayerPalette: playerra2
 STCR.PLD:
 	Inherits: STCR
 	Inherits@PLD: ^PointLaserDefenseSystem
@@ -1306,6 +1309,7 @@ DARK:
 	Inherits: ^HoverVehicle
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioAntiHeavy
+	Inherits@Lights: ^ScrinLightsBig
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Buildable:
@@ -1353,9 +1357,8 @@ DARK:
 		Sequence: idle
 	Hovers:
 		BobDistance: -25
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
+	RenderSprites:
+		PlayerPalette: playerra2
 
 DARK.chain:
 	Inherits: DARK
@@ -1388,6 +1391,7 @@ RUIN:
 	Inherits: ^HoverVehicle
 	Inherits: ^BiologicalDriver
 	Inherits: ^PrioArtillery
+	Inherits@Lights: ^ScrinLightsMedium
 	RenderSprites:
 		PlayerPalette: overlayplayerscrin
 	Valued:
@@ -1435,9 +1439,6 @@ RUIN:
 		Prerequisites: vehicles.upgraded
 	Hovers:
 		BobDistance: -25
-	WithShadow:
-		Offset: 43, 128, 0
-		ZOffset: -129
 	TurretedFloating:
 		TurnSpeed: 64
 		Offset: 0,0,0
@@ -1451,7 +1452,8 @@ RUIN:
 		Sequence: idle
 	WithFacingSpriteBody:
 		Sequence: idle
-
+	RenderSprites:
+		PlayerPalette: playerra2
 RUIN.barrage:
 	Inherits: RUIN
 	Valued:
@@ -3327,7 +3329,6 @@ REAC:
 		HP: 40000
 	RevealsShroud:
 		Range: 4c0
-	WithBuildingBib:
 	Power:
 		Amount: 100
 		RequiresCondition: !disabled && !forceshield && !being-warped
@@ -3339,7 +3340,8 @@ REAC:
 	ProvidesPrerequisite@buildingname:
 	InfiltrateForPowerOutage:
 		Types: SpyInfiltrate, PowerInfiltrate
-
+	RenderSprites:
+		PlayerPalette: playerts
 REA2:
 	Inherits: ^ScrinBuilding
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
@@ -3469,7 +3471,6 @@ PORT:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
-	WithBuildingBib:
 	Exit@1:
 		RequiresCondition: !being-captured
 		SpawnOffset: 0,512,0
@@ -3510,9 +3511,8 @@ PORT:
 	InfiltrateForSupportPower@spy:
 		Proxy: barracks.upgraded
 		Types: SpyInfiltrate
-	WithIdleOverlay:
-		RequiresCondition: !build-incomplete
-
+	RenderSprites:
+		PlayerPalette: playerts
 WSPH:
 	Inherits: ^ScrinBuilding
 	Inherits@PRIMARY: ^PrimaryBuilding
@@ -3688,7 +3688,6 @@ WSPH:
 	ProvidesPrerequisite@tpod:
 		Factions: scrin, traveler, harbinger
 		Prerequisite: vehicles.tpod
-	WithBuildingBib:
 	Exit@1:
 		SpawnOffset: 0,0,0
 		ExitCell: 0,2
@@ -3704,9 +3703,8 @@ WSPH:
 	InfiltrateForSupportPower@veh:
 		Types: SabInfiltrate
 		Proxy: veh.scrin.stolen
-	WithIdleOverlay:
-		RequiresCondition: !build-incomplete
-
+	RenderSprites:
+		PlayerPalette: playerts
 NERV:
 	Inherits: ^ScrinBuilding
 	Inherits: ^TechLevelBuilding

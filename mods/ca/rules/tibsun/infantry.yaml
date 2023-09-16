@@ -473,6 +473,8 @@ tse1.pilot.nod:
 		Cost: 120
 	Tooltip:
 		Name: Vehicle Pilot
+	Mobile:
+		Speed: 60
 tse3:
 	Inherits: ^Soldier
 	Inherits: ^WhiteFlash
@@ -717,9 +719,10 @@ tslasgunner:
 	Health:
 		HP: 30000
 	Mobile:
-		Speed: 71
+		Speed: 60
 	Armament@PRIMARY:
 		Weapon: TSPortableLaserFire
+		LocalOffset: 356,0,967
 	Armament@Garrison:
 		Name: mounted
 		Weapon: TSPortableLaserFire
@@ -754,9 +757,10 @@ tshgunner:
 	Health:
 		HP: 30000
 	Mobile:
-		Speed: 71
+		Speed: 60
 	Armament@PRIMARY:
 		Weapon: TS90mmx
+		LocalOffset: 356,0,700
 	Armament@Garrison:
 		Name: mounted
 		Weapon: TS90mmx

@@ -1,0 +1,79 @@
+^Infantry:
+	SpawnActorOnDeath@ZombieInfect:
+		Actor: modzombie1
+		Probability: 100
+		OwnerType: Killer
+		DeathType: ZombieInfection
+		RequiresLobbyCreeps: false
+
+^Soldier:
+	SpawnActorOnDeath@ZombieInfect:
+		Actor: modzombie1
+		Probability: 100
+		OwnerType: Killer
+		DeathType: ZombieInfection
+		RequiresLobbyCreeps: false
+
+^CommonZombie:
+	Inherits: ^Soldier
+	Selectable:
+		Class: commonzombie
+	Valued:
+		Cost: 50
+	DamagedByTerrain:
+		Damage: -100
+		DamageInterval: 16
+		Terrain: Tiberium, BlueTiberium
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 15000
+	Armament@PRIMARY:
+		Weapon: CommonZombieAttack
+	Armament@Garrison:
+		Name: mounted
+		Weapon: CommonZombieAttack
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 25
+	Voiced:
+		VoiceSet: ZombieVoice
+	-TakeCover:
+	-Captures@DRIVER_KILL:
+	-CaptureManager:
+	RenderSprites:
+		PlayerPalette: playerts
+	WithDeathAnimation:
+		DeathSequencePalette: playerts
+
+modzombie1:
+	Inherits: ^CommonZombie
+	Inherits: ^ScoutEquipment
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.zombie
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: Zombie
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	Armament@PRIMARY:
+		Weapon: CommonZombieAttack
+
+modzombie2:
+	Inherits: ^CommonZombie
+	Inherits: ^ScoutEquipment
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.zombie
+		Description: General-purpose infantry with good scouting abilities.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Tooltip:
+		Name: Zombie
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+	Armament@PRIMARY:
+		Weapon: CommonZombieAttack

@@ -1974,6 +1974,7 @@ gasilo.gdi:
 		-DepthSprite:
 
 tsgtsilo.nod:
+	Inherits: ^StructureOverlays
 	Defaults: tsgtsilo
 		Offset: 0, -24, 24
 	idle: tsgtsilo_a
@@ -2010,6 +2011,7 @@ tsgtsilo.nod:
 		Offset: 0, 0
 		UseTilesetCode: false
 tsgtsilo.gdi:
+	Inherits: ^StructureOverlays
 	Defaults: tsGTSILO2
 		Offset: 0, -24, 24
 	idle: tsGTSILO2_A
@@ -2868,10 +2870,86 @@ tse1.nod2:
 	Defaults: tsnode1_2
 	icon: tse1nicon
 tse1.pilot.nod:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
+	Inherits: ^CommonDeaths
 	Defaults: tsnodpilot
-	icon: tse1nicon
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand: tsnodpilot
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	attack:
+		Start: 164
+		Length: 6
+		Facings: 8
+	prone-attack:
+		Start: 212
+		Length: 6
+		Facings: 8
+	standup:
+		Facings: 8
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+	prone-stand:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	idle1:
+		Start: 56
+		Length: 14
+	idle2:
+		Start: 71
+		Length: 15
+	idle3:
+		Start: 56
+		Length: 14
+	idle4:
+		Start: 71
+		Length: 15
+	die1:
+		Start: 135
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4:
+		Start: 135
+		Length: 14
+	die5:
+		Start: 149
+		Length: 14
+	die3: tss_bang34
+		Length: *
+	die6: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die-crushed: tsnodpilot
+		Start: 135
+		Length: 14
+	die7: tss_bang34
+		Length: *
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tsweaticon
 tse3:
 	Inherits: ^BasicInfantryTibsun
 	Inherits@attack: ^BasicInfantryAttackTibsun
@@ -2896,9 +2974,85 @@ tsengineer.nod2:
 	Defaults: tsnodengineer
 	icon: tsnengnicon
 tshgunner:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
+	Inherits: ^CommonDeaths
 	Defaults: tsnodhgunner
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	attack:
+		Start: 204
+		Length: 6
+		Facings: 8
+	prone-attack:
+		Start: 252
+		Length: 6
+		Facings: 8
+	standup:
+		Facings: 8
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+	prone-stand:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	idle1:
+		Start: 56
+		Length: 14
+	idle2:
+		Start: 71
+		Length: 15
+	idle3:
+		Start: 56
+		Length: 14
+	idle4:
+		Start: 71
+		Length: 15
+	die1:
+		Start: 135
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4:
+		Start: 135
+		Length: 14
+	die5:
+		Start: 149
+		Length: 14
+	die3: tss_bang34
+		Length: *
+	die6: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die-crushed: tshgunner
+		Start: 149
+		Length: 14
+	die7: tss_bang34
+		Length: *
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
 	icon: tshgunnericon
 tsnodflame:
 	Inherits: ^BasicInfantryTibsun
@@ -2915,6 +3069,88 @@ tselitcadre:
 	Inherits@attack: ^BasicInfantryAttackTibsun
 	Defaults: tselitcadre
 	icon: tselitcadrecam
+tslasgunner:
+	Inherits: ^CommonDeaths
+	Defaults: tsnodheavy
+		Offset: 0, 0, 16
+		Scale: 1.3
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	attack:
+		Start: 164
+		Length: 6
+		Facings: 8
+	prone-attack:
+		Start: 212
+		Length: 6
+		Facings: 8
+	standup:
+		Facings: 8
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+	prone-stand:
+		Start: 86
+		Stride: 6
+		Facings: 8
+	idle1:
+		Start: 56
+		Length: 14
+	idle2:
+		Start: 71
+		Length: 15
+	idle3:
+		Start: 56
+		Length: 14
+	idle4:
+		Start: 71
+		Length: 15
+	die1:
+		Start: 135
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die4:
+		Start: 135
+		Length: 14
+	die5:
+		Start: 149
+		Length: 14
+	die3: tss_bang34
+		Length: *
+	die6: electro
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die-crushed: tshgunner
+		Start: 149
+		Length: 14
+	die7: tss_bang34
+		Length: *
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+	icon: tslasgunnericon
+
 #               Infantry Forgotten
 tsmhijack:
 	Inherits: ^BasicInfantryTibsun
@@ -4190,11 +4426,6 @@ tssplntcl1:
 	Defaults: tssplntcl1
 	icon: tsmassicon
 
-tslasgunner:
-	Inherits: ^BasicInfantryTibsun
-	Inherits@attack: ^BasicInfantryAttackTibsun
-	Defaults: tsnodheavy
-	icon: tslasgunnericon
 
 tsmedic.nod:
 	Inherits: tsmedic
@@ -4295,6 +4526,12 @@ tscygrl:
 		BlendMode: Alpha
 		Offset: 0, 0
 	icon: tscygrlicon
+	die-crushed: tse1
+		Start: 159
+		Length: 5
+		ShadowStart: 451
+		Tick: 800
+		ZOffset: -511
 	die1:
 		Start: 280
 		Length: 13

@@ -1,0 +1,9 @@
+CommonZombieAttack:
+	Inherits: ^LightMG
+	ReloadDelay: 8
+	Report: fiend2.aud
+	Range: 2c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 4500
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath, ZombieInfection

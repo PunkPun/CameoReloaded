@@ -1215,7 +1215,7 @@ tsnthpad:
 	Buildable:
 		BuildPaletteOrder: 80
 		Queue: Building
-		Prerequisites: garadr, ~structures.sharedcabal
+		Prerequisites: anyhq, ~structures.sharedcabal
 		Description: Produces, rearms and\nrepairs helicopters.
 		IconPalette: chromets
 	Building:

@@ -139,6 +139,7 @@ Rules:
 	ca|rules/starcraft/units.yaml
 	ca|rules/kknd/palettes.yaml
 	ca|rules/kknd/units.yaml
+	ca|rules/zombies/rules.yaml
 
 Sequences:
 	ca|sequences/defaults.yaml
@@ -159,6 +160,7 @@ Sequences:
 	ca|sequences/tibsun.yaml
 	ca|sequences/starcraft.yaml
 	ca|sequences/kknd.yaml
+	ca|rules/zombies/sequences.yaml
 
 ModelSequences:
 	ca|sequences/voxels.yaml
@@ -256,12 +258,14 @@ Weapons:
 	ca|rules/camea/weapons.yaml
 	ca|rules/tibsun/weapons.yaml
 	ca|rules/kknd/weapons.yaml
+	ca|rules/zombies/weapons.yaml
 
 Voices:
 	ca|audio/voices.yaml
 	ca|audio/generals.yaml
 	ca|rules/starwars/voices.yaml
 	ca|rules/tibsun/voices.yaml
+	ca|rules/zombies/voices.yaml
 
 Notifications:
 	ca|audio/notifications.yaml

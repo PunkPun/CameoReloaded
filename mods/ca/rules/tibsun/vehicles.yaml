@@ -1307,7 +1307,7 @@ tsmcv.nod:
 	Buildable:
 		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 300
-		Prerequisites: anyhq, ~vehicles.tsnod
+		Prerequisites: anyhq, ~vehicles.sharedcabal
 		Description: Deploys into another Construction Yard.\n  Unarmed
 	Transforms:
 		IntoActor: tsgtcnst.nod

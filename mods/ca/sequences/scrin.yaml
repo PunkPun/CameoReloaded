@@ -134,63 +134,64 @@ s2:
 	Inherits: ^ScrinCommonDeaths
 	Defaults:
 		Scale: 0.6
-	stand: modscrin_ravager
-		Length: 13
+	stand: modscrin_ravager2
+		Length: 10
 		Facings: 8
 		Tick: 9999
-	stand2: modscrin_ravager
-		Length: 13
+	stand2: modscrin_ravager2
+		Length: 10
 		Facings: 8
 		Tick: 9999
-	run: modscrin_ravager
-		Length: 13
+	run: modscrin_ravager2
+		Length: 10
 		Facings: 8
 		Tick: 35
-	shoot: modscrin_ravager
-		Start: 104
-		Length: 6
+	shoot: modscrin_ravager2
+		Start: 80
+		Length: 9
 		Facings: 8
 		Tick: 80
-	idle1: modscrin_ravager
-		Start: 104
-		Length: 6
-		Facings: 8
-		Tick: 120
-	idle2: modscrin_ravager
-		Start: 104
-		Length: 6
+	idle1: modscrin_ravager2
+		Length: 10
 		Facings: 8
 		Tick: 120
-	idle3: modscrin_ravager
-		Length: 13
+	idle2: modscrin_ravager2
+		Length: 10
 		Facings: 8
 		Tick: 120
-	idle4: modscrin_ravager
-		Length: 13
+	idle3: modscrin_ravager2
+		Start: 80
+		Length: 9
 		Facings: 8
 		Tick: 120
-	die1: modscrin_ravager
+	idle4: modscrin_ravager2
+		Start: 80
+		Length: 9
+		Facings: 8
+		Tick: 120
+	die1: modscrin_ravager2
 		Start: 152
-		Length: 15
+		Length: 18
 		Tick: 80
-	die2: modscrin_ravager
+	die2: modscrin_ravager2
 		Start: 152
-		Length: 15
+		Length: 18
 		Tick: 80
-	die3: modscrin_ravager
+	die3: modscrin_ravager2
 		Start: 152
-		Length: 15
+		Length: 18
 		Tick: 80
-	die4: modscrin_ravager
-		Start: 152
-		Length: 15
+	die4: modscrin_ravager2
+		Start: 177
+		Length: 18
 		Tick: 80
-	die7: modscrin_ravager
-		Start: 152
-		Length: 15
+	die7: modscrin_ravager2
+		Start: 177
+		Length: 18
 		Tick: 80
-	muzzle: scrinmuzz3
-		Length: 2
+	muzzle: scrinmuzz1
+		Length: 4
+		Facings: 8
 		Tick: 80
 	garrison-muzzle: scrinmuzz1
 		Length: 4
@@ -354,33 +355,39 @@ s4:
 
 s6:
 	Inherits: ^ScrinCommonDeaths
-	stand: s6
+	Defaults:
+		Scale: 0.6
+	stand: modscrin_assimilator
+		Length: 9
 		Facings: 8
-	stand2: s6
+		Tick: 9999
+	stand2: modscrin_assimilator
+		Length: 9
 		Facings: 8
-	run: s6
-		Start: 8
-		Length: 4
+		Tick: 9999
+	run: modscrin_assimilator
+		Length: 9
 		Facings: 8
-		Tick: 120
-	idle1: s6
-		Length: 1
-		Tick: 120
-	idle2: s6
-		Start: 2
-		Length: 1
-		Tick: 120
-	idle3: s6
-		Start: 3
-		Length: 1
-		Tick: 120
-	idle4: s6
-		Start: 4
-		Length: 1
-		Tick: 120
-	die1: s6
+		Tick: 75
+	idle1: modscrin_assimilator
+		Length: 9
+		Facings: 8
+		Tick: 111
+	idle2: modscrin_assimilator
+		Length: 9
+		Facings: 8
+		Tick: 111
+	idle3: modscrin_assimilator
+		Length: 9
+		Facings: 8
+		Tick: 111
+	idle4: modscrin_assimilator
+		Length: 9
+		Facings: 8
+		Tick: 111
+	die1: modscrin_assimilator
 		Start: 72
-		Length: 8
+		Length: 20
 		Tick: 80
 	die2: s6
 		Start: 80
@@ -563,53 +570,57 @@ s8:
 
 feed:
 	Inherits: ^ScrinCommonDeaths
-	idle: feed
+	Defaults:
+		Scale: 0.6
+	idle: modscrin_tnt
+		Length: 13
 		Facings: 8
-	move: feed
-		Start: 8
-		Length: 4
+		Tick: 9999
+	move: modscrin_tnt
+		Length: 13
 		Facings: 8
-		Tick: 120
-	harvest: feed
-		Start: 40
-		Length: 4
+		Tick: 35
+	harvest: modscrin_tnt
+		Length: 13
 		Facings: 8
-		Tick: 120
-	idle1: feed
-		Start: 1
-		Length: 1
-		Tick: 120
-	idle2: feed
-		Start: 3
-		Length: 1
-		Tick: 120
-	idle3: feed
-		Start: 5
-		Length: 1
-		Tick: 120
-	idle4: feed
-		Start: 7
-		Length: 1
-		Tick: 120
-	die1: feed
-		Start: 72
-		Length: 8
+		Tick: 35
+	idle1: modscrin_tnt
+		Length: 13
+		Facings: 8
+		Tick: 35
+	idle2: modscrin_tnt
+		Length: 13
+		Facings: 8
+		Tick: 35
+	idle3: modscrin_tnt
+		Start: 104
+		Length: 6
+		Facings: 8
 		Tick: 80
-	die2: feed
-		Start: 80
-		Length: 8
+	idle4: modscrin_tnt
+		Start: 104
+		Length: 6
+		Facings: 8
 		Tick: 80
-	die3: feed
-		Start: 88
-		Length: 8
+	die1: modscrin_tnt
+		Start: 152
+		Length: 15
 		Tick: 80
-	die4: feed
-		Start: 88
-		Length: 8
+	die2: modscrin_tnt
+		Start: 152
+		Length: 15
 		Tick: 80
-	die7: feed
-		Start: 72
-		Length: 8
+	die3: modscrin_tnt
+		Start: 152
+		Length: 15
+		Tick: 80
+	die4: modscrin_tnt
+		Start: 152
+		Length: 15
+		Tick: 80
+	die7: modscrin_tnt
+		Start: 152
+		Length: 15
 		Tick: 80
 	chrono-overlay: chronofade_small
 		Length: *
@@ -1011,7 +1022,9 @@ lchr.destroyed:
 
 stcr:
 	Inherits: ^VehicleOverlays
-	idle: stcr
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_worm
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: scrinmuzz2
@@ -1058,10 +1071,12 @@ devo.destroyed:
 
 dark:
 	Inherits: ^VehicleOverlays
-	idle: dark
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_dark
 		Facings: 32
 		UseClassicFacings: True
-	turret: dark
+	turret: modscrin_dark
 		Facings: 32
 		Start: 32
 		UseClassicFacings: True
@@ -1080,10 +1095,13 @@ dark.disc:
 
 ruin:
 	Inherits: ^VehicleOverlays
-	idle: ruin
-		Facings: 1
-		Start: 32
-	turret: ruin
+	Defaults:
+		Scale: 0.5
+	idle: modscrin_arty
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.001
+	turret: modscrin_arty
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: scrinmuzz3
@@ -1472,17 +1490,19 @@ sfac:
 
 reac:
 	Inherits: ^StructureOverlays
-	idle: reac
-	damaged-idle: reac
-		Start: 1
-	make: reacmake
-		Length: *
-		Tick: 80
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	idle: modscrin_power
+		Start: 12
+		Length: 10
+		Tick: 160
+		Scale: 1.2
+	damaged-idle: modscrin_power
+		Start: 12
+		Length: 10
+		Tick: 90
+		Scale: 1.2
+	make: modscrin_power
+		Length: 10
+		Scale: 1.2
 	icon: reacicon
 
 proc.scrin:
@@ -1505,46 +1525,36 @@ proc.scrin:
 
 port:
 	Inherits: ^StructureOverlays
-	idle: port
-		Length: 1
-	idle-overlay: port
-		Start: 2
-		Length: 13
-		BlendMode: Additive
-		ZOffset: -512
-	damaged-idle: port
-		Start: 1
-		Length: 1
-	make: portmake
-		Length: *
-		Tick: 80
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	idle: modscrin_portal
+		Start: 12
+		Length: 10
+		Tick: 160
+		Scale: 1.0
+	damaged-idle: modscrin_portal
+		Start: 12
+		Length: 10
+		Tick: 90
+		Scale: 1.0
+	make: modscrin_portal
+		Length: 10
+		Scale: 1.0
 	icon: porticon
 
 wsph:
 	Inherits: ^StructureOverlays
-	idle: wsph
-		ZOffset: -512
-	idle-overlay: wsph
-		Start: 2
-		Length: 13
-		BlendMode: Additive
-		ZOffset: -256
-	damaged-idle: wsph
-		Start: 1
-		ZOffset: -512
-	make: wsphmake
-		Length: *
-		Tick: 80
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	idle: modscrin_gate
+		Start: 12
+		Length: 10
+		Tick: 160
+		Scale: 0.85
+	damaged-idle: modscrin_gate
+		Start: 12
+		Length: 10
+		Tick: 90
+		Scale: 0.85
+	make: modscrin_gate
+		Length: 10
+		Scale: 0.85
 	emp-overlay: emp_fx01
 		ZOffset: 2048
 	chrono-overlay: chronofade

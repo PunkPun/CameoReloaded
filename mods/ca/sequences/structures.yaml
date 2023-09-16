@@ -756,6 +756,30 @@ hbox:
 		UseTilesetExtension: false
 	icon: hboxicon
 		UseTilesetExtension: false
+hvbox:
+	Inherits: ^StructureOverlays
+	Defaults: modhvbox
+	idle:
+	damaged-idle:
+		Start: 2
+	make: modhvboxmake
+		Length: *
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+		UseTilesetExtension: false
+	emp-overlay: emp_fx01
+		UseTilesetExtension: false
+	chrono-overlay: chronofade
+		UseTilesetExtension: false
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+		UseTilesetExtension: false
+	icon: modhvboxicon
+		UseTilesetExtension: false
 
 gap:
 	Inherits: ^StructureOverlays
@@ -1900,19 +1924,18 @@ spennod:
 
 htur:
 	Inherits: ^StructureOverlays
-	idle: htur
+	idle: modcannon
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,0
-	damaged-idle: htur
-		Start: 32
+	damaged-idle: modcannon
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,0
-	make: hturmake
+	make: modcannonmake
 		Length: *
 		Offset: 0,0
-		Tick: 75
+		Tick: 25
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30

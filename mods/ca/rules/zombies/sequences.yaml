@@ -1,0 +1,106 @@
+^ZombieDeaths:
+	Defaults:
+		Scale: 2.0
+	die6: electroTD
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			SNOW: TEMPERAT
+			JUNGLE: TEMPERAT
+			WINTER: TEMPERAT
+			DUNE: TEMPERAT
+	die8: chronozapTD
+		Length: *
+		BlendMode: Alpha
+	die9: poisonTD
+		Length: *
+	die10: poisonTD
+		Length: *
+	die11: frozen
+		Length: *
+		Tick: 80
+	mind-overlay: mindanim
+		Length: *
+		Tick: 200
+		BlendMode: Alpha
+		Offset: 0, 0
+
+modzombie1:
+	Inherits: ^ZombieDeaths
+	Defaults: modzombie1
+		Scale: 0.65
+	stand:
+		Length: 10
+		Facings: 8
+		Tick: 9999
+	stand2:
+		Length: 10
+		Facings: 8
+		Tick: 9999
+	run:
+		Length: 10
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 80
+		Length: 10
+		Facings: 8
+	idle1:
+		Length: 10
+		Facings: 8
+		Tick: 200
+	idle2:
+		Start: 80
+		Length: 10
+		Facings: 8
+		Tick: 200
+	cheer:
+		Length: 10
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 160
+		Length: 25
+		Tick: 80
+	die2:
+		Start: 190
+		Length: 25
+		Tick: 80
+	die3:
+		Start: 160
+		Length: 25
+		Tick: 80
+	die4:
+		Start: 190
+		Length: 25
+		Tick: 80
+	die5:
+		Start: 160
+		Length: 25
+		Tick: 80
+	die7:
+		Start: 190
+		Length: 25
+		Tick: 80
+	die-crushed:
+		Start: 210
+		Length: 8
+		Tick: 200
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	chrono-overlay: chronofade_small
+		Length: *
+		BlendMode: Additive
+		Offset: 0, 0
+		UseTilesetCode: false
+		ZOffset: 512
+		Tick: 80
+	icon: e1icon
+
+modzombie2:
+	Inherits: modzombie1
+	Defaults: modzombie2
+		Scale: 0.65

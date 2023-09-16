@@ -201,13 +201,6 @@ Player:
 		Enabled: True
 		DisplayOrder: 16
 		Prerequisites: global.balancedharvesting
-	LobbyPrerequisiteCheckbox@CLASSICPRODUCTIONQUEUES:
-		ID: classicproductionqueues
-		Label: Classic Queues
-		Description: Build units and buildings of the same category in one queue.
-		DisplayOrder: 12
-		Prerequisites: classicproductionqueues
-		Enabled: True
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:

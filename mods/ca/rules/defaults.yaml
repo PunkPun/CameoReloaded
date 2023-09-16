@@ -4533,22 +4533,7 @@
 	Production:
 		Produces: Infantry, Soldier
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !infdisabled && classicproductionqueues
-	Production@Multi:
-		Produces: Infantry.Multi, Soldier
-		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !infdisabled && !classicproductionqueues
-	ProductionQueue@Multi:
-		Type: Infantry.Multi
-		DisplayOrder: 2
-		Group: Infantry
-		LowPowerModifier: 300
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		RequiresCondition: !infdisabled
 	GrantConditionOnPrerequisite@vehiclesonly:
 		Condition: infdisabled
 		Prerequisites: techlevel.vehiclesonly
@@ -4559,19 +4544,12 @@
 		Condition: produced
 	ProductionBar:
 		ProductionType: Infantry
-		RequiresCondition: classicproductionqueues
-	ProductionBar@Multi:
-		ProductionType: Infantry.Multi
-		RequiresCondition: !classicproductionqueues
 	ProvidesPrerequisite@infantryany:
 		Prerequisite: infantry.any
 	ProximityExternalCondition@close:
 		Range: 7c0
 		ValidRelationships: Ally
 		Condition: closeToBarracks
-	GrantConditionOnPrerequisite@classicproductionqueues:
-		Prerequisites: classicproductionqueues
-		Condition: classicproductionqueues
 ^VehicleProduction:
 	RallyPoint:
 	Exit@1:
@@ -4581,22 +4559,11 @@
 	Production:
 		Produces: Vehicle, Paradrop
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !vehiclesdisabled && classicproductionqueues
+		RequiresCondition: !vehiclesdisabled
 	Production@Multi:
 		Produces: Vehicle.Multi, Paradrop
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !vehiclesdisabled && !classicproductionqueues
-	ProductionQueue@Multi:
-		Type: Vehicle.Multi
-		DisplayOrder: 3
-		Group: Vehicle
-		LowPowerModifier: 300
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		RequiresCondition: !vehiclesdisabled
 	GrantConditionOnPrerequisite@infonly:
 		Condition: vehiclesdisabled
 		Prerequisites: techlevel.infonly
@@ -4607,19 +4574,12 @@
 		Condition: produced
 	ProductionBar:
 		ProductionType: Vehicle
-		RequiresCondition: classicproductionqueues
-	ProductionBar@Multi:
-		ProductionType: Vehicle.Multi
-		RequiresCondition: !classicproductionqueues
 	ProvidesPrerequisite@any:
 		Prerequisite: vehicles.any
 	ProximityExternalCondition@close:
 		Range: 7c0
 		ValidRelationships: Ally
 		Condition: closeToFactory
-	GrantConditionOnPrerequisite@classicproductionqueues:
-		Prerequisites: classicproductionqueues
-		Condition: classicproductionqueues
 
 ^AircraftProduction:
 	Exit@1:
@@ -4628,29 +4588,10 @@
 	RallyPoint:
 	ProductionBar:
 		ProductionType: Aircraft
-		RequiresCondition: classicproductionqueues
-	ProductionBar@Multi:
-		ProductionType: Aircraft.Multi
-		RequiresCondition: !classicproductionqueues
 	Production:
 		Produces: Aircraft, Helicopter, Plane
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !aircraftdisabled && classicproductionqueues
-	Production@Multi:
-		Produces: Aircraft.Multi, Helicopter, Plane
-		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !aircraftdisabled && !classicproductionqueues
-	ProductionQueue@Multi:
-		Type: Aircraft.Multi
-		DisplayOrder: 4
-		Group: Aircraft
-		LowPowerModifier: 300
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		RequiresCondition: !aircraftdisabled
 	GrantConditionOnPrerequisite@infonly:
 		Condition: aircraftdisabled
 		Prerequisites: techlevel.infonly
@@ -4659,56 +4600,15 @@
 		Prerequisites: techlevel.vehiclesonly
 	GrantExternalConditionToProduced:
 		Condition: produced
-	GrantConditionOnPrerequisite@classicproductionqueues:
-		Prerequisites: classicproductionqueues
-		Condition: classicproductionqueues
 ^StructureProduction:
 	ProductionBar@Building:
 		ProductionType: Building
-		RequiresCondition: classicproductionqueues
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
-		RequiresCondition: classicproductionqueues
-	ProductionBar@MultiB:
-		ProductionType: Building.Multi
-		RequiresCondition: !classicproductionqueues
-	ProductionBar@Multid:
-		ProductionType: Defense.Multi
-		Color: 8A8A8A
-		RequiresCondition: !classicproductionqueues
 	Production:
 		Produces: Building, Defense
 		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: classicproductionqueues
-	Production@Multi:
-		Produces: Building.Multi, Defense.Multi
-		PauseOnCondition: forceshield || invulnerability || being-warped
-		RequiresCondition: !classicproductionqueues
-	ProductionQueue@BMulti:
-		Type: Building.Multi
-		Group: Building
-		DisplayOrder: 0
-		ProductionGroup: Building
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@DMulti:
-		Type: Defense.Multi
-		Group: Defense
-		DisplayOrder: 1
-		ProductionGroup: Defense
-		LowPowerModifier: 300
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProvidesPrerequisite@conyardbuildable:
 		Prerequisite: conyardbuildable
 		RequiresPrerequisites: techlevel.aircraftonly
@@ -4719,9 +4619,7 @@
 	BaseProvider:
 		PauseOnCondition: being-captured
 		Range: 16c0
-	GrantConditionOnPrerequisite@classicproductionqueues:
-		Prerequisites: classicproductionqueues
-		Condition: classicproductionqueues
+
 ^ShipProduction:
 	Exit@1:
 		ExitCell: 1,1
@@ -4764,9 +4662,7 @@
 		Facing: 32
 		ExitCell: 2,0
 		ProductionTypes: Submarine, Ship, Boat
-	GrantConditionOnPrerequisite@classicproductionqueues:
-		Prerequisites: classicproductionqueues
-		Condition: classicproductionqueues
+
 ^ShipPrerequisites:
 	ProvidesPrerequisite@naval:
 		Prerequisite: ships.any

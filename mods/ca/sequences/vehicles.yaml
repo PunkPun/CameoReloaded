@@ -116,6 +116,21 @@ charv.destroyed:
 		UseClassicFacings: True
 		ZOffset: -512
 
+modft:
+	Inherits: ^VehicleOverlays
+	idle: modft
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.8
+	turret: modft
+		Start: 32
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.8
+	muzzle: gunfire2
+		Length: 2
+	icon: modfticon
+
 2tnk:
 	Inherits: ^VehicleOverlays
 	idle: 2tnk
@@ -379,6 +394,20 @@ arty:
 		Length: 12
 		Tick: 30
 	icon: artyicon
+
+modbigflak:
+	Inherits: ^VehicleOverlays
+	idle: modbigflak
+		Facings: 32
+		UseClassicFacings: True
+	turret: modbigflak
+		Facings: 32
+		Start: 32
+		UseClassicFacings: True
+	muzzle: smokeygun
+		Length: 12
+		Tick: 30
+	icon: modbigflakicon
 
 artynod:
 	Inherits: ^VehicleOverlays
@@ -1825,24 +1854,24 @@ v3rl:
 
 rtnk:
 	Inherits: ^VehicleOverlays
-	idle: rtnk
+	idle: bushtank
 		Facings: 32
 		UseClassicFacings: True
-	turret: rtnk
+	turret: bushtank
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
-	icon: rtnkicon
+	icon: bushtankicon
 
 rtnk.destroyed:
 	Inherits: ^VehicleOverlays
-	idle: rtnk
+	idle: bushtank
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: rtnk
+	turret: bushtank
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -1850,15 +1879,15 @@ rtnk.destroyed:
 
 rtnk.pld:
 	Inherits: rtnk
-	icon: miragepldicon
+	icon: bushtankicon
 
 rtnk.firerate:
 	Inherits: rtnk
-	icon: miragefirerateicon
+	icon: bushtankicon
 
 rtnk.reflector:
 	Inherits: rtnk
-	icon: miragereflectoricon
+	icon: bushtankicon
 
 msar:
 	Inherits: ^VehicleOverlays
@@ -1956,13 +1985,14 @@ mwtnk.destroyed:
 
 batf:
 	Inherits: ^VehicleOverlays
-	idle: batf
+	idle: modfortress
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.6
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30
-	turret: batf
+	turret: 1tnk
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -1980,9 +2010,10 @@ batf.reflector:
 
 batf.prism:
 	Inherits: ^VehicleOverlays
-	idle: batf
+	idle: modfortress
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.6
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30
@@ -2003,13 +2034,14 @@ batf.prism.reflector:
 
 batf.artillery:
 	Inherits: ^VehicleOverlays
-	idle: batf
+	idle: modfortress
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.6
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30
-	turret: batf
+	turret: 1tnk
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -2027,13 +2059,14 @@ batf.artillery.reflector:
 
 batf.destroyed:
 	Inherits: ^VehicleOverlays
-	idle: batf
+	idle: modfortress
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.6
 	muzzle: smokeygun
 		Length: 12
 		Tick: 30
-	turret: batf
+	turret: 1tnk
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -2044,9 +2077,10 @@ batf.destroyed:
 
 batf.arty:
 	Inherits: ^VehicleOverlays
-	idle: batfold
+	idle: modfortress
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.6
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -2054,9 +2088,10 @@ batf.arty:
 
 batf.bunker:
 	Inherits: ^VehicleOverlays
-	idle: batfold
+	idle: modfortress
 		Facings: 32
 		UseClassicFacings: True
+		Scale: 1.6
 	muzzle: minigun
 		Length: 6
 		Facings: 8

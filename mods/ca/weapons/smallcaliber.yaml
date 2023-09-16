@@ -95,6 +95,14 @@ FLAK-23-AG.Barrage:
 	Projectile: BulletCA
 		Inaccuracy: 1c512
 
+FLAK-88-AA:
+	Inherits: ^AACannon
+	ReloadDelay: 120
+	Range: 10c512
+	Report: flak1.aud, flak2.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 14000
+
 DrozdChaff:
 	Inherits: FLAK-23-AG
 	ReloadDelay: 60
