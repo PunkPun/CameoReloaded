@@ -13,22 +13,237 @@ commander_tree.tsgdi.keeper:
 		Image: tskeeper
 	ProvidesPrerequisite@1:
 		Prerequisite: vehicle.tskeeper
-commander_tree.tsgdi.tsgdie3:
+
+commander_tree.tsgdi.tsionh:
 	Inherits: ^default.commander_tree_item
 	Tooltip:
-		Name: Vehicle: Missile Soldier
+		Name: Vehicle: Ion Hotwizer
 	Buildable:
 		Queue: Commander_Tree
 		IconPalette: chromets
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 10
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, ~structures.tsgdi
-		Description: reserve vehicles that appear when your base is attacked, are used for defense and as a countermeasure in case of emergency they are equivalent to a light tank, without much more purpose
+		Description: powerful devastating artillery, effective against everything
 	RenderSprites:
-		Image: tsgdie3
+		Image: tsionh
 	ProvidesPrerequisite@1:
-		Prerequisite: infantry.tsgdie3
+		Prerequisite: vehicle.tsionh
+commander_tree.tsgdi.tstriton:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Triton
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: powerful devastating artillery, effective against everything
+	RenderSprites:
+		Image: tstriton
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tstriton
+commander_tree.tsgdi.tsbehemoth:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Behemoth
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: powerful devastating artillery, effective against everything
+	RenderSprites:
+		Image: tsbehemoth
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tsbehemoth
+commander_tree.tsgdi.tsmmch2:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Railgun Titan
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi, ~!vehicle.tstitanne2
+		Description: adds an Railgun cannon to Titans
+	RenderSprites:
+		Image: tsmmch2
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tsmmch2
 
+commander_tree.tsgdi.tstitanne2:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Armored Titan
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi, ~!vehicle.tsmmch2
+		Description: improve armor  of the Titan
+	RenderSprites:
+		Image: tstitanne2
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tstitanne2
+
+commander_tree.tsgdi.tsprowler:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Prowler
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: improve armor  of the Titan
+	RenderSprites:
+		Image: tsprowler
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tsprowler
+
+commander_tree.tsgdi.tsprowler_twin:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Prowler
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi, vehicle.tsprowler
+		Description: improve armor  of the Titan
+	RenderSprites:
+		Image: tsprowler_twin
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tsprowler_twin
+
+commander_tree.tsgdi.tshvr.emp:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Hover MLRS (EMP Missiles)
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi, ~!vehicle.tsmmch2
+		Description: improve armor  of the Titan
+	RenderSprites:
+		Image: tshvr.emp
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tshvr.emp
+
+commander_tree.tsgdi.tszonetroop:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Zone Trooper
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsgdi
+		Description: powerful devastating artillery, effective against everything
+	RenderSprites:
+		Image: tszonetroop
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tszonetroop
+commander_tree.tsnod.tse1.pilot.nod:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Vehicle Pilot
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsnod
+		Description: some survivors can spawn from vehicles
+	RenderSprites:
+		Image: tse1.pilot.nod
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tse1.pilot.nod
+commander_tree.tsnod.tsbhand:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Black Hand
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsnod
+		Description: upgrades the flame trooper to elite black hand troop
+	RenderSprites:
+		Image: tsbhand
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tsbhand
+commander_tree.tsnod.tslasgunner:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Laser Trooper
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsnod
+		Description: upgrades the flame trooper to elite black hand troop
+	RenderSprites:
+		Image: tslasgunner
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tslasgunner
+commander_tree.tsnod.tshgunner:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Infantry: Heavy Gunner
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsnod
+		Description: upgrades the flame trooper to elite black hand troop
+	RenderSprites:
+		Image: tshgunner
+	ProvidesPrerequisite@1:
+		Prerequisite: infantry.tshgunner
+commander_tree.tsnod.tskesselbrutn:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Cauldron Born
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsnod
+		Description: powerful devastating artillery, effective against everything
+	RenderSprites:
+		Image: tskesselbrutn
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tskesselbrutn
+commander_tree.tsnod.tsfusion:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Vehicle: Fusion Tank
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 20
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.tsnod
+		Description: powerful devastating artillery, effective against everything
+	RenderSprites:
+		Image: tsfusion
+	ProvidesPrerequisite@1:
+		Prerequisite: vehicle.tsfusion
 commander_tree.forgotten.doctrine.gdi:
 	Inherits: ^default.commander_tree_item
 	Tooltip:
@@ -310,3 +525,18 @@ commander_tree.cabal.tscrys.laser:
 		Image: tscrys.laser
 	ProvidesPrerequisite@1:
 		Prerequisite: structure.tscrys.laser
+commander_tree.cabal.tsdefender:
+	Inherits: ^default.commander_tree_item
+	Tooltip:
+		Name: Titan: Core Defender
+	Buildable:
+		Queue: Commander_Tree
+		IconPalette: chromets
+		BuildPaletteOrder: 50
+		ForceIconLocation: true
+		Prerequisites: prerequisite.has_points, ~structures.cabal
+		Description: Epic Unit.
+	RenderSprites:
+		Image: tsdefender
+	ProvidesPrerequisite@1:
+		Prerequisite: structure.tsdefender

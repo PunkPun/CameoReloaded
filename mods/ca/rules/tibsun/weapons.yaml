@@ -251,6 +251,20 @@ TSCommandoGun:
 		Damage: 5500
 		Versus:
 			Wood: 50
+TSZoneShot:
+	Inherits: ^TSMG
+	Burst: 5
+	BurstDelays: 0
+	Range: 5c0
+	Report: scoutpistol.aud, bigggun1.aud
+	Projectile: InstantHit
+		Inaccuracy: 1c138
+	Warhead@1Dam: SpreadDamage
+		Damage: 3200
+	Warhead@2Eff: CreateEffect
+		Explosions: tsionringgun
+		ValidTargets: Ground, Air
+		ExplosionPalette: tseffect
 ###################################################
 #               Ballistic
 ###################################################
@@ -622,6 +636,18 @@ TSHoverMissile:
 	Report: hovrmis1.aud
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
+
+TSHoverMissileEMP:
+	Inherits: TSHoverMissile
+	Warhead@3Eff: CreateEffect
+		Explosions: pulse_explosion_small
+		ExplosionPalette: tseffect-ignore-lighting-alpha75
+		ImpactSounds: expnew16.aud
+	Warhead@emp: GrantExternalCondition
+		Range: 3c0
+		Duration: 200
+		Condition: empdisable
+		ValidTargets: Ground, Structure, Vehicle
 
 TSMammothTusk:
 	Inherits: ^TSDefaultMissile
@@ -1370,6 +1396,40 @@ TSCoreLaser:
 		Dimensions: 5,5
 		Delay: 15
 		Footprint: _xxx_ xxxxx xxxxx xxxxx _xxx_
+TSVenenoLaser:
+	Inherits: TSTurretLaserFire
+	Range: 7c0
+	ReloadDelay: 10
+	Report: corefir1.aud
+	Projectile: LaserZap
+		Width: 80
+		Duration: 8
+		ZOffset: 2047
+		Color: 3377FF
+		SecondaryBeam: true
+		SecondaryBeamWidth: 50
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF
+	Warhead@1Dam: SpreadDamage
+		Spread: 750
+		Damage: 2000
+	Warhead@2Dam: HealthPercentageDamage
+		Damage: 15
+		Spread: 1c512
+		Delay: 5
+		DamageTypes: Prone100Percent, TriggerProne, FireDeath, Incendiary
+		Versus:
+			None: 70
+			Wood: 60
+			Light: 80
+			Medium: 90
+			Heavy: 100
+			Concrete: 50
+	Warhead@3Clust: FireCluster
+		Weapon: TS120mm
+		Dimensions: 3,3
+		Delay: 15
+		Footprint: _x_ xxx _x_
 
 ###################################################
 #               Other Weapons

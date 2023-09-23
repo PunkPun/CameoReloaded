@@ -4501,7 +4501,7 @@
 
 ^AircraftWithAmmoHelicopter:
 	Rearmable:
-		RearmActors: hpad, hpad.td, hpad.camea, chairport, tsgthpad, tsnthpad, tscgpad
+		RearmActors: hpad, hpad.td, hpad.camea, chairport, tsgthpad, tsnthpad, tscgpad, tscthpad
 	AmmoPool:
 		Ammo: 8
 		ReloadDelay: 10
@@ -4513,7 +4513,7 @@
 
 ^AircraftWithAmmoTwo:
 	Rearmable:
-		RearmActors: afld, afld.gdi, afld.allies, hpad, hpad.td, hpad.camea, chairport, tsgthpad, tsnthpad, tscgpad
+		RearmActors: afld, afld.gdi, afld.allies, hpad, hpad.td, hpad.camea, chairport, tsgthpad, tsnthpad, tscgpad, tscthpad
 	AmmoPool:
 		Ammo: 8
 		ReloadDelay: 10

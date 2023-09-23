@@ -136,6 +136,7 @@ Rules:
 	ca|rules/tibsun/vehicles.yaml
 	ca|rules/tibsun/aircraft.yaml
 	ca|rules/tibsun/commander-tree.yaml
+	ca|rules/tibsun/ai.yaml
 	ca|rules/starcraft/units.yaml
 	ca|rules/kknd/palettes.yaml
 	ca|rules/kknd/units.yaml
@@ -291,7 +292,7 @@ Hotkeys:
 
 LoadScreen: FitImageLoadScreen
 	Image: ca|bits/load/chopper.png,ca|bits/load/outpost.png,ca|bits/load/battleships.png,ca|bits/load/aftermath.png,ca|bits/load/ambush.png,ca|bits/load/defense.png,ca|bits/load/assault.png,ca|bits/load/scouts.png,ca|bits/load/factory.png,ca|bits/load/tankhit.png,ca|bits/load/toughguys.png,ca|bits/load/outskirts.png,ca|bits/load/hangar.png,ca|bits/load/airfuture.png,ca|bits/load/warroom.png,ca|bits/load/hangar2.png,ca|bits/load/airshow.png,ca|bits/load/nightfire.png,ca|bits/load/evacuation.png,ca|bits/load/napalm.png,ca|bits/load/heli.png,ca|bits/load/explosion.png,ca|bits/load/tankbattle.png,ca|bits/load/tankbattle2.png,ca|bits/load/tankbattle3.png,ca|bits/load/tankbattle4.png,ca|bits/load/prone.png,ca|bits/load/warishell.png,ca|bits/load/warishell2.png,ca|bits/load/warishell3.png,ca|bits/load/warishell4.png,ca|bits/load/warishell5.png,ca|bits/load/apocalypse.png,ca|bits/load/apocalypse2.png,ca|bits/load/apocalypse3.png,ca|bits/load/apocalypse4.png
-	Text: Cameo Growing Larger..., Stealing your Assets..., Cameo is Bigger than UCM..., We are like Blood Ravens..., We Steal some Relics..., Your 90s games are a Relic..., We combine all arms..., Please, share your Assets..., Cameo is not Canon..., Who can win? Star Wars or Warhammer40k...
+	Text: Cameo Growing Larger..., Stealing your Assets..., Cameo is Bigger than UCM..., We are like Blood Ravens..., We Steal some Relics..., Your 90s games are a Relic..., We combine all arms..., Please, share your Assets..., Cameo is not Canon..., Who can win? Star Wars or Warhammer40k..., Your Favorite Fanfic..., Everybody has Nukes...
 
 ServerTraits:
 	LobbyCommands

@@ -20,14 +20,14 @@ Player:
 		ExcessPowerIncreaseThreshold: 1
 		PlaceDefenseTowardsEnemyChance: 75
 		ConstructionYardTypes: fact,afac,sfac,chcommand, camea_conyard, tsgtcnst, tsgtcnst.nod
-		RefineryTypes: proc,proc.td,proc.scrin,chsupply, proc.camea, tsproc.gdi, tsproc.nod, tsmaproc.forgot, tsproc.cabal
-		PowerTypes: powr,apwr,nuke,nuk2,tpwr,reac,rea2,chpower,chpower2,powr.camea,nuk2.camea,tsgtpowr,tsntpowr,tsntapwr,tsmapowr2,tscrys,tscrys.laser,tskpr
-		BarracksTypes: barr,tent,hand,pyle,port,chsyrd,chbarracks,tsgtpile,tsnthand,tsmilp,tscybbar
-		VehiclesFactoryTypes: weap,airs,weap.td,wsph,chweap,tsgtweap,tsntweap,tsmaweap,tsmechfact
-		ProductionTypes: barr,tent,hand,pyle,port,airs,weap,weap.td,wsph,afld,afld.gdi,afld.allies,chairport,hpad,hpad.td,grav,chbarracks,chairport,chweap,tsgtweap,tsntweap,tsmaweap,tsgtpile,tsnthand,tsmilp,tscybbar,tsmechfact,tscthpad
+		RefineryTypes: proc,proc.td,proc.scrin,chsupply, proc.camea, tsproc.gdi, tsproc.nod, tsmaproc.forgot
+		PowerTypes: powr,apwr,nuke,nuk2,tpwr,reac,rea2,chpower,chpower2,powr.camea,nuk2.camea,tsgtpowr,tsntpowr,tsntapwr,tsmapowr2
+		BarracksTypes: barr,tent,hand,pyle,port,chsyrd,chbarracks,tsgtpile,tsnthand,tsmilp
+		VehiclesFactoryTypes: weap,airs,weap.td,wsph,chweap,tsgtweap,tsntweap,tsmaweap
+		ProductionTypes: barr,tent,hand,pyle,port,airs,weap,weap.td,wsph,afld,afld.gdi,afld.allies,chairport,hpad,hpad.td,grav,chbarracks,chairport,chweap,tsnthand,tsntweap,tsnthpad,tsmaweap,tsmilp,tsgtweap,tsgtpile,tsgthpad
 		NavalProductionTypes: spen,syrd,spen.nod,syrd.gdi,chsyrd
-		SiloTypes: silo,silo.td,silo.scrin,tsgtsilo.nod,tsgtsilo.gdi
-		AntiAirTypes: sam, nsam, agun, cram, shar, chgatling, tsgtctwr, tsntsam, tsgtspot, tsobl2
+		SiloTypes: silo,silo.td,silo.scrin,tsgtsilo.gdi,tsgtsilo.nod
+		AntiAirTypes: sam, nsam, agun, cram, shar, chgatling, tsgtctwr, tsntsam, tsgtspot
 		MaxBaseRadius: 26
 		BuildingDelays:
 			kenn: 2800
@@ -89,12 +89,12 @@ Player:
 			afld.allies: 10
 			grav: 20
 			chairport: 20
-			atek: 1
-			stek: 1
-			gtek: 1
-			tmpl: 1
-			scrt: 1
-			chpropaganda: 1
+			atek: 2
+			stek: 2
+			gtek: 2
+			tmpl: 2
+			scrt: 2
+			chpropaganda: 2
 			fix: 1
 			rep: 1
 			srep: 1
@@ -122,6 +122,7 @@ Player:
 			pbox: 7
 			hbox: 7
 			gtwr: 7
+			ftur: 10
 			gun: 7
 			gun.td: 7
 			chgatling: 7
@@ -131,7 +132,6 @@ Player:
 			tsla: 9
 			obli: 8
 			ltur: 10
-			ftur: 10
 			ttur: 10
 			htur: 7
 			atwr: 10
@@ -146,23 +146,29 @@ Player:
 			atek: 1
 			stek: 1
 			chpropaganda: 1
+			tmpl: 1
+			gtek: 1
 			silo: 1
 			silo.td: 1
 			silo.scrin: 1
 			fix: 1
-			dome: 10
-			chcommand.radar: 10
-			tmpl: 1
-			gtek: 1
-			scrt: 1
 			rep: 1
 			srep: 1
+			dome: 10
+			chcommand.radar: 10
 			hq: 10
 			nerv: 10
 			afld: 2
 			afld.gdi: 2
 			afld.allies: 2
 			chairport: 2
+			hpad: 2
+			hpad.td: 2
+			spen: 1
+			syrd: 1
+			spen.nod: 1
+			syrd.gdi: 1
+			scrt: 1
 			grav: 2
 			mslo: 1
 			iron: 1
@@ -180,12 +186,6 @@ Player:
 			orep: 1
 			sign: 1
 			patr: 1
-			hpad: 2
-			hpad.td: 2
-			spen: 1
-			syrd: 1
-			spen.nod: 1
-			syrd.gdi: 1
 			chsyrd: 1
 			bombard.strat: 1
 			seek.strat: 1
@@ -369,13 +369,13 @@ Player:
 			harv.scrin: 8
 			harv.chrono: 8
 	SquadManagerBotModuleCA@brutal-vhard:
-		RequiresCondition: enable-brutal-ai || enable-vhard-ai
+		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-normal-ai || enable-hard-ai || enable-easy-ai
 		MinimumAttackForceDelay: 25
 		SquadValue: 6000
 		SquadValueRandomBonus: 2500
 		SquadSize: 22
 		SquadSizeRandomBonus: 9
-		ExcludeFromSquadsTypes: harv, har2, harv.scrin, harv.chrono, chharv, chnmcv, mcv, amcv, smcv, dog, e6, n6, s6, mcv.camea, harv.camea, tsengineer.gdi, tsharv.gdi, tsharv.nod, tsengineer.nod, tsmcv.gdi, tsmcv.nod, tsharv.forgotten, tswinif, tscengie, tsharv.cabal, tscengineer
+		ExcludeFromSquadsTypes: harv, har2, harv.scrin, harv.chrono, chharv, chnmcv, mcv, amcv, smcv, dog, e6, n6, s6, mcv.camea, harv.camea, tsengineer.gdi, tsharv.gdi, tsharv.nod, tsengineer.nod, tsmcv.gdi, tsmcv.nod, tsharv.forgotten, tswinif, tscengie
 		ExcludeFromAirSquadsTypes: deva, pac, jjet, bjet
 		NavalUnitsTypes: ss,msub,dd,ca,lst,pt,dd2,pt2,ss2,isub,sb,seas
 		NavalProductionTypes: syrd, spen, syrd.gdi, spen.nod, chsyrd
@@ -404,3 +404,5 @@ Player:
 			stmr: Aircraft, Infantry, Building
 			enrv: Aircraft, Vehicle, Defense
 			mshp: Building
+
+

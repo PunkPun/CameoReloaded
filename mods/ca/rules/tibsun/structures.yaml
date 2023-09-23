@@ -926,6 +926,7 @@ tsgtsilo.gdi:
 		Prerequisites: proc, ~structures.tsgdi
 		BuildPaletteOrder: 60
 		Description: Stores excess Tiberium.
+		IconPalette: chromets
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -959,6 +960,80 @@ tsgtsilo.gdi:
 		RequiresSelection: true
 		PipCount: 5
 		FullSequence: pip-yellow
+tsgtdept.gdi:
+	Inherits: ^Building
+	Inherits@SHAPE: ^3x3Shape
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Service Depot
+	Buildable:
+		BuildPaletteOrder: 70
+		Prerequisites: vehicles.tsgdi, ~structures.tsgdi
+		Queue: Building
+		Description: Repairs vehicles.
+		IconPalette: chromets
+	Building:
+		Footprint: =+= x++ x+=
+		Dimensions: 3,3
+	Health:
+		HP: 110000
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Reservable:
+	RepairsUnits:
+		HpPerStep: 1000
+		PauseOnCondition: empdisable
+		PlayerExperience: 15
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: Repairing.
+		FinishRepairingNotification: UnitRepaired
+		FinishRepairingTextNotification: Unit repaired.
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+		LineWidth: 2
+	WithIdleOverlay@LIGHT:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-light
+	WithIdleOverlay@LIGHT-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-light-bright
+	WithIdleOverlay@GROUND:
+		RequiresCondition: !build-incomplete
+		Sequence: ground
+	WithIdleOverlay@CIRCUITS:
+		RequiresCondition: !build-incomplete
+		Sequence: circuits
+	WithIdleOverlay@CIRCUITS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: circuits-bright
+	WithRepairOverlay@CRANE:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: empdisable
+		StartSequence: crane-start
+		Sequence: crane-loop
+		EndSequence: crane-end
+	WithRepairOverlay@CRANE-BRIGHT:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: empdisable
+		StartSequence: crane-start
+		Sequence: crane-loop-bright
+		EndSequence: crane-end
+	WithRepairOverlay@PLATFORM:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: platform
+	WithDeathAnimation@BIB:
+		DeathSequence: dead-ground
+		UseDeathTypeSuffix: false
+	Power:
+		Amount: -30
+	ProvidesPrerequisite@buildingname:
+	RenderSprites:
+		Image: tsgtdept.gdi
+
 ###################################################
 #               Nod
 ###################################################
@@ -1185,6 +1260,8 @@ tsntweap:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@gdi:
+		Prerequisite: vehicles.tsnod
 tsntweap.fist:
 	Inherits: tsntweap
 	Tooltip:
@@ -1215,7 +1292,7 @@ tsnthpad:
 	Buildable:
 		BuildPaletteOrder: 80
 		Queue: Building
-		Prerequisites: anyhq, ~structures.sharedcabal
+		Prerequisites: anyhq, ~structures.tsnod
 		Description: Produces, rearms and\nrepairs helicopters.
 		IconPalette: chromets
 	Building:
@@ -1251,11 +1328,7 @@ tsnthpad:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@nod:
-		Factions: tsnod
 		Prerequisite: aircraft.tsnod
-	ProvidesPrerequisite@cabal:
-		Factions: cabal
-		Prerequisite: aircraft.cabal
 tsntradr:
 	Inherits: ^Building
 	Inherits: ^TechLevelBuilding
@@ -1265,13 +1338,13 @@ tsntradr:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
-		Prerequisites: proc, ~structures.sharedcabal
+		Prerequisites: proc, ~structures.tsnod
 		Description: Provides an overview of the battlefield.\nCan detect cloaked units.\nRequires power to operate.
 		IconPalette: chromets
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Radar
+		Name: Nod Radar
 	ProvidesPrerequisite:
 		Prerequisite: anyhq
 	Building:
@@ -1405,7 +1478,7 @@ tsntobel:
 		Range: 8c0
 	Armament:
 		Weapon: TSObeliskLaserFire
-		LocalOffset: 1980,297,1131
+		LocalOffset: 1980,297,931
 	AttackCharges:
 		PauseOnCondition: empdisable || disabled || build-incomplete
 		ChargeLevel: 65
@@ -1435,7 +1508,7 @@ tsntsam:
 		Name: S.A.M. Site
 	Buildable:
 		Queue: Defense
-		Prerequisites: anyhq, ~structures.nod
+		Prerequisites: anyhq, ~structures.tsnod
 		BuildPaletteOrder: 100
 		Description: Nod Anti-Air base defense.\nRequires power to operate.\n  Strong vs Aircraft\n  Weak vs Ground units
 	Health:
@@ -1470,6 +1543,7 @@ tsgtsilo.nod:
 		Prerequisites: proc, ~structures.sharedcabal
 		BuildPaletteOrder: 60
 		Description: Stores excess Tiberium.
+		IconPalette: chromets
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -1503,6 +1577,17 @@ tsgtsilo.nod:
 		RequiresSelection: true
 		PipCount: 5
 		FullSequence: pip-yellow
+
+tsproc.nod:
+	Inherits: tsproc.gdi
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower, ~structures.tsnod
+		Description: Processes raw Tiberium\ninto useable resources.
+		IconPalette: chromets
+	FreeActor:
+		Actor: tsharv.nod
 
 ###################################################
 #               Forgotten
@@ -2358,7 +2443,7 @@ tsproc.cabal:
 	ProvidesPrerequisite:
 		Prerequisite: proc
 	RenderSprites:
-		Image: tsproc.gdi
+		Image: tsproc.nod
 tscrys:
 	Inherits: ^Building
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
@@ -2702,7 +2787,7 @@ tsobl3:
 		Range: 8c0
 	Armament:
 		Weapon: TSObeliskLaserFire2
-		LocalOffset: 1980,297,1131
+		LocalOffset: 1980,297,900
 	AttackCharges:
 		PauseOnCondition: empdisable || disabled || build-incomplete
 		ChargeLevel: 62
@@ -2807,6 +2892,140 @@ tsgtfort:
 	BodyOrientation:
 		QuantizedFacings: 0
 
+tsctradr:
+	Inherits: ^Building
+	Inherits: ^TechLevelBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDownOrForceDisable
+	Inherits: ^RadarStation
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: proc, ~structures.cabal
+		Description: Provides an overview of the battlefield.\nCan detect cloaked units.\nRequires power to operate.
+		IconPalette: chromets
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: CABAL Radar
+	ProvidesPrerequisite:
+		Prerequisite: anyhq
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ProvidesRadar:
+		RequiresCondition: !disabled && !empdisable
+	InfiltrateForExploration:
+	DetectCloaked:
+		Range: 10c0
+	RenderDetectionCircle:
+	RevealsShroud:
+		Range: 10c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@DISH:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled || empdisable
+		Sequence: idle-dish
+	Targetable:
+		TargetTypes: Ground, Building, C4, SpyInfiltrate
+	Power:
+		Amount: -40
+	ProvidesPrerequisite@buildingname:
+
+tscttech:
+	Inherits: ^ScienceBuilding
+	Inherits: ^TechLevelBuilding
+	Inherits: ^Tier3Tech
+	Inherits@IDISABLE: ^DisableOnLowPowerOrForceDisabled
+	Inherits@shape: ^2x2Shape
+	Inherits: ^TSBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: anyhq, ~structures.cabal
+		Description: Provides access to advanced Nod technologies.
+		IconPalette: chromets
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: CABAL Tech Center
+	ProvidesPrerequisite:
+		Prerequisite: tech
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+		MaxHeightDelta: 3
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !disabled
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	Power:
+		Amount: -150
+	ProvidesPrerequisite@buildingname:
+
+tscthpad:
+	Inherits: ^BuildingTD
+	Inherits@shape: ^2x2Shape
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@AIRCRAFTREPAIR: ^RepairsAircraftWithRepairBay
+	Inherits@AirProd: ^AircraftProduction
+	Inherits: ^TSBuilding
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		BuildPaletteOrder: 80
+		Queue: Building
+		Prerequisites: anyhq, ~structures.cabal
+		Description: Produces, rearms and\nrepairs helicopters.
+		IconPalette: chromets
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 60000
+	RevealsShroud:
+		Range: 5c0
+		MaxHeightDelta: 3
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		Facing: 896
+	ExitsDebugOverlay:
+	RallyPoint:
+		SpawnOffset: 0,-256,0
+		ExitCell: 0,0
+		Facing: 224
+	Reservable:
+	WithIdleOverlay@PLATFORM:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-platform
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights
+	WithIdleOverlay@LIGHTS-BRIGHT:
+		RequiresCondition: !build-incomplete && !empdisable
+		Sequence: idle-lights-bright
+	WithDeathAnimation@BIB:
+		DeathSequence: dead-platform
+		UseDeathTypeSuffix: false
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@cabal:
+		Prerequisite: aircraft.cabal
 ###################################################
 #               Civilian
 ###################################################

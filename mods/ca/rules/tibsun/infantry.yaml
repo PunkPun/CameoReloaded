@@ -109,7 +109,7 @@ tse1.gdi:
 	Selectable:
 		Class: TSE1
 	Valued:
-		Cost: 120
+		Cost: 110
 	Tooltip:
 		Name: Light Infantry
 	UpdatesPlayerStatistics:
@@ -312,7 +312,7 @@ tsheavi:
 	Buildable:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 90
 		Prerequisites: ~infantry.tsgdi, anyhq
 		Description: Advanced infantry, uses a portable Mini Railgun
 		IconPalette: chromets
@@ -350,7 +350,7 @@ tsgdie3:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
-		Prerequisites: ~infantry.tsgdi, ~infantry.tsgdie3
+		Prerequisites: ~infantry.cnc3gdi
 		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
 		IconPalette: chromets
 	Selectable:
@@ -383,6 +383,68 @@ tsgdie3.multi:
 		Name: Multi Missile Soldier
 	Armament@PRIMARY:
 		Weapon: TSTwinBazooka
+tszonetroop:
+	Inherits: ^Soldier
+	Inherits: ^WhiteFlash
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@BERSERK: ^Berserk
+	Inherits@TS: ^TSInfantry
+	Buildable:
+		Queue: Infantry, Infantry.Multi
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 80
+		Prerequisites: ~infantry.tsgdi, tech, ~infantry.tszonetroop
+		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+		IconPalette: chromets
+	Selectable:
+		Class: tszonetroop2
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Zone Trooper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 50000
+	Mobile:
+		speed: 56
+	Armament@PRIMARY:
+		Weapon: TSZoneShot
+		LocalOffset: 356,0,200
+	-TakeCover:
+	AttackFrontal:
+		PauseOnCondition: being-warped
+		FacingTolerance: 0
+	Targetable@MetalInfantry:
+		TargetTypes: MetalInfantry
+	GrantConditionOnDeploy:
+		PauseOnCondition: empdisable || being-captured
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: false
+		UndeployOnPickup: false
+		Facing: 1
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
+		DeploySounds: clicky1.aud
+		UndeploySounds: clicky1.aud
+		Voice: Action
+	WithInfantryBody:
+		DefaultAttackSequence: attack
+		IdleSequences: idle1, idle2
+		RequiresCondition: !deployed
+	WithInfantryBody@deployed:
+		DefaultAttackSequence: attack
+		StandSequences: stand-shield
+		MoveSequence: run-shield
+		IdleSequences: idle1, idle2
+		RequiresCondition: deployed
+	SpeedMultiplier@deployed:
+		Modifier: 50
+		RequiresCondition: deployed
+	DamageMultiplier@deployed:
+		Modifier: 50
+		RequiresCondition: deployed
+
 tszonetroop2:
 	Inherits: ^Soldier
 	Inherits: ^WhiteFlash
@@ -393,7 +455,7 @@ tszonetroop2:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 50
-		Prerequisites: ~infantry.tsgdi, anyhq
+		Prerequisites: ~infantry.cnc3gdi, anyhq
 		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
 		IconPalette: chromets
 	Selectable:
@@ -422,7 +484,7 @@ tszonecaptain:
 	Buildable:
 		BuildLimit: 1
 		BuildPaletteOrder: 60
-		Prerequisites: ~infantry.tsgdi, anyhq
+		Prerequisites: ~infantry.cnc3gdi, anyhq
 		Description: Anti-tank/anti-aircraft infantry.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
 		IconPalette: chromets
 	Selectable:
@@ -455,7 +517,7 @@ tse1.nod:
 	Selectable:
 		Class: TSE1
 	Valued:
-		Cost: 120
+		Cost: 110
 	Tooltip:
 		Name: Light Infantry
 tse1.pilot.nod:
@@ -470,11 +532,15 @@ tse1.pilot.nod:
 	Selectable:
 		Class: TSE1
 	Valued:
-		Cost: 120
+		Cost: 75
 	Tooltip:
 		Name: Vehicle Pilot
 	Mobile:
 		Speed: 60
+	Armament@PRIMARY:
+		Weapon: TSStrongPistola
+	Health:
+		HP: 25000
 tse3:
 	Inherits: ^Soldier
 	Inherits: ^WhiteFlash
@@ -636,7 +702,7 @@ tsnodflame:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
-		Prerequisites: ~infantry.tsnod
+		Prerequisites: ~infantry.tsnod, ~!infantry.tsbhand
 		Description: Anti infantry purposes, is a infantry with Portable Flamer
 		IconPalette: chromets
 	Valued:
@@ -672,7 +738,7 @@ tsbhand:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
-		Prerequisites: ~infantry.tsnod
+		Prerequisites: ~infantry.tsnod, ~infantry.tsbhand
 		Description: Elite Variation of Flamer, the Black Hand are better equiped, same health as Elite Cadre
 		IconPalette: chromets
 	Valued:
@@ -707,7 +773,7 @@ tslasgunner:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
-		Prerequisites: ~infantry.tsnod, anyhq
+		Prerequisites: ~infantry.tsnod, anyhq, ~infantry.tslasgunner
 		Description: Elite infantry after CABAL revelion, used to replace CABAL cyborg army
 		IconPalette: chromets
 	Valued:
@@ -745,7 +811,7 @@ tshgunner:
 		Queue: Infantry, Infantry.Multi
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 30
-		Prerequisites: ~infantry.tsnod, anyhq
+		Prerequisites: ~infantry.tsnod, anyhq, ~infantry.tshgunner
 		Description: Armed with Recoiless Cannon
 		IconPalette: chromets
 	Valued:
@@ -1380,7 +1446,7 @@ tscyborgrep:
 	Buildable:
 		Queue: Infantry
 		BuildPaletteOrder: 60
-		Prerequisites: ~infantry.cabal, anyhq
+		Prerequisites: ~infantry.cabal, anyhq, ~infantry.tscyborgrep
 		Description: Cybernetic infantry unit, with Portable cannon, has more armor than a common Cyborg
 		IconPalette: chromets
 	Armament:

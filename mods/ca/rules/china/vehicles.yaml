@@ -1399,7 +1399,7 @@ chnukecann:
 	Buildable:
 		Queue: Vehicle, Vehicle.Multi
 		BuildPaletteOrder: 100
-		Prerequisites: ~vehicles.tsnod, anyhq
+		Prerequisites: chweap, techcenter
 		Description: Slow heavy artillery.\n Must be deployed to fire nuclear shells.
 	TooltipExtras:
 		Strengths: • Strong vs Masses

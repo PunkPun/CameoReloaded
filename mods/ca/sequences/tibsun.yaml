@@ -313,6 +313,10 @@ explosion:
 		ZRamp: 1
 		Tick: 60
 		Scale: 0.7
+	tsionringgun: tsring1
+		ZRamp: 1
+		Tick: 20
+		Scale: 0.1
 icon:
 	tsclustermissile: tsmltiicon
 	tschemmissile: tschemicon
@@ -1281,9 +1285,11 @@ tsproc.gdi:
 		Offset: 0, 0
 
 tsproc.nod:
+	Inherits: ^StructureOverlays
 	Defaults: tsntrefn
 		Offset: -12, -42, 20
 		DepthSpriteOffset: 22, 0
+		Scale: 1.2
 	idle:
 		ShadowStart: 3
 	damaged-idle:
@@ -1977,6 +1983,7 @@ tsgtsilo.nod:
 	Inherits: ^StructureOverlays
 	Defaults: tsgtsilo
 		Offset: 0, -24, 24
+		Scale: 1.2
 	idle: tsgtsilo_a
 	damaged-idle: tsgtsilo_a
 		Start: 4
@@ -2014,6 +2021,7 @@ tsgtsilo.gdi:
 	Inherits: ^StructureOverlays
 	Defaults: tsGTSILO2
 		Offset: 0, -24, 24
+		Scale: 1.2
 	idle: tsGTSILO2_A
 	damaged-idle: tsGTSILO2_A
 		Start: 4
@@ -2047,6 +2055,214 @@ tsgtsilo.gdi:
 	icon: tssiloicong
 		Offset: 0, 0
 		UseTilesetCode: false
+tsgtdept.gdi:
+	Inherits: ^StructureOverlays
+	Defaults: tsgtdept
+		Offset: 0, -36, 1
+		DepthSpriteOffset: 36, 0
+		Scale: 1.2
+	idle:
+		ShadowStart: 3
+		Offset: 0, -36, 12
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+		Offset: 0, -36, 12
+	dead:
+		Start: 2
+		ShadowStart: 5
+		Tick: 400
+		Offset: 0, -36, 12
+	ground: tsgtdeptbb
+		ShadowStart: 3
+		ZOffset: -1c611
+	damaged-ground: tsgtdeptbb
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1c611
+	dead-ground: tsgtdeptbb
+		Start: 2
+		ShadowStart: 5
+		ZOffset: -1c611
+		Tick: 400
+	idle-light: tsgtdept_b
+		Offset: 0, -36, 13
+		Length: 7
+		Tick: 120
+	idle-light-bright: tsgtdept_b
+		Offset: 0, -36, 13
+		Length: 7
+		Tick: 120
+	circuits: tsgtdept_a
+		Length: 5
+		ZOffset: -1c511
+		Tick: 120
+	circuits-bright: tsgtdept_a
+		Length: 5
+		ZOffset: -1c511
+		Tick: 120
+	damaged-circuits: tsgtdept_a
+		Start: 5
+		Length: 5
+		ZOffset: -1c511
+		Tick: 120
+	damaged-circuits-bright: tsgtdept_a
+		Start: 5
+		Length: 5
+		ZOffset: -1c511
+		Tick: 120
+	crane-start: tsgtdept_c
+		Length: 6
+		Offset: 0, -36, 12
+		Tick: 60
+	crane-loop: tsgtdept_c
+		Start: 6
+		Length: 5
+		Offset: 0, -36, 12
+		Tick: 60
+	crane-loop-bright: tsgtdept_c
+		Start: 6
+		Length: 5
+		Offset: 0, -36, 12
+		Tick: 60
+	crane-end: tsgtdept_c
+		Start: 10
+		Length: 6
+		Offset: 0, -36, 12
+		Tick: 60
+	platform: tsgtdept_d
+		Length: 7
+		ZOffset: -1c511
+	damaged-platform: tsgtdept_d
+		Start: 7
+		Length: 7
+		ZOffset: -1c511
+	make: tsgtdeptmk
+		Length: 10
+		Tick: 60
+		ShadowStart: 10
+		Offset: 0, -36, 36
+	icon: tsdepticon
+		Offset: 0, 0
+
+tsctradr:
+	Inherits: ^StructureOverlays
+	Defaults:
+		Offset: 0, -24, 28
+		Scale: 1.2
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	dead:
+		Start: 2
+		ShadowStart: 5
+		Tick: 400
+	idle-dish: tsntradr_a
+		Length: 24
+		Tick: 120
+	damaged-idle-dish: tsntradr_a
+		Start: 24
+		Length: 24
+		Tick: 120
+	make: tsctradrmk
+		Length: 20
+		ShadowStart: 20
+	icon: tsradriconcabal
+		Offset: 0, 0
+
+tscttech:
+	Inherits: ^StructureOverlays
+	Defaults:
+		Offset: 0, -24, 24
+		Scale: 1.2
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	dead:
+		Start: 2
+		ShadowStart: 5
+		Tick: 400
+	idle-lights: tsnttech_a
+		Length: 10
+		Tick: 120
+	idle-lights-bright: tsnttech_a
+		Length: 10
+		Tick: 120
+	damaged-idle-lights: tsnttech_a
+		Start: 10
+		Length: 10
+		Tick: 120
+	damaged-idle-lights-bright: tsnttech_a
+		Start: 10
+		Length: 10
+		Tick: 120
+	make: tscttechmk
+		Length: 18
+		ShadowStart: 18
+	icon: tsntchiconcabal
+		Offset: 0, 0
+
+tscthpad:
+	Inherits: ^StructureOverlays
+	Defaults:
+		Offset: 0, -24, 1
+		Scale: 1.2
+	idle:
+		ShadowStart: 3
+		ZOffset: -1c511
+		Offset: 0, -24, 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1c511
+		Offset: 0, -24, 3
+	dead:
+		Start: 2
+		ShadowStart: 5
+		ZOffset: -1c511
+		Tick: 400
+		Offset: 0, -24, 3
+	idle-platform: tscthpadbb
+		ShadowStart: 3
+		ZOffset: -1c511
+	damaged-idle-platform: tscthpadbb
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1c511
+	dead-platform: tscthpadbb
+		Start: 2
+		ShadowStart: 5
+		ZOffset: -1c511
+		Tick: 400
+	idle-lights: tsnthpad_a
+		Length: 46
+		ZOffset: -1c511
+		Tick: 100
+	idle-lights-bright: tsnthpad_a
+		Length: 46
+		ZOffset: -1c511
+		Tick: 100
+	damaged-idle-lights: tsnthpad_a
+		Start: 46
+		Length: 46
+		Tick: 100
+		ZOffset: -1c511
+	damaged-idle-lights-bright: tsnthpad_a
+		Start: 46
+		Length: 46
+		Tick: 100
+		ZOffset: -1c511
+	make: tscthpadmk
+		Length: 20
+		ShadowStart: 20
+		Offset: 0, -24, 24
+	icon: tsnhpdiconcabal
+		Offset: 0, 0
+
 ###################################################
 #               Defense
 ###################################################
@@ -2213,7 +2429,7 @@ tsntlasr:
 	turret: tsntlasr_a
 		Facings: 32
 		ShadowStart: 32
-		Offset: 0, -12, 64
+		Offset: 0, -12, 72
 		Scale: 1.3
 	make: tsntlasrmk
 		Length: 21
@@ -2222,8 +2438,10 @@ tsntlasr:
 		Offset: 0, 0
 
 tsntsam:
+	Inherits: ^StructureOverlays
 	Defaults:
 		Offset: 0, -12, 1
+		Scale: 1.2
 	idle:
 		ShadowStart: 3
 		ZRamp: 1
@@ -2582,23 +2800,23 @@ tszonetroop:
 		Scale: 1.3
 	stand:
 		Facings: 8
-		ShadowStart: 308
+		ShadowStart: 361
 		Offset: 0, 0, 16
 	stand-shield:
 		Start: 104
 		Facings: 8
-		ShadowStart: 308
+		ShadowStart: 465
 		Offset: 0, 0, 16
 	run:
 		Start: 8
 		Length: 12
 		Facings: 8
-		ShadowStart: 316
+		ShadowStart: 369
 	run-shield:
 		Start: 112
 		Length: 9
 		Facings: 8
-		ShadowStart: 316
+		ShadowStart: 473
 	idle1:
 		Start: 80
 		Length: 15
@@ -2608,15 +2826,15 @@ tszonetroop:
 		Length: 15
 		ShadowStart: 403
 	attack:
-		Frames: 184
+		Start: 184
 		Length: 12
 		Facings: 8
-		ShadowStart: 520
+		ShadowStart: 545
 	attack-shield:
-		Frames: 184
+		Start: 184
 		Length: 12
 		Facings: 8
-		ShadowStart: 520
+		ShadowStart: 545
 	attack-muzzle:
 		Start: 212
 		Length: 6
@@ -2880,6 +3098,7 @@ tse1.pilot.nod:
 		Start: 8
 		Length: 6
 		Facings: 8
+		Tick: 160
 	attack:
 		Start: 164
 		Length: 6
@@ -2935,6 +3154,7 @@ tse1.pilot.nod:
 	die-crushed: tsnodpilot
 		Start: 135
 		Length: 14
+		UseTilesetExtension: false
 	die7: tss_bang34
 		Length: *
 	chrono-overlay: chronofade_small
@@ -4700,7 +4920,7 @@ tsmcv.gdi:
 		Facings: 32
 		UseClassicFacings: True
 		Scale: 0.8
-	icon: tsgharvicon
+	icon: tsmcvicon
 
 tsfist.gdi:
 	Inherits: ^VehicleOverlays
@@ -4708,7 +4928,7 @@ tsfist.gdi:
 		Facings: 32
 		UseClassicFacings: True
 		Scale: 0.8
-	icon: tsgharvicon
+	icon: tsfisticon
 
 tsharv.gdi:
 	Inherits: ^VehicleOverlays
@@ -4939,6 +5159,19 @@ tshvr:
 	muzzle: gunfire2
 		Length: 2
 	icon: tshovricon
+tshvr.emp:
+	Inherits: ^VehicleOverlays
+	idle: tshvr
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	turret: tshvrtur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	muzzle: gunfire2
+		Length: 2
+	icon: tshovricon
 
 tsmmkii:
 	Inherits: ^VehicleOverlays
@@ -5067,7 +5300,7 @@ tsprowler:
 		Scale: 0.68
 	muzzle: gunfire2
 		Length: 2
-	icon: ts2tnkicon
+	icon: tsprowlericon
 
 tsprowler_twin:
 	Inherits: ^VehicleOverlays
@@ -5081,7 +5314,7 @@ tsprowler_twin:
 		Scale: 0.68
 	muzzle: gunfire2
 		Length: 2
-	icon: ts2tnkicon
+	icon: tsprowler2icon
 
 tskeeper:
 	Inherits: ^VehicleOverlays
@@ -5113,7 +5346,7 @@ tsionh:
 	muzzle: tsring1
 		Scale: 0.4
 		Length: 3
-	icon: ts2tnkicon
+	icon: tsionhicon
 
 
 tsjenng:
@@ -5263,14 +5496,14 @@ tsmcv.nod:
 		Facings: 32
 		UseClassicFacings: True
 		Scale: 0.8
-	icon: tsnharvicon
+	icon: tsnmcvicon
 tsfist.nod:
 	Inherits: ^VehicleOverlays
 	idle: tsnfist
 		Facings: 32
 		UseClassicFacings: True
 		Scale: 0.8
-	icon: tsnharvicon
+	icon: tsnfisticon
 
 tsharv.nod:
 	Inherits: ^VehicleOverlays
@@ -5381,7 +5614,7 @@ tsrepair:
 	idle: tsrepair
 		Facings: 32
 		UseClassicFacings: True
-		Scale: 0.7
+		Scale: 0.6
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -5505,6 +5738,68 @@ tscolon:
 		ShadowStart: 25
 	muzzle: gunfire2
 		Length: 2
+tsfusion:
+	Inherits: ^VehicleOverlays
+	idle: tsfusion
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tsfusionicon
+tsfusionttnk:
+	Inherits: ^VehicleOverlays
+	idle: tsfusionttnk
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: tsttnktur
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.8
+	icon: tsfusionicon
+
+tsfusionart2:
+	Inherits: ^VehicleOverlays
+	idle: tsfusionart2
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	icon: tsfusionicon
+
+tsfusionstnk:
+	Inherits: ^VehicleOverlays
+	idle: tsfusionstnk
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: tsntsam_a
+		Facings: 32
+		Offset: 0, 0, 12
+		Scale: 1.0
+	icon: tsfusionicon
+
+tsfusionbike:
+	Inherits: ^VehicleOverlays
+	idle: tsfusionstnk
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: tsntsam_a
+		Facings: 32
+		Offset: 0, 0, 12
+		Scale: 1.0
+	icon: tsfusionicon
+
+tsfusionbggy:
+	Inherits: ^VehicleOverlays
+	idle: tsfusionstnk
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 1.0
+	turret: tsgtctwr_b
+		Facings: 32
+		UseClassicFacings: True
+		Scale: 0.9
+	icon: tsfusionicon
 #               Vehicles Forgotten
 tsharv.forgotten:
 	Inherits: ^VehicleOverlays
@@ -5972,7 +6267,7 @@ tsdefender:
 		Facings: -8
 		Tick: 80
 		IgnoreWorldTint: True
-	icon: tscabalcobraicon
+	icon: tscoredeficon
 #               Vehicles Civilian / Unused
 
 
@@ -6135,15 +6430,15 @@ tscdrone:
 		Facings: 32
 		UseClassicFacings: True
 		Scale: 1.0
-	icon: tscyclicon
+	icon: tscdroneicon
 
 tscveneno:
 	Inherits: ^VehicleOverlays
 	idle: tscveneno
 		Facings: 32
 		UseClassicFacings: True
-		Scale: 1.0
-	icon: tscyclicon
+		Scale: 0.8
+	icon: tsvenenoicon
 ###################################################
 #               Civ Vehicles
 ###################################################

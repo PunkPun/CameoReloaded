@@ -1,11 +1,11 @@
 Player:
 	HarvesterBotModuleCA:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai || enable-naval-ai
-		HarvesterTypes: harv,har2,harv.scrin,harv.chrono,chharv, harv.camea
-		RefineryTypes: proc,proc.td,proc.scrin,chsupply, proc.camea
+		HarvesterTypes: harv,har2,harv.scrin,harv.chrono,chharv, harv.camea, tsharv.gdi, tsharv.nod, tsharv.forgotten, tsharv.cabal
+		RefineryTypes: proc,proc.td,proc.scrin,chsupply, proc.camea, tsproc.gdi, tsproc.nod, tsmaproc.forgot, tsproc.cabal
 	CaptureManagerBotModuleCA:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai
-		CapturingActorTypes: e6, n6, s6, che6
+		CapturingActorTypes: e6, n6, s6, che6, tsengineer.gdi, tsengineer.nod, tscengie
 		CheckCaptureTargetsForVisibility: false
 		MaximumCaptureTargetOptions: 15
 	BuildingRepairBotModule:
@@ -14,17 +14,17 @@ Player:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai || enable-naval-ai
 	McvManagerBotModuleCA@upper:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai
-		McvTypes: mcv, amcv, smcv, chnmcv, mcv.camea
-		ConstructionYardTypes: fact, afac, sfac, chcommand, camea_conyard
-		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand, weap.camea
+		McvTypes: mcv, amcv, smcv, chnmcv, mcv.camea,tsmcv.gdi,tsmcv.nod
+		ConstructionYardTypes: fact, afac, sfac, chcommand, camea_conyard, tsgtcnst, tsgtcnst.nod
+		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand, weap.camea,tsgtweap,tsntweap,tsmaweap
 		ScanForNewMcvInterval: 80
 		MaxBaseRadius: 25
 		MinimumConstructionYardCount: 2
 	McvManagerBotModuleCA@lower:
 		RequiresCondition: enable-normal-ai || enable-easy-ai || enable-naval-ai
-		McvTypes: mcv, amcv, smcv, chnmcv, mcv.camea
-		ConstructionYardTypes: fact, afac, sfac, chcommand, camea_conyard
-		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand, weap.camea
+		McvTypes: mcv, amcv, smcv, chnmcv, mcv.camea,tsmcv.gdi,tsmcv.nod
+		ConstructionYardTypes: fact, afac, sfac, chcommand, camea_conyard, tsgtcnst, tsgtcnst.nod
+		McvFactoryTypes: weap, weap.td, airs, wsph, chcommand, weap.camea,tsgtweap,tsntweap,tsmaweap
 	AutoDeployManager:
 	SupportPowerBotModule:
 		RequiresCondition: enable-brutal-ai || enable-vhard-ai || enable-hard-ai || enable-normal-ai || enable-easy-ai || enable-naval-ai

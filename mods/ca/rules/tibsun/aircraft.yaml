@@ -76,6 +76,8 @@ tsorca:
 		Condition: enable-smoke
 	Voiced:
 		VoiceSet: TSVehicle
+	EjectOnDeath:
+		PilotActor: tse1.gdi
 tsorca.husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
@@ -117,7 +119,7 @@ tsmx2:
 	Buildable:
 		Queue: Aircraft
 		BuildPaletteOrder: 10
-		Prerequisites: ~aircraft.tsgdi
+		Prerequisites: ~aircraft.cnc3gdi
 		Description: Fast assault gunship with\ndual missile launchers.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	Aircraft:
 		TurnSpeed: 20
@@ -393,7 +395,8 @@ tsnightclaw:
 		Condition: enable-smoke
 	Voiced:
 		VoiceSet: TSScrin
-
+	EjectOnDeath:
+		PilotActor: tse1.gdi
 tsnightclaw.husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
@@ -465,6 +468,8 @@ tstrnsport:
 		RequiresCondition: empdisable
 	Voiced:
 		VoiceSet: TSVehicle
+	EjectOnDeath:
+		PilotActor: tse1.gdi
 tstrnsport.husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
@@ -569,6 +574,9 @@ tsapache:
 		MoveSequence: move
 	Voiced:
 		VoiceSet: TSVehicle
+	EjectOnDeath:
+		PilotActor: tse1.pilot.nod
+
 tsapache.husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
@@ -674,6 +682,8 @@ tsscrin:
 		Condition: enable-smoke
 	Voiced:
 		VoiceSet: TSScrin
+	EjectOnDeath:
+		PilotActor: tse1.pilot.nod
 
 tsscrin.husk:
 	Inherits: ^HelicopterHusk
@@ -811,6 +821,8 @@ tsvenm:
 		TargetTypes: BoostMe
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	EjectOnDeath:
+		PilotActor: tse1.pilot.nod
 tsvenm.husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
@@ -840,6 +852,209 @@ tsvenm.husk.emp:
 ###################################################
 #               CABAL
 ###################################################
+tscdrone:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
+	RenderSprites:
+		PlayerPalette: playerts
+	Valued:
+		Cost: 360
+	Tooltip:
+		Name: Drone
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildPaletteOrder: 10
+		Prerequisites: ~aircraft.cabal
+		Description: Fast assault gunship with\ndual missile launchers.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+	Aircraft:
+		TurnSpeed: 25
+		Speed: 222
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		AltitudeVelocity: 333
+		CanSlide: false
+		TakeOffOnResupply: true
+	Health:
+		HP: 7500
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	Armament:
+		Weapon: TSLaserSentry
+		LocalOffset: 720,0,22
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		PersistentTargeting: false
+		Voice: Attack
+		PauseOnCondition: empdisable
+		AttackType: Hover
+	AmmoPool:
+		Ammo: 2
+		AmmoCondition: ammo
+	RenderSprites:
+	SpawnActorOnDeath:
+		Actor: tscdrone.husk
+		RequiresCondition: !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: tscdrone.husk.emp
+		RequiresCondition: empdisable
+	WithAmmoPipsDecoration:
+		PipCount: 2
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Voiced:
+		VoiceSet: TSSentryDroneVoice
+	-EjectOnDeath:
+
+tscdrone.husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Drone
+	Aircraft:
+		TurnSpeed: 16
+		Speed: 186
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		StationaryInterval: 3
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: tscdrone
+		PlayerPalette: playerts
+
+tscdrone.husk.emp:
+	Inherits: tscdrone.husk
+	Inherits: ^EmpVisualEffect
+tscveneno:
+	Inherits: ^HelicopterTD
+	Inherits: ^PrioAntiHeavyAA
+	Inherits@GAINSEXPERIENCE: ^GainsExperience
+	Inherits: ^AircraftWithAmmoHelicopter
+	RenderSprites:
+		PlayerPalette: playerts
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Veneno Gunship
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Aircraft
+		BuildPaletteOrder: 10
+		Prerequisites: ~aircraft.cabal, tech
+		Description: Fast assault gunship with\ndual missile launchers.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+	Aircraft:
+		TurnSpeed: 15
+		Speed: 105
+		TakeoffSounds: orcaup1.aud
+		LandingSounds: orcadwn1.aud
+		AltitudeVelocity: 67
+		CanSlide: false
+		TakeOffOnResupply: true
+	Health:
+		HP: 400000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 2c0
+		Type: CenterPosition
+	Armament:
+		Weapon: TSVenenoLaser
+		LocalOffset: 720,444,22, 720,-444,22
+		PauseOnCondition: !ammo
+	AttackAircraft:
+		FacingTolerance: 80
+		PersistentTargeting: false
+		Voice: Attack
+		PauseOnCondition: empdisable
+		AttackType: Hover
+	AmmoPool:
+		Ammo: 16
+		AmmoCondition: ammo
+	RenderSprites:
+	SpawnActorOnDeath:
+		Actor: tscveneno.husk
+		RequiresCondition: !empdisable
+	SpawnActorOnDeath@EMP:
+		Actor: tscveneno.husk.emp
+		RequiresCondition: empdisable
+	WithAmmoPipsDecoration:
+		PipCount: 5
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: Defend
+	LeavesTrails:
+		Offsets: -427,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
+	Voiced:
+		VoiceSet: TSOrbVoice
+ 	-EjectOnDeath:
+    
+tscveneno.husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Veneno Gunship
+	Aircraft:
+		TurnSpeed: 16
+		Speed: 186
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		StationaryInterval: 3
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: tscveneno
+		PlayerPalette: playerts
+
+tscveneno.husk.emp:
+	Inherits: tscveneno.husk
+	Inherits: ^EmpVisualEffect
+
 ###################################################
 #               Forgotten
 ###################################################
@@ -926,6 +1141,8 @@ tscropduster:
 		Condition: enable-smoke
 	Voiced:
 		VoiceSet: TSVehicle
+	EjectOnDeath:
+		PilotActor: tsmutant
 tscropduster.husk:
 	Inherits: ^PlaneHusk
 	Tooltip:
@@ -1036,6 +1253,8 @@ tsheli:
 		MoveSequence: move
 	Voiced:
 		VoiceSet: TSVehicle
+	EjectOnDeath:
+		PilotActor: tsmutant
 tsheli.husk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
