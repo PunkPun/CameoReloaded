@@ -1,27 +1,44 @@
+:: example launch script, see https://github.com/OpenRA/OpenRA/wiki/Dedicated for details
+
+@echo on
+
+set Name="Dedicated Server"
+set ListenPort=1234
+set AdvertiseOnline=True
+set Password=""
+set RecordReplays=False
+
+set RequireAuthentication=False
+set ProfileIDBlacklist=""
+set ProfileIDWhitelist=""
+
+set EnableSingleplayer=False
+set EnableSyncReports=False
+set EnableGeoIP=True
+set EnableLintChecks=True
+set ShareAnonymizedIPs=True
+
+set JoinChatDelay=5000
+
 @echo off
 setlocal EnableDelayedExpansion
-title OpenRA
 
+title %Name%
 FOR /F "tokens=1,2 delims==" %%A IN (mod.config) DO (set %%A=%%B)
 if exist user.config (FOR /F "tokens=1,2 delims==" %%A IN (user.config) DO (set %%A=%%B))
-set TEMPLATE_LAUNCHER=%0
 set MOD_SEARCH_PATHS=%~dp0mods,./mods
 
 if "!MOD_ID!" == "" goto badconfig
 if "!ENGINE_VERSION!" == "" goto badconfig
 if "!ENGINE_DIRECTORY!" == "" goto badconfig
 
-set TEMPLATE_DIR=%CD%
 if not exist %ENGINE_DIRECTORY%\bin\OpenRA.exe goto noengine
 >nul find %ENGINE_VERSION% %ENGINE_DIRECTORY%\VERSION || goto noengine
 cd %ENGINE_DIRECTORY%
 
-bin\OpenRA.exe Game.Mod=%MOD_ID% Engine.EngineDir=".." Engine.LaunchPath="%TEMPLATE_LAUNCHER%" "Engine.ModSearchPaths=%MOD_SEARCH_PATHS%"  "%*"
-set ERROR=%errorlevel%
-cd %TEMPLATE_DIR%
-
-if %ERROR% neq 0 goto crashdialog
-exit /b
+:loop
+bin\OpenRA.Server.exe Game.Mod=%MOD_ID% Engine.EngineDir=".." Server.Name=%Name% Server.ListenPort=%ListenPort% Server.AdvertiseOnline=%AdvertiseOnline% Server.EnableSingleplayer=%EnableSingleplayer% Server.Password=%Password% Server.RequireAuthentication=%RequireAuthentication% Server.RecordReplays=%RecordReplays% Server.ProfileIDBlacklist=%ProfileIDBlacklist% Server.ProfileIDWhitelist=%ProfileIDWhitelist% Server.EnableSyncReports=%EnableSyncReports% Server.EnableGeoIP=%EnableGeoIP% Server.ShareAnonymizedIPs=%ShareAnonymizedIPs% Server.EnableLintChecks=%EnableLintChecks% Engine.SupportDir=%SupportDir% Server.JoinChatDelay=%JoinChatDelay%
+goto loop
 
 :noengine
 echo Required engine files not found.
@@ -35,11 +52,3 @@ echo Ensure that MOD_ID ENGINE_VERSION and ENGINE_DIRECTORY are
 echo defined in your mod.config (or user.config) and try again.
 pause
 exit /b
-
-:crashdialog
-echo ----------------------------------------
-echo OpenRA has encountered a fatal error.
-echo   * Log Files are available in Documents\OpenRA\Logs
-echo   * FAQ is available at https://github.com/OpenRA/OpenRA/wiki/FAQ
-echo ----------------------------------------
-pause
