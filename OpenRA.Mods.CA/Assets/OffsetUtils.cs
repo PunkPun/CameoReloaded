@@ -11,7 +11,10 @@
 
 #endregion
 
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using OpenRA.Primitives;
 
 namespace OpenRA.Mods.CA.Assets
@@ -27,5 +30,38 @@ namespace OpenRA.Mods.CA.Assets
 
 			return offset;
 		}
+
+#if !NET5_0_OR_GREATER
+		public static IEnumerable<TSource> DistinctBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
+		{
+			if (source is null)
+				throw new ArgumentNullException(nameof(source));
+
+			if (keySelector is null)
+				throw new ArgumentNullException(nameof(keySelector));
+
+			return DistinctByIterator(source, keySelector);
+		}
+
+		static IEnumerable<TSource> DistinctByIterator<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
+		{
+			using (IEnumerator<TSource> enumerator = source.GetEnumerator())
+			{
+				if (enumerator.MoveNext())
+				{
+					var set = new HashSet<TKey>();
+					do
+					{
+						TSource element = enumerator.Current;
+						if (set.Add(keySelector(element)))
+						{
+							yield return element;
+						}
+					}
+					while (enumerator.MoveNext());
+				}
+			}
+		}
+#endif
 	}
 }
