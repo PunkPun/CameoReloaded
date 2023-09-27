@@ -146,7 +146,7 @@ namespace OpenRA.Mods.CA.Assets.FileFormats
 
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+			// throw new NotImplementedException();
 		}
 	}
 }
